@@ -1,0 +1,101 @@
+question,expected
+Are all dogs mammals?,yes
+Are all cats mammals?,yes
+Are all whales mammals?,yes
+Are all dolphins mammals?,yes
+Are all humans mammals?,yes
+Are all lions mammals?,yes
+Are all tigers mammals?,yes
+Are all bats mammals?,yes
+Are all bears mammals?,yes
+Are all elephants mammals?,yes
+Are all dogs animals?,yes
+Are all cats animals?,yes
+Are all whales animals?,yes
+Are all humans animals?,yes
+Are all birds animals?,yes
+Are all sparrows birds?,yes
+Are all eagles birds?,yes
+Are all penguins birds?,yes
+Are all parrots birds?,yes
+Are all ostriches birds?,yes
+Are all sparrows animals?,yes
+Are all eagles animals?,yes
+Are all snakes reptiles?,yes
+Are all lizards reptiles?,yes
+Are all turtles reptiles?,yes
+Are all crocodiles reptiles?,yes
+Are all snakes animals?,yes
+Are all frogs amphibians?,yes
+Are all frogs animals?,yes
+Are all sharks fish?,yes
+Are all salmons fish?,yes
+Are all sharks animals?,yes
+Are all squares rectangles?,yes
+Are all squares polygons?,yes
+Are all rectangles polygons?,yes
+Are all triangles polygons?,yes
+Are all squares shapes?,yes
+Are all rectangles shapes?,yes
+Are all triangles shapes?,yes
+Are all circles shapes?,yes
+Are all cars vehicles?,yes
+Are all buses vehicles?,yes
+Are all trucks vehicles?,yes
+Are all apples fruits?,yes
+Are all bananas fruits?,yes
+Are all rectangles squares?,no
+Are all animals mammals?,no
+Are all birds eagles?,no
+Are all polygons triangles?,no
+Are all shapes circles?,no
+Do all mammals have hair?,yes
+Do all mammals have fur?,yes
+Do all mammals give milk?,yes
+Do all mammals have a spine?,yes
+Do all mammals have a heart?,yes
+Do all mammals have a brain?,yes
+Do all birds have feathers?,yes
+Do all birds have wings?,yes
+Do all birds lay eggs?,yes
+Do all birds have a beak?,yes
+Do all fish have gills?,yes
+Do all fish have scales?,yes
+Do all reptiles have scales?,yes
+Do all reptiles lay eggs?,yes
+Do all humans have a heart?,yes
+Do all humans have a brain?,yes
+Do all squares have four sides?,yes
+Do all squares have equal sides?,yes
+Do all rectangles have four sides?,yes
+Do all rectangles have right angles?,yes
+Do all triangles have three sides?,yes
+Do all triangles have three angles?,yes
+Do all circles have a radius?,yes
+Do all cars have wheels?,yes
+Do all airplanes have wings?,yes
+Do all trees have roots?,yes
+Do all insects have six legs?,yes
+Do all spiders have eight legs?,yes
+Do all humans need water?,yes
+Do all animals need food?,yes
+Do all living things need water?,yes
+Do all living things need food?,yes
+Do all living things grow?,yes
+Do all living things die?,yes
+Do all circles have corners?,no
+Do all rectangles have three sides?,no
+Do all fish have hair?,no
+If it is raining, is the ground wet?,yes
+If there is fire, is there heat?,yes
+If there is fire, is there smoke?,yes
+If water freezes, does it become ice?,yes
+If water freezes, does it become solid?,yes
+If water boils, does it become steam?,yes
+If water boils, is it hot?,yes
+If metal is heated, does it expand?,yes
+If the sun is shining, is it daytime?,yes
+If it is night, is it dark?,yes
+If a person is human, are they mortal?,yes
+If something is alive, does it need food?,yes
+If you are breathing, are you alive?,yes
