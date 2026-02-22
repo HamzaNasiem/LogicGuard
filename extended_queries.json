@@ -1,0 +1,1079 @@
+{
+  "metadata": {
+    "total": 175,
+    "by_type": {
+      "taxonomic": {
+        "total": 85,
+        "true": 55,
+        "false": 30
+      },
+      "categorical": {
+        "total": 60,
+        "true": 35,
+        "false": 25
+      },
+      "hypothetical": {
+        "total": 30,
+        "true": 20,
+        "false": 10
+      }
+    },
+    "by_source": {
+      "original": 100,
+      "kb_generated": 75
+    },
+    "kb_path": "knowledge_base_extended.json"
+  },
+  "queries": [
+    {
+      "question": "Are all dogs mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all cats mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all whales mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all dolphins mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all lions mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all tigers felines?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all wolves canines?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all sharks fish?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all salmon fish?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all eagles birds?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all sparrows birds?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all snakes reptiles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all lizards reptiles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all frogs amphibians?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all penguins birds?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all squares rectangles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all rectangles polygons?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all triangles polygons?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all cars vehicles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all bicycles vehicles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all birds animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all mammals animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all dogs animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all airplanes vehicles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all boats vehicles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all bears mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all horses mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all elephants mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all penguins animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all animals living things?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all animals dogs?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all animals mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all mammals dogs?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all birds mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all fish mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all reptiles birds?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all mammals fish?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all rectangles squares?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all polygons triangles?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all vehicles cars?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all dogs felines?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all sharks mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all penguins mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all eagles mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all frogs reptiles?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all cats birds?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all snakes mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all triangles rectangles?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all circles polygons?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Are all dolphins fish?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "original"
+    },
+    {
+      "question": "Do all mammals have hair?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all birds have feathers?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all birds have wings?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all birds lay eggs?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all fish have gills?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all fish live in water?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all squares have four sides?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all rectangles have four sides?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all humans have a heart?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all living things need water?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all mammals give milk?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all mammals have a backbone?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all reptiles have scales?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all triangles have three sides?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all circles have a curved edge?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all animals need food?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all living things grow?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all reptiles lay eggs?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all insects have six legs?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all spiders have eight legs?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all fish have hair?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all birds have hair?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all reptiles have hair?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all fish give milk?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all birds live in water?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all mammals have gills?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all triangles have four sides?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all squares have three sides?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all mammals lay eggs?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all birds have gills?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all rectangles have equal sides?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all fish have feathers?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all circles have corners?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all triangles have right angles?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "Do all squares have curved sides?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "original"
+    },
+    {
+      "question": "If it is raining, is the ground wet?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If there is fire, is there heat?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If water freezes, does it become ice?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If water boils, is it hot?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If the sun is shining, is it daytime?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If metal is heated, does it expand?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If it is raining, do we need an umbrella?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If fire is present, is oxygen consumed?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If you are breathing, are you alive?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If a person is human, are they mortal?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If water freezes, does it become steam?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If it is raining, is the sky clear?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If fire is present, does it feel cold?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If water boils, does it freeze?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "If there is fire, does it need no oxygen?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "original"
+    },
+    {
+      "question": "Are all wolves mammals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all foxes canines?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all leopards felines?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all turtles reptiles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all crocodiles reptiles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all toads amphibians?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all ants insects?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all bees insects?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all spiders arachnids?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all hexagons polygons?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all pentagons polygons?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all rhombuses quadrilaterals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all airplanes aircraft?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all helicopters aircraft?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all buses vehicles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all trains vehicles?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all apples fruits?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all bananas fruits?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all carrots vegetables?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all trees plants?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all flowers plants?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all insects animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all reptiles animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all fish animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all amphibians animals?",
+      "ground_truth": true,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all reptiles mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all birds fish?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all insects mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all circles rectangles?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all shapes polygons?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all vehicles aircraft?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all fish reptiles?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all frogs mammals?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all spiders insects?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Are all fruits vegetables?",
+      "ground_truth": false,
+      "type": "taxonomic",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all mammals have warm blood?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all birds have a beak?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all reptiles have cold blood?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all fish have scales?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all arachnids have eight legs?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all living things need food?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all living things die?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all squares have equal sides?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all squares have right angles?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all triangles have three angles?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all humans have a brain?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all plants need water?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all trees have roots?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all circles have a radius?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all aircraft have wings?",
+      "ground_truth": true,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all reptiles have fur?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all birds have scales?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all insects have eight legs?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all mammals have scales?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all circles have straight sides?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all rectangles have equal sides?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all fish have legs?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all birds have fins?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all arachnids have six legs?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "Do all polygons have curved edges?",
+      "ground_truth": false,
+      "type": "categorical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If water freezes, does it become solid?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If there is fire, is there smoke?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If water boils, does it produce steam?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If it is raining, is it wet?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If it is night, is it dark?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If something is alive, does it need food?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If fire is present, is heat released?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If pressure increases, does volume decrease?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If temperature drops, do molecules slow?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If electricity flows, is the circuit complete?",
+      "ground_truth": true,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If water freezes, does it become gas?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If metal is heated, does it shrink?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If fire is present, does temperature drop?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If it is daytime, is it night?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    },
+    {
+      "question": "If electricity flows, is the circuit broken?",
+      "ground_truth": false,
+      "type": "hypothetical",
+      "source": "kb_generated"
+    }
+  ]
+}

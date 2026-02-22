@@ -11,3 +11,4 @@ wheels/
 massive_experiment_results.csv
 
 ieee_results_chart.png
+git rm -r --cached proofwriter-dataset-V2020.12.3/
