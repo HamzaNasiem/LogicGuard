@@ -10,5 +10,19 @@ wheels/
 .venv
 massive_experiment_results.csv
 
-ieee_results_chart.png
+truthfulqa.csv
+proofwriter-dataset-V2020.12.3/
+
+results_llama2_7b.json
+results_llama32_3b.json
+results_mistral_7b.json
+truthfulqa_validation.json
+metrics_report.json
+metrics_report.txt
+paper_tables_final.txt
+truthfulqa_validation_report.txt
+truthfulqa.csv
+extended_queries.json
+__pycache__/
+.venv/
 proofwriter-dataset-V2020.12.3/
