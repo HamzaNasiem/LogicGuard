@@ -1,0 +1,34 @@
+# LogicGuard Default Configuration
+
+kb:
+  default_path: "knowledge_base_1200.json"
+  extended_path: "data/knowledge_bases/knowledge_base_extended.json"
+
+llm:
+  default_model: "llama3.2:3b"
+  temperature: 0.0
+  seed: 42
+  max_tokens: 80
+  retries: 3
+
+evaluation:
+  default_parser: "regex"
+  models:
+    llama2_7b: "llama2"
+    mistral_7b: "mistral"
+    llama32_3b: "llama3.2:3b"
+
+experiment:
+  random_seed: 42
+  phase: 2
+  query_file: "extended_queries.json"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  log_level: "info"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"

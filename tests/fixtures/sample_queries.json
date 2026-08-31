@@ -1,0 +1,74 @@
+[
+  {
+    "id": "tax_001",
+    "question": "Are all dogs mammals?",
+    "ground_truth": true,
+    "type": "taxonomic",
+    "subject": "dog",
+    "predicate": "mammal",
+    "source": "manually_authored",
+    "domain": "biology"
+  },
+  {
+    "id": "tax_002",
+    "question": "Are all spiders insects?",
+    "ground_truth": false,
+    "type": "taxonomic",
+    "subject": "spider",
+    "predicate": "insect",
+    "source": "manually_authored",
+    "domain": "biology",
+    "note": "Classic cross-branch hallucination — spider IS-A arachnid, NOT insect"
+  },
+  {
+    "id": "tax_003",
+    "question": "Are all squares rectangles?",
+    "ground_truth": true,
+    "type": "taxonomic",
+    "subject": "square",
+    "predicate": "rectangle",
+    "source": "manually_authored",
+    "domain": "geometry"
+  },
+  {
+    "id": "cat_001",
+    "question": "Do all fish have hair?",
+    "ground_truth": false,
+    "type": "categorical",
+    "entity": "fish",
+    "property": "hair",
+    "source": "manually_authored",
+    "domain": "biology",
+    "note": "Classic mammalian property attribution to non-mammal"
+  },
+  {
+    "id": "cat_002",
+    "question": "Do all birds have feathers?",
+    "ground_truth": true,
+    "type": "categorical",
+    "entity": "bird",
+    "property": "feathers",
+    "source": "manually_authored",
+    "domain": "biology"
+  },
+  {
+    "id": "hyp_001",
+    "question": "If water freezes, does it become ice?",
+    "ground_truth": true,
+    "type": "hypothetical",
+    "condition": "water_freezes",
+    "consequence": "ice",
+    "source": "manually_authored",
+    "domain": "physics"
+  },
+  {
+    "id": "hyp_002",
+    "question": "If metal is heated, does it expand?",
+    "ground_truth": true,
+    "type": "hypothetical",
+    "condition": "metal_heated",
+    "consequence": "expands",
+    "source": "manually_authored",
+    "domain": "physics"
+  }
+]

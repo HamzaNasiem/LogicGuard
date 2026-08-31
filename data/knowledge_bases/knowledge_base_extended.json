@@ -1,0 +1,855 @@
+{
+  "taxonomies": {
+    "dog": [
+      "canine",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "wolf": [
+      "canine",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "fox": [
+      "canine",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "cat": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "lion": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "tiger": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "leopard": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "whale": [
+      "cetacean",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "dolphin": [
+      "cetacean",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "porpoise": [
+      "cetacean",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "bat": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "bear": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "elephant": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "horse": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "cow": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "pig": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "sheep": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "rabbit": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "rat": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "mouse": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "deer": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "giraffe": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "zebra": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "gorilla": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "chimpanzee": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "monkey": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "human": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "primate": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "canine": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "feline": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "cetacean": [
+      "mammal",
+      "animal",
+      "living_thing"
+    ],
+    "mammal": [
+      "animal",
+      "living_thing"
+    ],
+    "sparrow": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "eagle": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "penguin": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "parrot": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "ostrich": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "hawk": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "owl": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "crow": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "robin": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "pigeon": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "duck": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "swan": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "flamingo": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "peacock": [
+      "bird",
+      "animal",
+      "living_thing"
+    ],
+    "bird": [
+      "animal",
+      "living_thing"
+    ],
+    "snake": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "lizard": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "turtle": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "tortoise": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "crocodile": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "alligator": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "gecko": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "chameleon": [
+      "reptile",
+      "animal",
+      "living_thing"
+    ],
+    "reptile": [
+      "animal",
+      "living_thing"
+    ],
+    "shark": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "salmon": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "tuna": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "goldfish": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "trout": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "cod": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "clownfish": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "fish": [
+      "animal",
+      "living_thing"
+    ],
+    "frog": [
+      "amphibian",
+      "animal",
+      "living_thing"
+    ],
+    "toad": [
+      "amphibian",
+      "animal",
+      "living_thing"
+    ],
+    "salamander": [
+      "amphibian",
+      "animal",
+      "living_thing"
+    ],
+    "newt": [
+      "amphibian",
+      "animal",
+      "living_thing"
+    ],
+    "amphibian": [
+      "animal",
+      "living_thing"
+    ],
+    "ant": [
+      "insect",
+      "animal",
+      "living_thing"
+    ],
+    "bee": [
+      "insect",
+      "animal",
+      "living_thing"
+    ],
+    "butterfly": [
+      "insect",
+      "animal",
+      "living_thing"
+    ],
+    "mosquito": [
+      "insect",
+      "animal",
+      "living_thing"
+    ],
+    "spider": [
+      "arachnid",
+      "animal",
+      "living_thing"
+    ],
+    "scorpion": [
+      "arachnid",
+      "animal",
+      "living_thing"
+    ],
+    "insect": [
+      "animal",
+      "living_thing"
+    ],
+    "arachnid": [
+      "animal",
+      "living_thing"
+    ],
+    "animal": [
+      "living_thing"
+    ],
+    "plant": [
+      "living_thing"
+    ],
+    "tree": [
+      "plant",
+      "living_thing"
+    ],
+    "flower": [
+      "plant",
+      "living_thing"
+    ],
+    "fungus": [
+      "living_thing"
+    ],
+    "square": [
+      "rectangle",
+      "quadrilateral",
+      "rhombus",
+      "polygon",
+      "shape"
+    ],
+    "rectangle": [
+      "quadrilateral",
+      "polygon",
+      "shape"
+    ],
+    "rhombus": [
+      "quadrilateral",
+      "polygon",
+      "shape"
+    ],
+    "quadrilateral": [
+      "polygon",
+      "shape"
+    ],
+    "triangle": [
+      "polygon",
+      "shape"
+    ],
+    "pentagon": [
+      "polygon",
+      "shape"
+    ],
+    "hexagon": [
+      "polygon",
+      "shape"
+    ],
+    "polygon": [
+      "shape"
+    ],
+    "circle": [
+      "shape"
+    ],
+    "oval": [
+      "shape"
+    ],
+    "ellipse": [
+      "shape"
+    ],
+    "car": [
+      "vehicle"
+    ],
+    "bus": [
+      "vehicle"
+    ],
+    "truck": [
+      "vehicle"
+    ],
+    "motorcycle": [
+      "vehicle"
+    ],
+    "bicycle": [
+      "vehicle"
+    ],
+    "airplane": [
+      "vehicle",
+      "aircraft"
+    ],
+    "helicopter": [
+      "vehicle",
+      "aircraft"
+    ],
+    "boat": [
+      "vehicle"
+    ],
+    "ship": [
+      "vehicle"
+    ],
+    "train": [
+      "vehicle"
+    ],
+    "aircraft": [
+      "vehicle"
+    ],
+    "apple": [
+      "fruit",
+      "food"
+    ],
+    "banana": [
+      "fruit",
+      "food"
+    ],
+    "orange": [
+      "fruit",
+      "food"
+    ],
+    "mango": [
+      "fruit",
+      "food"
+    ],
+    "grape": [
+      "fruit",
+      "food"
+    ],
+    "strawberry": [
+      "fruit",
+      "food"
+    ],
+    "carrot": [
+      "vegetable",
+      "food"
+    ],
+    "potato": [
+      "vegetable",
+      "food"
+    ],
+    "tomato": [
+      "vegetable",
+      "food"
+    ],
+    "fruit": [
+      "food"
+    ],
+    "vegetable": [
+      "food"
+    ]
+  },
+  "properties": {
+    "mammal": [
+      "has_hair",
+      "hair",
+      "fur",
+      "gives_milk",
+      "milk",
+      "warm_blooded",
+      "has_backbone",
+      "backbone",
+      "has_heart",
+      "heart",
+      "has_brain",
+      "brain",
+      "has_lungs",
+      "lungs",
+      "vertebrate"
+    ],
+    "bird": [
+      "has_feathers",
+      "feathers",
+      "has_wings",
+      "wings",
+      "lays_eggs",
+      "lay_eggs",
+      "eggs",
+      "has_beak",
+      "beak",
+      "has_backbone",
+      "backbone"
+    ],
+    "fish": [
+      "has_gills",
+      "gills",
+      "has_scales",
+      "scales",
+      "lives_in_water",
+      "cold_blooded",
+      "has_backbone",
+      "backbone"
+    ],
+    "reptile": [
+      "cold_blooded",
+      "has_scales",
+      "scales",
+      "lays_eggs",
+      "lay_eggs",
+      "eggs",
+      "has_backbone",
+      "backbone"
+    ],
+    "amphibian": [
+      "cold_blooded",
+      "lives_near_water",
+      "lays_eggs",
+      "has_backbone"
+    ],
+    "insect": [
+      "six_legs",
+      "6_legs",
+      "has_six_legs",
+      "three_body_segments"
+    ],
+    "arachnid": [
+      "eight_legs",
+      "8_legs",
+      "has_eight_legs"
+    ],
+    "spider": [
+      "eight_legs",
+      "8_legs"
+    ],
+    "human": [
+      "has_heart",
+      "heart",
+      "has_brain",
+      "brain",
+      "mortal",
+      "has_hands",
+      "hands",
+      "upright",
+      "can_think"
+    ],
+    "primate": [
+      "warm_blooded",
+      "has_hair",
+      "gives_milk",
+      "has_hands",
+      "hands"
+    ],
+    "living_thing": [
+      "needs_water",
+      "water",
+      "needs_food",
+      "food",
+      "can_die",
+      "die",
+      "grows",
+      "grow",
+      "mortal",
+      "reproduces"
+    ],
+    "animal": [
+      "needs_food",
+      "food",
+      "needs_water",
+      "water",
+      "can_die"
+    ],
+    "plant": [
+      "needs_water",
+      "water",
+      "needs_sunlight",
+      "makes_own_food",
+      "photosynthesis"
+    ],
+    "tree": [
+      "has_roots",
+      "roots",
+      "root"
+    ],
+    "square": [
+      "four_sides",
+      "4_sides",
+      "equal_sides",
+      "4_equal_sides",
+      "four_right_angles",
+      "4_right_angles",
+      "right_angles"
+    ],
+    "rectangle": [
+      "four_sides",
+      "4_sides",
+      "four_right_angles",
+      "4_right_angles",
+      "right_angles"
+    ],
+    "triangle": [
+      "three_sides",
+      "3_sides",
+      "three_angles",
+      "3_angles"
+    ],
+    "circle": [
+      "no_corners",
+      "curved",
+      "round",
+      "has_radius",
+      "radius"
+    ],
+    "polygon": [
+      "has_straight_sides",
+      "is_closed_shape"
+    ],
+    "quadrilateral": [
+      "has_four_sides",
+      "four_sides",
+      "4_sides",
+      "has_four_angles"
+    ],
+    "vehicle": [
+      "wheels",
+      "has_wheels",
+      "transports_people"
+    ],
+    "aircraft": [
+      "wings",
+      "has_wings",
+      "can_fly",
+      "uses_fuel"
+    ],
+    "airplane": [
+      "wings",
+      "has_wings"
+    ],
+    "car": [
+      "wheels",
+      "has_wheels"
+    ]
+  },
+  "conditionals": {
+    "raining": [
+      "ground_wet",
+      "wet",
+      "need_umbrella",
+      "sky_cloudy"
+    ],
+    "fire": [
+      "heat",
+      "hot",
+      "dangerous",
+      "light",
+      "requires_oxygen",
+      "oxygen",
+      "smoke",
+      "produces_heat"
+    ],
+    "water freezes": [
+      "ice",
+      "solid",
+      "becomes_ice"
+    ],
+    "water_freezes": [
+      "ice",
+      "solid",
+      "becomes_ice"
+    ],
+    "water boils": [
+      "hot",
+      "steam",
+      "100_degrees"
+    ],
+    "water_boils": [
+      "hot",
+      "steam",
+      "100_degrees"
+    ],
+    "metal heated": [
+      "expands",
+      "expand"
+    ],
+    "metal is heated": [
+      "expands",
+      "expand"
+    ],
+    "metal_heated": [
+      "expands",
+      "expand"
+    ],
+    "sun shining": [
+      "daytime",
+      "day"
+    ],
+    "sun_shining": [
+      "daytime",
+      "day"
+    ],
+    "the sun is shining": [
+      "daytime",
+      "day"
+    ],
+    "sun is shining": [
+      "daytime",
+      "day"
+    ],
+    "night": [
+      "dark"
+    ],
+    "it is night": [
+      "dark"
+    ],
+    "breathing": [
+      "alive",
+      "living"
+    ],
+    "you are breathing": [
+      "alive",
+      "living"
+    ],
+    "alive": [
+      "needs_food",
+      "food"
+    ],
+    "something is alive": [
+      "needs_food",
+      "food"
+    ],
+    "a person is human": [
+      "mortal"
+    ],
+    "person is human": [
+      "mortal"
+    ],
+    "human": [
+      "mortal",
+      "can_think"
+    ],
+    "living_thing": [
+      "needs_food",
+      "can_die"
+    ],
+    "it is cold": [
+      "water_may_freeze",
+      "temperature_low",
+      "need_warm_clothes"
+    ],
+    "plant gets sunlight": [
+      "photosynthesis_occurs",
+      "plant_grows",
+      "energy_produced"
+    ],
+    "animal eats food": [
+      "animal_gets_energy",
+      "animal_survives",
+      "digestion_occurs"
+    ],
+    "fire is present": [
+      "oxygen_consumed",
+      "heat_released",
+      "light_produced"
+    ],
+    "pressure increases": [
+      "volume_decreases",
+      "compression_occurs"
+    ],
+    "temperature drops": [
+      "water_may_freeze",
+      "molecules_slow",
+      "energy_decreases"
+    ],
+    "electricity flows": [
+      "circuit_complete",
+      "current_present"
+    ],
+    "seed is planted": [
+      "plant_may_grow",
+      "needs_water",
+      "needs_sunlight"
+    ]
+  }
+}

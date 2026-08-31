@@ -2,7 +2,7 @@
 ### *Deterministic Hallucination Interception in Large Language Models Using Aristotelian-Avicennian Syllogistic Frameworks*
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Ollama-Multi--Model-black?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/NetworkX-Graph%20Engine-orange?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/IEEE-Under%20Review-blue?style=for-the-badge"/>
@@ -44,7 +44,9 @@ The core architectural insight: **parsing is probabilistic; reasoning must be de
 
 ## Key Results
 
-Evaluated on a **175-query formal syllogism dataset** — spanning biological taxonomy, geometric relations, and physical conditionals — using three open-weight LLMs running locally via Ollama:
+Evaluated on a **100-query original syllogism set** (circular-eval removed; 175 total with 75 KB-generated excluded) — spanning biological taxonomy, geometric relations, and physical conditionals — using three open-weight LLMs running locally via Ollama:
+
+> **Note:** Research eval defaults to `--parser regex` (~0.05ms Stage 1). Production API uses LLM parser (~2–7s Stage 1). Use `--parser both` in step2 to compare.
 
 ### Accuracy Improvement
 
