@@ -1,0 +1,88 @@
+======================================================================
+  LogicGuard — Statistical Significance Report  (Step 3b)
+  Source filter: ORIGINAL  |  N queries: 100
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+  TABLE VII — Statistical Significance (McNemar's Test)
+──────────────────────────────────────────────────────────────────────
+  Model               Base     +LG   Δ(pp)     p-value    Sig?    Effect
+  ──────────────── ─────── ─────── ───────  ──────────  ──────  ────────
+  LLaMA2-7B          63.0%   99.0%  +36.0%    0.000000  ✓ p<.001    0.5000
+  Mistral-7B         95.0%  100.0%   +5.0%    0.073638       —    0.5000
+  LLaMA3.2-3B        85.0%  100.0%  +15.0%    0.000301  ✓ p<.001    0.5000
+
+  Note: McNemar's test with Yates continuity correction (df=1).
+  Effect size: Cohen's g (large >0.3, medium 0.1-0.3, small <0.1).
+
+──────────────────────────────────────────────────────────────────────
+  TABLE VIII — 95% Confidence Intervals (Wilson Score)
+──────────────────────────────────────────────────────────────────────
+  Model              Base Acc          95% CI      LG Acc          95% CI
+  ──────────────── ──────────  ──────────────    ────────  ──────────────
+  LLaMA2-7B             63.0%    [53.2, 71.8]       99.0%    [94.6, 99.8]
+  Mistral-7B            95.0%    [88.8, 97.8]      100.0%   [96.3, 100.0]
+  LLaMA3.2-3B           85.0%    [76.7, 90.7]      100.0%   [96.3, 100.0]
+
+──────────────────────────────────────────────────────────────────────
+  TABLE IX — Latency Analysis (LogicGuard overhead)
+──────────────────────────────────────────────────────────────────────
+  Model               LLM (ms)    Stage1 (ms)    Stage2 (ms)    Overhead   Overhead %
+  ────────────────  ──────────  ─────────────  ─────────────  ──────────  ───────────
+  LLaMA2-7B           12563.85          0.060          0.050       0.110         0.0%
+  Mistral-7B           5557.65          0.050          0.040       0.090         0.0%
+  LLaMA3.2-3B          2010.76          0.050          0.040       0.080         0.0%
+
+  Note: Stage 2 (BFS) is typically < 1ms — deterministic graph
+  traversal adds negligible overhead over baseline LLM call.
+
+──────────────────────────────────────────────────────────────────────
+  McNemar's Test Detail
+──────────────────────────────────────────────────────────────────────
+
+  LLaMA2-7B:
+    n01 (baseline wrong, LG correct) :   36  ← LG helped
+    n10 (baseline correct, LG wrong) :    0  ← LG hurt (false alarms)
+    n11 (both correct)               :   63
+    n00 (both wrong)                 :    1
+    χ²                               : 34.0278
+    p-value                          : 0.000000
+    Significant (p < 0.05)?          : YES
+    Significant (p < 0.001)?         : YES
+    Effect size (Cohen's g)          : 0.5000 (large)
+
+  Mistral-7B:
+    n01 (baseline wrong, LG correct) :    5  ← LG helped
+    n10 (baseline correct, LG wrong) :    0  ← LG hurt (false alarms)
+    n11 (both correct)               :   95
+    n00 (both wrong)                 :    0
+    χ²                               : 3.2000
+    p-value                          : 0.073638
+    Significant (p < 0.05)?          : NO
+    Significant (p < 0.001)?         : NO
+    Effect size (Cohen's g)          : 0.5000 (large)
+
+  LLaMA3.2-3B:
+    n01 (baseline wrong, LG correct) :   15  ← LG helped
+    n10 (baseline correct, LG wrong) :    0  ← LG hurt (false alarms)
+    n11 (both correct)               :   85
+    n00 (both wrong)                 :    0
+    χ²                               : 13.0667
+    p-value                          : 0.000301
+    Significant (p < 0.05)?          : YES
+    Significant (p < 0.001)?         : YES
+    Effect size (Cohen's g)          : 0.5000 (large)
+
+──────────────────────────────────────────────────────────────────────
+  PAPER CITATION (paste into Section V)
+──────────────────────────────────────────────────────────────────────
+
+  LLaMA2-7B: The improvement from 63.0% (95% CI: [53.2, 71.8]) to 99.0% (95% CI: [94.6, 99.8]) is statistically significant (p < 0.001, McNemar's test, effect size g=0.500).
+
+  Mistral-7B: The improvement from 95.0% (95% CI: [88.8, 97.8]) to 100.0% (95% CI: [96.3, 100.0]) is not statistically significant (p = 0.0736).
+
+  LLaMA3.2-3B: The improvement from 85.0% (95% CI: [76.7, 90.7]) to 100.0% (95% CI: [96.3, 100.0]) is statistically significant (p < 0.001, McNemar's test, effect size g=0.500).
+
+======================================================================
+  END OF STATISTICAL REPORT
+======================================================================

@@ -26,4 +26,4 @@ This is the "no intervention" condition for all three models.
 | Raw LLM         | Probabilistic     | No             | No                | Baseline|
 | SelfCheckGPT    | Sampling variance | No             | No                | 5-10x   |
 | Logic-LM        | Symbolic solver   | Partial        | No                | TBD     |
-| **LogicGuard**  | **BFS + KB**      | **Yes**        | **Yes (4-state)** | **TBD** |
+| **AvicennaGuard**  | **BFS + KB**      | **Yes**        | **Yes (4-state)** | **TBD** |

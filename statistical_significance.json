@@ -1,0 +1,219 @@
+{
+  "source_filter": "original",
+  "n_queries": 100,
+  "mcnemar_tests": {
+    "LLaMA2-7B": {
+      "display_name": "LLaMA2-7B",
+      "n_queries": 100,
+      "n01": 36,
+      "n10": 0,
+      "n11": 63,
+      "n00": 1,
+      "chi2": 34.0278,
+      "p_value": 0.0,
+      "significant_p05": true,
+      "significant_p001": true,
+      "effect_size_g": 0.5,
+      "effect_magnitude": "large"
+    },
+    "Mistral-7B": {
+      "display_name": "Mistral-7B",
+      "n_queries": 100,
+      "n01": 5,
+      "n10": 0,
+      "n11": 95,
+      "n00": 0,
+      "chi2": 3.2,
+      "p_value": 0.073638,
+      "significant_p05": false,
+      "significant_p001": false,
+      "effect_size_g": 0.5,
+      "effect_magnitude": "large"
+    },
+    "LLaMA3.2-3B": {
+      "display_name": "LLaMA3.2-3B",
+      "n_queries": 100,
+      "n01": 15,
+      "n10": 0,
+      "n11": 85,
+      "n00": 0,
+      "chi2": 13.0667,
+      "p_value": 0.000301,
+      "significant_p05": true,
+      "significant_p001": true,
+      "effect_size_g": 0.5,
+      "effect_magnitude": "large"
+    }
+  },
+  "confidence_intervals": {
+    "LLaMA2-7B": {
+      "baseline": {
+        "accuracy": 63.0,
+        "ci_95": [
+          53.2,
+          71.8
+        ]
+      },
+      "logicguard": {
+        "accuracy": 99.0,
+        "ci_95": [
+          94.6,
+          99.8
+        ]
+      },
+      "delta_pp": 36.0
+    },
+    "Mistral-7B": {
+      "baseline": {
+        "accuracy": 95.0,
+        "ci_95": [
+          88.8,
+          97.8
+        ]
+      },
+      "logicguard": {
+        "accuracy": 100.0,
+        "ci_95": [
+          96.3,
+          100.0
+        ]
+      },
+      "delta_pp": 5.0
+    },
+    "LLaMA3.2-3B": {
+      "baseline": {
+        "accuracy": 85.0,
+        "ci_95": [
+          76.7,
+          90.7
+        ]
+      },
+      "logicguard": {
+        "accuracy": 100.0,
+        "ci_95": [
+          96.3,
+          100.0
+        ]
+      },
+      "delta_pp": 15.0
+    }
+  },
+  "latency_analysis": {
+    "LLaMA2-7B": {
+      "llm_call_ms": {
+        "mean": 12563.85,
+        "median": 12688.89,
+        "p95": 14608.97,
+        "n": 100
+      },
+      "stage1_ms": {
+        "mean": 0.06,
+        "median": 0.06,
+        "p95": 0.12,
+        "n": 100
+      },
+      "stage2_ms": {
+        "mean": 0.05,
+        "median": 0.05,
+        "p95": 0.1,
+        "n": 99
+      },
+      "total_overhead_ms": {
+        "mean": 0.11,
+        "median": 0.11,
+        "p95": 0.19,
+        "n": 100
+      },
+      "overhead_pct_of_llm": 0.0
+    },
+    "Mistral-7B": {
+      "llm_call_ms": {
+        "mean": 5557.65,
+        "median": 5454.85,
+        "p95": 7601.71,
+        "n": 100
+      },
+      "stage1_ms": {
+        "mean": 0.05,
+        "median": 0.05,
+        "p95": 0.09,
+        "n": 100
+      },
+      "stage2_ms": {
+        "mean": 0.04,
+        "median": 0.04,
+        "p95": 0.08,
+        "n": 99
+      },
+      "total_overhead_ms": {
+        "mean": 0.09,
+        "median": 0.08,
+        "p95": 0.14,
+        "n": 100
+      },
+      "overhead_pct_of_llm": 0.0
+    },
+    "LLaMA3.2-3B": {
+      "llm_call_ms": {
+        "mean": 2010.76,
+        "median": 1937.72,
+        "p95": 2808.1,
+        "n": 100
+      },
+      "stage1_ms": {
+        "mean": 0.05,
+        "median": 0.04,
+        "p95": 0.08,
+        "n": 100
+      },
+      "stage2_ms": {
+        "mean": 0.04,
+        "median": 0.04,
+        "p95": 0.08,
+        "n": 99
+      },
+      "total_overhead_ms": {
+        "mean": 0.08,
+        "median": 0.07,
+        "p95": 0.15,
+        "n": 100
+      },
+      "overhead_pct_of_llm": 0.0
+    }
+  },
+  "summary_table": [
+    {
+      "model": "LLaMA2-7B",
+      "base_acc": 63.0,
+      "lg_acc": 99.0,
+      "delta_pp": 36.0,
+      "base_ci": "[53.2, 71.8]",
+      "lg_ci": "[94.6, 99.8]",
+      "p_value": 0.0,
+      "significant": true,
+      "effect_size_g": 0.5
+    },
+    {
+      "model": "Mistral-7B",
+      "base_acc": 95.0,
+      "lg_acc": 100.0,
+      "delta_pp": 5.0,
+      "base_ci": "[88.8, 97.8]",
+      "lg_ci": "[96.3, 100.0]",
+      "p_value": 0.073638,
+      "significant": false,
+      "effect_size_g": 0.5
+    },
+    {
+      "model": "LLaMA3.2-3B",
+      "base_acc": 85.0,
+      "lg_acc": 100.0,
+      "delta_pp": 15.0,
+      "base_ci": "[76.7, 90.7]",
+      "lg_ci": "[96.3, 100.0]",
+      "p_value": 0.000301,
+      "significant": true,
+      "effect_size_g": 0.5
+    }
+  ]
+}

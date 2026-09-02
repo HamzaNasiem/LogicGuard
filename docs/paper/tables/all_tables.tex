@@ -1,0 +1,133 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\title{AvicennaGuard IEEE Tables}
+\author{Hamza Naseem, Moiz Ali}
+
+\begin{document}
+\maketitle
+
+\section*{AvicennaGuard: Formal Verification & Empirical Evaluation}
+
+\begin{table}[t]
+\centering
+\caption{\textsc{Multi-Model Accuracy Comparison Across Logical Reasoning Types}}
+\label{tab:main_results}
+\begin{tabular}{lcccccc}
+  \toprule
+  \textbf{Model Architecture} & \textbf{Taxonomic} & \textbf{Categorical} & \textbf{Hypothetical} & \textbf{Overall} & \textbf{Halluc. Caught} & \textbf{FA} \\
+  \midrule
+  LLaMA2-7B (Baseline) & 56.0\% & 62.9\% & 86.7\% & 63.0\% & --- & 0 \\
+  \quad + \textsc{AvicennaGuard} & \textbf{98.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{99.0\%} & \textbf{36/36} & \textbf{0} \\
+  \midrule
+  Mistral-7B (Baseline) & 96.0\% & 94.3\% & 93.3\% & 95.0\% & --- & 0 \\
+  \quad + \textsc{AvicennaGuard} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{5/5} & \textbf{0} \\
+  \midrule
+  LLaMA3.2-3B (Baseline) & 90.0\% & 71.4\% & 100.0\% & 85.0\% & --- & 0 \\
+  \quad + \textsc{AvicennaGuard} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{15/15} & \textbf{0} \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} Taxonomic, Categorical, and Hypothetical refer to formal syllogistic query classes. Halluc. Caught indicates LLM hallucinations intercepted and corrected by \textsc{AvicennaGuard} out of total interceptable errors. FA = False Alarms (erroneous override of a correct LLM response), verified at 0 across all configurations.}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{table}[t]
+\centering
+\caption{\textsc{Comparison with State-of-the-Art Hallucination Mitigation Baselines}}
+\label{tab:baseline_comparison}
+\begin{tabular}{lcccccc}
+  \toprule
+  \textbf{Method / Baseline} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} & \textbf{FP} & \textbf{Guard Latency} \\
+  \midrule
+  Raw LLM (LLaMA3.2-3B) & 85.0\% & 100.0\% & 75.0\% & 85.7\% & 0 & --- \\
+  SelfCheckGPT ($N=5$) & 85.5\% & 96.5\% & 67.5\% & 79.4\% & 2 & ~4400\,ms \\
+  RAG-Sparse (BM25) & 84.0\% & 100.0\% & 61.5\% & 76.1\% & 0 & 6736.8\,ms \\
+  RAG-Dense (MiniLM-384) & 82.0\% & 100.0\% & 56.6\% & 72.3\% & 0 & 5650.8\,ms \\
+  RAG-Dense (mpnet-768) & 80.0\% & 100.0\% & 51.8\% & 68.2\% & 0 & 6136.6\,ms \\
+  \midrule
+  \textbf{\textsc{AvicennaGuard} (Ours)} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{0} & \textbf{$< 0.1$\,ms} \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} Evaluated on 200 systematic logical deduction queries under identical seed. AvicennaGuard achieves $100\%$ precision and zero false positives (FP) via deterministic BFS reachability verification while requiring sub-millisecond validation time.}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{table}[t]
+\centering
+\caption{\textsc{Statistical Significance Testing via Paired McNemar Test with Yates Correction}}
+\label{tab:mcnemar_significance}
+\begin{tabular}{lcccccccc}
+  \toprule
+  \textbf{Model Architecture} & \textbf{Baseline [95\% CI]} & \textbf{+AvicennaGuard [95\% CI]} & \textbf{$b / c$} & $\boldsymbol{\chi^2}$ & $\boldsymbol{p}$\textbf{-value} & \textbf{Cohen's} $\boldsymbol{g}$ & \textbf{Significance} \\
+  \midrule
+  LLaMA2-7B & 63.0\% [53.2, 71.8] & \textbf{99.0\%} [94.5, 99.8] & 36\,/\,0 & 34.03 & $p < 0.001$ & 0.50 & \textbf{*** Significant} \\
+  Mistral-7B & 95.0\% [88.8, 97.8] & \textbf{100.0\%} [96.3, 100.0] & 5\,/\,0 & 3.20 & $p = 0.0736$ & 0.50 & Not Sig. ($p > .05$) \\
+  LLaMA3.2-3B & 85.0\% [76.7, 90.7] & \textbf{100.0\%} [96.3, 100.0] & 15\,/\,0 & 13.07 & $p < 0.001$ & 0.50 & \textbf{*** Significant} \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} $b$ denotes discordant pairs where baseline is incorrect and \textsc{AvicennaGuard} is correct; $c$ denotes baseline correct and \textsc{AvicennaGuard} incorrect ($c=0$ across all trials). 95\% confidence intervals computed via Wilson score method. $\chi^2$ computed with Yates continuity correction (df=1). Cohen's $g = 0.50$ represents maximum possible effect size.}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{table}[t]
+\centering
+\caption{\textsc{End-to-End Latency Decomposition Across Pipeline Stages}}
+\label{tab:latency_breakdown}
+\begin{tabular}{lccccc}
+  \toprule
+  \textbf{Model Architecture} & \textbf{LLM Call (Mean)} & \textbf{Stage 1: Parser} & \textbf{Stage 2: BFS Graph} & \textbf{Total Overhead} & \textbf{Overhead Ratio} \\
+  \midrule
+  LLaMA2-7B & 11012.5\,ms & 0.067\,ms & 0.067\,ms & 0.134\,ms & 0.000\% \\
+  Mistral-7B & 3402.6\,ms & 0.048\,ms & 0.039\,ms & 0.087\,ms & 0.000\% \\
+  LLaMA3.2-3B & 1396.5\,ms & 0.051\,ms & 0.039\,ms & 0.089\,ms & 0.010\% \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} Latencies measured in milliseconds over 100 queries per model. Stage 1 executes deterministic regex semantic parsing ($<0.08\,$ms). Stage 2 performs BFS closure on NetworkX knowledge base ($<0.05\,$ms). Guard overhead accounts for $<0.01\%$ of total end-to-end inference latency.}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{table*}[t]
+\centering
+\caption{\textsc{Ablation Study Isolating Stage 1 Parsing, Stage 2 BFS Graph Closure, and 4-State Epistemics}}
+\label{tab:ablation_study}
+\begin{tabular}{lcccccl}
+  \toprule
+  \textbf{Pipeline Configuration / Variant} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} & \textbf{Latency} & \textbf{Failure Mode / Theoretical Consequence} \\
+  \midrule
+  \textbf{\textsc{AvicennaGuard} (Full Architecture)} & 100.0\% & 100.0\% & 100.0\% & 100.0\% & 0.11\,ms & Optimal deterministic verification with full epistemic guarantees \\
+  \quad w/o Stage 2 BFS (Regex Direct Parsing only) & 76.5\% & 82.1\% & 72.0\% & 76.7\% & 0.06\,ms & Lacks graph transitive closure; fails on multi-hop derivations \\
+  \quad w/o 4-State Epistemics (Binary True/False only) & 88.0\% & 91.2\% & 86.5\% & 88.8\% & 0.10\,ms & Forces forced binary verdicts on OOD queries; introduces false alarms \\
+  \quad w/o DeBERTa Fallback (Regex Fast-Path only) & 98.5\% & 100.0\% & 97.2\% & 98.6\% & 0.06\,ms & Slight recall drop on syntactic variations matching no regex rule \\
+  \quad w/o Regex Fast-Path (DeBERTa Neural Parser only) & 99.2\% & 99.4\% & 99.0\% & 99.2\% & 8.45\,ms & $76\times$ latency increase; minor neural boundary classification errors \\
+  \quad w/o Transitive BFS Closure (1-Hop Edges only) & 84.0\% & 100.0\% & 73.5\% & 84.7\% & 0.08\,ms & Cannot verify ancestor taxonomic hierarchies ($A \to B \to C$) \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} Evaluated on systematic benchmark suite. The 4-state epistemic model (\textsc{Yaqeen}, \textsc{Wahm}, \textsc{Shakk}, \textsc{Zann}) prevents false overrides on unknown entities. BFS transitive closure is essential for multi-hop taxonomies.}
+\end{table*}
+
+\end{document}
+

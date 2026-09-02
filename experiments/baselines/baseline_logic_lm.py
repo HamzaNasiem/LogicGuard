@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Simplified Logic-LM style baseline on LogicGuard query set.
+Simplified Logic-LM style baseline on AvicennaGuard query set.
 
-Uses the same BFS validator as LogicGuard (symbolic check) without
+Uses the same BFS validator as AvicennaGuard (symbolic check) without
 LLM override logic — approximates neuro-symbolic solver comparison.
 """
 
@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-from logicguard.research.adapter import ResearchValidator  # noqa: E402
+from avicennaguard.research.adapter import ResearchValidator  # noqa: E402
 
 
 def main():

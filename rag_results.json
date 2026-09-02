@@ -1,0 +1,2788 @@
+{
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "total": 200,
+  "correct": 168,
+  "accuracy": 0.84,
+  "precision": 1.0,
+  "recall": 0.6145,
+  "f1": 0.7612,
+  "specificity": 1.0,
+  "false_positives": 0,
+  "false_negatives": 32,
+  "confusion": {
+    "tp": 51,
+    "fp": 0,
+    "tn": 117,
+    "fn": 32
+  },
+  "avg_latency_ms": 6736.8,
+  "results": [
+    {
+      "question": "If it is alive, is it true that need umbrella?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If raining, then need umbrella.",
+        "If alive, then food.",
+        "If breathing, then alive.",
+        "If alive, then needs food.",
+        "If you are breathing, then alive."
+      ],
+      "correct": true,
+      "latency_ms": 11758.0
+    },
+    {
+      "question": "Do all fishes have lives in water?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A fish has lives in water.",
+        "All fishs have lives in water.",
+        "A amphibian has lives near water.",
+        "All amphibians have lives near water.",
+        "A plant has water."
+      ],
+      "correct": false,
+      "latency_ms": 13513.2
+    },
+    {
+      "question": "Are all tortoises airplanes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All airplanes have wings.",
+        "All tortoises are animals.",
+        "All tortoises are reptiles.",
+        "All airplanes are vehicles.",
+        "All airplanes are aircrafts."
+      ],
+      "correct": true,
+      "latency_ms": 14748.7
+    },
+    {
+      "question": "Do all circles have curved?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All circles have curved.",
+        "A circle has curved.",
+        "All circles have round.",
+        "All circles are shapes.",
+        "All circles have radius."
+      ],
+      "correct": false,
+      "latency_ms": 10510.0
+    },
+    {
+      "question": "Are all fungus giraffes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All giraffes are mammals.",
+        "All giraffes are animals.",
+        "A fungus is a living thing.",
+        "All giraffes are living things."
+      ],
+      "correct": true,
+      "latency_ms": 10012.8
+    },
+    {
+      "question": "Are all robins airplanes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All robins are birds.",
+        "All robins are animals.",
+        "All airplanes have wings.",
+        "All airplanes are vehicles.",
+        "All airplanes are aircrafts."
+      ],
+      "correct": true,
+      "latency_ms": 9866.1
+    },
+    {
+      "question": "Are all spiders shapes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All ovals are shapes.",
+        "All squares are shapes.",
+        "All circles are shapes.",
+        "All spiders have 8 legs.",
+        "All spiders are animals."
+      ],
+      "correct": true,
+      "latency_ms": 8602.9
+    },
+    {
+      "question": "If it is sun shining, is it true that steam?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If sun shining, then day.",
+        "If sun shining, then day.",
+        "If sun is shining, then day.",
+        "If sun shining, then daytime.",
+        "If sun shining, then daytime."
+      ],
+      "correct": true,
+      "latency_ms": 10669.2
+    },
+    {
+      "question": "Are all humans living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All humans are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 10168.5
+    },
+    {
+      "question": "Are all bears cars?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cars have wheels.",
+        "All cars are vehicles.",
+        "All bears are mammals.",
+        "All bears are animals.",
+        "All cars have has wheels."
+      ],
+      "correct": true,
+      "latency_ms": 11164.5
+    },
+    {
+      "question": "Do all mammals have four right angles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A square has four right angles.",
+        "A rectangle has four right angles.",
+        "All squares have four right angles.",
+        "All rectangles have four right angles.",
+        "A square has right angles."
+      ],
+      "correct": true,
+      "latency_ms": 12865.1
+    },
+    {
+      "question": "Are all airplanes hawks?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All hawks are birds.",
+        "All hawks are animals.",
+        "All airplanes have wings.",
+        "All airplanes are vehicles.",
+        "All hawks are living things."
+      ],
+      "correct": true,
+      "latency_ms": 11221.8
+    },
+    {
+      "question": "Are all wolfs tomatos?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All wolfs are mammals.",
+        "All wolfs are canines.",
+        "All wolfs are animals.",
+        "All tomatos are foods.",
+        "All tomatos are vegetables."
+      ],
+      "correct": true,
+      "latency_ms": 10717.1
+    },
+    {
+      "question": "Are all mangos amphibians?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All mangos are foods.",
+        "All mangos are fruits.",
+        "All toads are amphibians.",
+        "All newts are amphibians.",
+        "All frogs are amphibians."
+      ],
+      "correct": true,
+      "latency_ms": 8775.6
+    },
+    {
+      "question": "Do all birds have beak?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All birds have beak.",
+        "All birds have has beak.",
+        "A bird has beak.",
+        "All owls are birds.",
+        "All swans are birds."
+      ],
+      "correct": false,
+      "latency_ms": 11141.0
+    },
+    {
+      "question": "Are all owls ships?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All owls are birds.",
+        "All owls are animals.",
+        "All ships are vehicles.",
+        "All owls are living things."
+      ],
+      "correct": true,
+      "latency_ms": 9332.9
+    },
+    {
+      "question": "Do all circles have no corners?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All circles have no corners.",
+        "All circles have round.",
+        "All circles are shapes.",
+        "All circles have radius.",
+        "All circles have curved."
+      ],
+      "correct": true,
+      "latency_ms": 10332.9
+    },
+    {
+      "question": "Are all parrots birds?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All parrots are birds.",
+        "All owls are birds.",
+        "All swans are birds.",
+        "All hawks are birds.",
+        "All ducks are birds."
+      ],
+      "correct": true,
+      "latency_ms": 8953.3
+    },
+    {
+      "question": "Do all birds have round?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All owls are birds.",
+        "A circle has round.",
+        "All swans are birds.",
+        "All hawks are birds.",
+        "All ducks are birds."
+      ],
+      "correct": true,
+      "latency_ms": 9684.6
+    },
+    {
+      "question": "Are all mosquitos ovals?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All ovals are shapes.",
+        "All mosquitos are insects.",
+        "All mosquitos are animals.",
+        "All mosquitos are living things."
+      ],
+      "correct": true,
+      "latency_ms": 11012.4
+    },
+    {
+      "question": "Do all spiders have wings?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A bird has wings.",
+        "All birds have wings.",
+        "A bird has has wings.",
+        "A airplane has wings.",
+        "A aircraft has wings."
+      ],
+      "correct": true,
+      "latency_ms": 8948.6
+    },
+    {
+      "question": "Are all quadrilaterals apples?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All apples are foods.",
+        "All apples are fruits.",
+        "All quadrilaterals are shapes.",
+        "All squares are quadrilaterals.",
+        "All rhombuss are quadrilaterals."
+      ],
+      "correct": true,
+      "latency_ms": 10811.4
+    },
+    {
+      "question": "Are all salamanders tomatos?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All tomatos are foods.",
+        "All tomatos are vegetables.",
+        "All salamanders are animals.",
+        "All salamanders are amphibians.",
+        "All salamanders are living things."
+      ],
+      "correct": true,
+      "latency_ms": 10500.0
+    },
+    {
+      "question": "Are all alligators reptiles?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All alligators are reptiles.",
+        "All reptiles have eggs.",
+        "All snakes are reptiles.",
+        "All geckos are reptiles.",
+        "All turtles are reptiles."
+      ],
+      "correct": true,
+      "latency_ms": 9910.9
+    },
+    {
+      "question": "Are all trees plants?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All trees are plants.",
+        "All trees have root.",
+        "All trees have roots.",
+        "All plants have water.",
+        "All flowers are plants."
+      ],
+      "correct": true,
+      "latency_ms": 8189.7
+    },
+    {
+      "question": "Are all turtles animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All turtles are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 9551.3
+    },
+    {
+      "question": "Are all sheeps bananas?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All bananas are foods.",
+        "All sheeps are mammals.",
+        "All sheeps are animals.",
+        "All bananas are fruits.",
+        "All sheeps are living things."
+      ],
+      "correct": true,
+      "latency_ms": 10243.1
+    },
+    {
+      "question": "If it is alive, is it true that food?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If alive, then food.",
+        "If alive, then needs food.",
+        "If something is alive, then food.",
+        "If something is alive, then needs food.",
+        "A mango is a food."
+      ],
+      "correct": false,
+      "latency_ms": 9531.8
+    },
+    {
+      "question": "Are all trees elephants?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All trees have root.",
+        "All trees have roots.",
+        "All trees are plants.",
+        "All trees have has roots.",
+        "All elephants are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 9626.5
+    },
+    {
+      "question": "Are all canines mammals?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All canines are mammals.",
+        "All rats are mammals.",
+        "All pigs are mammals.",
+        "All mammals have fur.",
+        "All foxs are mammals."
+      ],
+      "correct": false,
+      "latency_ms": 8783.7
+    },
+    {
+      "question": "Are all amphibians hexagons?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All hexagons are shapes.",
+        "All toads are amphibians.",
+        "All newts are amphibians.",
+        "All frogs are amphibians.",
+        "All hexagons are polygons."
+      ],
+      "correct": true,
+      "latency_ms": 9298.4
+    },
+    {
+      "question": "Are all flamingos birds?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All flamingos are birds.",
+        "All owls are birds.",
+        "All swans are birds.",
+        "All hawks are birds.",
+        "All ducks are birds."
+      ],
+      "correct": true,
+      "latency_ms": 10297.2
+    },
+    {
+      "question": "Are all salamanders animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All salamanders are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 11103.2
+    },
+    {
+      "question": "Do all rectangles have cold blooded?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A fish has cold blooded.",
+        "A reptile has cold blooded.",
+        "All fishs have cold blooded.",
+        "A amphibian has cold blooded.",
+        "All reptiles have cold blooded."
+      ],
+      "correct": true,
+      "latency_ms": 11100.5
+    },
+    {
+      "question": "Are all hawks apples?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All hawks are birds.",
+        "All apples are foods.",
+        "All hawks are animals.",
+        "All apples are fruits.",
+        "All hawks are living things."
+      ],
+      "correct": true,
+      "latency_ms": 10242.9
+    },
+    {
+      "question": "If it is something is alive, is it true that food?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If something is alive, then food.",
+        "If something is alive, then needs food.",
+        "If alive, then food.",
+        "If alive, then needs food.",
+        "A mango is a food."
+      ],
+      "correct": false,
+      "latency_ms": 10754.2
+    },
+    {
+      "question": "If it is it is night, is it true that dark?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "If night, then dark.",
+        "If it is night, then dark."
+      ],
+      "correct": true,
+      "latency_ms": 8774.6
+    },
+    {
+      "question": "Do all spiders have 8 legs?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All spiders have 8 legs.",
+        "All spiders have eight legs.",
+        "A spider has 8 legs.",
+        "A insect has 6 legs.",
+        "A insect has six legs."
+      ],
+      "correct": false,
+      "latency_ms": 9575.2
+    },
+    {
+      "question": "If it is fire is present, is it true that ground wet?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If raining, then ground wet.",
+        "If fire is present, then heat released.",
+        "If fire is present, then light produced.",
+        "If fire is present, then oxygen consumed.",
+        "If fire, then hot."
+      ],
+      "correct": true,
+      "latency_ms": 11167.5
+    },
+    {
+      "question": "Do all mammals have backbone?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All mammals have backbone.",
+        "All mammals have has backbone.",
+        "A fish has backbone.",
+        "A bird has backbone.",
+        "All rats are mammals."
+      ],
+      "correct": false,
+      "latency_ms": 8976.3
+    },
+    {
+      "question": "Are all strawberries fruits?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All fruits are foods.",
+        "All mangos are fruits.",
+        "All grapes are fruits.",
+        "All apples are fruits.",
+        "All oranges are fruits."
+      ],
+      "correct": false,
+      "latency_ms": 8512.9
+    },
+    {
+      "question": "If it is temperature drops, is it true that digestion occurs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If temperature drops, then molecules slow.",
+        "If animal eats food, then digestion occurs.",
+        "If temperature drops, then water may freeze.",
+        "If temperature drops, then energy decreases.",
+        "If it is cold, then temperature low."
+      ],
+      "correct": true,
+      "latency_ms": 13367.4
+    },
+    {
+      "question": "Are all newts bicycles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All newts are animals.",
+        "All newts are amphibians.",
+        "All bicycles are vehicles.",
+        "All newts are living things."
+      ],
+      "correct": true,
+      "latency_ms": 9700.0
+    },
+    {
+      "question": "Are all flamingos grapes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All grapes are foods.",
+        "All grapes are fruits.",
+        "All flamingos are birds.",
+        "All flamingos are animals.",
+        "All flamingos are living things."
+      ],
+      "correct": true,
+      "latency_ms": 10075.9
+    },
+    {
+      "question": "Are all mouses animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All mouses are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 9010.3
+    },
+    {
+      "question": "Are all trucks mangos?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All mangos are foods.",
+        "All mangos are fruits.",
+        "All trucks are vehicles."
+      ],
+      "correct": true,
+      "latency_ms": 7430.1
+    },
+    {
+      "question": "If it is night, is it true that day?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If night, then dark.",
+        "If sun shining, then day.",
+        "If sun shining, then day.",
+        "If it is night, then dark.",
+        "If sun is shining, then day."
+      ],
+      "correct": true,
+      "latency_ms": 12470.9
+    },
+    {
+      "question": "Are all rhombus dogs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All dogs are mammals.",
+        "All dogs are canines.",
+        "All dogs are animals.",
+        "A rhombus is a shape.",
+        "A square is a rhombus."
+      ],
+      "correct": true,
+      "latency_ms": 11333.8
+    },
+    {
+      "question": "Are all airplanes ducks?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All ducks are birds.",
+        "All ducks are animals.",
+        "All airplanes have wings.",
+        "All airplanes are vehicles.",
+        "All ducks are living things."
+      ],
+      "correct": true,
+      "latency_ms": 11288.5
+    },
+    {
+      "question": "Are all snakes shapes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All ovals are shapes.",
+        "All squares are shapes.",
+        "All snakes are animals.",
+        "All circles are shapes.",
+        "All snakes are reptiles."
+      ],
+      "correct": true,
+      "latency_ms": 9810.4
+    },
+    {
+      "question": "If it is temperature drops, is it true that energy decreases?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If temperature drops, then energy decreases.",
+        "If temperature drops, then molecules slow.",
+        "If temperature drops, then water may freeze.",
+        "If it is cold, then temperature low.",
+        "If pressure increases, then volume decreases."
+      ],
+      "correct": false,
+      "latency_ms": 12488.1
+    },
+    {
+      "question": "Do all polygons have can think?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A human has can think.",
+        "If human, then can think.",
+        "All humans have can think.",
+        "A animal has can die.",
+        "A aircraft has can fly."
+      ],
+      "correct": true,
+      "latency_ms": 10250.3
+    },
+    {
+      "question": "Are all mangos fruits?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All mangos are fruits.",
+        "All mangos are foods.",
+        "All fruits are foods.",
+        "All grapes are fruits.",
+        "All apples are fruits."
+      ],
+      "correct": true,
+      "latency_ms": 9850.8
+    },
+    {
+      "question": "Are all fungus birds?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All owls are birds.",
+        "All swans are birds.",
+        "All hawks are birds.",
+        "All ducks are birds.",
+        "All crows are birds."
+      ],
+      "correct": true,
+      "latency_ms": 8802.8
+    },
+    {
+      "question": "Do all squares have 4 sides?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All squares have 4 sides.",
+        "All squares have four sides.",
+        "All squares have equal sides.",
+        "All squares have 4 equal sides.",
+        "A square has 4 sides."
+      ],
+      "correct": true,
+      "latency_ms": 10620.0
+    },
+    {
+      "question": "Are all bananas frogs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All frogs are animals.",
+        "All bananas are foods.",
+        "All bananas are fruits.",
+        "All frogs are amphibians.",
+        "All frogs are living things."
+      ],
+      "correct": true,
+      "latency_ms": 9213.1
+    },
+    {
+      "question": "Are all bananas reptiles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All bananas are foods.",
+        "All reptiles have eggs.",
+        "All bananas are fruits.",
+        "All snakes are reptiles.",
+        "All geckos are reptiles."
+      ],
+      "correct": true,
+      "latency_ms": 10429.1
+    },
+    {
+      "question": "Do all squares have four right angles?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All squares have four right angles.",
+        "All squares have right angles.",
+        "A square has four right angles.",
+        "All squares have 4 right angles.",
+        "A rectangle has four right angles."
+      ],
+      "correct": false,
+      "latency_ms": 11487.9
+    },
+    {
+      "question": "Are all cows animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All cows are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 9254.9
+    },
+    {
+      "question": "Are all wolfs living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All wolfs are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 12319.2
+    },
+    {
+      "question": "Are all chimpanzees plants?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All trees are plants.",
+        "All plants have water.",
+        "All flowers are plants.",
+        "All plants have needs water.",
+        "All chimpanzees are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 7044.3
+    },
+    {
+      "question": "Are all hexagons wolfs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All wolfs are mammals.",
+        "All wolfs are canines.",
+        "All wolfs are animals.",
+        "All hexagons are shapes.",
+        "All hexagons are polygons."
+      ],
+      "correct": true,
+      "latency_ms": 5021.5
+    },
+    {
+      "question": "Do all amphibians have lives near water?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All amphibians have lives near water.",
+        "A amphibian has lives near water.",
+        "A fish has lives in water.",
+        "All fishs have lives in water.",
+        "A plant has water."
+      ],
+      "correct": false,
+      "latency_ms": 5491.4
+    },
+    {
+      "question": "Are all giraffes animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All giraffes are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 5228.1
+    },
+    {
+      "question": "Are all cetaceans ellipses?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All ellipses are shapes.",
+        "All whales are cetaceans.",
+        "All cetaceans are mammals.",
+        "All cetaceans are animals.",
+        "All dolphins are cetaceans."
+      ],
+      "correct": true,
+      "latency_ms": 5321.2
+    },
+    {
+      "question": "Are all vehicles pigs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All pigs are mammals.",
+        "All pigs are animals.",
+        "All cars are vehicles.",
+        "All buss are vehicles.",
+        "All ships are vehicles."
+      ],
+      "correct": true,
+      "latency_ms": 4553.9
+    },
+    {
+      "question": "Do all animals have root?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A tree has root.",
+        "All trees have root.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals."
+      ],
+      "correct": true,
+      "latency_ms": 4681.9
+    },
+    {
+      "question": "Are all whales flowers?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All whales are mammals.",
+        "All whales are animals.",
+        "All flowers are plants.",
+        "All whales are cetaceans.",
+        "All whales are living things."
+      ],
+      "correct": true,
+      "latency_ms": 4337.7
+    },
+    {
+      "question": "Are all geckos cars?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cars have wheels.",
+        "All cars are vehicles.",
+        "All geckos are animals.",
+        "All geckos are reptiles.",
+        "All cars have has wheels."
+      ],
+      "correct": true,
+      "latency_ms": 4790.5
+    },
+    {
+      "question": "Are all dolphins bananas?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All bananas are foods.",
+        "All bananas are fruits.",
+        "All dolphins are mammals.",
+        "All dolphins are animals.",
+        "All dolphins are cetaceans."
+      ],
+      "correct": true,
+      "latency_ms": 4310.8
+    },
+    {
+      "question": "Are all felines rhombus?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cats are felines.",
+        "A rhombus is a shape.",
+        "All lions are felines.",
+        "A square is a rhombus.",
+        "All tigers are felines."
+      ],
+      "correct": true,
+      "latency_ms": 5091.2
+    },
+    {
+      "question": "Do all vehicles have 8 legs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A spider has 8 legs.",
+        "A insect has 6 legs.",
+        "All cars are vehicles.",
+        "All buss are vehicles.",
+        "A insect has six legs."
+      ],
+      "correct": true,
+      "latency_ms": 5720.3
+    },
+    {
+      "question": "Are all penguins cars?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cars have wheels.",
+        "All cars are vehicles.",
+        "All penguins are birds.",
+        "All penguins are animals.",
+        "All cars have has wheels."
+      ],
+      "correct": true,
+      "latency_ms": 5085.0
+    },
+    {
+      "question": "Are all frogs pentagons?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All frogs are animals.",
+        "All pentagons are shapes.",
+        "All frogs are amphibians.",
+        "All pentagons are polygons.",
+        "All frogs are living things."
+      ],
+      "correct": true,
+      "latency_ms": 5083.9
+    },
+    {
+      "question": "Are all bats carrots?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All bats are mammals.",
+        "All bats are animals.",
+        "All carrots are foods.",
+        "All carrots are vegetables.",
+        "All bats are living things."
+      ],
+      "correct": true,
+      "latency_ms": 4896.6
+    },
+    {
+      "question": "Are all grapes circles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All grapes are foods.",
+        "All grapes are fruits.",
+        "All circles have round.",
+        "All circles are shapes.",
+        "All circles have radius."
+      ],
+      "correct": true,
+      "latency_ms": 4822.8
+    },
+    {
+      "question": "Are all pigeons ellipses?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All pigeons are birds.",
+        "All pigeons are animals.",
+        "All ellipses are shapes.",
+        "All pigeons are living things."
+      ],
+      "correct": true,
+      "latency_ms": 5079.8
+    },
+    {
+      "question": "Do all vehicles have transports people?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All vehicles have transports people.",
+        "A vehicle has transports people.",
+        "All cars are vehicles.",
+        "All buss are vehicles.",
+        "All ships are vehicles."
+      ],
+      "correct": false,
+      "latency_ms": 5074.2
+    },
+    {
+      "question": "Are all rabbits vegetables?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All rabbits are mammals.",
+        "All rabbits are animals.",
+        "All vegetables are foods.",
+        "All tomatos are vegetables.",
+        "All potatos are vegetables."
+      ],
+      "correct": true,
+      "latency_ms": 4989.0
+    },
+    {
+      "question": "Are all cars tortoises?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cars have wheels.",
+        "All cars are vehicles.",
+        "All cars have has wheels.",
+        "All tortoises are animals.",
+        "All tortoises are reptiles."
+      ],
+      "correct": true,
+      "latency_ms": 5062.2
+    },
+    {
+      "question": "Are all foxes animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals.",
+        "All dogs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 5253.6
+    },
+    {
+      "question": "Are all bicycles aircrafts?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All aircrafts have wings.",
+        "All bicycles are vehicles.",
+        "All aircrafts have can fly.",
+        "All aircrafts are vehicles.",
+        "All airplanes are aircrafts."
+      ],
+      "correct": false,
+      "latency_ms": 4925.6
+    },
+    {
+      "question": "Are all ellipses shapes?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All ellipses are shapes.",
+        "All ovals are shapes.",
+        "All squares are shapes.",
+        "All circles are shapes.",
+        "All rhombuss are shapes."
+      ],
+      "correct": true,
+      "latency_ms": 5578.1
+    },
+    {
+      "question": "Are all cars swans?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All swans are birds.",
+        "All cars have wheels.",
+        "All swans are animals.",
+        "All cars are vehicles.",
+        "All cars have has wheels."
+      ],
+      "correct": true,
+      "latency_ms": 4769.9
+    },
+    {
+      "question": "Are all porpoises living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All porpoises are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 6248.6
+    },
+    {
+      "question": "If it is plant gets sunlight, is it true that energy produced?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "If plant gets sunlight, then energy produced.",
+        "If plant gets sunlight, then plant grows.",
+        "If plant gets sunlight, then photosynthesis occurs.",
+        "A plant has needs sunlight.",
+        "If animal eats food, then animal gets energy."
+      ],
+      "correct": true,
+      "latency_ms": 7261.2
+    },
+    {
+      "question": "Are all potatos pentagons?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All potatos are foods.",
+        "All pentagons are shapes.",
+        "All potatos are vegetables.",
+        "All pentagons are polygons."
+      ],
+      "correct": true,
+      "latency_ms": 4675.5
+    },
+    {
+      "question": "Are all triangles shapes?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All triangles are shapes.",
+        "All ovals are shapes.",
+        "All squares are shapes.",
+        "All circles are shapes.",
+        "All rhombuss are shapes."
+      ],
+      "correct": true,
+      "latency_ms": 4603.6
+    },
+    {
+      "question": "Are all flowers bicycles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All flowers are plants.",
+        "All bicycles are vehicles.",
+        "All flowers are living things."
+      ],
+      "correct": true,
+      "latency_ms": 3653.4
+    },
+    {
+      "question": "Do all living things have reproduces?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All living things have reproduces.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": false,
+      "latency_ms": 5598.1
+    },
+    {
+      "question": "Are all dolphins helicopters?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All dolphins are mammals.",
+        "All dolphins are animals.",
+        "All dolphins are cetaceans.",
+        "All helicopters are vehicles.",
+        "All helicopters are aircrafts."
+      ],
+      "correct": true,
+      "latency_ms": 5118.8
+    },
+    {
+      "question": "Do all insects have wings?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A bird has wings.",
+        "All birds have wings.",
+        "All bees are insects.",
+        "All ants are insects.",
+        "A bird has has wings."
+      ],
+      "correct": true,
+      "latency_ms": 4731.9
+    },
+    {
+      "question": "Are all flowers cows?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cows are mammals.",
+        "All cows are animals.",
+        "All flowers are plants.",
+        "All cows are living things.",
+        "All flowers are living things."
+      ],
+      "correct": true,
+      "latency_ms": 4658.3
+    },
+    {
+      "question": "If it is metal is heated, is it true that food?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If metal heated, then expand.",
+        "If metal heated, then expand.",
+        "If metal heated, then expands.",
+        "If metal heated, then expands.",
+        "If metal is heated, then expand."
+      ],
+      "correct": true,
+      "latency_ms": 6854.1
+    },
+    {
+      "question": "Are all clownfishes grapes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All grapes are foods.",
+        "All grapes are fruits."
+      ],
+      "correct": true,
+      "latency_ms": 4331.2
+    },
+    {
+      "question": "Do all plants have water?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All plants have water.",
+        "All plants have needs water.",
+        "A plant has water.",
+        "A animal has water.",
+        "All trees are plants."
+      ],
+      "correct": false,
+      "latency_ms": 4978.6
+    },
+    {
+      "question": "Are all mangos foods?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All mangos are foods.",
+        "All grapes are foods.",
+        "All fruits are foods.",
+        "All apples are foods.",
+        "All tomatos are foods."
+      ],
+      "correct": true,
+      "latency_ms": 6905.2
+    },
+    {
+      "question": "Are all geckos rectangles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All geckos are animals.",
+        "All geckos are reptiles.",
+        "All rectangles are shapes.",
+        "All squares are rectangles.",
+        "All rectangles have 4 sides."
+      ],
+      "correct": true,
+      "latency_ms": 7927.2
+    },
+    {
+      "question": "If it is electricity flows, is it true that alive?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If electricity flows, then current present.",
+        "If electricity flows, then circuit complete.",
+        "If alive, then food.",
+        "If breathing, then alive.",
+        "If alive, then needs food."
+      ],
+      "correct": true,
+      "latency_ms": 7122.6
+    },
+    {
+      "question": "If it is it is cold, is it true that temperature low?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If it is cold, then temperature low.",
+        "A fish has cold blooded.",
+        "A reptile has cold blooded.",
+        "All fishs have cold blooded.",
+        "A amphibian has cold blooded."
+      ],
+      "correct": false,
+      "latency_ms": 7932.9
+    },
+    {
+      "question": "Are all eagles animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All eagles are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 5568.4
+    },
+    {
+      "question": "Are all tomatos ellipses?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All tomatos are foods.",
+        "All ellipses are shapes.",
+        "All tomatos are vegetables."
+      ],
+      "correct": true,
+      "latency_ms": 4752.8
+    },
+    {
+      "question": "Are all gorillas carrots?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All carrots are foods.",
+        "All gorillas are mammals.",
+        "All gorillas are animals.",
+        "All gorillas are primates.",
+        "All carrots are vegetables."
+      ],
+      "correct": true,
+      "latency_ms": 5786.7
+    },
+    {
+      "question": "Are all potatos tortoises?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All potatos are foods.",
+        "All tortoises are animals.",
+        "All tortoises are reptiles.",
+        "All potatos are vegetables.",
+        "All tortoises are living things."
+      ],
+      "correct": true,
+      "latency_ms": 6512.7
+    },
+    {
+      "question": "Are all wolfs mammals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All wolfs are mammals.",
+        "All rats are mammals.",
+        "All pigs are mammals.",
+        "All mammals have fur.",
+        "All foxs are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 5362.2
+    },
+    {
+      "question": "Are all reptiles trains?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All reptiles have eggs.",
+        "All trains are vehicles.",
+        "All snakes are reptiles.",
+        "All geckos are reptiles.",
+        "All turtles are reptiles."
+      ],
+      "correct": true,
+      "latency_ms": 6298.3
+    },
+    {
+      "question": "Are all newts living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All newts are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 6346.7
+    },
+    {
+      "question": "Are all rhombus eagles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All eagles are birds.",
+        "A rhombus is a shape.",
+        "A square is a rhombus.",
+        "All eagles are animals.",
+        "A rhombus is a polygon."
+      ],
+      "correct": true,
+      "latency_ms": 7863.5
+    },
+    {
+      "question": "Are all rhombus quadrilaterals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "A rhombus is a shape.",
+        "A square is a rhombus.",
+        "A rhombus is a polygon.",
+        "A rhombus is a quadrilateral.",
+        "All quadrilaterals are shapes."
+      ],
+      "correct": true,
+      "latency_ms": 6161.5
+    },
+    {
+      "question": "Do all amphibians have right angles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A square has right angles.",
+        "A square has 4 right angles.",
+        "A rectangle has right angles.",
+        "All squares have right angles.",
+        "A square has four right angles."
+      ],
+      "correct": true,
+      "latency_ms": 5158.4
+    },
+    {
+      "question": "Are all pigs bicycles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All pigs are mammals.",
+        "All pigs are animals.",
+        "All bicycles are vehicles.",
+        "All pigs are living things."
+      ],
+      "correct": true,
+      "latency_ms": 3882.8
+    },
+    {
+      "question": "Are all grapes pentagons?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All grapes are foods.",
+        "All grapes are fruits.",
+        "All pentagons are shapes.",
+        "All pentagons are polygons."
+      ],
+      "correct": true,
+      "latency_ms": 4265.4
+    },
+    {
+      "question": "Are all quadrilaterals rhombus?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A rhombus is a shape.",
+        "A square is a rhombus.",
+        "A rhombus is a polygon.",
+        "A rhombus is a quadrilateral.",
+        "All quadrilaterals are shapes."
+      ],
+      "correct": false,
+      "latency_ms": 5767.8
+    },
+    {
+      "question": "Do all plants have lives in water?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All plants have water.",
+        "A fish has lives in water.",
+        "All plants have needs water.",
+        "All fishs have lives in water.",
+        "A amphibian has lives near water."
+      ],
+      "correct": true,
+      "latency_ms": 5030.8
+    },
+    {
+      "question": "Are all goldfishes animals?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals.",
+        "All dogs are animals."
+      ],
+      "correct": false,
+      "latency_ms": 4740.5
+    },
+    {
+      "question": "Are all horses flowers?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All horses are mammals.",
+        "All horses are animals.",
+        "All flowers are plants.",
+        "All horses are living things.",
+        "All flowers are living things."
+      ],
+      "correct": true,
+      "latency_ms": 4704.4
+    },
+    {
+      "question": "Are all bananas butterflies?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All bananas are foods.",
+        "All bananas are fruits."
+      ],
+      "correct": true,
+      "latency_ms": 2533.8
+    },
+    {
+      "question": "If it is breathing, is it true that solid?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If breathing, then alive.",
+        "If breathing, then living.",
+        "If water freezes, then solid.",
+        "If water freezes, then solid.",
+        "If you are breathing, then alive."
+      ],
+      "correct": true,
+      "latency_ms": 5604.3
+    },
+    {
+      "question": "Do all primates have gives milk?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All primates have gives milk.",
+        "A mammal has gives milk.",
+        "A primate has gives milk.",
+        "All mammals have gives milk.",
+        "A mammal has milk."
+      ],
+      "correct": false,
+      "latency_ms": 4818.1
+    },
+    {
+      "question": "Are all reptiles living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All reptiles are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 4345.9
+    },
+    {
+      "question": "If it is animal eats food, is it true that living?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If animal eats food, then animal survives.",
+        "If animal eats food, then digestion occurs.",
+        "If animal eats food, then animal gets energy.",
+        "A animal has food.",
+        "A living thing has food."
+      ],
+      "correct": true,
+      "latency_ms": 6087.9
+    },
+    {
+      "question": "Are all bears living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All bears are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 5163.5
+    },
+    {
+      "question": "Are all polygons closed shape?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All polygons have is closed shape.",
+        "A polygon has is closed shape.",
+        "A oval is a shape.",
+        "A square is a shape.",
+        "A circle is a shape."
+      ],
+      "correct": true,
+      "latency_ms": 5246.9
+    },
+    {
+      "question": "Do all birds have feathers?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All birds have feathers.",
+        "All birds have has feathers.",
+        "All owls are birds.",
+        "All swans are birds.",
+        "All hawks are birds."
+      ],
+      "correct": false,
+      "latency_ms": 5409.0
+    },
+    {
+      "question": "Are all foxes living things?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die.",
+        "All foxs are living things."
+      ],
+      "correct": false,
+      "latency_ms": 5838.1
+    },
+    {
+      "question": "Do all mammals have four sides?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A square has four sides.",
+        "A rectangle has four sides.",
+        "All squares have four sides.",
+        "All rectangles have four sides.",
+        "A quadrilateral has four sides."
+      ],
+      "correct": true,
+      "latency_ms": 5366.6
+    },
+    {
+      "question": "Are all leopards felines?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All leopards are felines.",
+        "All cats are felines.",
+        "All lions are felines.",
+        "All tigers are felines.",
+        "All felines are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 6028.5
+    },
+    {
+      "question": "Are all boats aircrafts?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All boats are vehicles.",
+        "All aircrafts have wings.",
+        "All aircrafts have can fly.",
+        "All aircrafts are vehicles.",
+        "All airplanes are aircrafts."
+      ],
+      "correct": false,
+      "latency_ms": 5593.6
+    },
+    {
+      "question": "Can all living things die?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All living things have can die.",
+        "All living things have die.",
+        "A living thing has can die.",
+        "If living thing, then can die.",
+        "A animal has can die."
+      ],
+      "correct": false,
+      "latency_ms": 5597.4
+    },
+    {
+      "question": "Are all toads amphibians?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All toads are amphibians.",
+        "All toads are animals.",
+        "All newts are amphibians.",
+        "All frogs are amphibians.",
+        "All amphibians are animals."
+      ],
+      "correct": true,
+      "latency_ms": 6184.1
+    },
+    {
+      "question": "Are all hexagons shapes?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All hexagons are shapes.",
+        "All ovals are shapes.",
+        "All squares are shapes.",
+        "All circles are shapes.",
+        "All rhombuss are shapes."
+      ],
+      "correct": true,
+      "latency_ms": 5650.3
+    },
+    {
+      "question": "Are all gorillas living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All gorillas are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 5583.7
+    },
+    {
+      "question": "Are all porpoises mammals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All porpoises are mammals.",
+        "All rats are mammals.",
+        "All pigs are mammals.",
+        "All mammals have fur.",
+        "All foxs are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 5527.1
+    },
+    {
+      "question": "Do all polygons have three body segments?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A insect has three body segments.",
+        "All insects have three body segments.",
+        "All polygons are shapes.",
+        "All squares are polygons.",
+        "All rhombuss are polygons."
+      ],
+      "correct": true,
+      "latency_ms": 6029.2
+    },
+    {
+      "question": "Are all mosquitos grapes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All grapes are foods.",
+        "All grapes are fruits.",
+        "All mosquitos are insects.",
+        "All mosquitos are animals.",
+        "All mosquitos are living things."
+      ],
+      "correct": true,
+      "latency_ms": 4894.2
+    },
+    {
+      "question": "If it is electricity flows, is it true that 100 degrees?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If electricity flows, then current present.",
+        "If electricity flows, then circuit complete.",
+        "If water boils, then 100 degrees.",
+        "If water boils, then 100 degrees."
+      ],
+      "correct": true,
+      "latency_ms": 5589.6
+    },
+    {
+      "question": "Are all primates polygons?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All primates have hands.",
+        "All polygons are shapes.",
+        "All humans are primates.",
+        "All squares are polygons.",
+        "All primates are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 4526.6
+    },
+    {
+      "question": "Are all spiders rectangles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All spiders have 8 legs.",
+        "All spiders are animals.",
+        "All spiders are arachnids.",
+        "All rectangles are shapes.",
+        "All squares are rectangles."
+      ],
+      "correct": true,
+      "latency_ms": 4489.8
+    },
+    {
+      "question": "Are all clownfishes living things?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die.",
+        "All foxs are living things."
+      ],
+      "correct": false,
+      "latency_ms": 4887.7
+    },
+    {
+      "question": "Are all tigers bananas?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All bananas are foods.",
+        "All tigers are mammals.",
+        "All tigers are felines.",
+        "All tigers are animals.",
+        "All bananas are fruits."
+      ],
+      "correct": true,
+      "latency_ms": 5250.7
+    },
+    {
+      "question": "Are all triangles polygons?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All triangles are polygons.",
+        "All polygons are shapes.",
+        "All triangles are shapes.",
+        "All squares are polygons.",
+        "All rhombuss are polygons."
+      ],
+      "correct": false,
+      "latency_ms": 4699.6
+    },
+    {
+      "question": "If it is it is night, is it true that temperature low?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If it is cold, then temperature low.",
+        "If night, then dark.",
+        "If it is night, then dark.",
+        "If temperature drops, then molecules slow.",
+        "If temperature drops, then water may freeze."
+      ],
+      "correct": true,
+      "latency_ms": 6677.7
+    },
+    {
+      "question": "Are all mouses living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All mouses are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 5216.2
+    },
+    {
+      "question": "Are all felines mammals?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All felines are mammals.",
+        "All rats are mammals.",
+        "All pigs are mammals.",
+        "All mammals have fur.",
+        "All foxs are mammals."
+      ],
+      "correct": false,
+      "latency_ms": 6157.8
+    },
+    {
+      "question": "If it is pressure increases, is it true that living?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If pressure increases, then volume decreases.",
+        "If pressure increases, then compression occurs.",
+        "A living thing has die.",
+        "A rat is a living thing.",
+        "A pig is a living thing."
+      ],
+      "correct": true,
+      "latency_ms": 7173.8
+    },
+    {
+      "question": "Are all crows helicopters?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All crows are birds.",
+        "All crows are animals.",
+        "All crows are living things.",
+        "All helicopters are vehicles.",
+        "All helicopters are aircrafts."
+      ],
+      "correct": true,
+      "latency_ms": 6291.2
+    },
+    {
+      "question": "Are all toads cars?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cars have wheels.",
+        "All toads are animals.",
+        "All cars are vehicles.",
+        "All toads are amphibians.",
+        "All cars have has wheels."
+      ],
+      "correct": true,
+      "latency_ms": 5141.6
+    },
+    {
+      "question": "Do all squares have four sides?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All squares have four sides.",
+        "A square has four sides.",
+        "All squares have 4 sides.",
+        "A rectangle has four sides.",
+        "All squares have equal sides."
+      ],
+      "correct": true,
+      "latency_ms": 6018.8
+    },
+    {
+      "question": "If it is it is night, is it true that oxygen consumed?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If fire is present, then oxygen consumed.",
+        "If night, then dark.",
+        "If fire, then oxygen.",
+        "If it is night, then dark.",
+        "If fire, then requires oxygen."
+      ],
+      "correct": true,
+      "latency_ms": 6393.7
+    },
+    {
+      "question": "Do all rectangles have warm blooded?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A mammal has warm blooded.",
+        "A primate has warm blooded.",
+        "All mammals have warm blooded.",
+        "All primates have warm blooded.",
+        "A fish has cold blooded."
+      ],
+      "correct": true,
+      "latency_ms": 5930.5
+    },
+    {
+      "question": "If it is water freezes, is it true that solid?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "If water freezes, then solid.",
+        "If water freezes, then solid.",
+        "If water freezes, then ice.",
+        "If water freezes, then ice.",
+        "If water freezes, then becomes ice."
+      ],
+      "correct": true,
+      "latency_ms": 6051.1
+    },
+    {
+      "question": "Are all deers animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All deers are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 5423.7
+    },
+    {
+      "question": "Are all crows strawberries?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All crows are birds.",
+        "All crows are animals.",
+        "All crows are living things."
+      ],
+      "correct": true,
+      "latency_ms": 3711.3
+    },
+    {
+      "question": "Are all turtles rhombus?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A rhombus is a shape.",
+        "A square is a rhombus.",
+        "A rhombus is a polygon.",
+        "All turtles are animals.",
+        "All turtles are reptiles."
+      ],
+      "correct": true,
+      "latency_ms": 5814.5
+    },
+    {
+      "question": "If it is electricity flows, is it true that light?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If electricity flows, then current present.",
+        "If electricity flows, then circuit complete.",
+        "If fire, then light.",
+        "If fire is present, then light produced."
+      ],
+      "correct": true,
+      "latency_ms": 5148.1
+    },
+    {
+      "question": "If it is temperature drops, is it true that alive?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If temperature drops, then molecules slow.",
+        "If temperature drops, then water may freeze.",
+        "If temperature drops, then energy decreases.",
+        "If alive, then food.",
+        "If breathing, then alive."
+      ],
+      "correct": true,
+      "latency_ms": 5056.0
+    },
+    {
+      "question": "Are all plants living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All plants are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 4904.4
+    },
+    {
+      "question": "Are all zebras living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All zebras are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 5567.0
+    },
+    {
+      "question": "If it is something is alive, is it true that expands?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If something is alive, then food.",
+        "If something is alive, then needs food.",
+        "If alive, then food.",
+        "If breathing, then alive.",
+        "If alive, then needs food."
+      ],
+      "correct": true,
+      "latency_ms": 5281.3
+    },
+    {
+      "question": "Are all rats ships?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All rats are mammals.",
+        "All rats are animals.",
+        "All ships are vehicles.",
+        "All rats are living things."
+      ],
+      "correct": true,
+      "latency_ms": 3469.7
+    },
+    {
+      "question": "Are all bats rectangles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All bats are mammals.",
+        "All bats are animals.",
+        "All rectangles are shapes.",
+        "All squares are rectangles.",
+        "All bats are living things."
+      ],
+      "correct": true,
+      "latency_ms": 3920.2
+    },
+    {
+      "question": "Are all birds trees?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All owls are birds.",
+        "All trees have root.",
+        "All swans are birds.",
+        "All hawks are birds.",
+        "All ducks are birds."
+      ],
+      "correct": true,
+      "latency_ms": 4575.9
+    },
+    {
+      "question": "Are all mosquitos carrots?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All carrots are foods.",
+        "All mosquitos are insects.",
+        "All mosquitos are animals.",
+        "All carrots are vegetables.",
+        "All mosquitos are living things."
+      ],
+      "correct": true,
+      "latency_ms": 5775.4
+    },
+    {
+      "question": "Are all dolphins animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All dolphins are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 5276.1
+    },
+    {
+      "question": "Are all rectangles trouts?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All trouts are fishs.",
+        "All trouts are animals.",
+        "All rectangles are shapes.",
+        "All squares are rectangles.",
+        "All rectangles have 4 sides."
+      ],
+      "correct": true,
+      "latency_ms": 5464.2
+    },
+    {
+      "question": "Are all foxes plants?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All trees are plants.",
+        "All plants have water.",
+        "All flowers are plants.",
+        "All plants have needs water.",
+        "All plants are living things."
+      ],
+      "correct": true,
+      "latency_ms": 4318.0
+    },
+    {
+      "question": "Are all motorcycles pigs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All pigs are mammals.",
+        "All pigs are animals.",
+        "All pigs are living things.",
+        "All motorcycles are vehicles."
+      ],
+      "correct": true,
+      "latency_ms": 3320.3
+    },
+    {
+      "question": "Are all motorcycles vegetables?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All vegetables are foods.",
+        "All tomatos are vegetables.",
+        "All potatos are vegetables.",
+        "All carrots are vegetables.",
+        "All motorcycles are vehicles."
+      ],
+      "correct": true,
+      "latency_ms": 4083.4
+    },
+    {
+      "question": "Are all motorcycles vehicles?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All motorcycles are vehicles.",
+        "All cars are vehicles.",
+        "All buss are vehicles.",
+        "All ships are vehicles.",
+        "All boats are vehicles."
+      ],
+      "correct": true,
+      "latency_ms": 4153.7
+    },
+    {
+      "question": "Are all motorcycles snakes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All snakes are animals.",
+        "All snakes are reptiles.",
+        "All snakes are living things.",
+        "All motorcycles are vehicles."
+      ],
+      "correct": true,
+      "latency_ms": 3885.8
+    },
+    {
+      "question": "If it is sun shining, is it true that compression occurs?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "If sun shining, then day.",
+        "If sun shining, then day.",
+        "If sun is shining, then day.",
+        "If sun shining, then daytime.",
+        "If sun shining, then daytime."
+      ],
+      "correct": true,
+      "latency_ms": 5551.0
+    },
+    {
+      "question": "Are all lions rhombus?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A rhombus is a shape.",
+        "All lions are mammals.",
+        "All lions are felines.",
+        "All lions are animals.",
+        "A square is a rhombus."
+      ],
+      "correct": true,
+      "latency_ms": 5345.3
+    },
+    {
+      "question": "Are all crows polygons?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All crows are birds.",
+        "All crows are animals.",
+        "All polygons are shapes.",
+        "All squares are polygons.",
+        "All rhombuss are polygons."
+      ],
+      "correct": true,
+      "latency_ms": 4161.1
+    },
+    {
+      "question": "Are all spiders aircrafts?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All spiders have 8 legs.",
+        "All spiders are animals.",
+        "All aircrafts have wings.",
+        "All spiders are arachnids.",
+        "All aircrafts have can fly."
+      ],
+      "correct": true,
+      "latency_ms": 4220.3
+    },
+    {
+      "question": "Are all swans animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All swans are animals.",
+        "All swans are birds.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals."
+      ],
+      "correct": true,
+      "latency_ms": 3980.0
+    },
+    {
+      "question": "Are all humans grapes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All grapes are foods.",
+        "All humans have heart.",
+        "All humans have hands.",
+        "All humans have brain.",
+        "All grapes are fruits."
+      ],
+      "correct": true,
+      "latency_ms": 4119.9
+    },
+    {
+      "question": "Do all humans have upright?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All humans have upright.",
+        "A human has upright.",
+        "All humans have heart.",
+        "All humans have hands.",
+        "All humans have brain."
+      ],
+      "correct": false,
+      "latency_ms": 4219.7
+    },
+    {
+      "question": "Do all mammals have gives milk?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All mammals have gives milk.",
+        "All mammals have milk.",
+        "A mammal has gives milk.",
+        "A primate has gives milk.",
+        "All primates have gives milk."
+      ],
+      "correct": false,
+      "latency_ms": 4896.6
+    },
+    {
+      "question": "Are all boats vehicles?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All boats are vehicles.",
+        "All cars are vehicles.",
+        "All buss are vehicles.",
+        "All ships are vehicles.",
+        "All trucks are vehicles."
+      ],
+      "correct": true,
+      "latency_ms": 4234.6
+    },
+    {
+      "question": "Are all cods bicycles?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cods are fishs.",
+        "All cods are animals.",
+        "All bicycles are vehicles.",
+        "All cods are living things."
+      ],
+      "correct": true,
+      "latency_ms": 4625.6
+    },
+    {
+      "question": "Are all oranges fruits?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All oranges are fruits.",
+        "All fruits are foods.",
+        "All oranges are foods.",
+        "All mangos are fruits.",
+        "All grapes are fruits."
+      ],
+      "correct": false,
+      "latency_ms": 4241.4
+    },
+    {
+      "question": "Do all birds have eggs?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All birds have eggs.",
+        "All birds have lay eggs.",
+        "All birds have lays eggs.",
+        "A bird has eggs.",
+        "All owls are birds."
+      ],
+      "correct": false,
+      "latency_ms": 4492.6
+    },
+    {
+      "question": "Are all scorpions plants?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All trees are plants.",
+        "All plants have water.",
+        "All flowers are plants.",
+        "All scorpions are animals.",
+        "All scorpions are arachnids."
+      ],
+      "correct": true,
+      "latency_ms": 5080.2
+    },
+    {
+      "question": "Are all parrots quadrilaterals?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All parrots are birds.",
+        "All parrots are animals.",
+        "All quadrilaterals are shapes.",
+        "All parrots are living things.",
+        "All squares are quadrilaterals."
+      ],
+      "correct": true,
+      "latency_ms": 5062.4
+    },
+    {
+      "question": "Are all peacocks animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All peacocks are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 4619.1
+    },
+    {
+      "question": "If it is electricity flows, is it true that current present?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "If electricity flows, then current present.",
+        "If electricity flows, then circuit complete.",
+        "If fire is present, then heat released.",
+        "If fire is present, then light produced.",
+        "If fire is present, then oxygen consumed."
+      ],
+      "correct": true,
+      "latency_ms": 7410.8
+    },
+    {
+      "question": "Do all arachnids have straight sides?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "A polygon has has straight sides.",
+        "All polygons have has straight sides.",
+        "A square has 4 sides.",
+        "A triangle has 3 sides.",
+        "A square has four sides."
+      ],
+      "correct": true,
+      "latency_ms": 5657.3
+    },
+    {
+      "question": "Do all amphibians have lays eggs?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All amphibians have lays eggs.",
+        "A bird has lays eggs.",
+        "A reptile has lays eggs.",
+        "All birds have lays eggs.",
+        "A amphibian has lays eggs."
+      ],
+      "correct": true,
+      "latency_ms": 5819.3
+    },
+    {
+      "question": "Are all mammals apples?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All rats are mammals.",
+        "All pigs are mammals.",
+        "All mammals have fur.",
+        "All foxs are mammals.",
+        "All dogs are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 4758.4
+    },
+    {
+      "question": "Are all mammals quadrilaterals?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All rats are mammals.",
+        "All pigs are mammals.",
+        "All mammals have fur.",
+        "All foxs are mammals.",
+        "All dogs are mammals."
+      ],
+      "correct": true,
+      "latency_ms": 1847.8
+    },
+    {
+      "question": "Are all flamingos cars?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cars have wheels.",
+        "All cars are vehicles.",
+        "All flamingos are birds.",
+        "All cars have has wheels.",
+        "All flamingos are animals."
+      ],
+      "correct": true,
+      "latency_ms": 5095.3
+    },
+    {
+      "question": "Are all monkeys living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All monkeys are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 4674.1
+    },
+    {
+      "question": "Are all cars insects?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cars have wheels.",
+        "All bees are insects.",
+        "All ants are insects.",
+        "All cars are vehicles.",
+        "All insects have 6 legs."
+      ],
+      "correct": true,
+      "latency_ms": 4695.1
+    },
+    {
+      "question": "Do all primates have hair?",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All primates have has hair.",
+        "A mammal has hair.",
+        "All mammals have hair.",
+        "A mammal has has hair.",
+        "A primate has has hair."
+      ],
+      "correct": false,
+      "latency_ms": 5290.6
+    },
+    {
+      "question": "Are all quadrilaterals cats?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All cats are mammals.",
+        "All cats are felines.",
+        "All cats are animals.",
+        "All cats are living things.",
+        "All quadrilaterals are shapes."
+      ],
+      "correct": true,
+      "latency_ms": 4855.5
+    },
+    {
+      "question": "Are all penguins living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All penguins are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 5306.4
+    },
+    {
+      "question": "Are all tigers living things?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All tigers are living things.",
+        "All rats are living things.",
+        "All pigs are living things.",
+        "All owls are living things.",
+        "All living things have die."
+      ],
+      "correct": true,
+      "latency_ms": 5155.8
+    },
+    {
+      "question": "Are all sparrows animals?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All sparrows are animals.",
+        "All rats are animals.",
+        "All pigs are animals.",
+        "All owls are animals.",
+        "All foxs are animals."
+      ],
+      "correct": true,
+      "latency_ms": 4687.8
+    },
+    {
+      "question": "Are all spiders arachnids?",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "retrieved_facts": [
+        "All spiders are arachnids.",
+        "All spiders have 8 legs.",
+        "All spiders are animals.",
+        "All arachnids have 8 legs.",
+        "All arachnids are animals."
+      ],
+      "correct": true,
+      "latency_ms": 6503.5
+    },
+    {
+      "question": "Are all ovals foxes?",
+      "ground_truth": "no",
+      "prediction": "no",
+      "retrieved_facts": [
+        "All ovals are shapes."
+      ],
+      "correct": true,
+      "latency_ms": 2436.0
+    }
+  ],
+  "elapsed_s": 1347.4
+}

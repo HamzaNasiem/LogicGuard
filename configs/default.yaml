@@ -1,4 +1,4 @@
-# LogicGuard Default Configuration
+# AvicennaGuard Default Configuration
 
 kb:
   default_path: "knowledge_base_1200.json"

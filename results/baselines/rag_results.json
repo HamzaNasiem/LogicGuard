@@ -1,0 +1,766 @@
+{
+  "method": "Dense RAG",
+  "model": "llama3.2:3b",
+  "retriever_type": "sparse_tfidf",
+  "top_k": 5,
+  "mock": true,
+  "total_queries": 20,
+  "num_kb_facts": 8302,
+  "mean_latency_retrieval_ms": 4.68,
+  "mean_latency_generation_ms": 0.05,
+  "mean_latency_total_ms": 4.72,
+  "metrics": {
+    "accuracy": 0.55,
+    "precision": 0.8333,
+    "recall": 0.3846,
+    "f1": 0.5263,
+    "specificity": 0.8571,
+    "confusion_matrix": {
+      "tp": 5,
+      "fp": 1,
+      "tn": 6,
+      "fn": 8,
+      "total": 20
+    },
+    "ood_count": 0,
+    "unresolved_count": 0
+  },
+  "per_query_type": {
+    "taxonomic": {
+      "accuracy": 0.75,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "specificity": 1.0,
+      "confusion_matrix": {
+        "tp": 2,
+        "fp": 0,
+        "tn": 1,
+        "fn": 1,
+        "total": 4
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 4
+    },
+    "hypothetical": {
+      "accuracy": 0.5,
+      "precision": 0.75,
+      "recall": 0.3,
+      "f1": 0.4286,
+      "specificity": 0.8333,
+      "confusion_matrix": {
+        "tp": 3,
+        "fp": 1,
+        "tn": 5,
+        "fn": 7,
+        "total": 16
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 16
+    }
+  },
+  "per_source": {
+    "FOLIO": {
+      "accuracy": 0.55,
+      "precision": 0.8333,
+      "recall": 0.3846,
+      "f1": 0.5263,
+      "specificity": 0.8571,
+      "confusion_matrix": {
+        "tp": 5,
+        "fp": 1,
+        "tn": 6,
+        "fn": 8,
+        "total": 20
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 20
+    }
+  },
+  "results": [
+    {
+      "query_id": "folio_001",
+      "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "All academic professions have academic freedom and tenure.",
+        "A academic profession has academic freedom and tenure.",
+        "A child is a person.",
+        "A young mammal is a young.",
+        "A young bird is a young."
+      ],
+      "similarity_scores": [
+        0.2275,
+        0.2275,
+        0.2227,
+        0.2148,
+        0.2132
+      ],
+      "context_used": "All academic professions have academic freedom and tenure.\nA academic profession has academic freedom and tenure.\nA child is a person.\nA young mammal is a young.\nA young bird is a young.",
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 11.05,
+      "latency_generation_ms": 0.01,
+      "latency_total_ms": 11.07,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_002",
+      "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "All school buss have wheels.",
+        "A school bus has wheels.",
+        "All school ships are ships.",
+        "A school ship is a ship.",
+        "All school buss are buss."
+      ],
+      "similarity_scores": [
+        0.2285,
+        0.2285,
+        0.1972,
+        0.1972,
+        0.1904
+      ],
+      "context_used": "All school buss have wheels.\nA school bus has wheels.\nAll school ships are ships.\nA school ship is a ship.\nAll school buss are buss.",
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 4.49,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 4.53,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_003",
+      "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A home fries is a potato.",
+        "All home friess are potatos.",
+        "All true toads are frogs.",
+        "A true toad is a frog.",
+        "A true frog is a frog."
+      ],
+      "similarity_scores": [
+        0.4491,
+        0.4479,
+        0.0822,
+        0.0822,
+        0.077
+      ],
+      "context_used": "A home fries is a potato.\nAll home friess are potatos.\nAll true toads are frogs.\nA true toad is a frog.\nA true frog is a frog.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 13.38,
+      "latency_generation_ms": 0.01,
+      "latency_total_ms": 13.39,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_004",
+      "question": "Is it true that there is an animal.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "retrieved_facts": [
+        "All true toads are frogs.",
+        "A true toad is a frog.",
+        "A domestic animal is a animal.",
+        "All true frogs are frogs.",
+        "A true frog is a frog."
+      ],
+      "similarity_scores": [
+        0.3395,
+        0.3395,
+        0.3351,
+        0.3177,
+        0.3177
+      ],
+      "context_used": "All true toads are frogs.\nA true toad is a frog.\nA domestic animal is a animal.\nAll true frogs are frogs.\nA true frog is a frog.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 5.34,
+      "latency_generation_ms": 0.19,
+      "latency_total_ms": 5.52,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_005",
+      "question": "Is it true that tom is an ocellated wild turkey.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "retrieved_facts": [
+        "A turkey has feathers.",
+        "A turkey has gobbling call.",
+        "A dingo has wild canine.",
+        "All dingos have wild canine.",
+        "A wild tamarind is a tree."
+      ],
+      "similarity_scores": [
+        0.3671,
+        0.3256,
+        0.2579,
+        0.2579,
+        0.2551
+      ],
+      "context_used": "A turkey has feathers.\nA turkey has gobbling call.\nA dingo has wild canine.\nAll dingos have wild canine.\nA wild tamarind is a tree.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 3.74,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 3.79,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_006",
+      "question": "Is it true that tom is an eastern wild turkey.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "retrieved_facts": [
+        "A turkey has feathers.",
+        "A turkey has gobbling call.",
+        "A dingo has wild canine.",
+        "All dingos have wild canine.",
+        "A wild tamarind is a tree."
+      ],
+      "similarity_scores": [
+        0.3181,
+        0.2822,
+        0.2235,
+        0.2235,
+        0.2211
+      ],
+      "context_used": "A turkey has feathers.\nA turkey has gobbling call.\nA dingo has wild canine.\nAll dingos have wild canine.\nA wild tamarind is a tree.",
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 2.91,
+      "latency_generation_ms": 0.03,
+      "latency_total_ms": 2.94,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_007",
+      "question": "Is it true that the legend of zelda is in the top 10 list.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A true toad is a frog.",
+        "All true toads are frogs.",
+        "A true frog is a frog.",
+        "All true frogs are frogs.",
+        "A true frog has webbed feet."
+      ],
+      "similarity_scores": [
+        0.4165,
+        0.4165,
+        0.3898,
+        0.3898,
+        0.3727
+      ],
+      "context_used": "A true toad is a frog.\nAll true toads are frogs.\nA true frog is a frog.\nAll true frogs are frogs.\nA true frog has webbed feet.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 2.61,
+      "latency_generation_ms": 0.03,
+      "latency_total_ms": 2.64,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_008",
+      "question": "Is it true that the legend of zelda is not in the top 10 list.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A true toad is a frog.",
+        "All true toads are frogs.",
+        "A true frog is a frog.",
+        "All true frogs are frogs.",
+        "A true frog has webbed feet."
+      ],
+      "similarity_scores": [
+        0.4165,
+        0.4165,
+        0.3898,
+        0.3898,
+        0.3727
+      ],
+      "context_used": "A true toad is a frog.\nAll true toads are frogs.\nA true frog is a frog.\nAll true frogs are frogs.\nA true frog has webbed feet.",
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 5.97,
+      "latency_generation_ms": 0.01,
+      "latency_total_ms": 5.97,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_009",
+      "question": "Is it true that all squares are shapes.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "retrieved_facts": [
+        "All squares are shapes.",
+        "All round shapes are shapes.",
+        "All squares have four sides.",
+        "All squares have 4 sides.",
+        "All squares are polygons."
+      ],
+      "similarity_scores": [
+        0.8857,
+        0.3092,
+        0.2508,
+        0.2508,
+        0.2454
+      ],
+      "context_used": "All squares are shapes.\nAll round shapes are shapes.\nAll squares have four sides.\nAll squares have 4 sides.\nAll squares are polygons.",
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 5.9,
+      "latency_generation_ms": 0.02,
+      "latency_total_ms": 5.92,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_010",
+      "question": "Is it true that rock is a turtle or cute.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "retrieved_facts": [
+        "A turtle is a animal.",
+        "A rock dove is a pigeon.",
+        "All rock doves are pigeons.",
+        "A turtle is a reptile.",
+        "A berry is a rock star."
+      ],
+      "similarity_scores": [
+        0.2846,
+        0.2767,
+        0.2767,
+        0.2689,
+        0.2642
+      ],
+      "context_used": "A turtle is a animal.\nA rock dove is a pigeon.\nAll rock doves are pigeons.\nA turtle is a reptile.\nA berry is a rock star.",
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 3.03,
+      "latency_generation_ms": 0.03,
+      "latency_total_ms": 3.05,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_011",
+      "question": "Is it true that if rock is not both a turtle and a squirrel, then rock is either cute or skittish.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A rock dove is a pigeon.",
+        "All rock doves are pigeons.",
+        "All berrys are rock stars.",
+        "A berry is a rock star.",
+        "A rock hopper is a penguin."
+      ],
+      "similarity_scores": [
+        0.343,
+        0.343,
+        0.3274,
+        0.3274,
+        0.3256
+      ],
+      "context_used": "A rock dove is a pigeon.\nAll rock doves are pigeons.\nAll berrys are rock stars.\nA berry is a rock star.\nA rock hopper is a penguin.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 3.54,
+      "latency_generation_ms": 0.01,
+      "latency_total_ms": 3.55,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_012",
+      "question": "Is it true that if rock is cute and still, then rock is a turtle and skittish.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A rock dove is a pigeon.",
+        "All rock doves are pigeons.",
+        "A berry is a rock star.",
+        "All berrys are rock stars.",
+        "All rock hoppers are penguins."
+      ],
+      "similarity_scores": [
+        0.3729,
+        0.3729,
+        0.356,
+        0.356,
+        0.354
+      ],
+      "context_used": "A rock dove is a pigeon.\nAll rock doves are pigeons.\nA berry is a rock star.\nAll berrys are rock stars.\nAll rock hoppers are penguins.",
+      "ground_truth": false,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 2.85,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 2.89,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_013",
+      "question": "Is it true that karen will share \"stranger things\" to lisa.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "All true toads are frogs.",
+        "A true toad is a frog.",
+        "All true frogs are frogs.",
+        "A true frog is a frog.",
+        "All true frogs have webbed feet."
+      ],
+      "similarity_scores": [
+        0.3312,
+        0.3312,
+        0.31,
+        0.31,
+        0.2964
+      ],
+      "context_used": "All true toads are frogs.\nA true toad is a frog.\nAll true frogs are frogs.\nA true frog is a frog.\nAll true frogs have webbed feet.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 2.86,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 2.91,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_014",
+      "question": "Is it true that \"black mirror\" is popular.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "All true toads are frogs.",
+        "A true toad is a frog.",
+        "A true frog is a frog.",
+        "All true frogs are frogs.",
+        "All true frogs have webbed feet."
+      ],
+      "similarity_scores": [
+        0.3169,
+        0.3169,
+        0.2966,
+        0.2966,
+        0.2836
+      ],
+      "context_used": "All true toads are frogs.\nA true toad is a frog.\nA true frog is a frog.\nAll true frogs are frogs.\nAll true frogs have webbed feet.",
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 3.65,
+      "latency_generation_ms": 0.27,
+      "latency_total_ms": 3.92,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_015",
+      "question": "Is it true that beijing has hosted both the 2008 summer olympics and a winter olympics.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "All herbs have dies back in winter or annual.",
+        "A herb has dies back in winter or annual.",
+        "A true toad is a frog.",
+        "All true toads are frogs.",
+        "A true frog is a frog."
+      ],
+      "similarity_scores": [
+        0.3001,
+        0.3001,
+        0.2613,
+        0.2613,
+        0.2446
+      ],
+      "context_used": "All herbs have dies back in winter or annual.\nA herb has dies back in winter or annual.\nA true toad is a frog.\nAll true toads are frogs.\nA true frog is a frog.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 4.22,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 4.27,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_016",
+      "question": "Is it true that marvin is an alien.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A true toad is a frog.",
+        "All true toads are frogs.",
+        "A true frog is a frog.",
+        "All true frogs are frogs.",
+        "A true frog has webbed feet."
+      ],
+      "similarity_scores": [
+        0.4165,
+        0.4165,
+        0.3898,
+        0.3898,
+        0.3727
+      ],
+      "context_used": "A true toad is a frog.\nAll true toads are frogs.\nA true frog is a frog.\nAll true frogs are frogs.\nA true frog has webbed feet.",
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 4.37,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 4.41,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_017",
+      "question": "Is it true that marvin is neither a human nor from mars.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A human is a animal.",
+        "A human is a mammal.",
+        "A human has mortal.",
+        "If human, then mortal.",
+        "A world is a human."
+      ],
+      "similarity_scores": [
+        0.3652,
+        0.3583,
+        0.3434,
+        0.3434,
+        0.3428
+      ],
+      "context_used": "A human is a animal.\nA human is a mammal.\nA human has mortal.\nIf human, then mortal.\nA world is a human.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 3.18,
+      "latency_generation_ms": 0.01,
+      "latency_total_ms": 3.18,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_018",
+      "question": "Is it true that djokovic lives in a tax haven.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "retrieved_facts": [
+        "A true frog has lives near water.",
+        "All true frogs have lives near water.",
+        "A fish has lives in water.",
+        "All fishs have lives in water.",
+        "A true toad is a frog."
+      ],
+      "similarity_scores": [
+        0.4629,
+        0.4629,
+        0.3387,
+        0.3376,
+        0.2818
+      ],
+      "context_used": "A true frog has lives near water.\nAll true frogs have lives near water.\nA fish has lives in water.\nAll fishs have lives in water.\nA true toad is a frog.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 3.06,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 3.1,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_019",
+      "question": "Is it true that djokovic does not live in a tax haven.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A fish has live in.",
+        "All fishs have live in.",
+        "A fish has live in water.",
+        "All fishs have live in water.",
+        "A true toad is a frog."
+      ],
+      "similarity_scores": [
+        0.4397,
+        0.4372,
+        0.3431,
+        0.3419,
+        0.2818
+      ],
+      "context_used": "A fish has live in.\nAll fishs have live in.\nA fish has live in water.\nAll fishs have live in water.\nA true toad is a frog.",
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 3.33,
+      "latency_generation_ms": 0.02,
+      "latency_total_ms": 3.35,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    },
+    {
+      "query_id": "folio_020",
+      "question": "Is it true that roderick strong leads a professional wrestling stable.?",
+      "prediction": false,
+      "final_answer": "no",
+      "retrieved_facts": [
+        "A flightless bird has strong legs.",
+        "All flightless birds have strong legs.",
+        "All true toads are frogs.",
+        "A true toad is a frog.",
+        "A rabbit has strong hind legs."
+      ],
+      "similarity_scores": [
+        0.2314,
+        0.2296,
+        0.2269,
+        0.2269,
+        0.2259
+      ],
+      "context_used": "A flightless bird has strong legs.\nAll flightless birds have strong legs.\nAll true toads are frogs.\nA true toad is a frog.\nA rabbit has strong hind legs.",
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_retrieval_ms": 4.04,
+      "latency_generation_ms": 0.04,
+      "latency_total_ms": 4.08,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "retriever_type": "sparse_tfidf",
+        "top_k": 5,
+        "mock": true,
+        "num_kb_facts": 8302
+      }
+    }
+  ],
+  "summary_text": "====================================================================\n  EVALUATION SUMMARY: DENSE RAG\n====================================================================\n  Total Evaluated: 20     | Accuracy:    55.0%\n  Precision:       83.3% | Recall:      38.5%\n  F1 Score:        52.6% | Specificity: 85.7%\n--------------------------------------------------------------------\n  Confusion Matrix: TP=5    FP=1    TN=6    FN=8   \n--------------------------------------------------------------------\n  Breakdown by Query Type:\n    Type            N      Acc      Prec     Rec      F1      \n    -------------------------------------------------------\n    hypothetical    16      50.0%   75.0%   30.0%   42.9%\n    taxonomic       4       75.0%  100.0%   66.7%   80.0%\n--------------------------------------------------------------------\n  Breakdown by Source Dataset:\n    Source             N      Acc      Prec     Rec      F1      \n    ----------------------------------------------------------\n    FOLIO              20      55.0%   83.3%   38.5%   52.6%\n===================================================================="
+}

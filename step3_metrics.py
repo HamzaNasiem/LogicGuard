@@ -95,21 +95,21 @@ def compute_per_type_metrics(results: List[Dict]) -> Dict:
 
 def compute_hallucination_analysis(
     baseline_results: List[Dict],
-    logicguard_results: List[Dict]
+    avicennaguard_results: List[Dict]
 ) -> Dict:
     """
     Detailed hallucination interception analysis.
-    Compares baseline vs LogicGuard on same queries.
+    Compares baseline vs AvicennaGuard on same queries.
     """
     # Index baseline by question
     baseline_by_q = {r['question']: r for r in baseline_results}
 
-    intercepted      = []   # LLM wrong → LogicGuard correct
-    false_alarms     = []   # LLM correct → LogicGuard wrong
+    intercepted      = []   # LLM wrong → AvicennaGuard correct
+    false_alarms     = []   # LLM correct → AvicennaGuard wrong
     both_correct     = []
     both_wrong       = []
 
-    for lg_r in logicguard_results:
+    for lg_r in avicennaguard_results:
         q       = lg_r['question']
         bl_r    = baseline_by_q.get(q)
         if not bl_r:
@@ -172,8 +172,8 @@ def format_prf1_table(all_metrics: Dict) -> str:
 
     for run_key, data in all_metrics.items():
         m    = data['overall']
-        tag  = ' [+LG]' if 'logicguard' in run_key else '      '
-        name = run_key.replace('_baseline', '').replace('_logicguard', '') + tag
+        tag  = ' [+AG]' if ('_avicennaguard' in run_key or '_logicguard' in run_key) else '      '
+        name = run_key.replace('_baseline', '').replace('_avicennaguard', '').replace('_logicguard', '') + tag
         rows.append(
             f"  {name:<28} {m['precision']:>5.1f}% {m['recall']:>5.1f}% "
             f"{m['f1']:>5.1f}% {m['accuracy']:>5.1f}% {m['specificity']:>5.1f}%"
@@ -194,8 +194,8 @@ def format_per_type_table(all_metrics: Dict) -> str:
     rows   = [header, sep]
 
     for run_key, data in all_metrics.items():
-        tag  = ' [+LG]' if 'logicguard' in run_key else '      '
-        name = run_key.replace('_baseline', '').replace('_logicguard', '') + tag
+        tag  = ' [+AG]' if ('_avicennaguard' in run_key or '_logicguard' in run_key) else '      '
+        name = run_key.replace('_baseline', '').replace('_avicennaguard', '').replace('_logicguard', '') + tag
         per  = data['per_type']
         vals = []
         for qt in qtypes:
@@ -247,8 +247,9 @@ def format_paper_numbers(all_metrics: Dict, hall_data: Dict) -> str:
     ]
 
     for run_key, data in all_metrics.items():
-        tag     = '+LogicGuard' if 'logicguard' in run_key else 'Baseline  '
-        base    = run_key.replace('_baseline', '').replace('_logicguard', '')
+        is_guard = '_avicennaguard' in run_key or '_logicguard' in run_key
+        tag     = '+AvicennaGuard' if is_guard else 'Baseline      '
+        base    = run_key.replace('_baseline', '').replace('_avicennaguard', '').replace('_logicguard', '')
         name    = f"{base} ({tag})"
         pt      = data['per_type']
         tax_acc = pt.get('taxonomic', {}).get('metrics', {}).get('accuracy', 0)
@@ -256,8 +257,8 @@ def format_paper_numbers(all_metrics: Dict, hall_data: Dict) -> str:
         hyp_acc = pt.get('hypothetical', {}).get('metrics', {}).get('accuracy', 0)
         overall = data['overall']['accuracy']
         # Hallucinations
-        hkey   = run_key.replace('_baseline', '').replace('_logicguard', '')
-        if 'logicguard' in run_key and hkey in hall_data:
+        hkey   = run_key.replace('_baseline', '').replace('_avicennaguard', '').replace('_logicguard', '')
+        if is_guard and hkey in hall_data:
             caught = hall_data[hkey]['intercepted']
             total  = hall_data[hkey]['total_llm_errors']
             hall_str = f"{caught}/{total}"
@@ -275,8 +276,9 @@ def format_paper_numbers(all_metrics: Dict, hall_data: Dict) -> str:
         "",
     ]
     for run_key, data in all_metrics.items():
-        tag  = '+LG' if 'logicguard' in run_key else 'base'
-        base = run_key.replace('_baseline', '').replace('_logicguard', '')
+        is_guard = '_avicennaguard' in run_key or '_logicguard' in run_key
+        tag  = '+AG' if is_guard else 'base'
+        base = run_key.replace('_baseline', '').replace('_avicennaguard', '').replace('_logicguard', '')
         m    = data['overall']
         lines.append(
             f"    {base} ({tag}):  "
@@ -302,7 +304,7 @@ def main():
     args = parser.parse_args()
 
     print("=" * 65)
-    print("  LogicGuard — Step 3: Metrics & Confusion Matrices")
+    print("  AvicennaGuard — Step 3: Metrics & Confusion Matrices")
     print("=" * 65)
 
     # ── Load results ──────────────────────────────────────────────────
@@ -345,10 +347,12 @@ def main():
     # ── Hallucination analysis ─────────────────────────────────────────
     print("\nComputing hallucination interception...")
     for run_key in run_keys:
-        if '_logicguard' not in run_key:
+        if not ('_avicennaguard' in run_key or '_logicguard' in run_key):
             continue
-        base_key = run_key.replace('_logicguard', '_baseline')
-        model_key = run_key.replace('_logicguard', '')
+        base_key = run_key.replace('_avicennaguard', '_baseline').replace('_logicguard', '_baseline')
+        model_key = run_key.replace('_avicennaguard', '').replace('_logicguard', '')
+        if model_key in hall_data:
+            continue
         if base_key in all_run_results and run_key in all_run_results:
             h = compute_hallucination_analysis(
                 all_run_results[base_key],
@@ -362,7 +366,7 @@ def main():
     print("\nBuilding report...")
     report_lines = [
         "=" * 65,
-        "  LogicGuard — Complete Metrics Report",
+        "  AvicennaGuard — Complete Metrics Report",
         "  (Generated by step3_metrics.py)",
         "=" * 65,
         "",

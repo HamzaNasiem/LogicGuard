@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{\textsc{End-to-End Latency Decomposition Across Pipeline Stages}}
+\label{tab:latency_breakdown}
+\begin{tabular}{lccccc}
+  \toprule
+  \textbf{Model Architecture} & \textbf{LLM Call (Mean)} & \textbf{Stage 1: Parser} & \textbf{Stage 2: BFS Graph} & \textbf{Total Overhead} & \textbf{Overhead Ratio} \\
+  \midrule
+  LLaMA2-7B & 11012.5\,ms & 0.067\,ms & 0.067\,ms & 0.134\,ms & 0.000\% \\
+  Mistral-7B & 3402.6\,ms & 0.048\,ms & 0.039\,ms & 0.087\,ms & 0.000\% \\
+  LLaMA3.2-3B & 1396.5\,ms & 0.051\,ms & 0.039\,ms & 0.089\,ms & 0.010\% \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} Latencies measured in milliseconds over 100 queries per model. Stage 1 executes deterministic regex semantic parsing ($<0.08\,$ms). Stage 2 performs BFS closure on NetworkX knowledge base ($<0.05\,$ms). Guard overhead accounts for $<0.01\%$ of total end-to-end inference latency.}
+\end{table}

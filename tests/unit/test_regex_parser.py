@@ -1,7 +1,7 @@
 """Unit tests for deterministic regex fallback parser."""
 
 import pytest
-from logicguard.parsers.regex_parser import RegexParser
+from avicennaguard.parsers.regex_parser import RegexParser
 
 
 @pytest.fixture

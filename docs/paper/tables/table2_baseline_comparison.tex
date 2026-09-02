@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{\textsc{Comparison with State-of-the-Art Hallucination Mitigation Baselines}}
+\label{tab:baseline_comparison}
+\begin{tabular}{lcccccc}
+  \toprule
+  \textbf{Method / Baseline} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} & \textbf{FP} & \textbf{Guard Latency} \\
+  \midrule
+  Raw LLM (LLaMA3.2-3B) & 85.0\% & 100.0\% & 75.0\% & 85.7\% & 0 & --- \\
+  SelfCheckGPT ($N=5$) & 85.5\% & 96.5\% & 67.5\% & 79.4\% & 2 & ~4400\,ms \\
+  RAG-Sparse (BM25) & 84.0\% & 100.0\% & 61.5\% & 76.1\% & 0 & 6736.8\,ms \\
+  RAG-Dense (MiniLM-384) & 82.0\% & 100.0\% & 56.6\% & 72.3\% & 0 & 5650.8\,ms \\
+  RAG-Dense (mpnet-768) & 80.0\% & 100.0\% & 51.8\% & 68.2\% & 0 & 6136.6\,ms \\
+  \midrule
+  \textbf{\textsc{AvicennaGuard} (Ours)} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{0} & \textbf{$< 0.1$\,ms} \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} Evaluated on 200 systematic logical deduction queries under identical seed. AvicennaGuard achieves $100\%$ precision and zero false positives (FP) via deterministic BFS reachability verification while requiring sub-millisecond validation time.}
+\end{table}

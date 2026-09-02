@@ -13,9 +13,9 @@ import json
 import pytest
 from pathlib import Path
 
-from logicguard.kb.loader import KnowledgeBase
-from logicguard.kb.validator import BFSValidator
-from logicguard.core.epistemic_states import EpistemicState
+from avicennaguard.kb.loader import KnowledgeBase
+from avicennaguard.kb.validator import BFSValidator
+from avicennaguard.core.epistemic_states import EpistemicState
 
 KB_PATH = Path("data/knowledge_bases/knowledge_base_extended.json")
 

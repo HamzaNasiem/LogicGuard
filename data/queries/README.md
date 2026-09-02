@@ -10,7 +10,7 @@ Original unprocessed query files from external sources.
 - manually_authored.json      — Queries authored independently by researchers
 
 ### processed/
-Queries formatted for LogicGuard evaluation pipeline.
+Queries formatted for AvicennaGuard evaluation pipeline.
 - queries_phase1.json         — 175 queries (current published results)
 - queries_phase1_clean.json   — 100 original queries only (no KB-generated)
 - queries_phase2.json         — 500+ queries (Phase 2 expansion)

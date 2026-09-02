@@ -5,7 +5,7 @@
 # ================================================================
 # - Scans ProofWriter dataset (any folder/format)
 # - Extracts taxonomic, categorical, hypothetical queries
-# - Maps them to LogicGuard format
+# - Maps them to AvicennaGuard format
 # - Extends knowledge_base.json with new entities
 # - Saves extended_queries.json (ready for Step 2)
 
@@ -195,11 +195,11 @@
 
 
 # # ─────────────────────────────────────────────────────────────────────
-# # PART B: Map ProofWriter Qs → LogicGuard format
+# # PART B: Map ProofWriter Qs → AvicennaGuard format
 # # ─────────────────────────────────────────────────────────────────────
 
 # def classify_proofwriter_question(q_text: str) -> Optional[str]:
-#     """Classify question into LogicGuard types."""
+#     """Classify question into AvicennaGuard types."""
 #     t = q_text.lower().strip()
 #     if re.match(r'^are all', t):
 #         return 'taxonomic'
@@ -215,11 +215,11 @@
 #     return None
 
 
-# def convert_proofwriter_to_logicguard(
+# def convert_proofwriter_to_avicennaguard(
 #     entry: Dict
 # ) -> List[Dict]:
 #     """
-#     Convert a ProofWriter entry into LogicGuard-compatible queries.
+#     Convert a ProofWriter entry into AvicennaGuard-compatible queries.
 #     Returns list of:
 #     {
 #       'question': str,
@@ -533,7 +533,7 @@
 # def build_extended_query_set_from_proofwriter(pf_queries: List[Dict], kb: Dict) -> List[Dict]:
 #     """
 #     Filter ProofWriter queries to only those whose entities exist in KB.
-#     This ensures LogicGuard can actually validate them.
+#     This ensures AvicennaGuard can actually validate them.
 #     Returns deduplicated, KB-compatible queries.
 #     """
 #     valid = []
@@ -622,7 +622,7 @@
 # # ─────────────────────────────────────────────────────────────────────
 
 # def main():
-#     parser = argparse.ArgumentParser(description='ProofWriter Extractor for LogicGuard')
+#     parser = argparse.ArgumentParser(description='ProofWriter Extractor for AvicennaGuard')
 #     parser.add_argument('--proofwriter_dir', type=str, default='./proofwriter',
 #                         help='Path to ProofWriter dataset directory')
 #     parser.add_argument('--kb_path', type=str, default='knowledge_base.json',
@@ -636,7 +636,7 @@
 #     args = parser.parse_args()
 
 #     print("=" * 65)
-#     print("  LogicGuard — Step 1: ProofWriter Extractor + KB Extender")
+#     print("  AvicennaGuard — Step 1: ProofWriter Extractor + KB Extender")
 #     print("=" * 65)
 
 #     # ── 1. Load and parse ProofWriter ────────────────────────────────
@@ -660,7 +660,7 @@
 #             extracted_pairs['is_a'].extend(parse_is_a_facts(facts))
 #             extracted_pairs['properties'].extend(parse_property_facts(facts))
 #             # Extract questions
-#             converted = convert_proofwriter_to_logicguard(entry)
+#             converted = convert_proofwriter_to_avicennaguard(entry)
 #             pf_queries_raw.extend(converted)
 
 #     print(f"  ProofWriter: {len(pf_queries_raw)} raw questions extracted")
@@ -1212,7 +1212,7 @@ def main():
     args = parser.parse_args()
 
     print("=" * 65)
-    print("  LogicGuard — Step 1 (FIXED): KB Builder + Query Generator")
+    print("  AvicennaGuard — Step 1 (FIXED): KB Builder + Query Generator")
     print("=" * 65)
 
     # 1. Build KB from script (no file reading)

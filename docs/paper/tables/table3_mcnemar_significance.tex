@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{\textsc{Statistical Significance Testing via Paired McNemar Test with Yates Correction}}
+\label{tab:mcnemar_significance}
+\begin{tabular}{lcccccccc}
+  \toprule
+  \textbf{Model Architecture} & \textbf{Baseline [95\% CI]} & \textbf{+AvicennaGuard [95\% CI]} & \textbf{$b / c$} & $\boldsymbol{\chi^2}$ & $\boldsymbol{p}$\textbf{-value} & \textbf{Cohen's} $\boldsymbol{g}$ & \textbf{Significance} \\
+  \midrule
+  LLaMA2-7B & 63.0\% [53.2, 71.8] & \textbf{99.0\%} [94.5, 99.8] & 36\,/\,0 & 34.03 & $p < 0.001$ & 0.50 & \textbf{*** Significant} \\
+  Mistral-7B & 95.0\% [88.8, 97.8] & \textbf{100.0\%} [96.3, 100.0] & 5\,/\,0 & 3.20 & $p = 0.0736$ & 0.50 & Not Sig. ($p > .05$) \\
+  LLaMA3.2-3B & 85.0\% [76.7, 90.7] & \textbf{100.0\%} [96.3, 100.0] & 15\,/\,0 & 13.07 & $p < 0.001$ & 0.50 & \textbf{*** Significant} \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} $b$ denotes discordant pairs where baseline is incorrect and \textsc{AvicennaGuard} is correct; $c$ denotes baseline correct and \textsc{AvicennaGuard} incorrect ($c=0$ across all trials). 95\% confidence intervals computed via Wilson score method. $\chi^2$ computed with Yates continuity correction (df=1). Cohen's $g = 0.50$ represents maximum possible effect size.}
+\end{table}

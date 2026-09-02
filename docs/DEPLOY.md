@@ -1,4 +1,4 @@
-# LogicGuard Deployment
+# AvicennaGuard Deployment
 
 ## Local API
 
@@ -16,16 +16,16 @@ Endpoints:
 
 ## Railway
 
-1. Set start command: `logicguard-api --host 0.0.0.0 --port $PORT`
+1. Set start command: `avicennaguard-api --host 0.0.0.0 --port $PORT`
 2. Env vars: `LOGICGUARD_KB=knowledge_base_1200.json`, `LOGICGUARD_MODEL=llama3.2:3b`
 3. Ollama must be reachable for LLM parser Stage 1 (regex mode works without Ollama in research scripts)
 
 ## LangChain integration
 
 ```python
-from integrations.langchain_middleware import LogicGuardMiddleware
+from integrations.langchain_middleware import AvicennaGuardMiddleware
 
-guard = LogicGuardMiddleware("knowledge_base_1200.json")
+guard = AvicennaGuardMiddleware("knowledge_base_1200.json")
 result = guard.guard("Are all dogs mammals?", llm_answer="yes")
 print(result.epistemic_state, result.final_answer)
 ```

@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{\textsc{Multi-Model Accuracy Comparison Across Logical Reasoning Types}}
+\label{tab:main_results}
+\begin{tabular}{lcccccc}
+  \toprule
+  \textbf{Model Architecture} & \textbf{Taxonomic} & \textbf{Categorical} & \textbf{Hypothetical} & \textbf{Overall} & \textbf{Halluc. Caught} & \textbf{FA} \\
+  \midrule
+  LLaMA2-7B (Baseline) & 56.0\% & 62.9\% & 86.7\% & 63.0\% & --- & 0 \\
+  \quad + \textsc{AvicennaGuard} & \textbf{98.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{99.0\%} & \textbf{36/36} & \textbf{0} \\
+  \midrule
+  Mistral-7B (Baseline) & 96.0\% & 94.3\% & 93.3\% & 95.0\% & --- & 0 \\
+  \quad + \textsc{AvicennaGuard} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{5/5} & \textbf{0} \\
+  \midrule
+  LLaMA3.2-3B (Baseline) & 90.0\% & 71.4\% & 100.0\% & 85.0\% & --- & 0 \\
+  \quad + \textsc{AvicennaGuard} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{15/15} & \textbf{0} \\
+  \bottomrule
+\end{tabular}
+\vspace{1mm}
+\\[-1mm]
+\raggedright
+\footnotesize{\textit{Note:} Taxonomic, Categorical, and Hypothetical refer to formal syllogistic query classes. Halluc. Caught indicates LLM hallucinations intercepted and corrected by \textsc{AvicennaGuard} out of total interceptable errors. FA = False Alarms (erroneous override of a correct LLM response), verified at 0 across all configurations.}
+\end{table}

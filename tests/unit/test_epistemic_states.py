@@ -1,7 +1,7 @@
 """Unit tests for epistemic state definitions and ValidatorResult."""
 
 import pytest
-from logicguard.core.epistemic_states import EpistemicState, QueryType, ValidatorResult
+from avicennaguard.core.epistemic_states import EpistemicState, QueryType, ValidatorResult
 
 
 def test_epistemic_state_values():

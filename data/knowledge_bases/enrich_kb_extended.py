@@ -1,0 +1,1976 @@
+"""
+Enrichment script for knowledge_base_extended.json.
+Expands properties to 200+ entries and conditionals to 100+ entries,
+ensuring comprehensive coverage across biological, mechanical, physical, chemical,
+and domain-specific categories.
+"""
+
+import json
+from pathlib import Path
+import sys
+
+# Load current KB
+kb_path = Path("data/knowledge_bases/knowledge_base_extended.json")
+with open(kb_path, "r", encoding="utf-8") as f:
+    kb = json.load(f)
+
+# Base existing properties (preserve exactly)
+properties = dict(kb.get("properties", {}))
+
+# Category-by-category additions for properties
+new_properties = {
+    # -------------------------------------------------------------
+    # 1. Mammals, Carnivores, Herbivores, Primates, Rodents, Cetaceans, Canines, Felines, Ungulates
+    # -------------------------------------------------------------
+    "carnivore": [
+        "eats_meat", "meat_eating", "carnivorous", "sharp_teeth",
+        "predator", "hunting_behavior", "has_canines", "has_claws"
+    ],
+    "herbivore": [
+        "eats_plants", "plant_eating", "herbivorous", "flat_molars",
+        "digestive_system_for_plants", "plant_diet"
+    ],
+    "omnivore": [
+        "eats_plants_and_meat", "diverse_diet", "generalist_feeder",
+        "eats_plants", "eats_meat"
+    ],
+    "placental": [
+        "gives_live_birth", "placenta", "nourishes_fetus", "warm_blooded"
+    ],
+    "marsupial": [
+        "has_pouch", "pouch", "carries_young_in_pouch",
+        "gives_birth_to_immature_young", "warm_blooded", "has_fur"
+    ],
+    "monotreme": [
+        "lays_eggs", "egg_laying_mammal", "has_mammary_glands",
+        "has_cloaca", "warm_blooded", "has_fur"
+    ],
+    "ape": [
+        "no_tail", "tailless", "large_brain", "brachiation",
+        "opposable_thumbs", "warm_blooded", "has_hair"
+    ],
+    "monkey": [
+        "has_tail", "tail", "tree_dwelling", "opposable_digits",
+        "social_groups", "warm_blooded", "has_hair"
+    ],
+    "chimpanzee": [
+        "uses_tools", "high_intelligence", "opposable_thumbs",
+        "tailless", "social_behavior", "has_hair", "warm_blooded"
+    ],
+    "gorilla": [
+        "ground_dwelling", "herbivorous", "large_body", "knuckle_walking",
+        "opposable_thumbs", "has_hair", "warm_blooded"
+    ],
+    "rodent": [
+        "continuously_growing_incisors", "gnawing_teeth", "fur",
+        "warm_blooded", "gives_milk", "has_incisors"
+    ],
+    "mouse": [
+        "small_body", "long_tail", "pointed_snout", "whiskers",
+        "nocturnal", "gnawing_teeth", "has_fur"
+    ],
+    "rat": [
+        "medium_body", "long_tail", "omnivorous", "gnawing_teeth",
+        "whiskers", "burrowing", "has_fur"
+    ],
+    "squirrel": [
+        "bushy_tail", "tree_climbing", "acorn_eating", "sharp_claws",
+        "gnawing_teeth", "has_fur"
+    ],
+    "beaver": [
+        "flat_paddle_tail", "builds_dams", "waterproof_fur",
+        "webbed_hind_feet", "aquatic_rodent", "gnawing_teeth"
+    ],
+    "hamster": [
+        "cheek_pouches", "short_tail", "nocturnal", "burrowing",
+        "gnawing_teeth", "has_fur"
+    ],
+    "guinea_pig": [
+        "short_body", "no_external_tail", "herbivorous",
+        "vocal_communication", "has_fur"
+    ],
+    "cetacean": [
+        "blowhole", "blubber", "aquatic", "flippers",
+        "horizontal_tail_flukes", "gives_milk", "warm_blooded",
+        "echolocation", "has_lungs"
+    ],
+    "whale": [
+        "blowhole", "blubber", "aquatic_mammal", "flippers",
+        "horizontal_tail_flukes", "marine_mammal", "warm_blooded"
+    ],
+    "dolphin": [
+        "blowhole", "echolocation", "melon_organ", "dorsal_fin",
+        "marine_mammal", "high_intelligence", "swimming", "warm_blooded"
+    ],
+    "porpoise": [
+        "blunt_snout", "spade_shaped_teeth", "small_cetacean",
+        "triangular_dorsal_fin", "blowhole", "warm_blooded"
+    ],
+    "baleen_whale": [
+        "baleen_plates", "filter_feeding", "two_blowholes",
+        "large_size", "krill_eater", "warm_blooded"
+    ],
+    "toothed_whale": [
+        "conical_teeth", "single_blowhole", "echolocation",
+        "active_predator", "warm_blooded"
+    ],
+    "killer_whale": [
+        "apex_predator", "black_and_white_pattern", "dorsal_fin",
+        "pod_hunting", "echolocation", "warm_blooded"
+    ],
+    "canine": [
+        "carnassial_teeth", "sense_of_smell", "non_retractable_claws",
+        "four_legs", "fur", "warm_blooded", "has_hair", "barks_or_howls"
+    ],
+    "dog": [
+        "barks", "domesticated", "loyal_behavior", "four_legs",
+        "fur", "sense_of_smell", "has_tail"
+    ],
+    "wolf": [
+        "pack_hunting", "howls", "carnassial_teeth", "dense_underfur",
+        "carnivorous", "four_legs", "fur"
+    ],
+    "fox": [
+        "bushy_tail", "pointed_ears", "slender_muzzle",
+        "omnivorous_canine", "nocturnal", "fur"
+    ],
+    "coyote": [
+        "narrow_muzzle", "howls_and_yips", "adaptable_predator",
+        "bushy_tail", "fur"
+    ],
+    "jackal": [
+        "scavenger_and_hunter", "slender_body", "large_ears",
+        "omnivorous", "fur"
+    ],
+    "dingo": [
+        "wild_canine", "australian_native", "erect_ears",
+        "bushy_tail", "fur"
+    ],
+    "feline": [
+        "retractable_claws", "carnassial_teeth", "night_vision",
+        "whiskers", "carnivore", "fur", "warm_blooded", "has_hair"
+    ],
+    "cat": [
+        "purrs", "meows", "retractable_claws", "domesticated",
+        "night_vision", "whiskers", "fur"
+    ],
+    "lion": [
+        "mane_in_males", "pride_social_structure", "roars",
+        "big_cat", "retractable_claws", "carnivore"
+    ],
+    "tiger": [
+        "striped_coat", "swimming_ability", "roars",
+        "largest_cat_species", "retractable_claws", "carnivore"
+    ],
+    "leopard": [
+        "rosette_spots", "tree_climbing", "solitary_hunter",
+        "retractable_claws", "carnivore"
+    ],
+    "cheetah": [
+        "semi_retractable_claws", "tear_stripes", "high_speed_running",
+        "spotted_coat", "carnivore"
+    ],
+    "jaguar": [
+        "compact_muscular_body", "rosettes_with_spots", "powerful_bite",
+        "swims_well", "retractable_claws"
+    ],
+    "cougar": [
+        "tawny_coat", "solitary", "powerful_jumping",
+        "ambush_predator", "retractable_claws"
+    ],
+    "ungulate": [
+        "hooves", "herbivorous_quadruped", "walks_on_toes",
+        "four_legs", "warm_blooded"
+    ],
+    "horse": [
+        "hooves", "single_toe_hoof", "mane_and_tail",
+        "herbivore", "quadruped", "fast_runner"
+    ],
+    "cow": [
+        "cloven_hooves", "ruminant_stomach", "chews_cud",
+        "herbivore", "produces_milk", "horns_or_polled"
+    ],
+    "pig": [
+        "cloven_hooves", "snout", "omnivorous", "curly_tail",
+        "thick_skin", "four_legs"
+    ],
+    "sheep": [
+        "wool_fleece", "cloven_hooves", "ruminant",
+        "herbivore", "flocking_behavior"
+    ],
+    "goat": [
+        "cloven_hooves", "horns", "beard", "ruminant",
+        "agile_climber", "herbivore"
+    ],
+    "deer": [
+        "antlers_in_males", "cloven_hooves", "herbivore",
+        "slender_legs", "ruminant"
+    ],
+    "elephant": [
+        "proboscis_trunk", "ivory_tusks", "large_ears",
+        "thick_pachyderm_skin", "herbivore", "columnar_legs"
+    ],
+    "giraffe": [
+        "long_neck", "ossicones", "spotted_coat",
+        "prehensile_tongue", "tallest_mammal"
+    ],
+    "zebra": [
+        "black_and_white_stripes", "single_hoof", "herbivore",
+        "herd_animal", "four_legs"
+    ],
+    "hippopotamus": [
+        "semi_aquatic_mammal", "large_canine_tusks", "barrel_shaped_body",
+        "herbivore", "secretes_red_fluid"
+    ],
+    "rhinoceros": [
+        "keratin_horn", "thick_armored_skin", "herbivore",
+        "three_toed_hooves"
+    ],
+    "camel": [
+        "humps_store_fat", "padded_feet", "drought_tolerant",
+        "herbivore", "desert_adapted"
+    ],
+    "llama": [
+        "two_toed_padded_feet", "dense_wool_coat", "ruminant",
+        "herbivore", "high_altitude_adapted"
+    ],
+    "moose": [
+        "palmate_antlers", "large_body", "dewlap_bell_on_neck",
+        "aquatic_plant_feeder", "cloven_hooves"
+    ],
+    "buffalo": [
+        "large_curved_horns", "stout_quadruped", "ruminant",
+        "herbivore", "cloven_hooves"
+    ],
+    "bison": [
+        "shoulder_hump", "shaggy_fur", "curved_horns",
+        "herd_herbivore", "cloven_hooves"
+    ],
+    "donkey": [
+        "long_ears", "loud_bray", "hooves", "hardy_beast_of_burden",
+        "herbivore"
+    ],
+    "bat": [
+        "wings_of_skin", "echolocation", "flying_mammal",
+        "nocturnal", "patagium", "has_fur"
+    ],
+    "bear": [
+        "plantigrade_feet", "non_retractable_claws", "thick_fur",
+        "omnivorous", "hibernates", "has_fur"
+    ],
+    "polar_bear": [
+        "white_water_repellent_fur", "thick_blubber_layer", "black_skin",
+        "swims_in_arctic", "carnivorous_bear"
+    ],
+    "panda": [
+        "black_and_white_fur", "bamboo_diet", "pseudo_thumb",
+        "herbivorous_bear"
+    ],
+    "rabbit": [
+        "long_ears", "strong_hind_legs", "hopping_locomotion",
+        "fluffy_tail", "herbivore", "has_fur"
+    ],
+    "seal": [
+        "fin_like_flippers", "streamlined_body", "blubber",
+        "aquatic_carnivore", "swims"
+    ],
+    "sea_lion": [
+        "external_ear_flaps", "walks_on_all_fours_on_land",
+        "swimming_flippers", "vocalizes"
+    ],
+    "walrus": [
+        "long_tusks", "whiskered_vibrissae", "thick_blubber",
+        "arctic_marine_mammal"
+    ],
+    "otter": [
+        "dense_waterproof_fur", "webbed_feet", "streamlined_body",
+        "aquatic_carnivore"
+    ],
+    "raccoon": [
+        "facial_mask", "ringed_tail", "dexterous_front_paws",
+        "nocturnal_omnivore", "has_fur"
+    ],
+    "badger": [
+        "stout_body", "powerful_digging_claws", "striped_face",
+        "burrowing_carnivore"
+    ],
+    "skunk": [
+        "defensive_scent_glands", "black_and_white_stripes",
+        "omnivorous", "warning_coloration"
+    ],
+    "hedgehog": [
+        "protective_spines", "curls_into_ball", "nocturnal_insectivore",
+        "pointed_snout"
+    ],
+    "mole": [
+        "paddle_like_digging_paws", "underground_burrowing",
+        "reduced_eyes", "velvety_fur"
+    ],
+    "armadillo": [
+        "bony_armor_plates", "digging_claws", "burrowing",
+        "insectivorous"
+    ],
+    "anteater": [
+        "long_tubular_snout", "long_sticky_tongue", "toothless",
+        "strong_digging_claws"
+    ],
+    "sloth": [
+        "slow_metabolism", "tree_hanging_claws", "arboreal",
+        "algae_in_fur", "folivore"
+    ],
+    "koala": [
+        "eucalyptus_diet", "marsupial_pouch", "arboreal",
+        "two_opposable_thumbs_on_hands"
+    ],
+    "kangaroo": [
+        "large_powerful_hind_legs", "muscular_tail_for_balance",
+        "marsupial_pouch", "hopping_locomotion"
+    ],
+    "opossum": [
+        "prehensile_tail", "marsupial_pouch", "plays_dead",
+        "opposable_hallux", "nocturnal"
+    ],
+
+    # -------------------------------------------------------------
+    # 2. Birds, Raptors, Waterfowl, Flightless birds, Songbirds
+    # -------------------------------------------------------------
+    "avian": [
+        "has_feathers", "wings", "beak", "hollow_bones",
+        "oviparous", "endothermic"
+    ],
+    "raptor": [
+        "hooked_beak", "sharp_talons", "keen_eyesight",
+        "carnivorous_bird", "has_feathers", "has_wings"
+    ],
+    "bird_of_prey": [
+        "hooked_beak", "sharp_talons", "binocular_vision",
+        "carnivorous_bird", "aerial_hunting"
+    ],
+    "eagle": [
+        "hooked_beak", "sharp_talons", "broad_wings",
+        "high_altitude_flight", "apex_avian_predator", "has_feathers"
+    ],
+    "hawk": [
+        "hooked_beak", "sharp_talons", "keen_vision",
+        "fast_pursuit", "carnivorous_bird", "has_feathers"
+    ],
+    "falcon": [
+        "tapered_wings", "high_speed_dive", "hooked_beak",
+        "sharp_talons", "tomial_tooth", "has_feathers"
+    ],
+    "owl": [
+        "facial_disc", "silent_flight_feathers",
+        "large_forward_facing_eyes", "nocturnal_predator",
+        "rotates_head_270_degrees", "has_feathers"
+    ],
+    "vulture": [
+        "bald_head", "scavenger_bird", "broad_wings_for_soaring",
+        "strong_stomach_acid", "has_feathers"
+    ],
+    "osprey": [
+        "fish_eating_raptor", "reversible_outer_toe", "barbed_talons",
+        "dives_for_fish", "has_feathers"
+    ],
+    "waterfowl": [
+        "webbed_feet", "waterproof_feathers", "swimming",
+        "flattened_bill", "lives_near_water", "has_feathers", "has_wings"
+    ],
+    "duck": [
+        "webbed_feet", "broad_flat_bill", "waterproof_feathers",
+        "quacks", "swimming_bird", "has_feathers"
+    ],
+    "goose": [
+        "webbed_feet", "long_neck", "honks",
+        "migratory_v_formation", "herbivorous_waterfowl", "has_feathers"
+    ],
+    "swan": [
+        "long_curved_neck", "webbed_feet", "white_or_black_plumage",
+        "large_waterfowl", "graceful_swimming", "has_feathers"
+    ],
+    "pelican": [
+        "large_throat_pouch", "webbed_feet", "fish_scooping_bill",
+        "coastal_waterbird", "has_feathers"
+    ],
+    "cormorant": [
+        "diving_waterbird", "hooked_bill", "swimming_underwater",
+        "dries_wings_in_sun", "has_feathers"
+    ],
+    "flightless_bird": [
+        "cannot_fly", "strong_legs", "reduced_wing_muscles",
+        "has_feathers", "lays_eggs"
+    ],
+    "ostrich": [
+        "flightless", "two_toed_feet", "fastest_running_bird",
+        "largest_living_bird", "lays_giant_eggs", "has_feathers"
+    ],
+    "emu": [
+        "flightless", "three_toed_feet", "fast_running",
+        "shaggy_plumage", "australian_native", "has_feathers"
+    ],
+    "penguin": [
+        "flightless", "flipper_like_wings", "swimming_in_cold_waters",
+        "dense_waterproof_feathers", "countershaded_coloration", "has_feathers"
+    ],
+    "kiwi": [
+        "flightless", "long_beak_with_nostrils_at_tip",
+        "hair_like_feathers", "nocturnal", "has_feathers"
+    ],
+    "cassowary": [
+        "flightless", "helmet_like_casque", "dagger_like_inner_claw",
+        "dense_black_plumage", "has_feathers"
+    ],
+    "songbird": [
+        "syrinx_vocal_organ", "perching_feet", "complex_songs",
+        "small_to_medium_body", "has_feathers"
+    ],
+    "sparrow": [
+        "conical_seed_eating_beak", "perching_bird",
+        "brown_and_grey_plumage", "chirping", "has_feathers"
+    ],
+    "robin": [
+        "red_or_orange_breast", "melodious_song", "worm_eating",
+        "perching_bird", "has_feathers"
+    ],
+    "crow": [
+        "all_black_plumage", "cawing_sound", "high_intelligence",
+        "tool_use", "omnivorous_bird", "has_feathers"
+    ],
+    "raven": [
+        "large_corvid", "wedge_shaped_tail", "heavy_beak",
+        "deep_croaking_call", "high_intelligence", "has_feathers"
+    ],
+    "pigeon": [
+        "stout_body", "short_neck", "slender_beak_with_fleshy_cere",
+        "cooing_call", "crop_milk", "has_feathers"
+    ],
+    "dove": [
+        "slender_build", "peace_symbolism", "seed_eating",
+        "soft_coo_call", "has_feathers"
+    ],
+    "parrot": [
+        "curved_hooked_bill", "zygodactyl_feet",
+        "brightly_colored_plumage", "mimics_sounds",
+        "high_intelligence", "has_feathers"
+    ],
+    "hummingbird": [
+        "rapid_wing_flapping", "hovers_in_air", "long_slender_beak",
+        "drinks_nectar", "iridescent_feathers", "has_feathers"
+    ],
+    "woodpecker": [
+        "chisel_like_beak", "stiff_tail_feathers", "zygodactyl_feet",
+        "pecks_tree_trunks", "shock_absorbing_skull", "has_feathers"
+    ],
+    "flamingo": [
+        "pink_plumage_from_carotenoids", "long_stilt_legs",
+        "downward_curved_filter_beak", "stands_on_one_leg", "has_feathers"
+    ],
+    "peacock": [
+        "iridescent_tail_covert_train", "eye_spot_ocelli_patterns",
+        "crested_head", "courtship_display", "has_feathers"
+    ],
+    "seagull": [
+        "webbed_feet", "hooked_bill", "coastal_scavenger",
+        "grey_and_white_plumage", "has_feathers"
+    ],
+    "stork": [
+        "long_legs", "long_straight_bill", "large_wading_bird",
+        "bill_clattering_communication", "has_feathers"
+    ],
+    "heron": [
+        "s_shaped_neck", "dagger_like_bill", "wading_predator",
+        "spears_fish", "has_feathers"
+    ],
+    "crane": [
+        "long_straight_neck_in_flight", "elaborate_courtship_dance",
+        "trumpeting_call", "tall_wading_bird", "has_feathers"
+    ],
+    "turkey": [
+        "fleshy_wattle_and_snood", "fan_shaped_tail",
+        "gobbling_call", "ground_nesting_bird", "has_feathers"
+    ],
+    "chicken": [
+        "comb_and_wattles", "clucking_call", "lays_eggs",
+        "domesticated_fowl", "scratching_feet", "has_feathers"
+    ],
+    "quail": [
+        "small_plump_body", "head_plume_crest", "ground_dwelling",
+        "seed_and_insect_eater", "has_feathers"
+    ],
+    "pheasant": [
+        "long_pointed_tail", "vibrant_male_plumage",
+        "ground_nesting_gamebird", "has_feathers"
+    ],
+
+    # -------------------------------------------------------------
+    # 3. Reptiles, Snakes, Lizards, Crocodilians, Chelonians
+    # -------------------------------------------------------------
+    "snake": [
+        "legless", "limbless", "forked_tongue", "scales",
+        "unhinging_jaw", "carnivorous", "slithers", "has_backbone",
+        "cold_blooded"
+    ],
+    "venomous_snake": [
+        "venom_glands", "hollow_or_grooved_fangs", "toxic_venom",
+        "legless", "scales", "cold_blooded"
+    ],
+    "non_venomous_snake": [
+        "constricting_behavior", "no_venom_glands", "recurved_teeth",
+        "legless", "scales", "cold_blooded"
+    ],
+    "viper": [
+        "hinged_front_fangs", "hemotoxic_venom", "triangular_head",
+        "vertical_pupils", "keeled_scales"
+    ],
+    "cobra": [
+        "expanding_neck_hood", "neurotoxic_venom", "fixed_front_fangs",
+        "warning_threat_display"
+    ],
+    "python": [
+        "constrictor", "heat_sensing_pits", "lays_eggs",
+        "non_venomous", "large_body"
+    ],
+    "boa": [
+        "constrictor", "gives_live_birth_ovoviviparous",
+        "non_venomous", "ambush_hunter"
+    ],
+    "rattlesnake": [
+        "rattle_on_tail", "heat_sensing_facial_pits",
+        "hemotoxic_venom", "hinged_fangs"
+    ],
+    "lizard": [
+        "four_legs", "external_ear_openings", "movable_eyelids",
+        "sheds_skin", "tail_autotomy", "scales", "cold_blooded"
+    ],
+    "gecko": [
+        "adhesive_toe_pads", "no_eyelids_licks_eyes",
+        "nocturnal_lizard", "vocalizations"
+    ],
+    "chameleon": [
+        "color_changing_skin", "independently_moving_eyes",
+        "zygodactylous_feet", "projectile_tongue", "prehensile_tail"
+    ],
+    "iguana": [
+        "dorsal_spines", "dewlap_under_chin", "herbivorous_lizard",
+        "parietal_third_eye"
+    ],
+    "monitor_lizard": [
+        "forked_tongue", "powerful_claws", "long_neck",
+        "carnivorous_lizard", "muscular_tail"
+    ],
+    "komodo_dragon": [
+        "largest_living_lizard", "venomous_bite", "serrated_teeth",
+        "carnivorous_scavenger"
+    ],
+    "gila_monster": [
+        "beaded_scales", "venomous_bite", "fat_storing_tail",
+        "slow_moving_desert_lizard"
+    ],
+    "crocodilian": [
+        "armored_scutes", "powerful_jaw_muscles", "semi_aquatic",
+        "vertical_pupils", "webbed_hind_feet", "cold_blooded"
+    ],
+    "crocodile": [
+        "v_shaped_snout", "visible_fourth_lower_tooth", "salt_glands",
+        "semi_aquatic_predator", "armored_skin", "cold_blooded"
+    ],
+    "alligator": [
+        "u_shaped_broad_snout", "freshwater_habitat", "dark_coloration",
+        "semi_aquatic", "armored_skin", "cold_blooded"
+    ],
+    "caiman": [
+        "bony_ridge_between_eyes", "freshwater_crocodilian",
+        "ventral_armor_scutes", "carnivorous"
+    ],
+    "gharial": [
+        "extremely_narrow_long_snout", "specialized_fish_eater",
+        "many_interlocking_teeth", "aquatic_crocodilian"
+    ],
+    "chelonian": [
+        "protective_bony_shell", "carapace_and_plastron",
+        "keratinous_beak_no_teeth", "anapsid_skull", "oviparous"
+    ],
+    "turtle": [
+        "bony_shell", "carapace", "plastron", "beak_no_teeth",
+        "egg_laying", "retracts_head_or_flippers", "cold_blooded",
+        "has_backbone"
+    ],
+    "sea_turtle": [
+        "paddle_like_flippers", "streamlined_carapace",
+        "cannot_retract_into_shell", "marine_reptile",
+        "salt_excreting_glands"
+    ],
+    "tortoise": [
+        "dome_shaped_shell", "elephantine_columnar_feet",
+        "terrestrial", "herbivorous", "long_lifespan"
+    ],
+    "terrapin": [
+        "semi_aquatic", "webbed_toes", "brackish_water_habitat",
+        "hard_carapace"
+    ],
+    "snapping_turtle": [
+        "powerful_hooked_jaws", "rough_ridged_carapace",
+        "long_tail", "reduced_plastron", "aggressive_defense"
+    ],
+
+    # -------------------------------------------------------------
+    # 4. Amphibians, Frogs, Salamanders
+    # -------------------------------------------------------------
+    "frog": [
+        "jumping_legs", "webbed_toes", "smooth_moist_skin",
+        "tailless_adult", "tadpole_stage", "croaking",
+        "metamorphosis", "cold_blooded"
+    ],
+    "true_frog": [
+        "smooth_skin", "long_legs", "webbed_feet",
+        "lives_near_water", "tympanum_eardrum"
+    ],
+    "tree_frog": [
+        "expanded_adhesive_toe_discs", "arboreal_climbing",
+        "slender_body", "moist_skin"
+    ],
+    "bullfrog": [
+        "large_body", "deep_bellowing_call", "large_tympanum",
+        "voracious_predator"
+    ],
+    "poison_dart_frog": [
+        "aposematic_bright_coloration", "skin_alkaloid_toxins",
+        "diurnal_behavior", "small_body"
+    ],
+    "toad": [
+        "dry_warty_skin", "short_hind_legs_hopping",
+        "parotoid_poison_glands", "terrestrial_adult"
+    ],
+    "salamander": [
+        "long_tail", "four_short_limbs", "moist_glandular_skin",
+        "tissue_regeneration", "nocturnal", "cold_blooded", "has_backbone"
+    ],
+    "newt": [
+        "aquatic_adult_phase", "rough_granular_skin_in_eft_stage",
+        "tail_fin_in_breeding_season", "skin_toxins"
+    ],
+    "axolotl": [
+        "neoteny_retains_gills", "external_feathery_gills",
+        "aquatic_throughout_life", "limb_regeneration"
+    ],
+    "mudpuppy": [
+        "permanent_external_gills", "fully_aquatic_salamander",
+        "flat_head", "nocturnal"
+    ],
+    "caecilian": [
+        "limbless_serpentine_body", "fossorial_burrowing",
+        "reduced_eyes_covered_by_skin", "tentacles_near_snout"
+    ],
+
+    # -------------------------------------------------------------
+    # 5. Fish, Chondrichthyes, Osteichthyes, Sharks, Rays
+    # -------------------------------------------------------------
+    "teleost_fish": [
+        "homocercal_tail", "swim_bladder", "bony_skeleton",
+        "operculum_gill_cover", "has_gills"
+    ],
+    "bony_fish": [
+        "bony_endoskeleton", "operculum", "swim_bladder",
+        "has_gills", "has_scales", "cold_blooded"
+    ],
+    "osteichthyes": [
+        "calcified_bony_skeleton", "operculum_covering_gills",
+        "swim_bladder", "terminal_mouth", "has_gills"
+    ],
+    "chondrichthyes": [
+        "cartilaginous_skeleton", "placoid_scales_denticles",
+        "multiple_gill_slits_no_operculum", "no_swim_bladder",
+        "oily_liver_buoyancy", "has_gills"
+    ],
+    "cartilaginous_fish": [
+        "cartilage_skeleton", "dermal_denticles", "ventral_mouth",
+        "gill_slits", "internal_fertilization", "has_gills"
+    ],
+    "shark": [
+        "cartilaginous_skeleton", "multiple_rows_of_teeth",
+        "dorsal_fin", "gill_slits", "carnivorous_fish",
+        "ampullae_of_lorenzini", "has_gills"
+    ],
+    "great_white_shark": [
+        "large_serrated_triangular_teeth", "torpedo_shaped_body",
+        "apex_marine_predator", "endothermic_countercurrent", "has_gills"
+    ],
+    "hammerhead_shark": [
+        "cephalofoil_head_structure", "360_degree_vision",
+        "enhanced_electroreception", "cartilaginous_skeleton", "has_gills"
+    ],
+    "manta_ray": [
+        "broad_pectoral_wings", "cephalic_horns_for_feeding",
+        "filter_feeder", "no_venomous_stinger", "cartilage_skeleton",
+        "has_gills"
+    ],
+    "stingray": [
+        "flattened_disc_body", "venomous_tail_spine",
+        "bottom_dwelling_demersal", "spiracles_for_breathing", "has_gills"
+    ],
+    "skate": [
+        "flattened_body", "lays_egg_cases_mermaids_purse",
+        "fleshy_tail_no_stinger", "cartilaginous_skeleton", "has_gills"
+    ],
+    "salmon": [
+        "anadromous_lifecycle", "adipose_fin",
+        "upstream_spawning_migration", "pink_flesh", "bony_fish",
+        "has_gills"
+    ],
+    "trout": [
+        "freshwater_gamefish", "streamlined_body", "adipose_fin",
+        "spotted_patterns", "cold_water_habitat", "has_gills"
+    ],
+    "tuna": [
+        "warm_blooded_countercurrent_system", "high_speed_swimming",
+        "crescent_tail_fin", "streamlined_torpedo_body", "has_gills"
+    ],
+    "goldfish": [
+        "domesticated_carp", "freshwater_habitat",
+        "golden_orange_coloration", "stomachless_digestion", "has_gills"
+    ],
+    "cod": [
+        "three_dorsal_fins", "chin_barbel", "cold_ocean_habitat",
+        "bony_skeleton", "has_gills"
+    ],
+    "clownfish": [
+        "mucus_immunity_to_anemone_stings", "orange_and_white_stripes",
+        "sequential_hermaphrodite", "symbiosis", "has_gills"
+    ],
+    "catfish": [
+        "whiskered_barbels", "scaleless_skin_or_bony_plates",
+        "flattened_head", "bottom_feeder", "has_gills"
+    ],
+    "eel": [
+        "elongated_snake_like_body", "continuous_dorsal_and_anal_fins",
+        "no_pelvic_fins", "mucus_coated_skin", "has_gills"
+    ],
+    "seahorse": [
+        "prehensile_tail", "tubular_snout", "males_carry_brood_pouch",
+        "upright_swimming_posture", "bony_armor_plates", "has_gills"
+    ],
+
+    # -------------------------------------------------------------
+    # 6. Insects, Arachnids, Crustaceans, Invertebrates
+    # -------------------------------------------------------------
+    "ant": [
+        "six_legs", "elbowed_antennae", "eusocial_colony",
+        "metapleural_glands", "queen_worker_caste"
+    ],
+    "bee": [
+        "six_legs", "pollinator", "produces_honey_and_wax",
+        "pollen_baskets", "eusocial_or_solitary"
+    ],
+    "honeybee": [
+        "barbed_stinger", "waggle_dance_communication",
+        "honey_production", "caste_system", "pollinator", "six_legs"
+    ],
+    "wasp": [
+        "smooth_stinger_can_sting_repeatedly", "pinched_waist_petiole",
+        "predatory_or_parasitoid", "chewing_mouthparts", "six_legs"
+    ],
+    "butterfly": [
+        "four_scaled_wings", "clubbed_antennae", "diurnal_activity",
+        "coiled_proboscis", "complete_metamorphosis", "six_legs"
+    ],
+    "moth": [
+        "feathery_or_filamentous_antennae", "nocturnal_activity",
+        "wings_rest_flat_or_roof_like", "cocoon_pupation", "six_legs"
+    ],
+    "mosquito": [
+        "piercing_sucking_proboscis", "females_feed_on_blood",
+        "aquatic_larva_wriggler", "vector_for_pathogens", "six_legs"
+    ],
+    "beetle": [
+        "hardened_forewings_elytra", "chewing_mouthparts",
+        "complete_metamorphosis", "heavily_sclerotized_body", "six_legs"
+    ],
+    "fly": [
+        "two_functional_wings", "halteres_for_balance",
+        "compound_eyes", "lapping_or_piercing_mouthparts", "six_legs"
+    ],
+    "grasshopper": [
+        "jumping_hind_legs", "chewing_mandibles",
+        "stridulating_sound_production", "tympanum_on_abdomen", "six_legs"
+    ],
+    "dragonfly": [
+        "four_large_transparent_wings", "huge_compound_eyes",
+        "aquatic_nymph_stage", "aerial_predator", "six_legs"
+    ],
+    "termite": [
+        "cellulose_digesting_gut_symbionts", "eusocial_mound_builders",
+        "straight_moniliform_antennae", "pale_soft_body", "six_legs"
+    ],
+    "mantis": [
+        "raptorial_spiny_front_legs", "triangular_head_mobile_neck",
+        "ambush_predator", "stereoscopic_insect_vision", "six_legs"
+    ],
+    "tarantula": [
+        "eight_legs", "large_hairy_body", "urticating_hairs",
+        "downward_pointing_chelicerae", "burrowing_spider"
+    ],
+    "black_widow": [
+        "hourglass_abdominal_marking", "neurotoxic_latrotoxin",
+        "comb_footed_web", "sexual_dimorphism", "eight_legs"
+    ],
+    "scorpion": [
+        "eight_legs", "pincher_chelae_pedipalps",
+        "curved_tail_with_venomous_stinger", "fluoresces_under_uv_light"
+    ],
+    "tick": [
+        "eight_legs_adult", "blood_feeding_ectoparasite",
+        "fused_capitulum_and_idiosoma", "vectors_lyme_disease"
+    ],
+    "mite": [
+        "microscopic_to_tiny_body", "eight_legs_adult",
+        "fused_body_regions", "diverse_habitats"
+    ],
+    "crustacean": [
+        "chitinous_exoskeleton", "biramous_branched_limbs",
+        "two_pairs_of_antennae", "gills_for_respiration",
+        "jointed_appendages"
+    ],
+    "crab": [
+        "decapod_ten_legs", "broad_flattened_carapace",
+        "large_chelae_claws", "reduced_abdomen_tucked_under",
+        "sideways_walking"
+    ],
+    "lobster": [
+        "decapod_ten_legs", "large_asymmetric_pincers",
+        "muscular_tail_fan", "hard_exoskeleton", "marine_benthic"
+    ],
+    "shrimp": [
+        "ten_legs_decapod", "slender_compressed_body",
+        "long_antennae", "swimmerets_pleopods",
+        "fan_tail_backward_escape"
+    ],
+    "crayfish": [
+        "freshwater_crustacean", "resembles_small_lobster",
+        "two_large_claws", "gills_in_carapace"
+    ],
+    "prawn": [
+        "branching_gills", "overlapping_body_segments",
+        "longer_legs_with_three_clawed_pairs", "swimming_crustacean"
+    ],
+    "barnacle": [
+        "sessile_crustacean", "calcareous_shell_plates",
+        "feathery_cirri_for_filter_feeding", "attaches_to_surfaces"
+    ],
+    "krill": [
+        "small_planktonic_crustacean", "bioluminescent_photophores",
+        "filter_feeder", "keystone_marine_species"
+    ],
+    "mollusk": [
+        "soft_unsegmented_body", "muscular_foot", "mantle_tissue",
+        "calcareous_shell_or_reduced", "radula_mouthpart"
+    ],
+    "octopus": [
+        "eight_flexible_arms_with_suckers", "no_internal_shell",
+        "beak_mouth", "ink_sac_defense", "camouflage_chromatophores",
+        "high_intelligence"
+    ],
+    "squid": [
+        "eight_arms_and_two_tentacles", "internal_chitinous_gladius_pen",
+        "streamlined_torpedo_mantle", "fin_propulsion_and_jet_siphon"
+    ],
+    "snail": [
+        "spiral_calcareous_shell", "muscular_crawling_foot",
+        "radula_for_rasping", "sensory_tentacles_with_eyes"
+    ],
+    "slug": [
+        "no_external_shell", "muscular_foot", "mantle_shield",
+        "mucus_slime_trail"
+    ],
+    "clam": [
+        "two_hinged_calcareous_valves", "bivalve",
+        "filter_feeding_siphons", "hatchet_shaped_burrowing_foot"
+    ],
+    "oyster": [
+        "irregular_bivalve_shells", "produces_pearls",
+        "sessile_filter_feeder", "reef_building"
+    ],
+    "starfish": [
+        "five_or_more_radial_arms", "water_vascular_system",
+        "tube_feet_with_suction", "regenerates_arms",
+        "everts_stomach_to_feed"
+    ],
+    "sea_urchin": [
+        "spherical_spiny_test_shell", "movable_spines",
+        "five_toothed_jaw_aristotles_lantern", "grazes_on_kelp"
+    ],
+
+    # -------------------------------------------------------------
+    # 7. Plants, Angiosperms, Gymnosperms, Conifers, Trees, Flowers, Succulents
+    # -------------------------------------------------------------
+    "vascular_plant": [
+        "xylem_and_phloem_vessels", "roots_stems_leaves",
+        "lignified_tissues", "photosynthesis"
+    ],
+    "non_vascular_plant": [
+        "lacks_vascular_tissue", "absorbs_water_by_diffusion",
+        "rhizoids_instead_of_roots", "moist_habitat"
+    ],
+    "bryophyte": [
+        "non_vascular", "spore_reproduction", "gametophyte_dominant",
+        "moist_growing_conditions"
+    ],
+    "moss": [
+        "small_soft_cushion_growth", "rhizoids",
+        "spore_capsules_on_stalks", "non_vascular_plant"
+    ],
+    "fern": [
+        "vascular_spore_producer", "fronds_with_sori_underneath",
+        "fiddlehead_croziers", "rhizome_stem"
+    ],
+    "spermatophyte": [
+        "seed_bearing_plant", "vascular_tissue", "pollen_production",
+        "embryo_protected_in_seed"
+    ],
+    "angiosperm": [
+        "flowers", "seeds_enclosed_in_ovary_fruit", "double_fertilization",
+        "vessel_elements_in_xylem", "photosynthesis"
+    ],
+    "flowering_plant": [
+        "produces_flowers", "produces_fruit", "enclosed_seeds",
+        "nectar_production", "pollination_adapted"
+    ],
+    "dicot": [
+        "two_cotyledons_seed_leaves", "net_veined_leaves",
+        "flower_parts_in_4s_or_5s", "taproot_system"
+    ],
+    "monocot": [
+        "single_cotyledon", "parallel_leaf_veins",
+        "flower_parts_in_3s", "fibrous_root_system"
+    ],
+    "gymnosperm": [
+        "naked_seeds_not_in_fruit", "cones_strobilus",
+        "needle_or_scale_leaves", "tracheids_in_xylem", "non_flowering"
+    ],
+    "conifer": [
+        "seed_cones", "needle_or_scale_leaves", "evergreen_mostly",
+        "resin_canals", "woody_stem"
+    ],
+    "pine_tree": [
+        "needles_in_fascicle_bundles", "woody_pinecones",
+        "tall_trunk", "evergreen", "resin_scented"
+    ],
+    "fir_tree": [
+        "flat_friendly_needles", "upright_standing_cones",
+        "smooth_bark_when_young", "evergreen_conifer"
+    ],
+    "cedar_tree": [
+        "aromatic_rot_resistant_wood", "small_scale_leaves",
+        "barrel_shaped_cones", "conifer"
+    ],
+    "redwood_tree": [
+        "thick_fire_resistant_bark", "massive_height",
+        "rot_resistant_wood", "conifer"
+    ],
+    "deciduous_tree": [
+        "sheds_leaves_in_autumn", "broadleaf_foliage",
+        "seasonal_dormancy", "woody_trunk"
+    ],
+    "evergreen_tree": [
+        "retains_foliage_year_round", "needle_or_waxy_leaves",
+        "woody_trunk", "photosynthesizes_all_seasons"
+    ],
+    "oak_tree": [
+        "produces_acorns", "lobed_leaves", "hard_dense_wood",
+        "deciduous_or_evergreen", "deep_taproot"
+    ],
+    "maple_tree": [
+        "palmate_lobed_leaves", "winged_samara_seeds_helicopters",
+        "sweet_sap_for_syrup", "vibrant_autumn_colors"
+    ],
+    "birch_tree": [
+        "peeling_papery_bark", "horizontal_lenticels",
+        "catkin_flowers", "serrated_leaves"
+    ],
+    "willow_tree": [
+        "flexible_slender_branches", "moisture_loving_roots",
+        "narrow_elongated_leaves", "catkins"
+    ],
+    "palm_tree": [
+        "unbranched_trunk", "crown_of_feather_or_fan_fronds",
+        "monocot_tree_form", "tropical_subtropical"
+    ],
+    "fruit_tree": [
+        "produces_edible_fruit", "flowering_blossoms",
+        "woody_trunk", "grafted_cultivars"
+    ],
+    "apple_tree": [
+        "produces_apples_pome_fruit", "five_petaled_spring_blossoms",
+        "deciduous_fruit_tree"
+    ],
+    "flower": [
+        "petals", "sepals", "stamen", "pistil", "nectar",
+        "attracts_pollinators", "fragrance", "bloom", "blossom", "has_petals"
+    ],
+    "rose": [
+        "thorny_prickly_stems", "fragrant_multi_petaled_blossoms",
+        "produces_rose_hips", "flowering_shrub"
+    ],
+    "tulip": [
+        "cup_shaped_blossom", "grows_from_bulb",
+        "linear_broad_leaves", "spring_perennial"
+    ],
+    "daisy": [
+        "composite_flower_head", "disc_florets_and_ray_petals",
+        "white_petals_yellow_center", "herbaceous"
+    ],
+    "orchid": [
+        "bilateral_flower_symmetry", "specialized_labellum_lip",
+        "pollinia_pollen_packets", "epiphytic_or_terrestrial"
+    ],
+    "sunflower": [
+        "large_heliotropic_flower_head", "produces_edible_seeds",
+        "tall_rough_hairy_stem", "fibrous_root"
+    ],
+    "lily": [
+        "six_petal_like_tepals", "prominent_stamens",
+        "grows_from_bulbs", "fragrant_trumpet_flowers"
+    ],
+    "succulent": [
+        "thick_fleshy_water_storing_leaves", "drought_tolerant",
+        "cam_photosynthesis", "waxy_cuticle"
+    ],
+    "cactus": [
+        "areoles_producing_spines", "photosynthetic_succulent_stem",
+        "drought_adapted", "reduced_or_absent_leaves"
+    ],
+    "aloe_vera": [
+        "thick_serrated_gel_filled_leaves", "soothing_sap",
+        "succulent_rosette", "drought_resistant"
+    ],
+    "shrub": [
+        "multiple_woody_stems_from_base", "shorter_than_tree",
+        "perennial_woody_plant"
+    ],
+    "herb": [
+        "non_woody_soft_green_stem",
+        "dies_back_in_winter_or_annual", "aromatic_or_culinary_use"
+    ],
+    "grass": [
+        "hollow_cylindrical_stems_culms",
+        "narrow_leaves_with_sheaths", "fibrous_roots",
+        "wind_pollinated"
+    ],
+    "vine": [
+        "trailing_or_climbing_stems",
+        "tendrils_or_aerial_roots_for_support",
+        "flexible_woody_or_herbaceous_stem"
+    ],
+
+    # -------------------------------------------------------------
+    # 8. Vehicles, Aircraft, Watercraft, Land vehicles, Electric vehicles
+    # -------------------------------------------------------------
+    "land_vehicle": [
+        "operates_on_land", "wheels_or_tracks",
+        "transports_cargo_or_passengers", "ground_mobility"
+    ],
+    "wheeled_vehicle": [
+        "wheels_for_rolling", "axles", "ground_propulsion", "steering"
+    ],
+    "automobile": [
+        "four_wheels", "passenger_cabin", "motor_propulsion",
+        "steering_mechanism", "headlights_and_seatbelts"
+    ],
+    "sedan": [
+        "four_doors", "three_box_configuration",
+        "enclosed_passenger_cabin", "has_wheels"
+    ],
+    "sports_car": [
+        "aerodynamic_styling", "high_performance_engine",
+        "responsive_handling", "has_wheels"
+    ],
+    "suv": [
+        "high_ground_clearance", "four_wheel_or_all_wheel_drive",
+        "elevated_seating", "cargo_utility", "has_wheels"
+    ],
+    "truck": [
+        "cargo_bed_or_payload_area", "heavy_duty_chassis",
+        "high_towing_capacity", "has_wheels"
+    ],
+    "pickup_truck": [
+        "open_rear_cargo_bed", "enclosed_cab", "towing_hitch",
+        "has_wheels"
+    ],
+    "dump_truck": [
+        "hydraulically_tilting_dump_bed", "heavy_duty_dumping_mechanism",
+        "construction_hauler", "has_wheels"
+    ],
+    "semi_trailer_truck": [
+        "fifth_wheel_coupling", "diesel_engine", "detachable_trailer",
+        "air_brake_system", "has_wheels"
+    ],
+    "bus": [
+        "large_passenger_capacity", "multiple_passenger_rows",
+        "wide_doors_for_boarding", "has_wheels"
+    ],
+    "school_bus": [
+        "yellow_high_visibility_paint", "stop_arm_signals",
+        "flashing_red_lights", "student_transport", "has_wheels"
+    ],
+    "motorcycle": [
+        "two_wheels_in_line", "handlebar_steering", "saddle_seating",
+        "engine_powered_two_wheeler", "has_wheels"
+    ],
+    "scooter": [
+        "step_through_frame", "small_wheels", "platform_for_feet",
+        "automatic_transmission", "has_wheels"
+    ],
+    "bicycle": [
+        "two_wheels", "pedal_driven_crank", "chain_drive",
+        "handlebar_steering", "human_powered", "has_wheels"
+    ],
+    "mountain_bike": [
+        "knobby_wide_tires", "suspension_fork_or_dual_shock",
+        "sturdy_frame", "wide_gear_range_for_trails", "has_wheels"
+    ],
+    "electric_vehicle": [
+        "electric_motor", "lithium_ion_battery_pack", "charging_port",
+        "zero_tailpipe_emissions", "regenerative_braking", "has_wheels"
+    ],
+    "electric_car": [
+        "electric_powertrain", "rechargeable_battery_pack", "inverter",
+        "regenerative_braking", "quiet_operation", "has_wheels"
+    ],
+    "hybrid_car": [
+        "dual_powertrain_combustion_and_electric", "regenerative_braking",
+        "fuel_efficiency", "has_wheels"
+    ],
+    "train": [
+        "runs_on_railway_tracks", "locomotive_and_railcars",
+        "steel_wheels_on_steel_rails", "flanged_wheels"
+    ],
+    "locomotive": [
+        "provides_tractive_power_for_train",
+        "diesel_electric_or_catenary_electric", "heavy_engine"
+    ],
+    "subway": [
+        "underground_rapid_transit", "electric_third_rail_or_overhead",
+        "multiple_car_passenger_train"
+    ],
+    "airliner": [
+        "commercial_passenger_transport", "pressurized_cabin",
+        "turbofan_jet_engines", "has_wings", "can_fly"
+    ],
+    "jet_aircraft": [
+        "gas_turbine_jet_propulsion", "high_altitude_cruising",
+        "swept_wings", "has_wings", "can_fly"
+    ],
+    "fighter_jet": [
+        "afterburning_turbofan_engines", "weapon_hardpoints",
+        "fly_by_wire_avionics", "has_wings", "can_fly"
+    ],
+    "helicopter": [
+        "main_rotor_and_tail_rotor", "vertical_takeoff_and_landing_vtol",
+        "hovers_in_place", "can_fly"
+    ],
+    "glider": [
+        "unpowered_flight", "high_aspect_ratio_wings",
+        "thermalling_soaring", "has_wings", "can_fly"
+    ],
+    "drone": [
+        "unmanned_aerial_vehicle_uav", "remote_control_or_autonomous",
+        "multi_rotor_or_fixed_wing", "can_fly"
+    ],
+    "rocket": [
+        "reaction_engine_expelling_mass", "operates_in_vacuum_of_space",
+        "carries_both_fuel_and_oxidizer", "high_thrust"
+    ],
+    "spacecraft": [
+        "operates_outside_atmosphere", "thermal_protection_shield",
+        "reaction_control_thrusters"
+    ],
+    "satellite": [
+        "orbits_celestial_body", "solar_panels",
+        "telecommunications_transponders"
+    ],
+    "watercraft": [
+        "floats_on_water", "buoyant_hull", "water_propulsion_system",
+        "navigates_marine_or_freshwater"
+    ],
+    "boat": [
+        "small_to_medium_watercraft", "hull_displacement_or_planing",
+        "rudder_or_outboard_steering", "floats_on_water"
+    ],
+    "ship": [
+        "large_ocean_going_vessel", "multiple_decks",
+        "deep_draft_hull", "navigation_bridge", "floats_on_water"
+    ],
+    "cargo_ship": [
+        "intermodal_container_holds", "large_deadweight_tonnage",
+        "diesel_marine_engine", "floats_on_water"
+    ],
+    "submarine": [
+        "ballast_tanks_for_diving_surfacing", "pressure_hull",
+        "underwater_navigation_sonar"
+    ],
+    "sailboat": [
+        "uses_wind_power_via_sails", "mast_and_rigging",
+        "keel_or_centerboard_for_leeway", "floats_on_water"
+    ],
+    "motorboat": [
+        "internal_or_outboard_engine_propulsion", "planing_hull",
+        "helm_steering", "floats_on_water"
+    ],
+    "yacht": [
+        "luxury_cruising_amenities", "recreational_staterooms",
+        "powered_or_sailing_rig", "floats_on_water"
+    ],
+    "ferry": [
+        "transports_passengers_and_vehicles_across_water",
+        "roll_on_roll_off_ramps", "regular_terminal_route", "floats_on_water"
+    ],
+    "canoe": [
+        "open_deck_lightweight_watercraft",
+        "single_bladed_paddle_propulsion", "floats_on_water"
+    ],
+    "kayak": [
+        "closed_cockpit_or_sit_on_top",
+        "double_bladed_paddle_propulsion", "floats_on_water"
+    ],
+
+    # -------------------------------------------------------------
+    # 9. Tools, Electronics, Computers, Machinery
+    # -------------------------------------------------------------
+    "tool": [
+        "assists_manual_or_mechanical_work",
+        "provides_mechanical_advantage",
+        "specific_functional_application"
+    ],
+    "hand_tool": [
+        "manually_powered_by_hand", "ergonomic_handle",
+        "portable", "no_external_electric_power_needed"
+    ],
+    "hammer": [
+        "weighted_striking_head", "impact_force_delivery",
+        "nail_driving_and_pulling", "handle"
+    ],
+    "screwdriver": [
+        "shaped_tip_flat_or_phillips", "turns_threaded_screws",
+        "torque_application_handle"
+    ],
+    "wrench": [
+        "grips_and_turns_fasteners", "applies_rotational_torque",
+        "fixed_or_adjustable_jaw"
+    ],
+    "saw": [
+        "toothed_cutting_blade", "cuts_wood_metal_or_plastic",
+        "linear_stroke_or_rotary_cutting"
+    ],
+    "pliers": [
+        "pivoting_jaws", "grips_twists_or_cuts_wire",
+        "mechanical_leverage_handles"
+    ],
+    "drill": [
+        "rotating_cutting_bit", "bores_cylindrical_holes",
+        "chuck_mechanism"
+    ],
+    "power_tool": [
+        "powered_by_electric_motor_or_pneumatics",
+        "higher_power_than_hand_tools", "triggers_and_safety_guards"
+    ],
+    "electronics": [
+        "semiconductors", "active_and_passive_components",
+        "manipulates_electrical_currents", "printed_circuit_boards"
+    ],
+    "electronic_device": [
+        "contains_electronic_circuits",
+        "processes_information_or_signals", "requires_power_source"
+    ],
+    "semiconductor": [
+        "variable_electrical_conductivity", "silicon_or_gallium_arsenide",
+        "doped_p_n_junctions", "solid_state"
+    ],
+    "transistor": [
+        "amplifies_or_switches_signals",
+        "base_collector_emitter_or_gate_drain_source",
+        "semiconductor_device"
+    ],
+    "microchip": [
+        "integrated_circuit_on_silicon_die",
+        "millions_to_billions_of_transistors",
+        "miniaturized_electronic_circuits"
+    ],
+    "diode": [
+        "allows_current_in_one_direction_only", "anode_and_cathode",
+        "p_n_junction_rectifier"
+    ],
+    "resistor": [
+        "opposes_current_flow", "measured_in_ohms",
+        "dissipates_power_as_heat", "passive_component"
+    ],
+    "capacitor": [
+        "stores_electrostatic_charge", "measured_in_farads",
+        "two_conductive_plates_with_dielectric"
+    ],
+    "integrated_circuit": [
+        "miniaturized_circuits_on_semiconductor",
+        "encapsulated_package_with_pins", "high_density_logic"
+    ],
+    "computer": [
+        "cpu_processor", "memory_ram", "persistent_storage",
+        "executes_stored_programs", "digital_logic_operations"
+    ],
+    "desktop_computer": [
+        "stationary_chassis_tower", "external_monitor_keyboard_mouse",
+        "modular_expandable_components"
+    ],
+    "laptop": [
+        "portable_integrated_clamshell_form",
+        "rechargeable_internal_battery",
+        "integrated_screen_keyboard_trackpad"
+    ],
+    "smartphone": [
+        "touchscreen_display", "cellular_transceiver",
+        "mobile_operating_system", "integrated_sensors_and_cameras"
+    ],
+    "tablet": [
+        "flat_touchscreen_slate_form", "portable_mobile_os",
+        "virtual_or_stylus_input", "rechargeable_battery"
+    ],
+    "server": [
+        "high_reliability_hardware", "provides_network_services",
+        "rack_mountable", "redundant_power_supplies"
+    ],
+    "supercomputer": [
+        "massively_parallel_processing",
+        "high_floating_point_performance_flops",
+        "advanced_liquid_cooling"
+    ],
+    "microcontroller": [
+        "cpu_memory_and_io_on_single_chip",
+        "embedded_control_applications", "low_power_consumption"
+    ],
+    "microprocessor": [
+        "central_processing_unit_on_ic",
+        "arithmetic_logic_unit_alu",
+        "instruction_fetch_decode_execute_cycle"
+    ],
+    "machinery": [
+        "assembled_moving_mechanical_parts",
+        "transforms_energy_into_mechanical_work",
+        "industrial_application"
+    ],
+    "machine": [
+        "contains_moving_components", "modifies_forces_or_motion",
+        "requires_energy_input"
+    ],
+    "industrial_machine": [
+        "heavy_duty_fabrication_or_processing",
+        "automated_or_operator_controlled",
+        "manufacturing_environment"
+    ],
+    "engine": [
+        "converts_thermal_or_chemical_energy_to_motion",
+        "generates_mechanical_work", "shaft_power_output"
+    ],
+    "internal_combustion_engine": [
+        "combusts_fuel_air_mixture_in_cylinders", "pistons_and_crankshaft",
+        "four_stroke_or_two_stroke_cycle"
+    ],
+    "electric_motor": [
+        "converts_electrical_energy_to_mechanical_rotation",
+        "stator_and_rotor_electromagnetic_fields", "high_efficiency"
+    ],
+    "turbine": [
+        "rotary_mechanical_device_extracting_fluid_energy",
+        "rotor_blades", "drives_generator_or_compressor"
+    ],
+    "generator": [
+        "converts_mechanical_rotation_to_electrical_energy",
+        "electromagnetic_induction", "produces_ac_or_dc_power"
+    ],
+    "pump": [
+        "moves_fluids_liquids_or_gases", "creates_pressure_differential",
+        "impeller_or_reciprocating_piston"
+    ],
+    "compressor": [
+        "increases_gas_pressure_by_reducing_volume", "pressurizes_gases",
+        "pneumatic_or_refrigeration_use"
+    ],
+    "robotic_arm": [
+        "multi_axis_jointed_articulation", "programmable_servo_motors",
+        "end_effector_gripper_or_welder"
+    ],
+    "3d_printer": [
+        "additive_layer_by_layer_manufacturing",
+        "extrusion_nozzle_or_laser_galvanometer", "executes_g_code"
+    ],
+
+    # -------------------------------------------------------------
+    # 10. Professions, Medical, Legal, Engineering, Academic
+    # -------------------------------------------------------------
+    "profession": [
+        "requires_specialized_education_and_training",
+        "bound_by_code_of_ethics",
+        "professional_licensing_or_certification"
+    ],
+    "career": [
+        "long_term_professional_path", "occupational_progression",
+        "work_experience"
+    ],
+    "occupation": [
+        "regular_gainful_employment", "performed_duties",
+        "vocational_role"
+    ],
+    "medical_profession": [
+        "healthcare_delivery", "patient_care", "clinical_training",
+        "medical_ethics_and_hipaa"
+    ],
+    "healthcare_worker": [
+        "promotes_patient_health", "administers_treatments",
+        "clinical_skills", "infection_control"
+    ],
+    "physician": [
+        "medical_doctorate_degree", "diagnoses_diseases",
+        "prescribes_pharmacotherapy", "state_medical_license",
+        "hippocratic_oath"
+    ],
+    "doctor": [
+        "diagnoses_illnesses", "prescribes_treatment",
+        "clinical_training", "medical_degree", "patient_examinations"
+    ],
+    "surgeon": [
+        "performs_surgical_operations",
+        "sterile_operating_room_procedures",
+        "specialized_surgical_tools", "board_certified_in_surgery"
+    ],
+    "pediatrician": [
+        "specializes_in_infant_child_adolescent_care",
+        "childhood_development_milestones", "pediatric_dosages"
+    ],
+    "cardiologist": [
+        "specializes_in_heart_and_vascular_diseases",
+        "interprets_ecg_and_echocardiograms", "cardiac_catheterization"
+    ],
+    "neurologist": [
+        "specializes_in_nervous_system_disorders",
+        "evaluates_brain_and_spinal_cord", "interprets_eeg_and_emg"
+    ],
+    "nurse": [
+        "administers_patient_care_and_medications",
+        "monitors_vital_signs", "patient_advocacy", "nursing_license"
+    ],
+    "pharmacist": [
+        "dispenses_prescription_medications",
+        "evaluates_drug_interactions_and_dosages",
+        "pharmacy_degree_pharmd"
+    ],
+    "dentist": [
+        "diagnoses_and_treats_oral_teeth_conditions",
+        "performs_dental_restorations_and_extractions",
+        "dental_degree_dds_or_dmd"
+    ],
+    "veterinarian": [
+        "veterinary_medicine_degree_dvm",
+        "diagnoses_and_treats_animals",
+        "animal_surgery_and_vaccinations"
+    ],
+    "legal_profession": [
+        "specialized_legal_training", "advocacy_and_adjudication",
+        "adherence_to_rules_of_professional_conduct"
+    ],
+    "lawyer": [
+        "law_degree_juris_doctor", "passed_bar_examination",
+        "provides_legal_counsel", "drafts_legal_pleadings",
+        "advocates_for_clients"
+    ],
+    "attorney": [
+        "licensed_to_practice_law", "represents_clients_in_court",
+        "attorney_client_privilege", "legal_strategy"
+    ],
+    "judge": [
+        "presides_over_courtroom_proceedings",
+        "rules_on_admissibility_of_evidence",
+        "issues_rulings_and_sentences", "neutral_adjudicator"
+    ],
+    "prosecutor": [
+        "represents_the_government_in_criminal_cases",
+        "files_criminal_indictments",
+        "bears_burden_of_proof_beyond_reasonable_doubt"
+    ],
+    "defense_attorney": [
+        "defends_accused_parties_in_legal_proceedings",
+        "protects_constitutional_rights", "cross_examines_witnesses"
+    ],
+    "paralegal": [
+        "assists_lawyers_with_legal_research",
+        "drafts_preliminary_legal_documents", "organizes_case_files"
+    ],
+    "engineering_profession": [
+        "applies_mathematics_and_scientific_principles",
+        "designs_structures_machines_systems",
+        "professional_engineer_pe_license"
+    ],
+    "engineer": [
+        "engineering_degree", "designs_practical_solutions",
+        "problem_solving_and_modeling", "technical_analysis"
+    ],
+    "civil_engineer": [
+        "designs_bridges_roads_dams_infrastructure",
+        "structural_analysis", "surveying_and_geotechnical_knowledge"
+    ],
+    "mechanical_engineer": [
+        "designs_mechanical_systems_engines_thermal_devices",
+        "thermodynamics_and_cad_modeling", "kinematics_analysis"
+    ],
+    "electrical_engineer": [
+        "designs_electrical_circuits_power_systems_avionics",
+        "electromagnetism_and_signal_processing", "circuit_simulation"
+    ],
+    "software_engineer": [
+        "writes_and_architects_software_code",
+        "software_design_patterns_and_algorithms",
+        "version_control_and_testing"
+    ],
+    "aerospace_engineer": [
+        "designs_aircraft_spacecraft_missiles",
+        "aerodynamics_and_orbital_mechanics",
+        "propulsion_and_flight_dynamics"
+    ],
+    "chemical_engineer": [
+        "scales_chemical_processes_to_industrial_production",
+        "mass_and_energy_balances", "reaction_kinetics_and_separation"
+    ],
+    "architect": [
+        "designs_building_aesthetics_and_spatial_layouts",
+        "creates_architectural_blueprints",
+        "compliance_with_building_codes"
+    ],
+    "academic_profession": [
+        "higher_education_instruction",
+        "peer_reviewed_scholarly_research",
+        "academic_freedom_and_tenure"
+    ],
+    "educator": [
+        "delivers_pedagogical_instruction", "curriculum_development",
+        "assesses_student_learning"
+    ],
+    "professor": [
+        "holds_doctorate_phd", "conducts_original_research",
+        "teaches_university_courses", "mentors_graduate_students"
+    ],
+    "teacher": [
+        "classroom_instruction", "lesson_planning",
+        "educational_pedagogy", "teaching_certification"
+    ],
+    "scientist": [
+        "applies_scientific_method", "conducts_empirical_experiments",
+        "formulates_hypotheses", "publishes_peer_reviewed_papers"
+    ],
+    "physicist": [
+        "researches_matter_energy_space_time",
+        "mathematical_physics_models",
+        "quantum_mechanics_or_relativity"
+    ],
+    "chemist": [
+        "studies_composition_structure_properties_of_substances",
+        "synthesizes_compounds", "spectroscopy_and_chromatography"
+    ],
+    "biologist": [
+        "investigates_living_organisms_and_ecosystems",
+        "cellular_molecular_or_organismal_studies", "evolutionary_analysis"
+    ],
+    "mathematician": [
+        "proves_mathematical_theorems",
+        "abstract_structures_and_computational_proofs",
+        "applied_or_pure_mathematics"
+    ],
+    "astronomer": [
+        "observes_celestial_bodies_and_universe",
+        "telescopic_spectroscopy", "astrophysics_modeling"
+    ],
+    "researcher": [
+        "systematic_investigation_and_data_collection",
+        "literature_review", "statistical_analysis_and_reporting"
+    ],
+
+    # -------------------------------------------------------------
+    # 11. Medical, Legal, Biological Concepts
+    # -------------------------------------------------------------
+    "nsaid": [
+        "reduces_inflammation", "reduces_pain", "reduces_fever",
+        "cyclooxygenase_inhibitor"
+    ],
+    "analgesic": [
+        "reduces_pain", "pain_relief_medication"
+    ],
+    "antibiotic": [
+        "kills_bacteria", "requires_prescription",
+        "ineffective_against_viral", "bacterial_target"
+    ],
+    "statin": [
+        "lowers_cholesterol", "requires_prescription",
+        "hmg_coa_reductase_inhibitor"
+    ],
+    "antihypertensive": [
+        "lowers_blood_pressure", "requires_prescription",
+        "cardiovascular_medication"
+    ],
+    "medication": [
+        "requires_dosage", "therapeutic_purpose",
+        "active_pharmaceutical_ingredient"
+    ],
+    "diabetes": [
+        "elevated_blood_sugar", "requires_monitoring",
+        "insulin_regulation_defect"
+    ],
+    "chronic_disease": [
+        "requires_long_term_management", "not_curable_easily",
+        "prolonged_duration"
+    ],
+    "infectious_disease": [
+        "caused_by_pathogen", "can_spread",
+        "communicable_or_vector_borne"
+    ],
+    "cardiovascular_disease": [
+        "affects_heart", "affects_blood_vessels",
+        "circulatory_impairment"
+    ],
+    "bone": [
+        "contains_calcium", "supports_body", "osseous_tissue",
+        "skeletal_system"
+    ],
+    "blood_cell": [
+        "found_in_blood", "produced_in_bone_marrow",
+        "cellular_component_of_blood"
+    ],
+    "criminal_offense": [
+        "requires_legal_defense", "punishable_by_law",
+        "violation_of_statute"
+    ],
+    "violent_crime": [
+        "involves_physical_harm", "higher_penalty",
+        "crimes_against_persons"
+    ],
+    "intellectual_property": [
+        "protected_by_law", "has_owner",
+        "intangible_creations_of_mind"
+    ],
+    "legal_document": [
+        "requires_signature", "legally_binding",
+        "written_legal_instrument"
+    ],
+    "contract": [
+        "requires_consideration", "enforceable",
+        "mutual_assent_and_offer_acceptance"
+    ],
+}
+
+# Update properties dict with all new entities
+for k, v in new_properties.items():
+    if k in properties:
+        # Merge unique items while preserving existing
+        existing_set = set(properties[k])
+        for prop in v:
+            if prop not in existing_set:
+                properties[k].append(prop)
+    else:
+        properties[k] = v
+
+# Base existing conditionals (preserve exactly)
+conditionals = dict(kb.get("conditionals", {}))
+
+# Category-by-category additions for conditionals
+new_conditionals = {
+    # -------------------------------------------------------------
+    # Physical phase changes & thermodynamics
+    # -------------------------------------------------------------
+    "water evaporates": [
+        "water_vapor", "humidity_increases", "liquid_volume_decreases"
+    ],
+    "water_evaporates": [
+        "water_vapor", "humidity_increases", "liquid_volume_decreases"
+    ],
+    "ice melts": [
+        "liquid_water", "absorbs_latent_heat", "phase_change_to_liquid"
+    ],
+    "ice_melts": [
+        "liquid_water", "absorbs_latent_heat", "phase_change_to_liquid"
+    ],
+    "steam condenses": [
+        "liquid_water", "latent_heat_released", "droplets_form"
+    ],
+    "steam_condenses": [
+        "liquid_water", "latent_heat_released", "droplets_form"
+    ],
+    "dry ice sublimates": [
+        "carbon_dioxide_gas", "bypasses_liquid_state", "cold_gas_released"
+    ],
+    "dry_ice_sublimates": [
+        "carbon_dioxide_gas", "bypasses_liquid_state", "cold_gas_released"
+    ],
+    "metal is cooled": [
+        "contracts", "contract", "thermal_contraction"
+    ],
+    "metal_is_cooled": [
+        "contracts", "contract", "thermal_contraction"
+    ],
+    "temperature drops below freezing": [
+        "water_freezes", "frost_forms", "ice_accumulates"
+    ],
+    "temperature_drops_below_freezing": [
+        "water_freezes", "frost_forms", "ice_accumulates"
+    ],
+    "pressure_increases": [
+        "volume_decreases", "compression_occurs", "density_increases"
+    ],
+    "temperature_drops": [
+        "water_may_freeze", "molecules_slow", "energy_decreases"
+    ],
+    "gas expands adiabatically": [
+        "temperature_drops", "gas_cools", "pressure_falls"
+    ],
+    "gas_expands_adiabatically": [
+        "temperature_drops", "gas_cools", "pressure_falls"
+    ],
+
+    # -------------------------------------------------------------
+    # Combustion, Chemical reactions, Material science
+    # -------------------------------------------------------------
+    "wood burns": [
+        "ash_produced", "smoke_released", "carbon_dioxide_produced", "heat_released"
+    ],
+    "wood_burns": [
+        "ash_produced", "smoke_released", "carbon_dioxide_produced", "heat_released"
+    ],
+    "iron rusts": [
+        "iron_oxide_forms", "corrosion_occurs", "metal_degrades", "oxygen_and_water_consumed"
+    ],
+    "iron_rusts": [
+        "iron_oxide_forms", "corrosion_occurs", "metal_degrades", "oxygen_and_water_consumed"
+    ],
+    "acid reacts with base": [
+        "neutralization", "salt_and_water_produced", "ph_moves_toward_neutral"
+    ],
+    "acid_reacts_with_base": [
+        "neutralization", "salt_and_water_produced", "ph_moves_toward_neutral"
+    ],
+    "salt dissolves in water": [
+        "saline_solution", "ions_dissociate", "electrical_conductivity_increases"
+    ],
+    "salt_dissolves_in_water": [
+        "saline_solution", "ions_dissociate", "electrical_conductivity_increases"
+    ],
+    "sugar dissolves in water": [
+        "sweet_solution", "solute_dissolved", "homogeneous_mixture"
+    ],
+    "sugar_dissolves_in_water": [
+        "sweet_solution", "solute_dissolved", "homogeneous_mixture"
+    ],
+    "hydrogen burns in oxygen": [
+        "water_formed", "exothermic_combustion", "heat_and_light_released"
+    ],
+    "hydrogen_burns_in_oxygen": [
+        "water_formed", "exothermic_combustion", "heat_and_light_released"
+    ],
+    "methane combusts": [
+        "carbon_dioxide_produced", "water_vapor_produced", "energy_released"
+    ],
+    "methane_combusts": [
+        "carbon_dioxide_produced", "water_vapor_produced", "energy_released"
+    ],
+
+    # -------------------------------------------------------------
+    # Biological dependencies, physiology, ecology
+    # -------------------------------------------------------------
+    "plant_gets_sunlight": [
+        "photosynthesis_occurs", "plant_grows", "energy_produced", "oxygen_released"
+    ],
+    "plant deprived of water": [
+        "plant_wilts", "leaves_wither", "photosynthesis_stops", "plant_may_die"
+    ],
+    "plant_deprived_of_water": [
+        "plant_wilts", "leaves_wither", "photosynthesis_stops", "plant_may_die"
+    ],
+    "animal_eats_food": [
+        "animal_gets_energy", "animal_survives", "digestion_occurs", "nutrients_absorbed"
+    ],
+    "animal deprived of oxygen": [
+        "asphyxiation", "cellular_respiration_stops", "organ_failure", "loss_of_consciousness"
+    ],
+    "animal_deprived_of_oxygen": [
+        "asphyxiation", "cellular_respiration_stops", "organ_failure", "loss_of_consciousness"
+    ],
+    "heart stops beating": [
+        "blood_circulation_stops", "tissues_deprived_of_oxygen", "cardiac_arrest"
+    ],
+    "heart_stops_beating": [
+        "blood_circulation_stops", "tissues_deprived_of_oxygen", "cardiac_arrest"
+    ],
+    "seed_is_planted": [
+        "plant_may_grow", "needs_water", "needs_sunlight", "germination_possible"
+    ],
+    "seed germinates": [
+        "radicle_emerges", "hypocotyl_elongates", "seedling_develops"
+    ],
+    "seed_germinates": [
+        "radicle_emerges", "hypocotyl_elongates", "seedling_develops"
+    ],
+    "flower is pollinated": [
+        "fertilization_occurs", "seeds_develop", "fruit_forms"
+    ],
+    "flower_is_pollinated": [
+        "fertilization_occurs", "seeds_develop", "fruit_forms"
+    ],
+    "vaccination administered": [
+        "immune_response_triggered", "antibodies_produced", "memory_cells_formed"
+    ],
+    "vaccination_administered": [
+        "immune_response_triggered", "antibodies_produced", "memory_cells_formed"
+    ],
+    "pathogen enters bloodstream": [
+        "immune_system_activates", "white_blood_cells_respond", "inflammation_triggered"
+    ],
+    "pathogen_enters_bloodstream": [
+        "immune_system_activates", "white_blood_cells_respond", "inflammation_triggered"
+    ],
+
+    # -------------------------------------------------------------
+    # Electrical, mechanical, automotive logic
+    # -------------------------------------------------------------
+    "electricity_flows": [
+        "circuit_complete", "current_present", "magnetic_field_generated"
+    ],
+    "circuit is closed": [
+        "electricity_flows", "current_travels", "device_powers_on"
+    ],
+    "circuit_is_closed": [
+        "electricity_flows", "current_travels", "device_powers_on"
+    ],
+    "circuit is opened": [
+        "current_stops", "power_disconnected", "device_turns_off"
+    ],
+    "circuit_is_opened": [
+        "current_stops", "power_disconnected", "device_turns_off"
+    ],
+    "short circuit occurs": [
+        "excessive_current_spikes", "fuse_melts", "circuit_breaker_trips"
+    ],
+    "short_circuit_occurs": [
+        "excessive_current_spikes", "fuse_melts", "circuit_breaker_trips"
+    ],
+    "switch is turned on": [
+        "circuit_completes", "current_flows", "light_turns_on"
+    ],
+    "switch_is_turned_on": [
+        "circuit_completes", "current_flows", "light_turns_on"
+    ],
+    "brake pedal is pressed": [
+        "brake_fluid_pressurized", "friction_applied_to_wheels", "vehicle_slows_down"
+    ],
+    "brake_pedal_is_pressed": [
+        "brake_fluid_pressurized", "friction_applied_to_wheels", "vehicle_slows_down"
+    ],
+    "accelerator is pressed": [
+        "throttle_opens", "fuel_increases", "engine_rpm_rises", "vehicle_accelerates"
+    ],
+    "accelerator_is_pressed": [
+        "throttle_opens", "fuel_increases", "engine_rpm_rises", "vehicle_accelerates"
+    ],
+    "engine runs out of fuel": [
+        "combustion_ceases", "engine_stalls", "vehicle_loses_power"
+    ],
+    "engine_runs_out_of_fuel": [
+        "combustion_ceases", "engine_stalls", "vehicle_loses_power"
+    ],
+    "tire is punctured": [
+        "air_pressure_drops", "tire_deflates", "handling_impaired"
+    ],
+    "tire_is_punctured": [
+        "air_pressure_drops", "tire_deflates", "handling_impaired"
+    ],
+    "aircraft wing generates lift": [
+        "aircraft_ascends_or_maintains_altitude", "opposes_gravity"
+    ],
+    "aircraft_wing_generates_lift": [
+        "aircraft_ascends_or_maintains_altitude", "opposes_gravity"
+    ],
+
+    # -------------------------------------------------------------
+    # Weather, environmental & medical / legal rules
+    # -------------------------------------------------------------
+    "rain falls": [
+        "ground_wet", "wet", "puddles_form", "soil_hydrated"
+    ],
+    "rain_falls": [
+        "ground_wet", "wet", "puddles_form", "soil_hydrated"
+    ],
+    "lightning strikes": [
+        "electrical_discharge", "thunder_generated", "high_heat_released"
+    ],
+    "lightning_strikes": [
+        "electrical_discharge", "thunder_generated", "high_heat_released"
+    ],
+    "bacterial_infection": [
+        "need_antibiotic", "antibiotic_effective", "fever_possible"
+    ],
+    "bacterial infection": [
+        "need_antibiotic", "antibiotic_effective"
+    ],
+    "viral_infection": [
+        "antibiotic_ineffective", "need_antiviral", "immune_response"
+    ],
+    "viral infection": [
+        "antibiotic_ineffective", "need_antiviral"
+    ],
+    "high_blood_pressure": [
+        "hypertension_risk", "need_antihypertensive", "cardiovascular_strain"
+    ],
+    "high blood pressure": [
+        "hypertension_risk", "need_antihypertensive"
+    ],
+    "high_blood_sugar": [
+        "diabetes_risk", "need_antidiabetic", "insulin_deficiency_or_resistance"
+    ],
+    "high blood sugar": [
+        "diabetes_risk", "need_antidiabetic"
+    ],
+    "contract_signed": [
+        "legally_binding", "enforceable", "mutual_obligation_created"
+    ],
+    "contract signed": [
+        "legally_binding", "enforceable"
+    ],
+    "criminal_convicted": [
+        "requires_sentencing", "has_criminal_record", "legal_penalties_imposed"
+    ],
+    "criminal convicted": [
+        "requires_sentencing", "has_criminal_record"
+    ],
+    "patent_registered": [
+        "protected_20_years", "owner_has_exclusive_rights", "infringement_actionable"
+    ],
+    "patent registered": [
+        "protected_20_years", "owner_has_exclusive_rights"
+    ],
+}
+
+# Update conditionals dict with all new rules
+for k, v in new_conditionals.items():
+    if k in conditionals:
+        existing_set = set(conditionals[k])
+        for c in v:
+            if c not in existing_set:
+                conditionals[k].append(c)
+    else:
+        conditionals[k] = v
+
+# Update KB
+kb["properties"] = properties
+kb["conditionals"] = conditionals
+
+if "_meta" in kb and "stats" in kb["_meta"]:
+    kb["_meta"]["stats"]["property_entities"] = len(properties)
+    kb["_meta"]["stats"]["conditional_rules"] = len(conditionals)
+
+# Save enriched KB
+with open(kb_path, "w", encoding="utf-8") as f:
+    json.dump(kb, f, indent=2, ensure_ascii=False)
+
+print(f"Enrichment complete!")
+print(f"Taxonomies: {len(kb['taxonomies'])}")
+print(f"Properties: {len(kb['properties'])}")
+print(f"Conditionals: {len(kb['conditionals'])}")

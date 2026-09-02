@@ -1,5 +1,5 @@
 """
-End-to-end integration tests for the full LogicGuard pipeline.
+End-to-end integration tests for the full AvicennaGuard pipeline.
 
 These tests verify the complete two-stage pipeline behavior:
 Stage 1 (regex parser) → Stage 2 (BFS validator) → ValidatorResult
@@ -16,17 +16,17 @@ import pytest
 from pathlib import Path
 from unittest.mock import patch
 
-from logicguard.kb.loader import KnowledgeBase
-from logicguard.pipeline.logicguard import LogicGuard
-from logicguard.core.epistemic_states import EpistemicState
+from avicennaguard.kb.loader import KnowledgeBase
+from avicennaguard.pipeline.avicennaguard import AvicennaGuard
+from avicennaguard.core.epistemic_states import EpistemicState
 
 KB_PATH = Path("data/knowledge_bases/knowledge_base_extended.json")
 
 
 @pytest.fixture(scope="module")
-def lg() -> LogicGuard:
+def lg() -> AvicennaGuard:
     kb = KnowledgeBase(KB_PATH)
-    return LogicGuard(kb, model="llama3.2:3b")
+    return AvicennaGuard(kb, model="llama3.2:3b")
 
 
 class TestHallucinationInterception:
@@ -95,7 +95,7 @@ class TestFalsePositiveGuarantee:
     """
     Verifies FP = 0 across a set of known-correct LLM answers.
 
-    A false positive would be: LLM correct, LogicGuard overrides with wrong answer.
+    A false positive would be: LLM correct, AvicennaGuard overrides with wrong answer.
     This must NEVER happen. These tests guard against KB corruption.
     """
 
@@ -116,6 +116,6 @@ class TestFalsePositiveGuarantee:
 
             assert not result.intercepted, (
                 f"FALSE POSITIVE on {entities}: "
-                f"LLM was correct ({correct_answer}) but LogicGuard intercepted. "
+                f"LLM was correct ({correct_answer}) but AvicennaGuard intercepted. "
                 f"Final answer: {result.final_answer}"
             )

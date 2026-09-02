@@ -1,0 +1,133 @@
+=====================================================================================
+  AVICENNAGUARD -- MULTI-MODEL BENCHMARK EVALUATION REPORT
+=====================================================================================
+  Benchmark File   : avicenna_benchmark_500.json
+  Mock Mode        : True
+  Parser Mode      : llm
+  Models Evaluated : llama3.2:3b, mistral:7b, llama2:7b, deepseek-r1:7b, phi4:latest
+
+-------------------------------------------------------------------------------------
+  1. MULTI-MODEL PERFORMANCE SUMMARY
+-------------------------------------------------------------------------------------
+
+  Model               Base Acc  Base F1  +AG Acc   +AG F1  Gain Acc  Hall. Caught  Interc.%  Overhead
+  --------------------------------------------------------------------------------------------------
+  llama3.2:3b            90.0%    92.3%    90.0%    92.3%     +0.0%             1    100.0%    1.27ms
+  mistral:7b             80.0%    83.3%    90.0%    92.3%    +10.0%             1     50.0%    0.94ms
+  llama2:7b              60.0%    66.7%    90.0%    92.3%    +30.0%             3     75.0%    0.93ms
+  deepseek-r1:7b         90.0%    93.3%    80.0%    85.7%    -10.0%             0      0.0%    0.95ms
+  phi4:latest            90.0%    92.3%    90.0%    92.3%     +0.0%             1    100.0%    0.94ms
+
+-------------------------------------------------------------------------------------
+  MODEL: llama3.2:3b
+-------------------------------------------------------------------------------------
+  Baseline Accuracy   : 90.00%
+  +AvicennaGuard Acc  : 90.00%
+  Accuracy Gain       : +0.00%
+  Precision           : 100.00% (Baseline: 100.00%)
+  Recall              : 85.71% (Baseline: 85.71%)
+  F1-Score            : 92.31% (Baseline: 92.31%)
+  Specificity         : 100.00%
+  False Positive Rate : 0.00%
+
+  Epistemic State Distribution:
+    - SHAKK     :    2
+    - WAHM      :    2
+    - YAQEEN    :    6
+
+  Latency Profile (Mean / Median / P95):
+    - Stage 1 Parser   : 0.95ms / 0.82ms / 1.88ms
+    - Stage 2 BFS      : 0.32ms / 0.07ms / 1.34ms
+    - Total Overhead   : 1.27ms / 0.98ms / 2.65ms
+
+-------------------------------------------------------------------------------------
+  MODEL: mistral:7b
+-------------------------------------------------------------------------------------
+  Baseline Accuracy   : 80.00%
+  +AvicennaGuard Acc  : 90.00%
+  Accuracy Gain       : +10.00%
+  Precision           : 100.00% (Baseline: 100.00%)
+  Recall              : 85.71% (Baseline: 71.43%)
+  F1-Score            : 92.31% (Baseline: 83.33%)
+  Specificity         : 100.00%
+  False Positive Rate : 0.00%
+
+  Epistemic State Distribution:
+    - SHAKK     :    2
+    - YAQEEN    :    7
+    - WAHM      :    1
+
+  Latency Profile (Mean / Median / P95):
+    - Stage 1 Parser   : 0.82ms / 0.81ms / 0.84ms
+    - Stage 2 BFS      : 0.12ms / 0.04ms / 0.76ms
+    - Total Overhead   : 0.94ms / 0.85ms / 1.59ms
+
+-------------------------------------------------------------------------------------
+  MODEL: llama2:7b
+-------------------------------------------------------------------------------------
+  Baseline Accuracy   : 60.00%
+  +AvicennaGuard Acc  : 90.00%
+  Accuracy Gain       : +30.00%
+  Precision           : 100.00% (Baseline: 80.00%)
+  Recall              : 85.71% (Baseline: 57.14%)
+  F1-Score            : 92.31% (Baseline: 66.67%)
+  Specificity         : 100.00%
+  False Positive Rate : 0.00%
+
+  Epistemic State Distribution:
+    - SHAKK     :    2
+    - YAQEEN    :    5
+    - WAHM      :    3
+
+  Latency Profile (Mean / Median / P95):
+    - Stage 1 Parser   : 0.82ms / 0.82ms / 0.84ms
+    - Stage 2 BFS      : 0.11ms / 0.04ms / 0.74ms
+    - Total Overhead   : 0.93ms / 0.85ms / 1.58ms
+
+-------------------------------------------------------------------------------------
+  MODEL: deepseek-r1:7b
+-------------------------------------------------------------------------------------
+  Baseline Accuracy   : 90.00%
+  +AvicennaGuard Acc  : 80.00%
+  Accuracy Gain       : +-10.00%
+  Precision           : 85.71% (Baseline: 87.50%)
+  Recall              : 85.71% (Baseline: 100.00%)
+  F1-Score            : 85.71% (Baseline: 93.33%)
+  Specificity         : 66.67%
+  False Positive Rate : 33.33%
+
+  Epistemic State Distribution:
+    - SHAKK     :    2
+    - WAHM      :    1
+    - YAQEEN    :    7
+
+  Latency Profile (Mean / Median / P95):
+    - Stage 1 Parser   : 0.82ms / 0.82ms / 0.83ms
+    - Stage 2 BFS      : 0.13ms / 0.04ms / 0.94ms
+    - Total Overhead   : 0.95ms / 0.86ms / 1.77ms
+
+-------------------------------------------------------------------------------------
+  MODEL: phi4:latest
+-------------------------------------------------------------------------------------
+  Baseline Accuracy   : 90.00%
+  +AvicennaGuard Acc  : 90.00%
+  Accuracy Gain       : +0.00%
+  Precision           : 100.00% (Baseline: 100.00%)
+  Recall              : 85.71% (Baseline: 85.71%)
+  F1-Score            : 92.31% (Baseline: 92.31%)
+  Specificity         : 100.00%
+  False Positive Rate : 0.00%
+
+  Epistemic State Distribution:
+    - SHAKK     :    2
+    - WAHM      :    2
+    - YAQEEN    :    6
+
+  Latency Profile (Mean / Median / P95):
+    - Stage 1 Parser   : 0.82ms / 0.81ms / 0.84ms
+    - Stage 2 BFS      : 0.13ms / 0.04ms / 0.86ms
+    - Total Overhead   : 0.94ms / 0.85ms / 1.70ms
+
+=====================================================================================
+  END OF BENCHMARK EVALUATION REPORT
+=====================================================================================

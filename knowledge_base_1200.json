@@ -1,0 +1,5193 @@
+{
+  "taxonomies": {
+    "dog": [
+      "canine",
+      "mammal",
+      "animal",
+      "living_thing",
+      "unpleasant_woman",
+      "domestic_animal",
+      "chap"
+    ],
+    "wolf": [
+      "canine",
+      "mammal",
+      "animal",
+      "living_thing",
+      "composer",
+      "classicist"
+    ],
+    "fox": [
+      "canine",
+      "mammal",
+      "animal",
+      "living_thing",
+      "fur",
+      "deceiver"
+    ],
+    "cat": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing",
+      "woman",
+      "man",
+      "gossip"
+    ],
+    "lion": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing",
+      "big_cat",
+      "person",
+      "celebrity"
+    ],
+    "tiger": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing",
+      "big_cat",
+      "person"
+    ],
+    "leopard": [
+      "feline",
+      "mammal",
+      "animal",
+      "living_thing",
+      "fur",
+      "big_cat"
+    ],
+    "whale": [
+      "cetacean",
+      "mammal",
+      "animal",
+      "living_thing",
+      "large_person"
+    ],
+    "dolphin": [
+      "cetacean",
+      "mammal",
+      "animal",
+      "living_thing",
+      "toothed_whale",
+      "percoid_fish"
+    ],
+    "porpoise": [
+      "cetacean",
+      "mammal",
+      "animal",
+      "living_thing",
+      "dolphin"
+    ],
+    "bat": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "racket",
+      "placental",
+      "turn"
+    ],
+    "bear": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "investor",
+      "carnivore"
+    ],
+    "elephant": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "emblem",
+      "pachyderm",
+      "proboscidean"
+    ],
+    "horse": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "equine",
+      "gymnastic_apparatus",
+      "military_personnel"
+    ],
+    "cow": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "unpleasant_woman",
+      "placental",
+      "cattle"
+    ],
+    "pig": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "swine",
+      "vulgarian",
+      "selfish_person"
+    ],
+    "sheep": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "follower",
+      "bovid",
+      "simpleton"
+    ],
+    "rabbit": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "fur",
+      "game",
+      "leporid"
+    ],
+    "rat": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "rodent",
+      "unpleasant_person",
+      "worker"
+    ],
+    "mouse": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "rodent",
+      "person",
+      "bruise"
+    ],
+    "deer": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "ruminant"
+    ],
+    "giraffe": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "ruminant"
+    ],
+    "zebra": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "equine"
+    ],
+    "gorilla": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing",
+      "great_ape"
+    ],
+    "chimpanzee": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing",
+      "great_ape"
+    ],
+    "monkey": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing",
+      "child"
+    ],
+    "human": [
+      "primate",
+      "mammal",
+      "animal",
+      "living_thing",
+      "hominid"
+    ],
+    "primate": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "priest",
+      "placental"
+    ],
+    "canine": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "carnivore",
+      "tooth"
+    ],
+    "feline": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "carnivore"
+    ],
+    "cetacean": [
+      "mammal",
+      "animal",
+      "living_thing",
+      "aquatic_mammal"
+    ],
+    "mammal": [
+      "animal",
+      "living_thing",
+      "vertebrate"
+    ],
+    "sparrow": [
+      "bird",
+      "animal",
+      "living_thing",
+      "passerine",
+      "accentor"
+    ],
+    "eagle": [
+      "bird",
+      "animal",
+      "living_thing",
+      "coin",
+      "score",
+      "bird_of_prey"
+    ],
+    "penguin": [
+      "bird",
+      "animal",
+      "living_thing",
+      "sphenisciform_seabird"
+    ],
+    "parrot": [
+      "bird",
+      "animal",
+      "living_thing",
+      "copycat"
+    ],
+    "ostrich": [
+      "bird",
+      "animal",
+      "living_thing",
+      "ratite",
+      "person"
+    ],
+    "hawk": [
+      "bird",
+      "animal",
+      "living_thing",
+      "militarist",
+      "board",
+      "bird_of_prey"
+    ],
+    "owl": [
+      "bird",
+      "animal",
+      "living_thing",
+      "bird_of_prey"
+    ],
+    "crow": [
+      "bird",
+      "animal",
+      "living_thing",
+      "sioux",
+      "corvine_bird",
+      "cry"
+    ],
+    "robin": [
+      "bird",
+      "animal",
+      "living_thing",
+      "thrush"
+    ],
+    "pigeon": [
+      "bird",
+      "animal",
+      "living_thing",
+      "columbiform_bird"
+    ],
+    "duck": [
+      "bird",
+      "animal",
+      "living_thing",
+      "anseriform_bird",
+      "score",
+      "poultry"
+    ],
+    "swan": [
+      "bird",
+      "animal",
+      "living_thing",
+      "aquatic_bird"
+    ],
+    "flamingo": [
+      "bird",
+      "animal",
+      "living_thing",
+      "wading_bird"
+    ],
+    "peacock": [
+      "bird",
+      "animal",
+      "living_thing",
+      "nymphalid",
+      "peafowl"
+    ],
+    "bird": [
+      "animal",
+      "living_thing",
+      "vertebrate",
+      "girl",
+      "meat"
+    ],
+    "snake": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "bad_person",
+      "diapsid",
+      "river"
+    ],
+    "lizard": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "saurian",
+      "gigolo"
+    ],
+    "turtle": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "sweater",
+      "jersey",
+      "chelonian"
+    ],
+    "tortoise": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "turtle"
+    ],
+    "crocodile": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "crocodilian_reptile"
+    ],
+    "alligator": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "crocodilian_reptile",
+      "leather"
+    ],
+    "gecko": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "lizard"
+    ],
+    "chameleon": [
+      "reptile",
+      "animal",
+      "living_thing",
+      "person",
+      "constellation",
+      "lizard"
+    ],
+    "reptile": [
+      "animal",
+      "living_thing",
+      "vertebrate"
+    ],
+    "shark": [
+      "fish",
+      "animal",
+      "living_thing",
+      "elasmobranch",
+      "expert",
+      "wrongdoer"
+    ],
+    "salmon": [
+      "fish",
+      "animal",
+      "living_thing",
+      "river",
+      "salmonid",
+      "food_fish"
+    ],
+    "tuna": [
+      "fish",
+      "animal",
+      "living_thing",
+      "prickly_pear",
+      "saltwater_fish",
+      "scombroid",
+      "food_fish"
+    ],
+    "goldfish": [
+      "fish",
+      "animal",
+      "living_thing",
+      "cyprinid"
+    ],
+    "trout": [
+      "fish",
+      "animal",
+      "living_thing",
+      "salmonid",
+      "food_fish"
+    ],
+    "cod": [
+      "fish",
+      "animal",
+      "living_thing",
+      "gadoid",
+      "husk",
+      "saltwater_fish"
+    ],
+    "clownfish": [
+      "fish",
+      "animal",
+      "living_thing"
+    ],
+    "fish": [
+      "animal",
+      "living_thing",
+      "aquatic_vertebrate",
+      "food",
+      "person"
+    ],
+    "frog": [
+      "amphibian",
+      "animal",
+      "living_thing",
+      "frenchman",
+      "adornment"
+    ],
+    "toad": [
+      "amphibian",
+      "animal",
+      "living_thing"
+    ],
+    "salamander": [
+      "amphibian",
+      "animal",
+      "living_thing",
+      "mythical_monster",
+      "fire_iron"
+    ],
+    "newt": [
+      "amphibian",
+      "animal",
+      "living_thing",
+      "salamander"
+    ],
+    "amphibian": [
+      "animal",
+      "living_thing",
+      "vertebrate",
+      "airplane",
+      "motor_vehicle"
+    ],
+    "ant": [
+      "insect",
+      "animal",
+      "living_thing",
+      "hymenopterous_insect"
+    ],
+    "bee": [
+      "insect",
+      "animal",
+      "living_thing",
+      "hymenopterous_insect",
+      "social_gathering"
+    ],
+    "butterfly": [
+      "insect",
+      "animal",
+      "living_thing",
+      "lepidopterous_insect",
+      "swimming_stroke"
+    ],
+    "mosquito": [
+      "insect",
+      "animal",
+      "living_thing",
+      "dipterous_insect"
+    ],
+    "spider": [
+      "arachnid",
+      "animal",
+      "living_thing",
+      "frying_pan",
+      "program"
+    ],
+    "scorpion": [
+      "arachnid",
+      "animal",
+      "living_thing",
+      "sign_of_the_zodiac",
+      "person"
+    ],
+    "insect": [
+      "animal",
+      "living_thing",
+      "unpleasant_person",
+      "arthropod"
+    ],
+    "arachnid": [
+      "animal",
+      "living_thing",
+      "arthropod"
+    ],
+    "animal": [
+      "living_thing",
+      "organism"
+    ],
+    "plant": [
+      "living_thing",
+      "building_complex",
+      "organism",
+      "actor"
+    ],
+    "tree": [
+      "plant",
+      "living_thing",
+      "plane_figure",
+      "theatrical_producer",
+      "actor",
+      "woody_plant"
+    ],
+    "flower": [
+      "plant",
+      "living_thing",
+      "time_period",
+      "angiosperm",
+      "reproductive_structure"
+    ],
+    "fungus": [
+      "living_thing",
+      "organism"
+    ],
+    "square": [
+      "rectangle",
+      "quadrilateral",
+      "rhombus",
+      "polygon",
+      "shape",
+      "tract",
+      "regular_polygon",
+      "number"
+    ],
+    "rectangle": [
+      "quadrilateral",
+      "polygon",
+      "shape",
+      "parallelogram"
+    ],
+    "rhombus": [
+      "quadrilateral",
+      "polygon",
+      "shape",
+      "parallelogram"
+    ],
+    "quadrilateral": [
+      "polygon",
+      "shape"
+    ],
+    "triangle": [
+      "polygon",
+      "shape",
+      "constellation"
+    ],
+    "pentagon": [
+      "polygon",
+      "shape",
+      "government_building",
+      "bureaucracy"
+    ],
+    "hexagon": [
+      "polygon",
+      "shape"
+    ],
+    "polygon": [
+      "shape",
+      "plane_figure"
+    ],
+    "circle": [
+      "shape",
+      "social_group",
+      "ellipse"
+    ],
+    "oval": [
+      "shape",
+      "conic_section"
+    ],
+    "ellipse": [
+      "shape",
+      "conic_section"
+    ],
+    "car": [
+      "vehicle",
+      "motor_vehicle",
+      "wheeled_vehicle",
+      "compartment"
+    ],
+    "bus": [
+      "vehicle",
+      "public_transport",
+      "topology",
+      "conductor"
+    ],
+    "truck": [
+      "vehicle",
+      "motor_vehicle",
+      "handcart"
+    ],
+    "motorcycle": [
+      "vehicle",
+      "motor_vehicle"
+    ],
+    "bicycle": [
+      "vehicle",
+      "wheeled_vehicle"
+    ],
+    "airplane": [
+      "vehicle",
+      "aircraft",
+      "heavier-than-air_craft"
+    ],
+    "helicopter": [
+      "vehicle",
+      "aircraft",
+      "heavier-than-air_craft"
+    ],
+    "boat": [
+      "vehicle",
+      "vessel",
+      "dish"
+    ],
+    "ship": [
+      "vehicle",
+      "vessel"
+    ],
+    "train": [
+      "vehicle",
+      "public_transport",
+      "procession",
+      "series"
+    ],
+    "aircraft": [
+      "vehicle",
+      "craft"
+    ],
+    "apple": [
+      "fruit",
+      "food",
+      "pome",
+      "apple_tree",
+      "edible_fruit"
+    ],
+    "banana": [
+      "fruit",
+      "food",
+      "herb",
+      "edible_fruit"
+    ],
+    "orange": [
+      "fruit",
+      "food",
+      "citrus",
+      "chromatic_color"
+    ],
+    "mango": [
+      "fruit",
+      "food",
+      "edible_fruit",
+      "fruit_tree"
+    ],
+    "grape": [
+      "fruit",
+      "food",
+      "shot",
+      "edible_fruit",
+      "vine"
+    ],
+    "strawberry": [
+      "fruit",
+      "food",
+      "berry",
+      "birthmark",
+      "herb"
+    ],
+    "carrot": [
+      "vegetable",
+      "food",
+      "root_vegetable",
+      "herb",
+      "root"
+    ],
+    "potato": [
+      "vegetable",
+      "food",
+      "root_vegetable",
+      "vine",
+      "starches",
+      "solanaceous_vegetable"
+    ],
+    "tomato": [
+      "vegetable",
+      "food",
+      "herb",
+      "solanaceous_vegetable"
+    ],
+    "fruit": [
+      "food",
+      "reproductive_structure",
+      "consequence",
+      "product"
+    ],
+    "vegetable": [
+      "food",
+      "herb",
+      "produce"
+    ],
+    "craft": [
+      "occupation",
+      "class",
+      "vehicle"
+    ],
+    "bogy": [
+      "aircraft",
+      "evil_spirit"
+    ],
+    "cruise_missile": [
+      "aircraft",
+      "bomb"
+    ],
+    "heavier-than-air_craft": [
+      "aircraft"
+    ],
+    "stealth_aircraft": [
+      "aircraft"
+    ],
+    "lighter-than-air_craft": [
+      "aircraft"
+    ],
+    "multiengine_airplane": [
+      "airplane"
+    ],
+    "seaplane": [
+      "airplane"
+    ],
+    "propeller_plane": [
+      "airplane"
+    ],
+    "fighter": [
+      "airplane",
+      "warplane",
+      "person",
+      "defender"
+    ],
+    "reconnaissance_plane": [
+      "airplane",
+      "warplane"
+    ],
+    "airliner": [
+      "airplane"
+    ],
+    "tanker_plane": [
+      "airplane"
+    ],
+    "hangar_queen": [
+      "airplane"
+    ],
+    "monoplane": [
+      "airplane"
+    ],
+    "bomber": [
+      "airplane",
+      "warplane",
+      "person",
+      "sandwich"
+    ],
+    "delta_wing": [
+      "airplane"
+    ],
+    "ski-plane": [
+      "airplane"
+    ],
+    "biplane": [
+      "airplane"
+    ],
+    "jet": [
+      "airplane",
+      "discharge",
+      "lignite"
+    ],
+    "crocodilian_reptile": [
+      "diapsid"
+    ],
+    "leather": [
+      "animal_skin"
+    ],
+    "vertebrate": [
+      "chordate"
+    ],
+    "motor_vehicle": [
+      "self-propelled_vehicle"
+    ],
+    "swamp_buggy": [
+      "amphibian"
+    ],
+    "organism": [
+      "system",
+      "living_thing"
+    ],
+    "chordate": [
+      "animal"
+    ],
+    "female": [
+      "animal",
+      "person"
+    ],
+    "predator": [
+      "animal",
+      "attacker"
+    ],
+    "molter": [
+      "animal"
+    ],
+    "hexapod": [
+      "animal"
+    ],
+    "peeper": [
+      "animal",
+      "spectator",
+      "eye"
+    ],
+    "captive": [
+      "animal",
+      "emotional_person",
+      "unfortunate"
+    ],
+    "racer": [
+      "animal",
+      "driver",
+      "car"
+    ],
+    "metazoan": [
+      "animal"
+    ],
+    "domestic_animal": [
+      "animal"
+    ],
+    "range_animal": [
+      "animal"
+    ],
+    "thoroughbred": [
+      "animal",
+      "adult",
+      "racehorse"
+    ],
+    "work_animal": [
+      "animal"
+    ],
+    "fictional_animal": [
+      "animal"
+    ],
+    "feeder": [
+      "animal",
+      "consumer",
+      "branch",
+      "domestic_animal"
+    ],
+    "hymenopterous_insect": [
+      "insect"
+    ],
+    "slave-making_ant": [
+      "ant"
+    ],
+    "bulldog_ant": [
+      "ant"
+    ],
+    "wood_ant": [
+      "ant"
+    ],
+    "carpenter_ant": [
+      "ant"
+    ],
+    "slave_ant": [
+      "ant"
+    ],
+    "pharaoh_ant": [
+      "ant"
+    ],
+    "little_black_ant": [
+      "ant"
+    ],
+    "army_ant": [
+      "ant"
+    ],
+    "fire_ant": [
+      "ant"
+    ],
+    "pome": [
+      "fruit"
+    ],
+    "apple_tree": [
+      "fruit_tree"
+    ],
+    "edible_fruit": [
+      "produce",
+      "fruit"
+    ],
+    "cooking_apple": [
+      "apple"
+    ],
+    "eating_apple": [
+      "apple"
+    ],
+    "crab_apple": [
+      "apple",
+      "apple_tree"
+    ],
+    "arthropod": [
+      "invertebrate"
+    ],
+    "false_scorpion": [
+      "arachnid"
+    ],
+    "whip-scorpion": [
+      "arachnid"
+    ],
+    "acarine": [
+      "arachnid"
+    ],
+    "harvestman": [
+      "arachnid"
+    ],
+    "herb": [
+      "vascular_plant",
+      "flavorer"
+    ],
+    "abaca": [
+      "banana",
+      "hemp"
+    ],
+    "plantain": [
+      "banana",
+      "vegetable",
+      "herb"
+    ],
+    "dwarf_banana": [
+      "banana"
+    ],
+    "edible_banana": [
+      "banana"
+    ],
+    "japanese_banana": [
+      "banana"
+    ],
+    "racket": [
+      "sound",
+      "enterprise",
+      "noise"
+    ],
+    "placental": [
+      "mammal"
+    ],
+    "turn": [
+      "change_of_course",
+      "activity",
+      "curve"
+    ],
+    "carnivorous_bat": [
+      "bat"
+    ],
+    "fruit_bat": [
+      "bat"
+    ],
+    "investor": [
+      "capitalist"
+    ],
+    "carnivore": [
+      "predator",
+      "placental"
+    ],
+    "bear_cub": [
+      "bear",
+      "cub"
+    ],
+    "sloth_bear": [
+      "bear"
+    ],
+    "american_black_bear": [
+      "bear"
+    ],
+    "brown_bear": [
+      "bear"
+    ],
+    "bruin": [
+      "bear"
+    ],
+    "ice_bear": [
+      "bear"
+    ],
+    "asiatic_black_bear": [
+      "bear"
+    ],
+    "social_gathering": [
+      "gathering"
+    ],
+    "honeybee": [
+      "bee"
+    ],
+    "drone": [
+      "bee",
+      "intonation",
+      "idler"
+    ],
+    "nomia_melanderi": [
+      "bee"
+    ],
+    "cuckoo-bumblebee": [
+      "bee"
+    ],
+    "potter_bee": [
+      "bee"
+    ],
+    "mason_bee": [
+      "bee"
+    ],
+    "carpenter_bee": [
+      "bee"
+    ],
+    "bumblebee": [
+      "bee"
+    ],
+    "andrena": [
+      "bee"
+    ],
+    "leaf-cutting_bee": [
+      "bee"
+    ],
+    "wheeled_vehicle": [
+      "vehicle",
+      "container"
+    ],
+    "mountain_bike": [
+      "bicycle"
+    ],
+    "ordinary": [
+      "bicycle",
+      "judge",
+      "condition",
+      "clergyman"
+    ],
+    "bicycle-built-for-two": [
+      "bicycle"
+    ],
+    "velocipede": [
+      "bicycle",
+      "wheeled_vehicle"
+    ],
+    "push-bike": [
+      "bicycle"
+    ],
+    "safety_bicycle": [
+      "bicycle"
+    ],
+    "girl": [
+      "female_offspring",
+      "female",
+      "woman"
+    ],
+    "meat": [
+      "food",
+      "content",
+      "plant_part"
+    ],
+    "piciform_bird": [
+      "bird"
+    ],
+    "nonpasserine_bird": [
+      "bird"
+    ],
+    "archaeornis": [
+      "bird"
+    ],
+    "archaeopteryx": [
+      "bird"
+    ],
+    "gallinaceous_bird": [
+      "bird"
+    ],
+    "sinornis": [
+      "bird"
+    ],
+    "carinate": [
+      "bird"
+    ],
+    "bird_of_passage": [
+      "bird",
+      "traveler"
+    ],
+    "protoavis": [
+      "bird"
+    ],
+    "ibero-mesornis": [
+      "bird"
+    ],
+    "bird_of_prey": [
+      "bird"
+    ],
+    "trogon": [
+      "bird"
+    ],
+    "aquatic_bird": [
+      "bird"
+    ],
+    "cock": [
+      "bird",
+      "faucet",
+      "striker",
+      "penis"
+    ],
+    "vessel": [
+      "tube",
+      "craft",
+      "container"
+    ],
+    "dish": [
+      "nutriment",
+      "crockery",
+      "containerful",
+      "container"
+    ],
+    "punt": [
+      "boat",
+      "irish_monetary_unit",
+      "kick"
+    ],
+    "ferry": [
+      "boat",
+      "transportation"
+    ],
+    "sea_boat": [
+      "boat"
+    ],
+    "steamboat": [
+      "boat"
+    ],
+    "gondola": [
+      "boat",
+      "freight_car",
+      "compartment"
+    ],
+    "surfboat": [
+      "boat"
+    ],
+    "mackinaw": [
+      "boat",
+      "blanket",
+      "coat"
+    ],
+    "motorboat": [
+      "boat"
+    ],
+    "lugger": [
+      "boat"
+    ],
+    "scow": [
+      "boat",
+      "barge"
+    ],
+    "ark": [
+      "boat",
+      "chest"
+    ],
+    "police_boat": [
+      "boat"
+    ],
+    "tugboat": [
+      "boat"
+    ],
+    "fireboat": [
+      "boat"
+    ],
+    "pilot_boat": [
+      "boat"
+    ],
+    "public_transport": [
+      "conveyance"
+    ],
+    "topology": [
+      "topography",
+      "pure_mathematics",
+      "anatomy"
+    ],
+    "conductor": [
+      "musician",
+      "collector",
+      "material"
+    ],
+    "trolleybus": [
+      "bus"
+    ],
+    "minibus": [
+      "bus"
+    ],
+    "school_bus": [
+      "bus"
+    ],
+    "lepidopterous_insect": [
+      "insect"
+    ],
+    "swimming_stroke": [
+      "stroke"
+    ],
+    "nymphalid": [
+      "butterfly"
+    ],
+    "lycaenid": [
+      "butterfly"
+    ],
+    "danaid": [
+      "butterfly"
+    ],
+    "ringlet": [
+      "butterfly",
+      "ring",
+      "round_shape",
+      "hair"
+    ],
+    "pierid": [
+      "butterfly"
+    ],
+    "sulphur_butterfly": [
+      "butterfly"
+    ],
+    "tooth": [
+      "bone",
+      "projection",
+      "structure"
+    ],
+    "fang": [
+      "canine",
+      "extremity",
+      "bantu"
+    ],
+    "compartment": [
+      "room",
+      "space"
+    ],
+    "hot_rod": [
+      "car"
+    ],
+    "hardtop": [
+      "car"
+    ],
+    "limousine": [
+      "car"
+    ],
+    "minicar": [
+      "car"
+    ],
+    "loaner": [
+      "car",
+      "investor"
+    ],
+    "sedan": [
+      "car",
+      "litter"
+    ],
+    "hatchback": [
+      "car",
+      "car_door"
+    ],
+    "sports_car": [
+      "car"
+    ],
+    "stock_car": [
+      "car",
+      "racer"
+    ],
+    "minivan": [
+      "car",
+      "passenger_van"
+    ],
+    "model_t": [
+      "car"
+    ],
+    "cruiser": [
+      "car",
+      "motorboat",
+      "warship"
+    ],
+    "compact": [
+      "car",
+      "case",
+      "written_agreement"
+    ],
+    "cab": [
+      "car",
+      "carriage",
+      "compartment"
+    ],
+    "root_vegetable": [
+      "vegetable"
+    ],
+    "root": [
+      "plant_organ",
+      "point",
+      "form"
+    ],
+    "woman": [
+      "female",
+      "adult",
+      "cleaner"
+    ],
+    "man": [
+      "person",
+      "adult",
+      "male",
+      "skilled_worker"
+    ],
+    "gossip": [
+      "report",
+      "chat",
+      "communicator"
+    ],
+    "domestic_cat": [
+      "cat",
+      "domestic_animal"
+    ],
+    "wildcat": [
+      "cat",
+      "attacker",
+      "oil_well"
+    ],
+    "aquatic_mammal": [
+      "placental"
+    ],
+    "person": [
+      "causal_agent",
+      "grammatical_category",
+      "organism",
+      "human_body"
+    ],
+    "constellation": [
+      "design",
+      "natural_object"
+    ],
+    "great_ape": [
+      "anthropoid_ape"
+    ],
+    "western_chimpanzee": [
+      "chimpanzee"
+    ],
+    "eastern_chimpanzee": [
+      "chimpanzee"
+    ],
+    "pygmy_chimpanzee": [
+      "chimpanzee"
+    ],
+    "central_chimpanzee": [
+      "chimpanzee"
+    ],
+    "social_group": [],
+    "shape": [
+      "spatial_property"
+    ],
+    "circle_of_curvature": [
+      "circle"
+    ],
+    "equator": [
+      "circle",
+      "great_circle"
+    ],
+    "circlet": [
+      "circle",
+      "adornment"
+    ],
+    "epicycle": [
+      "circle"
+    ],
+    "gadoid": [
+      "soft-finned_fish"
+    ],
+    "husk": [
+      "plant_material",
+      "sheath"
+    ],
+    "saltwater_fish": [
+      "seafood"
+    ],
+    "pea_pod": [
+      "cod",
+      "pod"
+    ],
+    "unpleasant_woman": [
+      "unpleasant_person"
+    ],
+    "cattle": [
+      "bovine"
+    ],
+    "springer": [
+      "cow",
+      "spaniel",
+      "stone"
+    ],
+    "heifer": [
+      "cow",
+      "young_mammal"
+    ],
+    "morlett's_crocodile": [
+      "crocodile"
+    ],
+    "asian_crocodile": [
+      "crocodile"
+    ],
+    "african_crocodile": [
+      "crocodile"
+    ],
+    "sioux": [
+      "plains_indian"
+    ],
+    "corvine_bird": [
+      "oscine"
+    ],
+    "cry": [
+      "motto",
+      "utterance"
+    ],
+    "american_crow": [
+      "crow"
+    ],
+    "ruminant": [
+      "even-toed_ungulate"
+    ],
+    "pere_david's_deer": [
+      "deer"
+    ],
+    "elk": [
+      "deer"
+    ],
+    "sambar": [
+      "deer"
+    ],
+    "japanese_deer": [
+      "deer"
+    ],
+    "fawn": [
+      "deer",
+      "light_brown",
+      "young_mammal"
+    ],
+    "roe_deer": [
+      "deer"
+    ],
+    "musk_deer": [
+      "deer"
+    ],
+    "pricket": [
+      "deer",
+      "spike"
+    ],
+    "fallow_deer": [
+      "deer"
+    ],
+    "virginia_deer": [
+      "deer"
+    ],
+    "muntjac": [
+      "deer"
+    ],
+    "red_deer": [
+      "deer"
+    ],
+    "wapiti": [
+      "deer"
+    ],
+    "caribou": [
+      "deer"
+    ],
+    "brocket": [
+      "deer",
+      "red_deer"
+    ],
+    "chap": [
+      "crack",
+      "male",
+      "depression"
+    ],
+    "poodle": [
+      "dog"
+    ],
+    "griffon": [
+      "dog",
+      "mythical_monster",
+      "sporting_dog"
+    ],
+    "hunting_dog": [
+      "dog"
+    ],
+    "cur": [
+      "dog",
+      "coward"
+    ],
+    "basenji": [
+      "dog"
+    ],
+    "spitz": [
+      "dog"
+    ],
+    "corgi": [
+      "dog"
+    ],
+    "newfoundland": [
+      "dog",
+      "island"
+    ],
+    "pug": [
+      "dog"
+    ],
+    "dalmatian": [
+      "dog",
+      "european"
+    ],
+    "pooch": [
+      "dog"
+    ],
+    "lapdog": [
+      "dog"
+    ],
+    "leonberg": [
+      "dog"
+    ],
+    "working_dog": [
+      "dog"
+    ],
+    "great_pyrenees": [
+      "dog"
+    ],
+    "toothed_whale": [
+      "whale"
+    ],
+    "percoid_fish": [
+      "spiny-finned_fish"
+    ],
+    "coryphaena_equisetis": [
+      "dolphin",
+      "dolphinfish"
+    ],
+    "coryphaena_hippurus": [
+      "dolphin",
+      "dolphinfish"
+    ],
+    "anseriform_bird": [
+      "waterfowl"
+    ],
+    "score": [
+      "evaluation",
+      "number",
+      "sheet_music"
+    ],
+    "poultry": [
+      "bird",
+      "gallinaceous_bird"
+    ],
+    "bufflehead": [
+      "duck"
+    ],
+    "sea_duck": [
+      "duck"
+    ],
+    "goldeneye": [
+      "duck",
+      "green_lacewing"
+    ],
+    "black_duck": [
+      "duck"
+    ],
+    "canvasback": [
+      "duck"
+    ],
+    "sheldrake": [
+      "duck",
+      "sea_duck"
+    ],
+    "teal": [
+      "duck",
+      "green"
+    ],
+    "widgeon": [
+      "duck"
+    ],
+    "dabbling_duck": [
+      "duck"
+    ],
+    "ruddy_duck": [
+      "duck"
+    ],
+    "mallard": [
+      "duck"
+    ],
+    "pochard": [
+      "duck"
+    ],
+    "quack-quack": [
+      "duck"
+    ],
+    "wood_duck": [
+      "duck"
+    ],
+    "wild_duck": [
+      "duck"
+    ],
+    "coin": [
+      "coinage"
+    ],
+    "harpy": [
+      "eagle",
+      "mythical_monster",
+      "unpleasant_woman",
+      "fruit_bat"
+    ],
+    "sea_eagle": [
+      "eagle",
+      "hawk"
+    ],
+    "bald_eagle": [
+      "eagle"
+    ],
+    "golden_eagle": [
+      "eagle"
+    ],
+    "eaglet": [
+      "eagle",
+      "young_bird"
+    ],
+    "tawny_eagle": [
+      "eagle"
+    ],
+    "emblem": [
+      "symbol",
+      "design"
+    ],
+    "pachyderm": [
+      "placental"
+    ],
+    "proboscidean": [
+      "placental"
+    ],
+    "rogue_elephant": [
+      "elephant"
+    ],
+    "african_elephant": [
+      "elephant"
+    ],
+    "gomphothere": [
+      "elephant"
+    ],
+    "mammoth": [
+      "elephant"
+    ],
+    "indian_elephant": [
+      "elephant"
+    ],
+    "conic_section": [
+      "plane_figure"
+    ],
+    "big_cat": [
+      "feline"
+    ],
+    "aquatic_vertebrate": [
+      "vertebrate"
+    ],
+    "food": [
+      "content",
+      "solid"
+    ],
+    "young_fish": [
+      "fish",
+      "young"
+    ],
+    "bottom-feeder": [
+      "fish",
+      "scavenger"
+    ],
+    "fingerling": [
+      "fish"
+    ],
+    "northern_snakehead": [
+      "fish"
+    ],
+    "food_fish": [
+      "fish"
+    ],
+    "climbing_perch": [
+      "fish"
+    ],
+    "rough_fish": [
+      "fish"
+    ],
+    "bottom_lurkers": [
+      "fish"
+    ],
+    "game_fish": [
+      "fish"
+    ],
+    "mouthbreeder": [
+      "fish"
+    ],
+    "cartilaginous_fish": [
+      "fish"
+    ],
+    "spawner": [
+      "fish"
+    ],
+    "bony_fish": [
+      "fish"
+    ],
+    "wading_bird": [
+      "aquatic_bird"
+    ],
+    "time_period": [
+      "fundamental_quantity"
+    ],
+    "angiosperm": [
+      "spermatophyte"
+    ],
+    "reproductive_structure": [
+      "plant_organ"
+    ],
+    "african_daisy": [
+      "flower"
+    ],
+    "scorpionweed": [
+      "flower"
+    ],
+    "swan_river_daisy": [
+      "flower"
+    ],
+    "heliophila": [
+      "flower"
+    ],
+    "lace-flower_vine": [
+      "flower"
+    ],
+    "corydalis": [
+      "flower",
+      "dilleniid_dicot_genus",
+      "arthropod_genus"
+    ],
+    "white-topped_aster": [
+      "flower"
+    ],
+    "woodland_star": [
+      "flower"
+    ],
+    "cowherb": [
+      "flower"
+    ],
+    "cyclamen": [
+      "flower"
+    ],
+    "gazania": [
+      "flower"
+    ],
+    "sandwort": [
+      "flower"
+    ],
+    "gerardia": [
+      "flower"
+    ],
+    "western_wall_flower": [
+      "flower"
+    ],
+    "pheasant's-eye": [
+      "flower"
+    ],
+    "fur": [
+      "animal_skin",
+      "coat",
+      "garment"
+    ],
+    "deceiver": [
+      "wrongdoer"
+    ],
+    "grey_fox": [
+      "fox"
+    ],
+    "vixen": [
+      "fox",
+      "unpleasant_woman"
+    ],
+    "red_fox": [
+      "fox",
+      "herb"
+    ],
+    "arctic_fox": [
+      "fox"
+    ],
+    "reynard": [
+      "fox"
+    ],
+    "kit_fox": [
+      "fox"
+    ],
+    "frenchman": [
+      "european"
+    ],
+    "adornment": [
+      "decoration"
+    ],
+    "true_frog": [
+      "frog"
+    ],
+    "tree_frog": [
+      "frog"
+    ],
+    "fire-bellied_toad": [
+      "frog"
+    ],
+    "midwife_toad": [
+      "frog"
+    ],
+    "south_american_poison_toad": [
+      "frog"
+    ],
+    "true_toad": [
+      "frog"
+    ],
+    "obstetrical_toad": [
+      "frog"
+    ],
+    "eastern_narrow-mouthed_toad": [
+      "frog"
+    ],
+    "crapaud": [
+      "frog"
+    ],
+    "spadefoot": [
+      "frog"
+    ],
+    "robber_frog": [
+      "frog"
+    ],
+    "tailed_frog": [
+      "frog"
+    ],
+    "barking_frog": [
+      "frog"
+    ],
+    "sheep_frog": [
+      "frog"
+    ],
+    "leptodactylid_frog": [
+      "frog"
+    ],
+    "consequence": [
+      "significance",
+      "result",
+      "phenomenon"
+    ],
+    "product": [
+      "commodity",
+      "creation",
+      "quantity"
+    ],
+    "juniper_berry": [
+      "fruit"
+    ],
+    "gourd": [
+      "fruit",
+      "bottle",
+      "vine"
+    ],
+    "chokecherry": [
+      "fruit",
+      "cherry"
+    ],
+    "buffalo_nut": [
+      "fruit",
+      "parasitic_plant"
+    ],
+    "ear": [
+      "fruit",
+      "cartilaginous_structure",
+      "hearing",
+      "sense_organ"
+    ],
+    "marasca": [
+      "fruit",
+      "sour_cherry"
+    ],
+    "pod": [
+      "fruit",
+      "animal_group",
+      "husk"
+    ],
+    "rowanberry": [
+      "fruit"
+    ],
+    "accessory_fruit": [
+      "fruit"
+    ],
+    "cubeb": [
+      "fruit",
+      "true_pepper",
+      "cigarette"
+    ],
+    "achene": [
+      "fruit"
+    ],
+    "drupe": [
+      "fruit"
+    ],
+    "wild_cherry": [
+      "fruit",
+      "cherry"
+    ],
+    "monilia": [
+      "fungus"
+    ],
+    "slime_mold": [
+      "fungus"
+    ],
+    "bottom_rot_fungus": [
+      "fungus"
+    ],
+    "potato_fungus": [
+      "fungus"
+    ],
+    "earthstar": [
+      "fungus"
+    ],
+    "coffee_fungus": [
+      "fungus"
+    ],
+    "white_fungus": [
+      "fungus"
+    ],
+    "pythium": [
+      "fungus"
+    ],
+    "coral_fungus": [
+      "fungus"
+    ],
+    "dead-man's-fingers": [
+      "fungus"
+    ],
+    "potato_wart_fungus": [
+      "fungus"
+    ],
+    "lichen": [
+      "fungus",
+      "skin_disease"
+    ],
+    "stinkhorn": [
+      "fungus"
+    ],
+    "wynnea_americana": [
+      "fungus"
+    ],
+    "dry_rot": [
+      "fungus",
+      "plant_disease"
+    ],
+    "banded_gecko": [
+      "gecko"
+    ],
+    "flying_gecko": [
+      "gecko"
+    ],
+    "okapi": [
+      "giraffe"
+    ],
+    "cyprinid": [
+      "cypriniform_fish"
+    ],
+    "silverfish": [
+      "goldfish",
+      "thysanuran_insect"
+    ],
+    "eastern_lowland_gorilla": [
+      "gorilla"
+    ],
+    "mountain_gorilla": [
+      "gorilla"
+    ],
+    "western_lowland_gorilla": [
+      "gorilla"
+    ],
+    "silverback": [
+      "gorilla"
+    ],
+    "shot": [
+      "maneuver",
+      "propulsion",
+      "projectile"
+    ],
+    "vine": [
+      "vascular_plant"
+    ],
+    "vinifera_grape": [
+      "grape"
+    ],
+    "muscadine": [
+      "grape"
+    ],
+    "slipskin_grape": [
+      "grape"
+    ],
+    "militarist": [
+      "adult"
+    ],
+    "board": [
+      "lumber",
+      "sheet",
+      "committee"
+    ],
+    "harrier": [
+      "hawk",
+      "attacker",
+      "hound"
+    ],
+    "cooper's_hawk": [
+      "hawk"
+    ],
+    "red-shouldered_hawk": [
+      "hawk"
+    ],
+    "rough-legged_hawk": [
+      "hawk"
+    ],
+    "buzzard": [
+      "hawk",
+      "new_world_vulture"
+    ],
+    "buteonine": [
+      "hawk"
+    ],
+    "harrier_eagle": [
+      "hawk"
+    ],
+    "eyas": [
+      "hawk"
+    ],
+    "osprey": [
+      "hawk"
+    ],
+    "honey_buzzard": [
+      "hawk"
+    ],
+    "tiercel": [
+      "hawk"
+    ],
+    "falcon": [
+      "hawk"
+    ],
+    "goshawk": [
+      "hawk"
+    ],
+    "chicken_hawk": [
+      "hawk"
+    ],
+    "sparrow_hawk": [
+      "hawk",
+      "falcon"
+    ],
+    "cargo_helicopter": [
+      "helicopter"
+    ],
+    "skyhook": [
+      "helicopter",
+      "hook"
+    ],
+    "shuttle_helicopter": [
+      "helicopter"
+    ],
+    "single-rotor_helicopter": [
+      "helicopter"
+    ],
+    "regular_hexagon": [
+      "hexagon"
+    ],
+    "equine": [
+      "odd-toed_ungulate"
+    ],
+    "gymnastic_apparatus": [
+      "sports_equipment"
+    ],
+    "military_personnel": [
+      "force",
+      "skilled_worker"
+    ],
+    "stalking-horse": [
+      "horse",
+      "campaigner",
+      "screen",
+      "pretense"
+    ],
+    "chestnut": [
+      "horse",
+      "edible_nut",
+      "wood",
+      "tree"
+    ],
+    "mesohippus": [
+      "horse"
+    ],
+    "protohippus": [
+      "horse"
+    ],
+    "post_horse": [
+      "horse"
+    ],
+    "gee-gee": [
+      "horse"
+    ],
+    "roan": [
+      "horse",
+      "leather"
+    ],
+    "wild_horse": [
+      "horse"
+    ],
+    "eohippus": [
+      "horse"
+    ],
+    "pinto": [
+      "horse"
+    ],
+    "harness_horse": [
+      "horse"
+    ],
+    "racehorse": [
+      "horse"
+    ],
+    "hack": [
+      "horse",
+      "politician",
+      "writer",
+      "unskilled_person"
+    ],
+    "workhorse": [
+      "horse",
+      "machine"
+    ],
+    "sorrel": [
+      "horse",
+      "herb",
+      "hibiscus"
+    ],
+    "hominid": [
+      "primate"
+    ],
+    "homo_erectus": [
+      "human",
+      "homo"
+    ],
+    "homo_soloensis": [
+      "human",
+      "homo"
+    ],
+    "neandertal_man": [
+      "human",
+      "homo"
+    ],
+    "homo_sapiens": [
+      "human",
+      "homo"
+    ],
+    "rhodesian_man": [
+      "human",
+      "homo"
+    ],
+    "world": [
+      "human",
+      "experience",
+      "class",
+      "natural_object"
+    ],
+    "homo_habilis": [
+      "human",
+      "homo"
+    ],
+    "unpleasant_person": [
+      "unwelcome_person"
+    ],
+    "earwig": [
+      "insect"
+    ],
+    "queen": [
+      "insect",
+      "female_aristocrat"
+    ],
+    "stonefly": [
+      "insect"
+    ],
+    "bug": [
+      "insect",
+      "defect",
+      "microphone"
+    ],
+    "social_insect": [
+      "insect"
+    ],
+    "odonate": [
+      "insect"
+    ],
+    "gallfly": [
+      "insect",
+      "wasp",
+      "dipterous_insect"
+    ],
+    "homopterous_insect": [
+      "insect"
+    ],
+    "proturan": [
+      "insect"
+    ],
+    "flea": [
+      "insect",
+      "ectoparasite"
+    ],
+    "ephemeron": [
+      "insect"
+    ],
+    "heteropterous_insect": [
+      "insect"
+    ],
+    "orthopterous_insect": [
+      "insect"
+    ],
+    "celebrity": [
+      "honor",
+      "important_person"
+    ],
+    "lioness": [
+      "lion"
+    ],
+    "lionet": [
+      "lion"
+    ],
+    "lion_cub": [
+      "lion",
+      "cub"
+    ],
+    "saurian": [
+      "diapsid"
+    ],
+    "gigolo": [
+      "libertine"
+    ],
+    "worm_lizard": [
+      "lizard"
+    ],
+    "agamid": [
+      "lizard"
+    ],
+    "anguid_lizard": [
+      "lizard"
+    ],
+    "legless_lizard": [
+      "lizard"
+    ],
+    "lanthanotus_borneensis": [
+      "lizard"
+    ],
+    "teiid_lizard": [
+      "lizard"
+    ],
+    "night_lizard": [
+      "lizard"
+    ],
+    "monitor": [
+      "lizard",
+      "vessel",
+      "supervisor",
+      "defender"
+    ],
+    "venomous_lizard": [
+      "lizard"
+    ],
+    "lacertid_lizard": [
+      "lizard"
+    ],
+    "iguanid": [
+      "lizard"
+    ],
+    "skink": [
+      "lizard"
+    ],
+    "fossorial_mammal": [
+      "mammal"
+    ],
+    "prototherian": [
+      "mammal"
+    ],
+    "female_mammal": [
+      "mammal",
+      "female"
+    ],
+    "tusker": [
+      "mammal"
+    ],
+    "metatherian": [
+      "mammal"
+    ],
+    "fruit_tree": [
+      "angiospermous_tree"
+    ],
+    "child": [
+      "juvenile",
+      "person",
+      "offspring"
+    ],
+    "old_world_monkey": [
+      "monkey"
+    ],
+    "new_world_monkey": [
+      "monkey"
+    ],
+    "dipterous_insect": [
+      "insect"
+    ],
+    "anopheline": [
+      "mosquito"
+    ],
+    "yellow-fever_mosquito": [
+      "mosquito"
+    ],
+    "asian_tiger_mosquito": [
+      "mosquito"
+    ],
+    "culex_quinquefasciatus": [
+      "mosquito"
+    ],
+    "gnat": [
+      "mosquito",
+      "dipterous_insect"
+    ],
+    "common_mosquito": [
+      "mosquito"
+    ],
+    "malarial_mosquito": [
+      "mosquito"
+    ],
+    "minibike": [
+      "motorcycle"
+    ],
+    "trail_bike": [
+      "motorcycle"
+    ],
+    "rodent": [
+      "placental"
+    ],
+    "bruise": [
+      "injury"
+    ],
+    "wood_mouse": [
+      "mouse"
+    ],
+    "harvest_mouse": [
+      "mouse",
+      "new_world_mouse"
+    ],
+    "field_mouse": [
+      "mouse",
+      "wood_rat"
+    ],
+    "nude_mouse": [
+      "mouse"
+    ],
+    "house_mouse": [
+      "mouse"
+    ],
+    "pacific_newt": [
+      "newt"
+    ],
+    "eft": [
+      "newt"
+    ],
+    "red_eft": [
+      "newt"
+    ],
+    "common_newt": [
+      "newt"
+    ],
+    "citrus": [
+      "fruit_tree",
+      "edible_fruit"
+    ],
+    "chromatic_color": [
+      "color"
+    ],
+    "bitter_orange": [
+      "orange"
+    ],
+    "sweet_orange": [
+      "orange"
+    ],
+    "temple_orange": [
+      "orange"
+    ],
+    "ratite": [
+      "bird"
+    ],
+    "barred_owl": [
+      "owl"
+    ],
+    "spotted_owl": [
+      "owl"
+    ],
+    "owlet": [
+      "owl"
+    ],
+    "screech_owl": [
+      "owl"
+    ],
+    "hoot_owl": [
+      "owl"
+    ],
+    "tawny_owl": [
+      "owl"
+    ],
+    "little_owl": [
+      "owl"
+    ],
+    "barn_owl": [
+      "owl"
+    ],
+    "hawk_owl": [
+      "owl"
+    ],
+    "horned_owl": [
+      "owl"
+    ],
+    "laughing_owl": [
+      "owl"
+    ],
+    "scops_owl": [
+      "owl"
+    ],
+    "long-eared_owl": [
+      "owl"
+    ],
+    "great_grey_owl": [
+      "owl"
+    ],
+    "copycat": [
+      "person"
+    ],
+    "parakeet": [
+      "parrot"
+    ],
+    "macaw": [
+      "parrot"
+    ],
+    "lovebird": [
+      "parrot",
+      "parakeet"
+    ],
+    "lory": [
+      "parrot"
+    ],
+    "cockateel": [
+      "parrot"
+    ],
+    "poll": [
+      "parrot",
+      "inquiry",
+      "top"
+    ],
+    "amazon": [
+      "parrot",
+      "woman",
+      "river",
+      "mythical_being"
+    ],
+    "popinjay": [
+      "parrot",
+      "egotist"
+    ],
+    "cockatoo": [
+      "parrot"
+    ],
+    "african_grey": [
+      "parrot"
+    ],
+    "kea": [
+      "parrot"
+    ],
+    "peafowl": [
+      "pheasant"
+    ],
+    "sphenisciform_seabird": [
+      "seabird"
+    ],
+    "jackass_penguin": [
+      "penguin"
+    ],
+    "emperor_penguin": [
+      "penguin"
+    ],
+    "rock_hopper": [
+      "penguin"
+    ],
+    "adelie": [
+      "penguin"
+    ],
+    "king_penguin": [
+      "penguin"
+    ],
+    "government_building": [
+      "building"
+    ],
+    "bureaucracy": [
+      "government_officials",
+      "organization",
+      "government"
+    ],
+    "swine": [
+      "even-toed_ungulate"
+    ],
+    "vulgarian": [
+      "unpleasant_person"
+    ],
+    "selfish_person": [
+      "unpleasant_person"
+    ],
+    "porker": [
+      "pig",
+      "hog"
+    ],
+    "columbiform_bird": [
+      "gallinaceous_bird"
+    ],
+    "wood_pigeon": [
+      "pigeon"
+    ],
+    "band-tailed_pigeon": [
+      "pigeon"
+    ],
+    "rock_dove": [
+      "pigeon"
+    ],
+    "domestic_pigeon": [
+      "pigeon"
+    ],
+    "dove": [
+      "pigeon",
+      "pacifist",
+      "constellation"
+    ],
+    "pouter_pigeon": [
+      "pigeon"
+    ],
+    "squab": [
+      "pigeon",
+      "poultry",
+      "sofa"
+    ],
+    "passenger_pigeon": [
+      "pigeon"
+    ],
+    "building_complex": [
+      "structure"
+    ],
+    "actor": [
+      "person",
+      "performer"
+    ],
+    "saltworks": [
+      "plant"
+    ],
+    "distillery": [
+      "plant"
+    ],
+    "packinghouse": [
+      "plant",
+      "building"
+    ],
+    "sewage_disposal_plant": [
+      "plant"
+    ],
+    "bottling_plant": [
+      "plant"
+    ],
+    "recycling_plant": [
+      "plant"
+    ],
+    "refinery": [
+      "plant"
+    ],
+    "brewery": [
+      "plant"
+    ],
+    "smelter": [
+      "plant"
+    ],
+    "factory": [
+      "plant"
+    ],
+    "mint": [
+      "plant",
+      "herb",
+      "large_indefinite_quantity",
+      "labiatae"
+    ],
+    "plane_figure": [
+      "figure"
+    ],
+    "decagon": [
+      "polygon"
+    ],
+    "octagon": [
+      "polygon"
+    ],
+    "concave_polygon": [
+      "polygon"
+    ],
+    "spherical_polygon": [
+      "polygon"
+    ],
+    "heptagon": [
+      "polygon"
+    ],
+    "isogon": [
+      "polygon"
+    ],
+    "dodecagon": [
+      "polygon"
+    ],
+    "nonagon": [
+      "polygon"
+    ],
+    "convex_polygon": [
+      "polygon"
+    ],
+    "undecagon": [
+      "polygon"
+    ],
+    "vaquita": [
+      "porpoise"
+    ],
+    "harbor_porpoise": [
+      "porpoise"
+    ],
+    "starches": [
+      "foodstuff",
+      "polysaccharide",
+      "formulation"
+    ],
+    "solanaceous_vegetable": [
+      "vegetable"
+    ],
+    "uruguay_potato": [
+      "potato",
+      "vine"
+    ],
+    "home_fries": [
+      "potato"
+    ],
+    "french_fries": [
+      "potato"
+    ],
+    "baked_potato": [
+      "potato"
+    ],
+    "mashed_potato": [
+      "potato"
+    ],
+    "priest": [
+      "spiritual_leader",
+      "clergyman",
+      "holy_order"
+    ],
+    "trapezoid": [
+      "quadrilateral",
+      "carpal_bone"
+    ],
+    "parallelogram": [
+      "quadrilateral"
+    ],
+    "trapezium": [
+      "quadrilateral",
+      "multiple_star",
+      "carpal_bone"
+    ],
+    "game": [
+      "diversion",
+      "contest",
+      "activity"
+    ],
+    "leporid": [
+      "lagomorph"
+    ],
+    "angora": [
+      "rabbit",
+      "national_capital",
+      "domestic_goat"
+    ],
+    "belgian_hare": [
+      "rabbit"
+    ],
+    "rabbit_ears": [
+      "rabbit",
+      "television_antenna"
+    ],
+    "bunny": [
+      "rabbit",
+      "waitress"
+    ],
+    "european_rabbit": [
+      "rabbit"
+    ],
+    "wood_rabbit": [
+      "rabbit"
+    ],
+    "lapin": [
+      "rabbit",
+      "fur"
+    ],
+    "worker": [
+      "person",
+      "insect",
+      "commoner"
+    ],
+    "jerboa_rat": [
+      "rat"
+    ],
+    "bandicoot_rat": [
+      "rat"
+    ],
+    "rice_rat": [
+      "rat"
+    ],
+    "black_rat": [
+      "rat"
+    ],
+    "pocket_rat": [
+      "rat"
+    ],
+    "brown_rat": [
+      "rat"
+    ],
+    "box": [
+      "rectangle",
+      "compartment",
+      "containerful",
+      "container"
+    ],
+    "synapsid": [
+      "reptile"
+    ],
+    "diapsida": [
+      "reptile"
+    ],
+    "diapsid": [
+      "reptile"
+    ],
+    "anapsid": [
+      "reptile"
+    ],
+    "thrush": [
+      "oscine",
+      "candidiasis",
+      "singer"
+    ],
+    "mythical_monster": [
+      "monster",
+      "mythical_being"
+    ],
+    "fire_iron": [
+      "implement"
+    ],
+    "slender_salamander": [
+      "salamander"
+    ],
+    "web-toed_salamander": [
+      "salamander"
+    ],
+    "western_red-backed_salamander": [
+      "salamander"
+    ],
+    "amphiuma": [
+      "salamander"
+    ],
+    "dicamptodon": [
+      "salamander"
+    ],
+    "olympic_salamander": [
+      "salamander"
+    ],
+    "eastern_red-backed_salamander": [
+      "salamander"
+    ],
+    "climbing_salamander": [
+      "salamander"
+    ],
+    "mud_puppy": [
+      "salamander",
+      "ambystomid"
+    ],
+    "pacific_giant_salamander": [
+      "salamander"
+    ],
+    "european_fire_salamander": [
+      "salamander"
+    ],
+    "spotted_salamander": [
+      "salamander",
+      "ambystomid"
+    ],
+    "ambystomid": [
+      "salamander"
+    ],
+    "siren": [
+      "salamander",
+      "woman",
+      "sea_nymph",
+      "alarm"
+    ],
+    "river": [
+      "stream"
+    ],
+    "salmonid": [
+      "soft-finned_fish"
+    ],
+    "coho": [
+      "salmon"
+    ],
+    "sockeye": [
+      "salmon"
+    ],
+    "atlantic_salmon": [
+      "salmon"
+    ],
+    "chinook": [
+      "salmon",
+      "wind",
+      "penutian"
+    ],
+    "redfish": [
+      "salmon",
+      "drum",
+      "rockfish"
+    ],
+    "blackfish": [
+      "salmon",
+      "dolphin",
+      "wrasse"
+    ],
+    "chum_salmon": [
+      "salmon"
+    ],
+    "sign_of_the_zodiac": [
+      "region"
+    ],
+    "elasmobranch": [
+      "cartilaginous_fish"
+    ],
+    "expert": [
+      "person"
+    ],
+    "wrongdoer": [
+      "bad_person"
+    ],
+    "thresher": [
+      "shark",
+      "farm_machine"
+    ],
+    "whale_shark": [
+      "shark"
+    ],
+    "cat_shark": [
+      "shark"
+    ],
+    "mackerel_shark": [
+      "shark"
+    ],
+    "dogfish": [
+      "shark",
+      "ganoid"
+    ],
+    "requiem_shark": [
+      "shark"
+    ],
+    "carpet_shark": [
+      "shark"
+    ],
+    "cow_shark": [
+      "shark"
+    ],
+    "hammerhead": [
+      "shark",
+      "stupid",
+      "head"
+    ],
+    "angel_shark": [
+      "shark"
+    ],
+    "sand_tiger": [
+      "shark"
+    ],
+    "nurse_shark": [
+      "shark"
+    ],
+    "follower": [
+      "traveler",
+      "person"
+    ],
+    "bovid": [
+      "ruminant"
+    ],
+    "simpleton": [
+      "person"
+    ],
+    "ewe": [
+      "sheep",
+      "african",
+      "kwa"
+    ],
+    "ram": [
+      "sheep",
+      "sign_of_the_zodiac",
+      "volatile_storage",
+      "person"
+    ],
+    "wether": [
+      "sheep"
+    ],
+    "domestic_sheep": [
+      "sheep"
+    ],
+    "black_sheep": [
+      "sheep",
+      "reprobate"
+    ],
+    "tender": [
+      "ship",
+      "offer",
+      "medium_of_exchange",
+      "assistant"
+    ],
+    "shipwreck": [
+      "ship",
+      "ruin",
+      "accident"
+    ],
+    "sister_ship": [
+      "ship"
+    ],
+    "whaler": [
+      "ship",
+      "mariner"
+    ],
+    "flagship": [
+      "ship"
+    ],
+    "treasure_ship": [
+      "ship"
+    ],
+    "icebreaker": [
+      "ship",
+      "beginning"
+    ],
+    "abandoned_ship": [
+      "ship"
+    ],
+    "steamer": [
+      "ship",
+      "clam",
+      "cooking_utensil"
+    ],
+    "passenger_ship": [
+      "ship"
+    ],
+    "warship": [
+      "ship",
+      "military_vehicle"
+    ],
+    "school_ship": [
+      "ship"
+    ],
+    "wreck": [
+      "ship",
+      "accident",
+      "decline"
+    ],
+    "lightship": [
+      "ship"
+    ],
+    "blockade-runner": [
+      "ship"
+    ],
+    "bad_person": [
+      "person"
+    ],
+    "viper": [
+      "snake"
+    ],
+    "constrictor": [
+      "snake"
+    ],
+    "elapid": [
+      "snake"
+    ],
+    "sea_snake": [
+      "snake"
+    ],
+    "blind_snake": [
+      "snake"
+    ],
+    "colubrid_snake": [
+      "snake"
+    ],
+    "passerine": [
+      "bird"
+    ],
+    "accentor": [
+      "oscine"
+    ],
+    "tree_sparrow": [
+      "sparrow",
+      "new_world_sparrow"
+    ],
+    "english_sparrow": [
+      "sparrow"
+    ],
+    "frying_pan": [
+      "pan"
+    ],
+    "program": [
+      "show",
+      "system",
+      "idea"
+    ],
+    "comb-footed_spider": [
+      "spider"
+    ],
+    "black_widow": [
+      "spider"
+    ],
+    "tarantula": [
+      "spider",
+      "wolf_spider"
+    ],
+    "wolf_spider": [
+      "spider"
+    ],
+    "black_and_gold_garden_spider": [
+      "spider"
+    ],
+    "orb-weaving_spider": [
+      "spider"
+    ],
+    "garden_spider": [
+      "spider"
+    ],
+    "barn_spider": [
+      "spider"
+    ],
+    "trap-door_spider": [
+      "spider"
+    ],
+    "tract": [
+      "system",
+      "treatise",
+      "geographical_area"
+    ],
+    "regular_polygon": [
+      "isogon"
+    ],
+    "number": [
+      "definite_quantity",
+      "amount",
+      "performance"
+    ],
+    "quadrate": [
+      "square",
+      "cube"
+    ],
+    "berry": [
+      "fruit",
+      "edible_fruit",
+      "rock_star"
+    ],
+    "birthmark": [
+      "blemish"
+    ],
+    "mute_swan": [
+      "swan"
+    ],
+    "cygnet": [
+      "swan",
+      "young_bird"
+    ],
+    "black_swan": [
+      "swan"
+    ],
+    "trumpeter": [
+      "swan",
+      "musician",
+      "wading_bird",
+      "messenger"
+    ],
+    "cob": [
+      "swan",
+      "gull",
+      "edible_nut",
+      "harness_horse"
+    ],
+    "whooper": [
+      "swan",
+      "crane"
+    ],
+    "tundra_swan": [
+      "swan"
+    ],
+    "pen": [
+      "swan",
+      "writing_implement",
+      "enclosure"
+    ],
+    "coscoroba": [
+      "swan"
+    ],
+    "cherry_tomato": [
+      "tomato"
+    ],
+    "beefsteak_tomato": [
+      "tomato"
+    ],
+    "texas_tortoise": [
+      "tortoise"
+    ],
+    "giant_tortoise": [
+      "tortoise"
+    ],
+    "european_tortoise": [
+      "tortoise"
+    ],
+    "gopher_tortoise": [
+      "tortoise"
+    ],
+    "desert_tortoise": [
+      "tortoise"
+    ],
+    "procession": [
+      "origin",
+      "motion",
+      "group_action"
+    ],
+    "series": [
+      "periodical",
+      "ordering",
+      "broadcast"
+    ],
+    "mail_train": [
+      "train"
+    ],
+    "passenger_train": [
+      "train"
+    ],
+    "streamliner": [
+      "train"
+    ],
+    "subway_train": [
+      "train"
+    ],
+    "boat_train": [
+      "train"
+    ],
+    "freight_train": [
+      "train"
+    ],
+    "car_train": [
+      "train"
+    ],
+    "hospital_train": [
+      "train"
+    ],
+    "theatrical_producer": [
+      "producer"
+    ],
+    "woody_plant": [
+      "vascular_plant"
+    ],
+    "hazel": [
+      "tree",
+      "nut_tree",
+      "wood"
+    ],
+    "mahogany": [
+      "tree",
+      "brown",
+      "wood"
+    ],
+    "red_sandalwood": [
+      "tree",
+      "wood"
+    ],
+    "pepper_tree": [
+      "tree"
+    ],
+    "hornbeam": [
+      "tree"
+    ],
+    "satinwood": [
+      "tree",
+      "angiospermous_yellowwood",
+      "wood"
+    ],
+    "souari": [
+      "tree"
+    ],
+    "ash": [
+      "tree",
+      "residue",
+      "wood"
+    ],
+    "guama": [
+      "tree"
+    ],
+    "burma_padauk": [
+      "tree"
+    ],
+    "scarlet_wisteria_tree": [
+      "tree"
+    ],
+    "gliricidia": [
+      "tree"
+    ],
+    "aroeira_blanca": [
+      "tree"
+    ],
+    "nitta_tree": [
+      "tree"
+    ],
+    "teak": [
+      "tree",
+      "wood"
+    ],
+    "equilateral_triangle": [
+      "triangle",
+      "regular_polygon"
+    ],
+    "acute_triangle": [
+      "triangle"
+    ],
+    "obtuse_triangle": [
+      "triangle"
+    ],
+    "right_triangle": [
+      "triangle"
+    ],
+    "oblique_triangle": [
+      "triangle"
+    ],
+    "wedge": [
+      "triangle",
+      "diacritical_mark",
+      "sandwich"
+    ],
+    "isosceles_triangle": [
+      "triangle"
+    ],
+    "scalene_triangle": [
+      "triangle"
+    ],
+    "rainbow_trout": [
+      "trout"
+    ],
+    "sea_trout": [
+      "trout",
+      "brown_trout",
+      "sciaenid_fish"
+    ],
+    "handcart": [
+      "wheeled_vehicle"
+    ],
+    "transporter": [
+      "truck",
+      "crane",
+      "belt"
+    ],
+    "tractor": [
+      "truck",
+      "self-propelled_vehicle"
+    ],
+    "pickup": [
+      "truck",
+      "bench_warrant",
+      "corrective"
+    ],
+    "lorry": [
+      "truck",
+      "wagon"
+    ],
+    "dump_truck": [
+      "truck"
+    ],
+    "trailer_truck": [
+      "truck"
+    ],
+    "sound_truck": [
+      "truck"
+    ],
+    "van": [
+      "truck",
+      "artistic_movement",
+      "army_unit",
+      "car"
+    ],
+    "fire_engine": [
+      "truck"
+    ],
+    "tow_truck": [
+      "truck"
+    ],
+    "garbage_truck": [
+      "truck"
+    ],
+    "prickly_pear": [
+      "edible_fruit",
+      "cactus"
+    ],
+    "scombroid": [
+      "percoid_fish"
+    ],
+    "sweater": [
+      "person",
+      "garment"
+    ],
+    "jersey": [
+      "shirt",
+      "american_state",
+      "channel_island"
+    ],
+    "chelonian": [
+      "anapsid"
+    ],
+    "produce": [
+      "food"
+    ],
+    "greens": [
+      "vegetable",
+      "tract",
+      "chromatic_color"
+    ],
+    "julienne": [
+      "vegetable",
+      "soup"
+    ],
+    "asparagus": [
+      "vegetable",
+      "herb"
+    ],
+    "gumbo": [
+      "vegetable",
+      "herb",
+      "soil"
+    ],
+    "cardoon": [
+      "vegetable"
+    ],
+    "legume": [
+      "vegetable",
+      "climber",
+      "herb",
+      "pod"
+    ],
+    "raw_vegetable": [
+      "vegetable"
+    ],
+    "onion": [
+      "vegetable",
+      "bulb",
+      "alliaceous_plant"
+    ],
+    "truffle": [
+      "vegetable",
+      "candy",
+      "fungus"
+    ],
+    "leek": [
+      "vegetable",
+      "alliaceous_plant"
+    ],
+    "pieplant": [
+      "vegetable"
+    ],
+    "artichoke": [
+      "vegetable"
+    ],
+    "cucumber": [
+      "vegetable",
+      "melon"
+    ],
+    "bamboo_shoot": [
+      "vegetable"
+    ],
+    "large_person": [
+      "person"
+    ],
+    "composer": [
+      "musician"
+    ],
+    "classicist": [
+      "artist",
+      "humanist"
+    ],
+    "timber_wolf": [
+      "wolf"
+    ],
+    "red_wolf": [
+      "wolf"
+    ],
+    "white_wolf": [
+      "wolf"
+    ],
+    "wolf_pup": [
+      "wolf",
+      "young_mammal"
+    ],
+    "coyote": [
+      "wolf",
+      "smuggler",
+      "fire_warden"
+    ],
+    "grevy's_zebra": [
+      "zebra"
+    ],
+    "mountain_zebra": [
+      "zebra"
+    ],
+    "common_zebra": [
+      "zebra"
+    ],
+    "occupation": [
+      "social_control",
+      "activity"
+    ],
+    "class": [
+      "gathering",
+      "people"
+    ],
+    "vehicle": [
+      "medium",
+      "conveyance"
+    ],
+    "evil_spirit": [
+      "spirit"
+    ],
+    "bomb": [
+      "calorimeter",
+      "flop",
+      "explosive_device",
+      "weaponry"
+    ],
+    "warplane": [
+      "heavier-than-air_craft",
+      "military_vehicle"
+    ],
+    "defender": [
+      "combatant",
+      "preserver"
+    ],
+    "sandwich": [
+      "snack_food"
+    ],
+    "discharge": [
+      "happening",
+      "emission",
+      "material"
+    ],
+    "lignite": [
+      "humate",
+      "coal"
+    ],
+    "animal_skin": [
+      "animal_product"
+    ],
+    "self-propelled_vehicle": [
+      "wheeled_vehicle"
+    ],
+    "system": [
+      "instrumentality"
+    ],
+    "living_thing": [],
+    "attacker": [
+      "wrongdoer"
+    ],
+    "spectator": [
+      "pump",
+      "perceiver"
+    ],
+    "eye": [
+      "sagacity",
+      "attention",
+      "sense_organ"
+    ],
+    "emotional_person": [
+      "person"
+    ],
+    "unfortunate": [
+      "person"
+    ],
+    "driver": [
+      "golfer",
+      "worker",
+      "operator"
+    ],
+    "adult": [
+      "person",
+      "animal"
+    ],
+    "consumer": [
+      "user"
+    ],
+    "branch": [
+      "stalk",
+      "division",
+      "subfigure"
+    ],
+    "invertebrate": [
+      "animal"
+    ],
+    "vascular_plant": [
+      "plant"
+    ],
+    "flavorer": [
+      "ingredient"
+    ],
+    "hemp": [
+      "shrub",
+      "plant_fiber",
+      "rope"
+    ],
+    "sound": [
+      "sensation",
+      "sound_property",
+      "mechanical_phenomenon"
+    ],
+    "enterprise": [
+      "drive",
+      "organization",
+      "undertaking"
+    ],
+    "noise": [
+      "sound",
+      "trouble"
+    ],
+    "change_of_course": [
+      "change_of_direction"
+    ],
+    "activity": [
+      "state",
+      "organic_process",
+      "act"
+    ],
+    "curve": [
+      "pitch",
+      "line"
+    ],
+    "capitalist": [
+      "person",
+      "conservative"
+    ],
+    "cub": [
+      "male_child",
+      "young_mammal",
+      "novice"
+    ],
+    "gathering": [
+      "social_group",
+      "group_action"
+    ],
+    "intonation": [
+      "prosody",
+      "singing"
+    ],
+    "idler": [
+      "nonworker"
+    ],
+    "container": [
+      "instrumentality"
+    ],
+    "judge": [
+      "adjudicator",
+      "official",
+      "authority"
+    ],
+    "condition": [
+      "state",
+      "premise"
+    ],
+    "clergyman": [
+      "spiritual_leader"
+    ],
+    "female_offspring": [
+      "female",
+      "child"
+    ],
+    "content": [
+      "communication",
+      "proportion"
+    ],
+    "plant_part": [
+      "natural_object"
+    ],
+    "traveler": [
+      "person"
+    ],
+    "faucet": [
+      "regulator"
+    ],
+    "striker": [
+      "nonworker",
+      "bluejacket",
+      "athlete"
+    ],
+    "penis": [
+      "erectile_organ"
+    ],
+    "tube": [
+      "cylinder",
+      "conduit",
+      "electronic_device"
+    ],
+    "nutriment": [
+      "food"
+    ],
+    "crockery": [
+      "tableware"
+    ],
+    "containerful": [
+      "indefinite_quantity"
+    ],
+    "irish_monetary_unit": [
+      "monetary_unit"
+    ],
+    "kick": [
+      "blow",
+      "movement",
+      "exhilaration"
+    ],
+    "transportation": [
+      "facility",
+      "movement",
+      "charge"
+    ],
+    "freight_car": [
+      "car"
+    ],
+    "blanket": [
+      "covering",
+      "layer",
+      "bedclothes"
+    ],
+    "coat": [
+      "covering",
+      "overgarment",
+      "hair"
+    ],
+    "barge": [
+      "boat"
+    ],
+    "chest": [
+      "body_part",
+      "box",
+      "external_body_part"
+    ],
+    "conveyance": [
+      "legal_document",
+      "transmission",
+      "instrumentality"
+    ],
+    "topography": [
+      "shape",
+      "geography"
+    ],
+    "pure_mathematics": [
+      "mathematics"
+    ],
+    "anatomy": [
+      "analysis",
+      "morphology"
+    ],
+    "musician": [
+      "artist",
+      "performer"
+    ],
+    "collector": [
+      "person",
+      "worker",
+      "crater"
+    ],
+    "material": [
+      "artifact",
+      "information"
+    ],
+    "stroke": [
+      "maneuver",
+      "attack",
+      "movement"
+    ],
+    "ring": [
+      "sound",
+      "toroid",
+      "band"
+    ],
+    "round_shape": [
+      "shape"
+    ],
+    "hair": [
+      "small_indefinite_quantity",
+      "plant_process",
+      "body_covering"
+    ],
+    "bone": [
+      "connective_tissue",
+      "white",
+      "animal_material"
+    ],
+    "projection": [
+      "prediction",
+      "visual_communication",
+      "plan"
+    ],
+    "structure": [
+      "constitution",
+      "artifact",
+      "cognition"
+    ],
+    "extremity": [
+      "ultimacy",
+      "adversity",
+      "external_body_part"
+    ],
+    "bantu": [
+      "african",
+      "niger-congo"
+    ],
+    "room": [
+      "opportunity",
+      "area",
+      "position"
+    ],
+    "space": [
+      "location",
+      "amorphous_shape",
+      "area"
+    ],
+    "litter": [
+      "rubbish",
+      "animal_group",
+      "conveyance"
+    ],
+    "car_door": [
+      "door"
+    ],
+    "passenger_van": [
+      "van"
+    ],
+    "case": [
+      "happening",
+      "circumstance",
+      "proceeding"
+    ],
+    "written_agreement": [
+      "legal_document",
+      "agreement"
+    ],
+    "carriage": [
+      "horse-drawn_vehicle",
+      "bodily_property",
+      "car"
+    ],
+    "plant_organ": [
+      "plant_part"
+    ],
+    "point": [
+      "component",
+      "meaning",
+      "location"
+    ],
+    "form": [
+      "word",
+      "category",
+      "structure"
+    ],
+    "cleaner": [
+      "laborer",
+      "shopkeeper",
+      "formulation"
+    ],
+    "male": [
+      "national_capital",
+      "person",
+      "animal"
+    ],
+    "skilled_worker": [
+      "worker"
+    ],
+    "report": [
+      "news",
+      "document",
+      "informing"
+    ],
+    "chat": [
+      "conversation",
+      "thrush",
+      "new_world_warbler"
+    ],
+    "communicator": [
+      "person"
+    ],
+    "oil_well": [
+      "well"
+    ],
+    "causal_agent": [
+      "physical_entity"
+    ],
+    "grammatical_category": [
+      "class"
+    ],
+    "human_body": [],
+    "design": [
+      "arrangement",
+      "plan",
+      "creating_by_mental_acts"
+    ],
+    "natural_object": [],
+    "anthropoid_ape": [
+      "ape"
+    ],
+    "spatial_property": [],
+    "great_circle": [
+      "line"
+    ],
+    "soft-finned_fish": [
+      "teleost_fish"
+    ],
+    "plant_material": [
+      "material"
+    ],
+    "sheath": [
+      "covering",
+      "dress",
+      "protective_covering"
+    ],
+    "seafood": [
+      "food"
+    ],
+    "bovine": [
+      "bovid"
+    ],
+    "spaniel": [
+      "sporting_dog"
+    ],
+    "stone": [
+      "material",
+      "building_material",
+      "natural_object"
+    ],
+    "young_mammal": [
+      "young"
+    ],
+    "plains_indian": [
+      "indian"
+    ],
+    "oscine": [
+      "passerine"
+    ],
+    "motto": [
+      "saying"
+    ],
+    "utterance": [
+      "auditory_communication"
+    ],
+    "even-toed_ungulate": [
+      "ungulate"
+    ],
+    "light_brown": [
+      "brown"
+    ],
+    "spike": [
+      "sports_equipment",
+      "electrical_discharge",
+      "fruit"
+    ],
+    "crack": [
+      "opening",
+      "depression"
+    ],
+    "depression": [
+      "economic_condition",
+      "crisis",
+      "geological_formation",
+      "psychological_state"
+    ],
+    "sporting_dog": [
+      "hunting_dog"
+    ],
+    "coward": [
+      "dramatist",
+      "person",
+      "actor",
+      "composer"
+    ],
+    "island": [
+      "zone",
+      "land"
+    ],
+    "european": [
+      "inhabitant"
+    ],
+    "spiny-finned_fish": [
+      "teleost_fish"
+    ],
+    "dolphinfish": [
+      "percoid_fish",
+      "saltwater_fish"
+    ],
+    "waterfowl": [
+      "aquatic_bird"
+    ],
+    "evaluation": [
+      "judgment",
+      "appraisal"
+    ],
+    "sheet_music": [
+      "musical_composition"
+    ],
+    "green_lacewing": [
+      "lacewing"
+    ],
+    "green": [
+      "tract",
+      "labor_leader",
+      "chromatic_color"
+    ],
+    "coinage": [
+      "word",
+      "currency",
+      "invention"
+    ],
+    "young_bird": [
+      "young"
+    ],
+    "symbol": [
+      "signal",
+      "representational_process"
+    ],
+    "solid": [
+      "shape",
+      "state_of_matter"
+    ],
+    "young": [
+      "civil_rights_leader",
+      "actress",
+      "animal"
+    ],
+    "scavenger": [
+      "chemical_agent",
+      "hoarder",
+      "animal"
+    ],
+    "fundamental_quantity": [
+      "measure"
+    ],
+    "spermatophyte": [
+      "vascular_plant"
+    ],
+    "dilleniid_dicot_genus": [
+      "dicot_genus"
+    ],
+    "arthropod_genus": [
+      "genus"
+    ],
+    "garment": [
+      "clothing"
+    ],
+    "decoration": [
+      "award",
+      "artifact",
+      "change_of_state"
+    ],
+    "significance": [
+      "message",
+      "meaning",
+      "importance"
+    ],
+    "result": [
+      "statement",
+      "ending",
+      "phenomenon"
+    ],
+    "phenomenon": [
+      "process",
+      "development"
+    ],
+    "commodity": [
+      "artifact"
+    ],
+    "creation": [
+      "beginning",
+      "activity",
+      "artifact"
+    ],
+    "quantity": [
+      "amount",
+      "concept"
+    ],
+    "bottle": [
+      "vessel",
+      "containerful"
+    ],
+    "cherry": [
+      "edible_fruit",
+      "drupe",
+      "wood",
+      "fruit_tree"
+    ],
+    "parasitic_plant": [
+      "parasite"
+    ],
+    "cartilaginous_structure": [
+      "structure"
+    ],
+    "hearing": [
+      "range",
+      "opportunity",
+      "proceeding"
+    ],
+    "sense_organ": [
+      "organ"
+    ],
+    "sour_cherry": [
+      "cherry",
+      "fruit_tree"
+    ],
+    "animal_group": [
+      "biological_group"
+    ],
+    "true_pepper": [
+      "vine"
+    ],
+    "cigarette": [
+      "roll_of_tobacco"
+    ],
+    "skin_disease": [
+      "disease"
+    ],
+    "plant_disease": [
+      "disease"
+    ],
+    "cypriniform_fish": [
+      "soft-finned_fish"
+    ],
+    "thysanuran_insect": [
+      "insect"
+    ],
+    "maneuver": [
+      "operation",
+      "motion",
+      "plan_of_action"
+    ],
+    "propulsion": [
+      "force",
+      "act"
+    ],
+    "projectile": [
+      "vehicle",
+      "weapon"
+    ],
+    "lumber": [
+      "bat",
+      "building_material",
+      "baseball_equipment"
+    ],
+    "sheet": [
+      "paper",
+      "expanse",
+      "bed_linen"
+    ],
+    "committee": [
+      "nongovernmental_organization",
+      "administrative_unit"
+    ],
+    "hound": [
+      "hunting_dog",
+      "villain"
+    ],
+    "new_world_vulture": [
+      "vulture"
+    ],
+    "hook": [
+      "temptation",
+      "catch",
+      "curve"
+    ],
+    "odd-toed_ungulate": [
+      "ungulate"
+    ],
+    "sports_equipment": [
+      "equipment"
+    ],
+    "force": [
+      "intensity",
+      "influence",
+      "physical_phenomenon"
+    ],
+    "campaigner": [
+      "politician"
+    ],
+    "screen": [
+      "surface",
+      "display",
+      "protective_covering"
+    ],
+    "pretense": [
+      "imagination",
+      "deception",
+      "misrepresentation"
+    ],
+    "edible_nut": [
+      "nut"
+    ],
+    "wood": [
+      "vegetation",
+      "actress",
+      "plant_material"
+    ],
+    "politician": [
+      "leader",
+      "schemer"
+    ],
+    "writer": [
+      "literate",
+      "communicator"
+    ],
+    "unskilled_person": [
+      "person"
+    ],
+    "machine": [
+      "device",
+      "person",
+      "organization"
+    ],
+    "hibiscus": [
+      "mallow"
+    ],
+    "homo": [
+      "hominid",
+      "person"
+    ],
+    "experience": [
+      "happening",
+      "education",
+      "content"
+    ],
+    "unwelcome_person": [
+      "person"
+    ],
+    "female_aristocrat": [
+      "aristocrat"
+    ],
+    "defect": [
+      "imperfection",
+      "disadvantage"
+    ],
+    "microphone": [
+      "electro-acoustic_transducer"
+    ],
+    "wasp": [
+      "white",
+      "hymenopterous_insect",
+      "protestant"
+    ],
+    "ectoparasite": [
+      "parasite"
+    ],
+    "honor": [
+      "symbol",
+      "righteousness",
+      "standing"
+    ],
+    "important_person": [
+      "adult"
+    ],
+    "libertine": [
+      "bad_person"
+    ],
+    "supervisor": [
+      "program",
+      "superior"
+    ],
+    "angiospermous_tree": [
+      "tree"
+    ],
+    "juvenile": [
+      "person"
+    ],
+    "offspring": [
+      "relative",
+      "animal",
+      "consequence"
+    ],
+    "injury": [
+      "ill_health",
+      "accident",
+      "personnel_casualty"
+    ],
+    "new_world_mouse": [
+      "rodent"
+    ],
+    "wood_rat": [
+      "rodent"
+    ],
+    "color": [
+      "visual_property",
+      "interest",
+      "timbre"
+    ],
+    "inquiry": [
+      "problem_solving",
+      "questioning",
+      "investigation"
+    ],
+    "top": [
+      "side",
+      "topographic_point",
+      "region"
+    ],
+    "mythical_being": [
+      "imaginary_being"
+    ],
+    "egotist": [
+      "unpleasant_person"
+    ],
+    "pheasant": [
+      "wildfowl",
+      "phasianid"
+    ],
+    "seabird": [
+      "aquatic_bird"
+    ],
+    "building": [
+      "structure",
+      "commercial_enterprise",
+      "creating_from_raw_materials"
+    ],
+    "government_officials": [
+      "administration"
+    ],
+    "organization": [
+      "social_group",
+      "structure"
+    ],
+    "government": [
+      "social_control",
+      "system",
+      "polity"
+    ],
+    "hog": [
+      "lamb",
+      "swine",
+      "selfish_person"
+    ],
+    "pacifist": [
+      "adult"
+    ],
+    "sofa": [
+      "seat"
+    ],
+    "performer": [
+      "entertainer"
+    ],
+    "large_indefinite_quantity": [
+      "indefinite_quantity"
+    ],
+    "labiatae": [
+      "asterid_dicot_family"
+    ],
+    "figure": [
+      "illustration",
+      "integer"
+    ],
+    "foodstuff": [
+      "food",
+      "consumer_goods"
+    ],
+    "polysaccharide": [
+      "carbohydrate"
+    ],
+    "formulation": [
+      "compound",
+      "expressive_style",
+      "creating_by_mental_acts"
+    ],
+    "spiritual_leader": [
+      "leader"
+    ],
+    "holy_order": [
+      "status",
+      "sacrament"
+    ],
+    "carpal_bone": [
+      "bone"
+    ],
+    "multiple_star": [
+      "star"
+    ],
+    "diversion": [
+      "attack",
+      "activity",
+      "turn"
+    ],
+    "contest": [
+      "social_event",
+      "competition"
+    ],
+    "lagomorph": [
+      "placental"
+    ],
+    "national_capital": [
+      "capital",
+      "city"
+    ],
+    "domestic_goat": [
+      "goat"
+    ],
+    "television_antenna": [
+      "omnidirectional_antenna"
+    ],
+    "waitress": [
+      "waiter"
+    ],
+    "commoner": [
+      "person"
+    ],
+    "candidiasis": [
+      "fungal_infection"
+    ],
+    "singer": [
+      "inventor",
+      "writer",
+      "musician",
+      "manufacturer"
+    ],
+    "monster": [
+      "anomaly",
+      "mutant",
+      "imaginary_being"
+    ],
+    "implement": [
+      "instrumentality"
+    ],
+    "sea_nymph": [
+      "water_nymph"
+    ],
+    "alarm": [
+      "device",
+      "signal",
+      "fear"
+    ],
+    "stream": [
+      "course",
+      "motion",
+      "body_of_water"
+    ],
+    "wind": [
+      "exhalation",
+      "weather",
+      "influence"
+    ],
+    "penutian": [
+      "amerind",
+      "indian"
+    ],
+    "drum": [
+      "sound",
+      "cylinder",
+      "percussion_instrument"
+    ],
+    "rockfish": [
+      "scorpaenid",
+      "saltwater_fish",
+      "sea_bass"
+    ],
+    "wrasse": [
+      "percoid_fish"
+    ],
+    "region": [
+      "location",
+      "body_part"
+    ],
+    "farm_machine": [
+      "machine"
+    ],
+    "ganoid": [
+      "teleost_fish"
+    ],
+    "stupid": [
+      "simpleton"
+    ],
+    "head": [
+      "domestic_animal",
+      "external_body_part",
+      "cognition"
+    ],
+    "african": [
+      "person"
+    ],
+    "kwa": [
+      "niger-congo"
+    ],
+    "volatile_storage": [
+      "memory"
+    ],
+    "reprobate": [
+      "wrongdoer"
+    ],
+    "offer": [
+      "message",
+      "attempt",
+      "speech_act"
+    ],
+    "medium_of_exchange": [
+      "standard"
+    ],
+    "assistant": [
+      "worker"
+    ],
+    "ruin": [
+      "building",
+      "devastation",
+      "decay"
+    ],
+    "accident": [
+      "happening",
+      "mishap"
+    ],
+    "mariner": [
+      "sailor"
+    ],
+    "beginning": [],
+    "clam": [],
+    "cooking_utensil": [],
+    "military_vehicle": [],
+    "decline": [],
+    "new_world_sparrow": [],
+    "pan": [],
+    "show": [],
+    "idea": [],
+    "treatise": [],
+    "geographical_area": [],
+    "definite_quantity": [],
+    "amount": [],
+    "performance": [],
+    "cube": [],
+    "rock_star": [],
+    "blemish": [],
+    "messenger": [],
+    "gull": [],
+    "crane": [],
+    "writing_implement": [],
+    "enclosure": [],
+    "origin": [],
+    "motion": [],
+    "group_action": [],
+    "periodical": [],
+    "ordering": [],
+    "broadcast": [],
+    "producer": [],
+    "nut_tree": [],
+    "brown": [],
+    "angiospermous_yellowwood": [],
+    "residue": [],
+    "diacritical_mark": [],
+    "brown_trout": [],
+    "sciaenid_fish": [],
+    "belt": [],
+    "bench_warrant": [],
+    "corrective": [],
+    "wagon": [],
+    "artistic_movement": [],
+    "army_unit": [],
+    "cactus": [],
+    "shirt": [],
+    "american_state": [],
+    "channel_island": [],
+    "soup": [],
+    "soil": [],
+    "climber": [],
+    "bulb": [],
+    "alliaceous_plant": [],
+    "candy": [],
+    "melon": [],
+    "artist": [],
+    "humanist": [],
+    "smuggler": [],
+    "fire_warden": [],
+    "social_control": [],
+    "people": [],
+    "medium": [],
+    "spirit": [],
+    "calorimeter": [],
+    "flop": [],
+    "explosive_device": [],
+    "weaponry": [],
+    "combatant": [],
+    "preserver": [],
+    "snack_food": [],
+    "happening": [],
+    "emission": [],
+    "humate": [],
+    "coal": [],
+    "animal_product": [],
+    "instrumentality": [],
+    "pump": [],
+    "perceiver": [],
+    "sagacity": [],
+    "attention": [],
+    "golfer": [],
+    "operator": [],
+    "user": [],
+    "stalk": [],
+    "division": [],
+    "subfigure": [],
+    "ingredient": [],
+    "shrub": [],
+    "plant_fiber": [],
+    "rope": [],
+    "sensation": [],
+    "sound_property": [],
+    "mechanical_phenomenon": [],
+    "drive": [],
+    "undertaking": [],
+    "trouble": [],
+    "change_of_direction": [],
+    "state": [],
+    "organic_process": [],
+    "act": [],
+    "pitch": [],
+    "line": [],
+    "conservative": [],
+    "male_child": [],
+    "novice": [],
+    "prosody": [],
+    "singing": [],
+    "nonworker": [],
+    "adjudicator": [],
+    "official": [],
+    "authority": [],
+    "premise": [],
+    "communication": [],
+    "proportion": [],
+    "regulator": [],
+    "bluejacket": [],
+    "athlete": [],
+    "erectile_organ": [],
+    "cylinder": [],
+    "conduit": [],
+    "electronic_device": [],
+    "tableware": [],
+    "indefinite_quantity": [],
+    "monetary_unit": [],
+    "blow": [],
+    "movement": [],
+    "exhilaration": [],
+    "facility": [],
+    "charge": [],
+    "covering": [],
+    "layer": [],
+    "bedclothes": [],
+    "overgarment": [],
+    "body_part": [],
+    "external_body_part": [],
+    "legal_document": [],
+    "transmission": [],
+    "geography": [],
+    "mathematics": [],
+    "analysis": [],
+    "morphology": [],
+    "crater": [],
+    "artifact": [],
+    "information": [],
+    "attack": [],
+    "toroid": [],
+    "band": [],
+    "small_indefinite_quantity": [],
+    "plant_process": [],
+    "body_covering": [],
+    "connective_tissue": [],
+    "white": [],
+    "animal_material": [],
+    "prediction": [],
+    "visual_communication": [],
+    "plan": [],
+    "constitution": [],
+    "cognition": [],
+    "ultimacy": [],
+    "adversity": [],
+    "niger-congo": [],
+    "opportunity": [],
+    "area": [],
+    "position": [],
+    "location": [],
+    "amorphous_shape": [],
+    "rubbish": [],
+    "door": [],
+    "circumstance": [],
+    "proceeding": [],
+    "agreement": [],
+    "horse-drawn_vehicle": [],
+    "bodily_property": [],
+    "component": [],
+    "meaning": [],
+    "word": [],
+    "category": [],
+    "laborer": [],
+    "shopkeeper": [],
+    "news": [],
+    "document": [],
+    "informing": [],
+    "conversation": [],
+    "new_world_warbler": [],
+    "well": [],
+    "physical_entity": [],
+    "arrangement": [],
+    "creating_by_mental_acts": [],
+    "ape": [],
+    "teleost_fish": [],
+    "dress": [],
+    "protective_covering": [],
+    "building_material": [],
+    "indian": [],
+    "saying": [],
+    "auditory_communication": [],
+    "ungulate": [],
+    "electrical_discharge": [],
+    "opening": [],
+    "economic_condition": [],
+    "crisis": [],
+    "geological_formation": [],
+    "psychological_state": [],
+    "dramatist": [],
+    "zone": [],
+    "land": [],
+    "inhabitant": [],
+    "judgment": [],
+    "appraisal": [],
+    "musical_composition": [],
+    "lacewing": [],
+    "labor_leader": [],
+    "currency": [],
+    "invention": [],
+    "signal": [],
+    "representational_process": [],
+    "state_of_matter": [],
+    "civil_rights_leader": [],
+    "actress": [],
+    "chemical_agent": [],
+    "hoarder": [],
+    "measure": [],
+    "dicot_genus": [],
+    "genus": [],
+    "clothing": [],
+    "award": [],
+    "change_of_state": [],
+    "message": [],
+    "importance": [],
+    "statement": [],
+    "ending": [],
+    "process": [],
+    "development": [],
+    "concept": [],
+    "parasite": [],
+    "range": [],
+    "organ": [],
+    "biological_group": [],
+    "roll_of_tobacco": [],
+    "disease": [],
+    "operation": [],
+    "plan_of_action": [],
+    "weapon": [],
+    "baseball_equipment": [],
+    "paper": [],
+    "expanse": [],
+    "bed_linen": [],
+    "nongovernmental_organization": [],
+    "administrative_unit": [],
+    "villain": [],
+    "vulture": [],
+    "temptation": [],
+    "catch": [],
+    "equipment": [],
+    "intensity": [],
+    "influence": [],
+    "physical_phenomenon": [],
+    "surface": [],
+    "display": [],
+    "imagination": [],
+    "deception": [],
+    "misrepresentation": [],
+    "nut": [],
+    "vegetation": [],
+    "leader": [],
+    "schemer": [],
+    "literate": [],
+    "device": [],
+    "mallow": [],
+    "education": [],
+    "aristocrat": [],
+    "imperfection": [],
+    "disadvantage": [],
+    "electro-acoustic_transducer": [],
+    "protestant": [],
+    "righteousness": [],
+    "standing": [],
+    "superior": [],
+    "relative": [],
+    "ill_health": [],
+    "personnel_casualty": [],
+    "visual_property": [],
+    "interest": [],
+    "timbre": [],
+    "problem_solving": [],
+    "questioning": [],
+    "investigation": [],
+    "side": [],
+    "topographic_point": [],
+    "imaginary_being": [],
+    "wildfowl": [],
+    "phasianid": [],
+    "commercial_enterprise": [],
+    "creating_from_raw_materials": [],
+    "administration": [],
+    "polity": [],
+    "lamb": [],
+    "seat": [],
+    "entertainer": [],
+    "asterid_dicot_family": [],
+    "illustration": [],
+    "integer": [],
+    "consumer_goods": [],
+    "carbohydrate": [],
+    "compound": [],
+    "expressive_style": [],
+    "status": [],
+    "sacrament": [],
+    "star": [],
+    "social_event": [],
+    "competition": [],
+    "capital": [],
+    "city": [],
+    "goat": [],
+    "omnidirectional_antenna": [],
+    "waiter": [],
+    "fungal_infection": [],
+    "inventor": [],
+    "manufacturer": [],
+    "anomaly": [],
+    "mutant": [],
+    "water_nymph": [],
+    "fear": [],
+    "course": [],
+    "body_of_water": [],
+    "exhalation": [],
+    "weather": [],
+    "amerind": [],
+    "percussion_instrument": [],
+    "scorpaenid": [],
+    "sea_bass": [],
+    "memory": [],
+    "attempt": [],
+    "speech_act": [],
+    "standard": [],
+    "devastation": [],
+    "decay": [],
+    "mishap": [],
+    "sailor": []
+  },
+  "properties": {
+    "mammal": [
+      "has_hair",
+      "hair",
+      "fur",
+      "gives_milk",
+      "give_milk",
+      "milk",
+      "warm_blooded",
+      "has_backbone",
+      "backbone",
+      "has_heart",
+      "heart",
+      "has_brain",
+      "brain",
+      "has_lungs",
+      "lungs",
+      "vertebrate"
+    ],
+    "bird": [
+      "has_feathers",
+      "feathers",
+      "has_wings",
+      "wings",
+      "lays_eggs",
+      "lay_eggs",
+      "eggs",
+      "has_beak",
+      "beak",
+      "has_backbone",
+      "backbone"
+    ],
+    "fish": [
+      "has_gills",
+      "gills",
+      "has_scales",
+      "scales",
+      "lives_in_water",
+      "live_in_water",
+      "live_in",
+      "cold_blooded",
+      "has_backbone",
+      "backbone"
+    ],
+    "reptile": [
+      "cold_blooded",
+      "has_scales",
+      "scales",
+      "lays_eggs",
+      "lay_eggs",
+      "eggs",
+      "has_backbone",
+      "backbone"
+    ],
+    "amphibian": [
+      "cold_blooded",
+      "lives_near_water",
+      "lays_eggs",
+      "has_backbone"
+    ],
+    "insect": [
+      "six_legs",
+      "6_legs",
+      "has_six_legs",
+      "three_body_segments"
+    ],
+    "arachnid": [
+      "eight_legs",
+      "8_legs",
+      "has_eight_legs"
+    ],
+    "spider": [
+      "eight_legs",
+      "8_legs"
+    ],
+    "human": [
+      "has_heart",
+      "heart",
+      "has_brain",
+      "brain",
+      "mortal",
+      "has_hands",
+      "hands",
+      "upright",
+      "can_think"
+    ],
+    "primate": [
+      "warm_blooded",
+      "has_hair",
+      "gives_milk",
+      "has_hands",
+      "hands"
+    ],
+    "living_thing": [
+      "needs_water",
+      "water",
+      "needs_food",
+      "food",
+      "can_die",
+      "die",
+      "grows",
+      "grow",
+      "mortal",
+      "reproduces"
+    ],
+    "animal": [
+      "needs_food",
+      "food",
+      "needs_water",
+      "water",
+      "can_die"
+    ],
+    "plant": [
+      "needs_water",
+      "water",
+      "needs_sunlight",
+      "makes_own_food",
+      "photosynthesis"
+    ],
+    "tree": [
+      "has_roots",
+      "roots",
+      "root"
+    ],
+    "square": [
+      "four_sides",
+      "4_sides",
+      "equal_sides",
+      "4_equal_sides",
+      "four_right_angles",
+      "4_right_angles",
+      "right_angles"
+    ],
+    "rectangle": [
+      "four_sides",
+      "4_sides",
+      "four_right_angles",
+      "4_right_angles",
+      "right_angles"
+    ],
+    "triangle": [
+      "three_sides",
+      "3_sides",
+      "three_angles",
+      "3_angles"
+    ],
+    "circle": [
+      "no_corners",
+      "curved",
+      "curved_edge",
+      "has_curved_edge",
+      "curved_sides",
+      "round",
+      "has_radius",
+      "radius"
+    ],
+    "polygon": [
+      "has_straight_sides",
+      "is_closed_shape"
+    ],
+    "quadrilateral": [
+      "has_four_sides",
+      "four_sides",
+      "4_sides",
+      "has_four_angles"
+    ],
+    "vehicle": [
+      "wheels",
+      "has_wheels",
+      "transports_people"
+    ],
+    "aircraft": [
+      "wings",
+      "has_wings",
+      "can_fly",
+      "uses_fuel"
+    ],
+    "airplane": [
+      "wings",
+      "has_wings"
+    ],
+    "car": [
+      "wheels",
+      "has_wheels"
+    ],
+    "shape": [
+      "straight",
+      "crooked"
+    ],
+    "activity": [
+      "active"
+    ],
+    "significance": [
+      "significant",
+      "insignificant"
+    ],
+    "quantity": [
+      "standard",
+      "insufficient",
+      "nonstandard",
+      "abundant",
+      "scarce",
+      "sufficient"
+    ],
+    "color": [
+      "uncolored",
+      "colored",
+      "colorless",
+      "colorful"
+    ],
+    "alarm": [
+      "alarming",
+      "unalarming"
+    ]
+  },
+  "conditionals": {
+    "raining": [
+      "ground_wet",
+      "wet",
+      "need_umbrella",
+      "umbrella",
+      "sky_cloudy"
+    ],
+    "fire": [
+      "heat",
+      "hot",
+      "dangerous",
+      "light",
+      "requires_oxygen",
+      "oxygen",
+      "smoke",
+      "produces_heat"
+    ],
+    "water freezes": [
+      "ice",
+      "solid",
+      "becomes_ice"
+    ],
+    "water_freezes": [
+      "ice",
+      "solid",
+      "becomes_ice"
+    ],
+    "water boils": [
+      "hot",
+      "steam",
+      "100_degrees"
+    ],
+    "water_boils": [
+      "hot",
+      "steam",
+      "100_degrees"
+    ],
+    "metal heated": [
+      "expands",
+      "expand"
+    ],
+    "metal is heated": [
+      "expands",
+      "expand"
+    ],
+    "metal_heated": [
+      "expands",
+      "expand"
+    ],
+    "sun shining": [
+      "daytime",
+      "day"
+    ],
+    "sun_shining": [
+      "daytime",
+      "day"
+    ],
+    "the sun is shining": [
+      "daytime",
+      "day"
+    ],
+    "sun is shining": [
+      "daytime",
+      "day"
+    ],
+    "night": [
+      "dark"
+    ],
+    "it is night": [
+      "dark"
+    ],
+    "breathing": [
+      "alive",
+      "living"
+    ],
+    "you are breathing": [
+      "alive",
+      "living"
+    ],
+    "alive": [
+      "needs_food",
+      "food"
+    ],
+    "something is alive": [
+      "needs_food",
+      "food"
+    ],
+    "a person is human": [
+      "mortal"
+    ],
+    "person is human": [
+      "mortal"
+    ],
+    "human": [
+      "mortal",
+      "can_think"
+    ],
+    "living_thing": [
+      "needs_food",
+      "can_die"
+    ],
+    "it is cold": [
+      "water_may_freeze",
+      "temperature_low",
+      "need_warm_clothes"
+    ],
+    "plant gets sunlight": [
+      "photosynthesis_occurs",
+      "plant_grows",
+      "energy_produced"
+    ],
+    "animal eats food": [
+      "animal_gets_energy",
+      "animal_survives",
+      "digestion_occurs"
+    ],
+    "fire is present": [
+      "oxygen_consumed",
+      "heat_released",
+      "light_produced"
+    ],
+    "pressure increases": [
+      "volume_decreases",
+      "compression_occurs"
+    ],
+    "temperature drops": [
+      "water_may_freeze",
+      "molecules_slow",
+      "energy_decreases"
+    ],
+    "electricity flows": [
+      "circuit_complete",
+      "current_present"
+    ],
+    "seed is planted": [
+      "plant_may_grow",
+      "needs_water",
+      "needs_sunlight"
+    ]
+  },
+  "_meta": {
+    "source": "WordNet 3.1 via NLTK",
+    "wordnet_version": "3.0",
+    "expanded_at": "2026-03-28T01:43:16Z",
+    "seed_kb": "knowledge_base_extended.json",
+    "max_nodes": 1500,
+    "max_depth": 2,
+    "stats": {
+      "taxonomy_nodes": 1500,
+      "total_isa_edges": 2161,
+      "property_entities": 30,
+      "conditional_rules": 31
+    }
+  }
+}

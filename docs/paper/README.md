@@ -5,14 +5,14 @@ This folder contains LaTeX source files for the IEEE submission.
 ## File Naming Convention
 
 ```
-logicguard_ieee_tai_v1.tex    ← IEEE Transactions on AI submission (v1)
-logicguard_ieee_tai_v2.tex    ← After Phase 1 improvements
-logicguard_ieee_access_v1.tex ← IEEE Access submission (fallback)
+avicennaguard_ieee_tai_v1.tex    ← IEEE Transactions on AI submission (v1)
+avicennaguard_ieee_tai_v2.tex    ← After Phase 1 improvements
+avicennaguard_ieee_access_v1.tex ← IEEE Access submission (fallback)
 ```
 
 ## Current Paper Status
 
-- **File:** logicguard_ieee_conference_v1.tex (submitted to local conference)
+- **File:** avicennaguard_ieee_conference_v1.tex (submitted to local conference)
 - **Status:** REJECTED
 - **Reason:** Small dataset, no baselines, circular evaluation, no p-values
 

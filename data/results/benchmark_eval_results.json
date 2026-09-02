@@ -1,0 +1,2895 @@
+{
+  "metadata": {
+    "benchmark_file": "avicenna_benchmark_500.json",
+    "total_benchmark_queries": 500,
+    "mock_mode": true,
+    "parser_mode": "llm",
+    "models_evaluated": [
+      "llama3.2:3b",
+      "mistral:7b",
+      "llama2:7b",
+      "deepseek-r1:7b",
+      "phi4:latest"
+    ]
+  },
+  "comparison_summary": [
+    {
+      "model": "llama3.2:3b",
+      "baseline_acc": 90.0,
+      "baseline_f1": 92.31,
+      "guard_acc": 90.0,
+      "guard_f1": 92.31,
+      "accuracy_gain": 0.0,
+      "hallucinations_intercepted": 1,
+      "interception_rate": 100.0,
+      "avg_overhead_ms": 1.273
+    },
+    {
+      "model": "mistral:7b",
+      "baseline_acc": 80.0,
+      "baseline_f1": 83.33,
+      "guard_acc": 90.0,
+      "guard_f1": 92.31,
+      "accuracy_gain": 10.0,
+      "hallucinations_intercepted": 1,
+      "interception_rate": 50.0,
+      "avg_overhead_ms": 0.936
+    },
+    {
+      "model": "llama2:7b",
+      "baseline_acc": 60.0,
+      "baseline_f1": 66.67,
+      "guard_acc": 90.0,
+      "guard_f1": 92.31,
+      "accuracy_gain": 30.0,
+      "hallucinations_intercepted": 3,
+      "interception_rate": 75.0,
+      "avg_overhead_ms": 0.93
+    },
+    {
+      "model": "deepseek-r1:7b",
+      "baseline_acc": 90.0,
+      "baseline_f1": 93.33,
+      "guard_acc": 80.0,
+      "guard_f1": 85.71,
+      "accuracy_gain": -10.0,
+      "hallucinations_intercepted": 0,
+      "interception_rate": 0.0,
+      "avg_overhead_ms": 0.948
+    },
+    {
+      "model": "phi4:latest",
+      "baseline_acc": 90.0,
+      "baseline_f1": 92.31,
+      "guard_acc": 90.0,
+      "guard_f1": 92.31,
+      "accuracy_gain": 0.0,
+      "hallucinations_intercepted": 1,
+      "interception_rate": 100.0,
+      "avg_overhead_ms": 0.943
+    }
+  ],
+  "models": {
+    "llama3.2:3b": {
+      "model": "llama3.2:3b",
+      "total_queries": 10,
+      "mock_mode": true,
+      "baseline": {
+        "metrics": {
+          "TP": 6,
+          "FP": 0,
+          "TN": 3,
+          "FN": 1,
+          "total": 10,
+          "accuracy": 90.0,
+          "precision": 100.0,
+          "recall": 85.71,
+          "f1": 92.31,
+          "specificity": 100.0,
+          "fpr": 0.0
+        },
+        "latency_ms": {
+          "llm": {
+            "mean": 20.36,
+            "median": 22.09,
+            "p95": 25.36,
+            "min": 13.53,
+            "max": 25.36
+          }
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.26,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 17.5,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.41,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 22.09,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 21.28,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.53,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 16.58,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.36,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.01,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 15.58,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          }
+        ]
+      },
+      "avicennaguard": {
+        "metrics": {
+          "TP": 6,
+          "FP": 0,
+          "TN": 3,
+          "FN": 1,
+          "total": 10,
+          "accuracy": 90.0,
+          "precision": 100.0,
+          "recall": 85.71,
+          "f1": 92.31,
+          "specificity": 100.0,
+          "fpr": 0.0
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.95,
+            "median": 0.825,
+            "p95": 1.876,
+            "min": 0.811,
+            "max": 1.876
+          },
+          "stage2": {
+            "mean": 0.323,
+            "median": 0.071,
+            "p95": 1.339,
+            "min": 0.013,
+            "max": 1.339
+          },
+          "total_overhead": {
+            "mean": 1.273,
+            "median": 0.979,
+            "p95": 2.653,
+            "min": 0.83,
+            "max": 2.653
+          }
+        },
+        "by_type": {
+          "taxonomic": {
+            "total": 5,
+            "correct": 5,
+            "metrics": {
+              "TP": 4,
+              "FP": 0,
+              "TN": 1,
+              "FN": 0,
+              "total": 5,
+              "accuracy": 100.0,
+              "precision": 100.0,
+              "recall": 100.0,
+              "f1": 100.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          },
+          "categorical": {
+            "total": 5,
+            "correct": 4,
+            "metrics": {
+              "TP": 2,
+              "FP": 0,
+              "TN": 2,
+              "FN": 1,
+              "total": 5,
+              "accuracy": 80.0,
+              "precision": 100.0,
+              "recall": 66.67,
+              "f1": 80.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          }
+        },
+        "epistemic_states": {
+          "SHAKK": 2,
+          "WAHM": 2,
+          "YAQEEN": 6
+        },
+        "hallucination_analysis": {
+          "intercepted": 1,
+          "intercepted_questions": [
+            "Are all sharks fish?"
+          ],
+          "false_alarms": 1,
+          "false_alarm_questions": [
+            "Do all mammals have mammary glands?"
+          ],
+          "both_correct": 8,
+          "both_wrong": 0,
+          "total_llm_errors": 1,
+          "interception_rate": 100.0
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'golden' or 'eagles_birds' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.26,
+              "stage1_ms": 1.055,
+              "stage2_ms": 0.03,
+              "total_overhead_ms": 1.085
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": false,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "Property: mammals.mammary_glands = False",
+            "covered": true,
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 17.5,
+              "stage1_ms": 0.825,
+              "stage2_ms": 1.339,
+              "total_overhead_ms": 2.164
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: dolphin \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.41,
+              "stage1_ms": 0.836,
+              "stage2_ms": 0.728,
+              "total_overhead_ms": 1.564
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: birds.feathers = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 22.09,
+              "stage1_ms": 0.827,
+              "stage2_ms": 0.023,
+              "total_overhead_ms": 0.85
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": true,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "BFS: shark \u2192 fish = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 21.28,
+              "stage1_ms": 0.811,
+              "stage2_ms": 0.037,
+              "total_overhead_ms": 0.848
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: reptiles.hair = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.53,
+              "stage1_ms": 0.814,
+              "stage2_ms": 0.071,
+              "total_overhead_ms": 0.885
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: bats \u22ac birds = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 16.58,
+              "stage1_ms": 0.814,
+              "stage2_ms": 0.165,
+              "total_overhead_ms": 0.979
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'amphibians' or property 'breathe_through_gills_as_adults' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.36,
+              "stage1_ms": 1.876,
+              "stage2_ms": 0.777,
+              "total_overhead_ms": 2.653
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: whale \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.01,
+              "stage1_ms": 0.822,
+              "stage2_ms": 0.048,
+              "total_overhead_ms": 0.87
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: insects.six_legs = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 15.58,
+              "stage1_ms": 0.817,
+              "stage2_ms": 0.013,
+              "total_overhead_ms": 0.83
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "accuracy_delta": 0.0,
+        "f1_delta": 0.0,
+        "precision_delta": 0.0,
+        "recall_delta": 0.0,
+        "hallucinations_intercepted": 1,
+        "false_alarms": 1,
+        "interception_rate": 100.0
+      }
+    },
+    "mistral:7b": {
+      "model": "mistral:7b",
+      "total_queries": 10,
+      "mock_mode": true,
+      "baseline": {
+        "metrics": {
+          "TP": 5,
+          "FP": 0,
+          "TN": 3,
+          "FN": 2,
+          "total": 10,
+          "accuracy": 80.0,
+          "precision": 100.0,
+          "recall": 71.43,
+          "f1": 83.33,
+          "specificity": 100.0,
+          "fpr": 0.0
+        },
+        "latency_ms": {
+          "llm": {
+            "mean": 18.141,
+            "median": 18.58,
+            "p95": 23.92,
+            "min": 12.98,
+            "max": 23.92
+          }
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 18.58,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 19.23,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.94,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 16.96,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.64,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 20.71,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.98,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 22.35,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.92,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 17.1,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          }
+        ]
+      },
+      "avicennaguard": {
+        "metrics": {
+          "TP": 6,
+          "FP": 0,
+          "TN": 3,
+          "FN": 1,
+          "total": 10,
+          "accuracy": 90.0,
+          "precision": 100.0,
+          "recall": 85.71,
+          "f1": 92.31,
+          "specificity": 100.0,
+          "fpr": 0.0
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.818,
+            "median": 0.814,
+            "p95": 0.837,
+            "min": 0.808,
+            "max": 0.837
+          },
+          "stage2": {
+            "mean": 0.119,
+            "median": 0.037,
+            "p95": 0.759,
+            "min": 0.012,
+            "max": 0.759
+          },
+          "total_overhead": {
+            "mean": 0.936,
+            "median": 0.854,
+            "p95": 1.595,
+            "min": 0.825,
+            "max": 1.595
+          }
+        },
+        "by_type": {
+          "taxonomic": {
+            "total": 5,
+            "correct": 5,
+            "metrics": {
+              "TP": 4,
+              "FP": 0,
+              "TN": 1,
+              "FN": 0,
+              "total": 5,
+              "accuracy": 100.0,
+              "precision": 100.0,
+              "recall": 100.0,
+              "f1": 100.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          },
+          "categorical": {
+            "total": 5,
+            "correct": 4,
+            "metrics": {
+              "TP": 2,
+              "FP": 0,
+              "TN": 2,
+              "FN": 1,
+              "total": 5,
+              "accuracy": 80.0,
+              "precision": 100.0,
+              "recall": 66.67,
+              "f1": 80.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          }
+        },
+        "epistemic_states": {
+          "SHAKK": 2,
+          "YAQEEN": 7,
+          "WAHM": 1
+        },
+        "hallucination_analysis": {
+          "intercepted": 1,
+          "intercepted_questions": [
+            "Do all birds have feathers?"
+          ],
+          "false_alarms": 0,
+          "false_alarm_questions": [],
+          "both_correct": 8,
+          "both_wrong": 1,
+          "total_llm_errors": 2,
+          "interception_rate": 50.0
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'golden' or 'eagles_birds' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 18.58,
+              "stage1_ms": 0.837,
+              "stage2_ms": 0.017,
+              "total_overhead_ms": 0.854
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: mammals.mammary_glands = False",
+            "covered": true,
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 19.23,
+              "stage1_ms": 0.816,
+              "stage2_ms": 0.122,
+              "total_overhead_ms": 0.938
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: dolphin \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.94,
+              "stage1_ms": 0.81,
+              "stage2_ms": 0.037,
+              "total_overhead_ms": 0.847
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": true,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "Property: birds.feathers = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 16.96,
+              "stage1_ms": 0.813,
+              "stage2_ms": 0.012,
+              "total_overhead_ms": 0.825
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: shark \u2192 fish = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.64,
+              "stage1_ms": 0.808,
+              "stage2_ms": 0.023,
+              "total_overhead_ms": 0.831
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: reptiles.hair = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 20.71,
+              "stage1_ms": 0.811,
+              "stage2_ms": 0.046,
+              "total_overhead_ms": 0.857
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: bats \u22ac birds = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.98,
+              "stage1_ms": 0.818,
+              "stage2_ms": 0.129,
+              "total_overhead_ms": 0.947
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'amphibians' or property 'breathe_through_gills_as_adults' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 22.35,
+              "stage1_ms": 0.836,
+              "stage2_ms": 0.759,
+              "total_overhead_ms": 1.595
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: whale \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.92,
+              "stage1_ms": 0.814,
+              "stage2_ms": 0.03,
+              "total_overhead_ms": 0.844
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: insects.six_legs = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 17.1,
+              "stage1_ms": 0.814,
+              "stage2_ms": 0.012,
+              "total_overhead_ms": 0.826
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "accuracy_delta": 10.0,
+        "f1_delta": 8.98,
+        "precision_delta": 0.0,
+        "recall_delta": 14.28,
+        "hallucinations_intercepted": 1,
+        "false_alarms": 0,
+        "interception_rate": 50.0
+      }
+    },
+    "llama2:7b": {
+      "model": "llama2:7b",
+      "total_queries": 10,
+      "mock_mode": true,
+      "baseline": {
+        "metrics": {
+          "TP": 4,
+          "FP": 1,
+          "TN": 2,
+          "FN": 3,
+          "total": 10,
+          "accuracy": 60.0,
+          "precision": 80.0,
+          "recall": 57.14,
+          "f1": 66.67,
+          "specificity": 66.67,
+          "fpr": 33.33
+        },
+        "latency_ms": {
+          "llm": {
+            "mean": 20.613,
+            "median": 22.39,
+            "p95": 26.8,
+            "min": 12.66,
+            "max": 26.8
+          }
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.66,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.35,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.8,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.25,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.22,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.82,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.78,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 16.97,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 21.89,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 22.39,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          }
+        ]
+      },
+      "avicennaguard": {
+        "metrics": {
+          "TP": 6,
+          "FP": 0,
+          "TN": 3,
+          "FN": 1,
+          "total": 10,
+          "accuracy": 90.0,
+          "precision": 100.0,
+          "recall": 85.71,
+          "f1": 92.31,
+          "specificity": 100.0,
+          "fpr": 0.0
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.817,
+            "median": 0.816,
+            "p95": 0.841,
+            "min": 0.808,
+            "max": 0.841
+          },
+          "stage2": {
+            "mean": 0.113,
+            "median": 0.036,
+            "p95": 0.742,
+            "min": 0.012,
+            "max": 0.742
+          },
+          "total_overhead": {
+            "mean": 0.93,
+            "median": 0.852,
+            "p95": 1.583,
+            "min": 0.824,
+            "max": 1.583
+          }
+        },
+        "by_type": {
+          "taxonomic": {
+            "total": 5,
+            "correct": 5,
+            "metrics": {
+              "TP": 4,
+              "FP": 0,
+              "TN": 1,
+              "FN": 0,
+              "total": 5,
+              "accuracy": 100.0,
+              "precision": 100.0,
+              "recall": 100.0,
+              "f1": 100.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          },
+          "categorical": {
+            "total": 5,
+            "correct": 4,
+            "metrics": {
+              "TP": 2,
+              "FP": 0,
+              "TN": 2,
+              "FN": 1,
+              "total": 5,
+              "accuracy": 80.0,
+              "precision": 100.0,
+              "recall": 66.67,
+              "f1": 80.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          }
+        },
+        "epistemic_states": {
+          "SHAKK": 2,
+          "YAQEEN": 5,
+          "WAHM": 3
+        },
+        "hallucination_analysis": {
+          "intercepted": 3,
+          "intercepted_questions": [
+            "Are all dolphins mammals?",
+            "Are all bats birds?",
+            "Are all whales mammals?"
+          ],
+          "false_alarms": 0,
+          "false_alarm_questions": [],
+          "both_correct": 6,
+          "both_wrong": 1,
+          "total_llm_errors": 4,
+          "interception_rate": 75.0
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'golden' or 'eagles_birds' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.66,
+              "stage1_ms": 0.822,
+              "stage2_ms": 0.02,
+              "total_overhead_ms": 0.842
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: mammals.mammary_glands = False",
+            "covered": true,
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.35,
+              "stage1_ms": 0.822,
+              "stage2_ms": 0.118,
+              "total_overhead_ms": 0.94
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": true,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "BFS: dolphin \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.8,
+              "stage1_ms": 0.811,
+              "stage2_ms": 0.031,
+              "total_overhead_ms": 0.842
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: birds.feathers = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.25,
+              "stage1_ms": 0.812,
+              "stage2_ms": 0.012,
+              "total_overhead_ms": 0.824
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: shark \u2192 fish = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.22,
+              "stage1_ms": 0.808,
+              "stage2_ms": 0.024,
+              "total_overhead_ms": 0.832
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: reptiles.hair = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.82,
+              "stage1_ms": 0.811,
+              "stage2_ms": 0.041,
+              "total_overhead_ms": 0.852
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": false,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "BFS: bats \u22ac birds = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.78,
+              "stage1_ms": 0.808,
+              "stage2_ms": 0.094,
+              "total_overhead_ms": 0.902
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'amphibians' or property 'breathe_through_gills_as_adults' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 16.97,
+              "stage1_ms": 0.841,
+              "stage2_ms": 0.742,
+              "total_overhead_ms": 1.583
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": true,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "BFS: whale \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 21.89,
+              "stage1_ms": 0.816,
+              "stage2_ms": 0.036,
+              "total_overhead_ms": 0.852
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: insects.six_legs = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 22.39,
+              "stage1_ms": 0.819,
+              "stage2_ms": 0.016,
+              "total_overhead_ms": 0.835
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "accuracy_delta": 30.0,
+        "f1_delta": 25.64,
+        "precision_delta": 20.0,
+        "recall_delta": 28.57,
+        "hallucinations_intercepted": 3,
+        "false_alarms": 0,
+        "interception_rate": 75.0
+      }
+    },
+    "deepseek-r1:7b": {
+      "model": "deepseek-r1:7b",
+      "total_queries": 10,
+      "mock_mode": true,
+      "baseline": {
+        "metrics": {
+          "TP": 7,
+          "FP": 1,
+          "TN": 2,
+          "FN": 0,
+          "total": 10,
+          "accuracy": 90.0,
+          "precision": 87.5,
+          "recall": 100.0,
+          "f1": 93.33,
+          "specificity": 66.67,
+          "fpr": 33.33
+        },
+        "latency_ms": {
+          "llm": {
+            "mean": 19.974,
+            "median": 20.93,
+            "p95": 26.7,
+            "min": 12.56,
+            "max": 26.7
+          }
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.88,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.94,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 20.93,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.83,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.7,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.56,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 24.49,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.45,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.73,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 20.23,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          }
+        ]
+      },
+      "avicennaguard": {
+        "metrics": {
+          "TP": 6,
+          "FP": 1,
+          "TN": 2,
+          "FN": 1,
+          "total": 10,
+          "accuracy": 80.0,
+          "precision": 85.71,
+          "recall": 85.71,
+          "f1": 85.71,
+          "specificity": 66.67,
+          "fpr": 33.33
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.816,
+            "median": 0.816,
+            "p95": 0.828,
+            "min": 0.808,
+            "max": 0.828
+          },
+          "stage2": {
+            "mean": 0.132,
+            "median": 0.041,
+            "p95": 0.941,
+            "min": 0.011,
+            "max": 0.941
+          },
+          "total_overhead": {
+            "mean": 0.948,
+            "median": 0.857,
+            "p95": 1.769,
+            "min": 0.824,
+            "max": 1.769
+          }
+        },
+        "by_type": {
+          "taxonomic": {
+            "total": 5,
+            "correct": 5,
+            "metrics": {
+              "TP": 4,
+              "FP": 0,
+              "TN": 1,
+              "FN": 0,
+              "total": 5,
+              "accuracy": 100.0,
+              "precision": 100.0,
+              "recall": 100.0,
+              "f1": 100.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          },
+          "categorical": {
+            "total": 5,
+            "correct": 3,
+            "metrics": {
+              "TP": 2,
+              "FP": 1,
+              "TN": 1,
+              "FN": 1,
+              "total": 5,
+              "accuracy": 60.0,
+              "precision": 66.67,
+              "recall": 66.67,
+              "f1": 66.67,
+              "specificity": 50.0,
+              "fpr": 50.0
+            }
+          }
+        },
+        "epistemic_states": {
+          "SHAKK": 2,
+          "WAHM": 1,
+          "YAQEEN": 7
+        },
+        "hallucination_analysis": {
+          "intercepted": 0,
+          "intercepted_questions": [],
+          "false_alarms": 1,
+          "false_alarm_questions": [
+            "Do all mammals have mammary glands?"
+          ],
+          "both_correct": 8,
+          "both_wrong": 1,
+          "total_llm_errors": 1,
+          "interception_rate": 0.0
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'golden' or 'eagles_birds' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.88,
+              "stage1_ms": 0.818,
+              "stage2_ms": 0.013,
+              "total_overhead_ms": 0.831
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": false,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "Property: mammals.mammary_glands = False",
+            "covered": true,
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 14.94,
+              "stage1_ms": 0.813,
+              "stage2_ms": 0.1,
+              "total_overhead_ms": 0.913
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: dolphin \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 20.93,
+              "stage1_ms": 0.819,
+              "stage2_ms": 0.026,
+              "total_overhead_ms": 0.845
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: birds.feathers = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.83,
+              "stage1_ms": 0.815,
+              "stage2_ms": 0.015,
+              "total_overhead_ms": 0.83
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: shark \u2192 fish = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.7,
+              "stage1_ms": 0.81,
+              "stage2_ms": 0.044,
+              "total_overhead_ms": 0.854
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: reptiles.hair = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.56,
+              "stage1_ms": 0.816,
+              "stage2_ms": 0.041,
+              "total_overhead_ms": 0.857
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: bats \u22ac birds = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 24.49,
+              "stage1_ms": 0.808,
+              "stage2_ms": 0.087,
+              "total_overhead_ms": 0.895
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'amphibians' or property 'breathe_through_gills_as_adults' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.45,
+              "stage1_ms": 0.828,
+              "stage2_ms": 0.941,
+              "total_overhead_ms": 1.769
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: whale \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.73,
+              "stage1_ms": 0.823,
+              "stage2_ms": 0.039,
+              "total_overhead_ms": 0.862
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: insects.six_legs = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 20.23,
+              "stage1_ms": 0.813,
+              "stage2_ms": 0.011,
+              "total_overhead_ms": 0.824
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "accuracy_delta": -10.0,
+        "f1_delta": -7.62,
+        "precision_delta": -1.79,
+        "recall_delta": -14.29,
+        "hallucinations_intercepted": 0,
+        "false_alarms": 1,
+        "interception_rate": 0.0
+      }
+    },
+    "phi4:latest": {
+      "model": "phi4:latest",
+      "total_queries": 10,
+      "mock_mode": true,
+      "baseline": {
+        "metrics": {
+          "TP": 6,
+          "FP": 0,
+          "TN": 3,
+          "FN": 1,
+          "total": 10,
+          "accuracy": 90.0,
+          "precision": 100.0,
+          "recall": 85.71,
+          "f1": 92.31,
+          "specificity": 100.0,
+          "fpr": 0.0
+        },
+        "latency_ms": {
+          "llm": {
+            "mean": 21.611,
+            "median": 24.66,
+            "p95": 26.34,
+            "min": 12.09,
+            "max": 26.34
+          }
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.34,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.19,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.18,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.2,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.44,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 24.31,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 24.66,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.12,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.09,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": null,
+            "intercepted": false,
+            "proof": "LLM baseline inference",
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.58,
+              "stage1_ms": 0.0,
+              "stage2_ms": 0.0,
+              "total_overhead_ms": 0.0
+            }
+          }
+        ]
+      },
+      "avicennaguard": {
+        "metrics": {
+          "TP": 6,
+          "FP": 0,
+          "TN": 3,
+          "FN": 1,
+          "total": 10,
+          "accuracy": 90.0,
+          "precision": 100.0,
+          "recall": 85.71,
+          "f1": 92.31,
+          "specificity": 100.0,
+          "fpr": 0.0
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.816,
+            "median": 0.814,
+            "p95": 0.837,
+            "min": 0.807,
+            "max": 0.837
+          },
+          "stage2": {
+            "mean": 0.127,
+            "median": 0.035,
+            "p95": 0.862,
+            "min": 0.011,
+            "max": 0.862
+          },
+          "total_overhead": {
+            "mean": 0.943,
+            "median": 0.85,
+            "p95": 1.699,
+            "min": 0.823,
+            "max": 1.699
+          }
+        },
+        "by_type": {
+          "taxonomic": {
+            "total": 5,
+            "correct": 5,
+            "metrics": {
+              "TP": 4,
+              "FP": 0,
+              "TN": 1,
+              "FN": 0,
+              "total": 5,
+              "accuracy": 100.0,
+              "precision": 100.0,
+              "recall": 100.0,
+              "f1": 100.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          },
+          "categorical": {
+            "total": 5,
+            "correct": 4,
+            "metrics": {
+              "TP": 2,
+              "FP": 0,
+              "TN": 2,
+              "FN": 1,
+              "total": 5,
+              "accuracy": 80.0,
+              "precision": 100.0,
+              "recall": 66.67,
+              "f1": 80.0,
+              "specificity": 100.0,
+              "fpr": 0.0
+            }
+          }
+        },
+        "epistemic_states": {
+          "SHAKK": 2,
+          "WAHM": 2,
+          "YAQEEN": 6
+        },
+        "hallucination_analysis": {
+          "intercepted": 1,
+          "intercepted_questions": [
+            "Do all birds have feathers?"
+          ],
+          "false_alarms": 1,
+          "false_alarm_questions": [
+            "Do all mammals have mammary glands?"
+          ],
+          "both_correct": 8,
+          "both_wrong": 0,
+          "total_llm_errors": 1,
+          "interception_rate": 100.0
+        },
+        "results": [
+          {
+            "id": "curated_001",
+            "question": "Are all golden eagles birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'golden' or 'eagles_birds' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.34,
+              "stage1_ms": 0.821,
+              "stage2_ms": 0.016,
+              "total_overhead_ms": 0.837
+            }
+          },
+          {
+            "id": "curated_002",
+            "question": "Do all mammals have mammary glands?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": false,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "Property: mammals.mammary_glands = False",
+            "covered": true,
+            "is_correct": false,
+            "latency_ms": {
+              "llm_ms": 26.19,
+              "stage1_ms": 0.814,
+              "stage2_ms": 0.143,
+              "total_overhead_ms": 0.957
+            }
+          },
+          {
+            "id": "curated_003",
+            "question": "Are all dolphins mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: dolphin \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 25.18,
+              "stage1_ms": 0.816,
+              "stage2_ms": 0.034,
+              "total_overhead_ms": 0.85
+            }
+          },
+          {
+            "id": "curated_004",
+            "question": "Do all birds have feathers?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": true,
+            "epistemic_state": "WAHM",
+            "intercepted": true,
+            "proof": "Property: birds.feathers = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 26.2,
+              "stage1_ms": 0.812,
+              "stage2_ms": 0.011,
+              "total_overhead_ms": 0.823
+            }
+          },
+          {
+            "id": "curated_005",
+            "question": "Are all sharks fish?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: shark \u2192 fish = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 14.44,
+              "stage1_ms": 0.807,
+              "stage2_ms": 0.02,
+              "total_overhead_ms": 0.827
+            }
+          },
+          {
+            "id": "curated_006",
+            "question": "Do all reptiles have hair?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: reptiles.hair = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 24.31,
+              "stage1_ms": 0.81,
+              "stage2_ms": 0.04,
+              "total_overhead_ms": 0.85
+            }
+          },
+          {
+            "id": "curated_007",
+            "question": "Are all bats birds?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: bats \u22ac birds = False",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 24.66,
+              "stage1_ms": 0.807,
+              "stage2_ms": 0.096,
+              "total_overhead_ms": 0.903
+            }
+          },
+          {
+            "id": "curated_008",
+            "question": "Do all amphibians breathe through gills as adults?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": false,
+            "llm_raw": "no",
+            "llm_answer": false,
+            "final_answer": false,
+            "epistemic_state": "SHAKK",
+            "intercepted": false,
+            "proof": "Entity 'amphibians' or property 'breathe_through_gills_as_adults' not in KB (SHAKK)",
+            "covered": false,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 23.12,
+              "stage1_ms": 0.837,
+              "stage2_ms": 0.862,
+              "total_overhead_ms": 1.699
+            }
+          },
+          {
+            "id": "curated_009",
+            "question": "Are all whales mammals?",
+            "source": "Curated_Gold",
+            "query_type": "taxonomic",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "BFS: whale \u2192 mammal = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 12.09,
+              "stage1_ms": 0.819,
+              "stage2_ms": 0.035,
+              "total_overhead_ms": 0.854
+            }
+          },
+          {
+            "id": "curated_010",
+            "question": "Do all insects have six legs?",
+            "source": "Curated_Gold",
+            "query_type": "categorical",
+            "difficulty": "medium",
+            "ground_truth": true,
+            "llm_raw": "yes",
+            "llm_answer": true,
+            "final_answer": true,
+            "epistemic_state": "YAQEEN",
+            "intercepted": false,
+            "proof": "Property: insects.six_legs = True",
+            "covered": true,
+            "is_correct": true,
+            "latency_ms": {
+              "llm_ms": 13.58,
+              "stage1_ms": 0.814,
+              "stage2_ms": 0.012,
+              "total_overhead_ms": 0.826
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "accuracy_delta": 0.0,
+        "f1_delta": 0.0,
+        "precision_delta": 0.0,
+        "recall_delta": 0.0,
+        "hallucinations_intercepted": 1,
+        "false_alarms": 1,
+        "interception_rate": 100.0
+      }
+    }
+  }
+}

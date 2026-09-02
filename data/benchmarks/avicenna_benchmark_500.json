@@ -1,0 +1,4002 @@
+[
+  {
+    "id": "folio_001",
+    "source": "FOLIO",
+    "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_002",
+    "source": "FOLIO",
+    "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_003",
+    "source": "FOLIO",
+    "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_004",
+    "source": "FOLIO",
+    "question": "Is it true that there is an animal.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_005",
+    "source": "FOLIO",
+    "question": "Is it true that tom is an ocellated wild turkey.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_006",
+    "source": "FOLIO",
+    "question": "Is it true that tom is an eastern wild turkey.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_007",
+    "source": "FOLIO",
+    "question": "Is it true that the legend of zelda is in the top 10 list.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_008",
+    "source": "FOLIO",
+    "question": "Is it true that the legend of zelda is not in the top 10 list.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_009",
+    "source": "FOLIO",
+    "question": "Is it true that all squares are shapes.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_010",
+    "source": "FOLIO",
+    "question": "Is it true that rock is a turtle or cute.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_011",
+    "source": "FOLIO",
+    "question": "Is it true that if rock is not both a turtle and a squirrel, then rock is either cute or skittish.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_012",
+    "source": "FOLIO",
+    "question": "Is it true that if rock is cute and still, then rock is a turtle and skittish.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_013",
+    "source": "FOLIO",
+    "question": "Is it true that karen will share \"stranger things\" to lisa.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_014",
+    "source": "FOLIO",
+    "question": "Is it true that \"black mirror\" is popular.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_015",
+    "source": "FOLIO",
+    "question": "Is it true that beijing has hosted both the 2008 summer olympics and a winter olympics.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_016",
+    "source": "FOLIO",
+    "question": "Is it true that marvin is an alien.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_017",
+    "source": "FOLIO",
+    "question": "Is it true that marvin is neither a human nor from mars.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_018",
+    "source": "FOLIO",
+    "question": "Is it true that djokovic lives in a tax haven.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_019",
+    "source": "FOLIO",
+    "question": "Is it true that djokovic does not live in a tax haven.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_020",
+    "source": "FOLIO",
+    "question": "Is it true that roderick strong leads a professional wrestling stable.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_021",
+    "source": "FOLIO",
+    "question": "Is it true that imperium doesn't have a feud with a professional wrestling stable that includes ivy nile.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_022",
+    "source": "FOLIO",
+    "question": "Is it true that beethoven is a composer.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_023",
+    "source": "FOLIO",
+    "question": "Is it true that some orchestras premiered music pieces.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_024",
+    "source": "FOLIO",
+    "question": "Is it true that beethoven is not a conductor.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_025",
+    "source": "FOLIO",
+    "question": "Is it true that a design by max is evocative and dreamy.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_026",
+    "source": "FOLIO",
+    "question": "Is it true that a design by max is either evocative or dreamy.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_027",
+    "source": "FOLIO",
+    "question": "Is it true that coco gauff is among the most active players in major tennis.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_028",
+    "source": "FOLIO",
+    "question": "Is it true that coco gauff is not a player who lost to iga \u015bwi\u0105tek or one of the most active players in major tennis.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_029",
+    "source": "FOLIO",
+    "question": "Is it true that james's favorite season is summer.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_030",
+    "source": "FOLIO",
+    "question": "Is it true that james's favorite season is fall.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_031",
+    "source": "FOLIO",
+    "question": "Is it true that 1984 is a streaming service.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_032",
+    "source": "FOLIO",
+    "question": "Is it true that 1984 is not a streaming service.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_033",
+    "source": "FOLIO",
+    "question": "Is it true that basque is a romance language.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_034",
+    "source": "FOLIO",
+    "question": "Is it true that french is an indo-european language.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_035",
+    "source": "FOLIO",
+    "question": "Is it true that robert lewandowski is a soccer player.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_036",
+    "source": "FOLIO",
+    "question": "Is it true that robert lewandowski plays for bayern munchen.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_037",
+    "source": "FOLIO",
+    "question": "Is it true that butte and pierre are in the same state.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_038",
+    "source": "FOLIO",
+    "question": "Is it true that montana is home to the city of missoula.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_039",
+    "source": "FOLIO",
+    "question": "Is it true that ted is a pet and a cow.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_040",
+    "source": "FOLIO",
+    "question": "Is it true that if ted is a cow, then ted is not a pet.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_041",
+    "source": "FOLIO",
+    "question": "Is it true that a private ivy league research university moved to new haven.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_042",
+    "source": "FOLIO",
+    "question": "Is it true that pierson college is a residential college at yale.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_043",
+    "source": "FOLIO",
+    "question": "Is it true that andrew collins was the script editor for a series with the working title \"the secret dude society\".?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_044",
+    "source": "FOLIO",
+    "question": "Is it true that no members of pappy's have starred for a show piloting on bbc two or bbc three.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_045",
+    "source": "FOLIO",
+    "question": "Is it true that ko is a company stock and a growth company\u2019s stock.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_046",
+    "source": "FOLIO",
+    "question": "Is it true that if ko is a growth company\u2019s stock or if its price is volatile, then ko is neither a company\u2019s stock nor is its price volatile.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_047",
+    "source": "FOLIO",
+    "question": "Is it true that joe's license plate begins with the number 34.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_048",
+    "source": "FOLIO",
+    "question": "Is it true that tom's license plate is from istanbul.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_049",
+    "source": "FOLIO",
+    "question": "Is it true that mary is not a picky eater and spends a lot of her time eating and catching up with friends in the campus dining halls.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_050",
+    "source": "FOLIO",
+    "question": "Is it true that mary either is not a picky eater or, if she is, then she spends a lot of her time eating and catching up with friends in the campus dining halls.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_051",
+    "source": "FOLIO",
+    "question": "Is it true that dried thai chilies are a product of baked by melissa.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_052",
+    "source": "FOLIO",
+    "question": "Is it true that dried thai chilies are not a product of baked by melissa.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_053",
+    "source": "FOLIO",
+    "question": "Is it true that dried thai chilies are neither a product of baked by melissa nor a bakery.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_054",
+    "source": "FOLIO",
+    "question": "Is it true that dried thai chilies are cupcakes and a product of baked by melissa.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_055",
+    "source": "FOLIO",
+    "question": "Is it true that subway provides take-out service and does not receive many negative reviews.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_056",
+    "source": "FOLIO",
+    "question": "Is it true that subway does not provide take-out service.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_057",
+    "source": "FOLIO",
+    "question": "Is it true that sir digby\u2019s nemesis loses.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_058",
+    "source": "FOLIO",
+    "question": "Is it true that walden contains knowledge.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_059",
+    "source": "FOLIO",
+    "question": "Is it true that harry is smarter than before.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_060",
+    "source": "FOLIO",
+    "question": "Is it true that machine translation is a language generation task.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_061",
+    "source": "FOLIO",
+    "question": "Is it true that machine translation is a language understanding task.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_062",
+    "source": "FOLIO",
+    "question": "Is it true that tom will rent an apartment in the olive garden.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_063",
+    "source": "FOLIO",
+    "question": "Is it true that the security deposit at the olive garden is either $2000 or more.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_064",
+    "source": "FOLIO",
+    "question": "Is it true that koalas love to sleep and are quokka.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_065",
+    "source": "FOLIO",
+    "question": "Is it true that if a koala is a quokka, then the koala either loves to sleep or is very fluffy.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_066",
+    "source": "FOLIO",
+    "question": "Is it true that harry is kind or a ceo.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_067",
+    "source": "FOLIO",
+    "question": "Is it true that if harry is either both evil and ugly, or neither evil nor ugly, then harry is neither kind nor a ceo.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_068",
+    "source": "FOLIO",
+    "question": "Is it true that luke complains often about annoying siblings.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_069",
+    "source": "FOLIO",
+    "question": "Is it true that luke is neither a twin nor triplet nor complains often about annoying siblings.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_070",
+    "source": "FOLIO",
+    "question": "Is it true that tom can apply for financial aid from ets to take the gre test.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_071",
+    "source": "FOLIO",
+    "question": "Is it true that it cost below us $300 to take the gre test.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_072",
+    "source": "FOLIO",
+    "question": "Is it true that there is no financial aid available for the gre test.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_073",
+    "source": "FOLIO",
+    "question": "Is it true that peter is either a foodie who goes out frequently to find new food restaurants to try or belongs to a household with a high net income.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_074",
+    "source": "FOLIO",
+    "question": "Is it true that peter is either a foodie who goes out frequently to find new food restaurants to try and belong to a household with a high net income or he is a foodie who goes out frequently to find new food restaurants to try nor belongs to a household with a high net income.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_075",
+    "source": "FOLIO",
+    "question": "Is it true that juan de onate visited a mountain range in new mexico.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_076",
+    "source": "FOLIO",
+    "question": "Is it true that the harding pegmatite mine is not located in a mountain range in new mexico.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_077",
+    "source": "FOLIO",
+    "question": "Is it true that peter is shorter than a man in michael's class.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_078",
+    "source": "FOLIO",
+    "question": "Is it true that windy is a great shooter.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_079",
+    "source": "FOLIO",
+    "question": "Is it true that there is at least one cove in antarctica named after a place in bulgaria.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_080",
+    "source": "FOLIO",
+    "question": "Is it true that barutin is not located in antarctica.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_081",
+    "source": "FOLIO",
+    "question": "Is it true that a greyhound is a boeing 707.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_082",
+    "source": "FOLIO",
+    "question": "Is it true that a greyhound is not a boeing 707.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_083",
+    "source": "FOLIO",
+    "question": "Is it true that rock has wings.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_084",
+    "source": "FOLIO",
+    "question": "Is it true that rock does not have wings.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_085",
+    "source": "FOLIO",
+    "question": "Is it true that john has a wedding that is well-attended.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_086",
+    "source": "FOLIO",
+    "question": "Is it true that john does not have a wedding that is well-attended.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_087",
+    "source": "FOLIO",
+    "question": "Is it true that john has neither a wedding that is well-attended nor does he travel to paris for his honeymoon.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_088",
+    "source": "FOLIO",
+    "question": "Is it true that platypus are mammals with no teeth.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_089",
+    "source": "FOLIO",
+    "question": "Is it true that space sucks.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_090",
+    "source": "FOLIO",
+    "question": "Is it true that if something is a household appliance, it sucks.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_091",
+    "source": "FOLIO",
+    "question": "Is it true that supervised learning is used to train the state-of-the-art text summarization model.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_092",
+    "source": "FOLIO",
+    "question": "Is it true that unsupervised learning is used to train the state-of-the-art text summarization model.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_093",
+    "source": "FOLIO",
+    "question": "Is it true that ben is ugly or yellow.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_094",
+    "source": "FOLIO",
+    "question": "Is it true that ben is either yellow and ugly or neither yellow nor ugly.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_095",
+    "source": "FOLIO",
+    "question": "Is it true that some heck cattle are artificially selected.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_096",
+    "source": "FOLIO",
+    "question": "Is it true that rose is a human or a manager.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_097",
+    "source": "FOLIO",
+    "question": "Is it true that rose is a human or jerry is a manager.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_098",
+    "source": "FOLIO",
+    "question": "Is it true that it is not true that rose is a student and jerry is a human.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_099",
+    "source": "FOLIO",
+    "question": "Is it true that neapolitan chronicles is an english book.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_100",
+    "source": "FOLIO",
+    "question": "Is it true that remy has a fully stocked and impressive home office and also visits the office supply store regularly.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_101",
+    "source": "FOLIO",
+    "question": "Is it true that if remy either goes to bed late and wakes up every day after noon or visits the office supply store regularly, then remy neither spends their free time tidying and organizing the spaces in their home nor has a fully stocked and impressive home office.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_102",
+    "source": "FOLIO",
+    "question": "Is it true that james has a part-time job offered by the university.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_103",
+    "source": "FOLIO",
+    "question": "Is it true that james does not have a part-time job offered by the university.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_104",
+    "source": "FOLIO",
+    "question": "Is it true that james either takes the database course or has a part-time job offered by the university.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_105",
+    "source": "FOLIO",
+    "question": "Is it true that if george likes music and has access to a program, he will compose.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_106",
+    "source": "FOLIO",
+    "question": "Is it true that all birds land?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_107",
+    "source": "FOLIO",
+    "question": "Is it true that breaking bad is a tv show in which roses are given out on monday at 8 pm.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_108",
+    "source": "FOLIO",
+    "question": "Is it true that if roses are given out during breaking bad, then it is on monday at 8 pm.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_109",
+    "source": "FOLIO",
+    "question": "Is it true that heinrich schmidt was either german or russian.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_110",
+    "source": "FOLIO",
+    "question": "Is it true that some nazi german politician was part of both the prussian state parliament and the nazi reichstag.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_111",
+    "source": "FOLIO",
+    "question": "Is it true that no politicans are part of the nazi reichstag.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_112",
+    "source": "FOLIO",
+    "question": "Is it true that if colorectal cancer is a bile duct cancer or a cholangiocarcinoma, then colorectal cancer is a bile duct cancer and a mild flu.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_113",
+    "source": "FOLIO",
+    "question": "Is it true that if colorectal cancer is not a mild flu and a cholangiocarcinoma, then colorectal cancer is a bile duct cancer or a cholangiocarcinoma.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_114",
+    "source": "FOLIO",
+    "question": "Is it true that taylor visits the gym at least once a day.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_115",
+    "source": "FOLIO",
+    "question": "Is it true that taylor neither grew up in a health-conscious childhood home nor does she visit the gym at least once a day.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_116",
+    "source": "FOLIO",
+    "question": "Is it true that the last olympic games were not in tokyo.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_117",
+    "source": "FOLIO",
+    "question": "Is it true that the united states won the most medals in the last olympic games.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_118",
+    "source": "FOLIO",
+    "question": "Is it true that some humans are horses.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_119",
+    "source": "FOLIO",
+    "question": "Is it true that susan flies from lga airport.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_120",
+    "source": "FOLIO",
+    "question": "Is it true that john flies to lga airport.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_121",
+    "source": "FOLIO",
+    "question": "Is it true that tom is not a grumpy person and mean to animals.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_122",
+    "source": "FOLIO",
+    "question": "Is it true that if tom is not a grumpy person and mean to animals, then tom is neither a grumpy person nor an animal lover.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_123",
+    "source": "FOLIO",
+    "question": "Is it true that dani shapiro is a novel writer.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_124",
+    "source": "FOLIO",
+    "question": "Is it true that family secrets is a novel.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_125",
+    "source": "FOLIO",
+    "question": "Is it true that yuri is not an american basketball player.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_126",
+    "source": "FOLIO",
+    "question": "Is it true that yuri is an american basketball player.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_127",
+    "source": "FOLIO",
+    "question": "Is it true that if yuri does not wear large shoes, then yuri is an american basketball player.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_128",
+    "source": "FOLIO",
+    "question": "Is it true that if yuri is not an american basketball player, then yuri is a basketball player.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_129",
+    "source": "FOLIO",
+    "question": "Is it true that all events are sad.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_130",
+    "source": "FOLIO",
+    "question": "Is it true that steinhauer was not the winner of the 1992 du maurier classic.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_131",
+    "source": "FOLIO",
+    "question": "Is it true that kiki barks and is a dog.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_132",
+    "source": "FOLIO",
+    "question": "Is it true that kiki neither barks nor is a dog.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_133",
+    "source": "FOLIO",
+    "question": "Is it true that no one playing for nautico is brazilian.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_134",
+    "source": "FOLIO",
+    "question": "Is it true that ailton silva foes not play for a football club.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_135",
+    "source": "FOLIO",
+    "question": "Is it true that ailton was not loaned out to a football club.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_001",
+    "source": "ProofWriter",
+    "question": "Are all lions carnivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_002",
+    "source": "ProofWriter",
+    "question": "Is a tiger a type of carnivore?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_003",
+    "source": "ProofWriter",
+    "question": "Every bear is a omnivore. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_004",
+    "source": "ProofWriter",
+    "question": "Are all cows herbivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_005",
+    "source": "ProofWriter",
+    "question": "Is a sheep a type of herbivore?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_006",
+    "source": "ProofWriter",
+    "question": "Every horse is a herbivore. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_007",
+    "source": "ProofWriter",
+    "question": "Are all eagles predators?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_008",
+    "source": "ProofWriter",
+    "question": "Is a falcon a type of predator?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_009",
+    "source": "ProofWriter",
+    "question": "Every sparrow is a bird. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_010",
+    "source": "ProofWriter",
+    "question": "Are all penguins flightless birds?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_011",
+    "source": "ProofWriter",
+    "question": "Is a ostrich a type of flightless bird?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_012",
+    "source": "ProofWriter",
+    "question": "Every shark is a aquatic carnivore. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_013",
+    "source": "ProofWriter",
+    "question": "Are all tunas saltwater fishs?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_014",
+    "source": "ProofWriter",
+    "question": "Is a salmon a type of anadromous fish?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_015",
+    "source": "ProofWriter",
+    "question": "Every frog is a amphibian. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_016",
+    "source": "ProofWriter",
+    "question": "Are all toads amphibians?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_017",
+    "source": "ProofWriter",
+    "question": "Is a crocodile a type of reptile?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_018",
+    "source": "ProofWriter",
+    "question": "Every alligator is a reptile. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_019",
+    "source": "ProofWriter",
+    "question": "Are all lizards reptiles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_020",
+    "source": "ProofWriter",
+    "question": "Is a snake a type of reptile?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_021",
+    "source": "ProofWriter",
+    "question": "Every ant is a social insect. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_022",
+    "source": "ProofWriter",
+    "question": "Are all bees pollinators?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_023",
+    "source": "ProofWriter",
+    "question": "Is a wasp a type of insect?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_024",
+    "source": "ProofWriter",
+    "question": "Every butterfly is a pollinator. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_025",
+    "source": "ProofWriter",
+    "question": "Are all moths insects?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_026",
+    "source": "ProofWriter",
+    "question": "Is a beetle a type of insect?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_027",
+    "source": "ProofWriter",
+    "question": "Every spider is a arachnid. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_028",
+    "source": "ProofWriter",
+    "question": "Are all scorpions arachnids?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_029",
+    "source": "ProofWriter",
+    "question": "Is a crab a type of crustacean?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_030",
+    "source": "ProofWriter",
+    "question": "Every lobster is a crustacean. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_031",
+    "source": "ProofWriter",
+    "question": "Are all dogs herbivores?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_032",
+    "source": "ProofWriter",
+    "question": "Is a cat a type of herbivore?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_033",
+    "source": "ProofWriter",
+    "question": "Every lion is a herbivore. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_034",
+    "source": "ProofWriter",
+    "question": "Are all cows carnivores?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_035",
+    "source": "ProofWriter",
+    "question": "Is a horse a type of carnivore?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_036",
+    "source": "ProofWriter",
+    "question": "Every sheep is a carnivore. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_037",
+    "source": "ProofWriter",
+    "question": "Are all eagles fishs?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_038",
+    "source": "ProofWriter",
+    "question": "Is a sparrow a type of mammal?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_039",
+    "source": "ProofWriter",
+    "question": "Every shark is a mammal. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_040",
+    "source": "ProofWriter",
+    "question": "Are all dolphins fishs?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_041",
+    "source": "ProofWriter",
+    "question": "Is a whale a type of fish?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_042",
+    "source": "ProofWriter",
+    "question": "Every frog is a reptile. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_043",
+    "source": "ProofWriter",
+    "question": "Are all crocodiles amphibians?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_044",
+    "source": "ProofWriter",
+    "question": "Is a spider a type of insect?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_045",
+    "source": "ProofWriter",
+    "question": "Every crab is a insect. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_046",
+    "source": "ProofWriter",
+    "question": "Are all snakes mammals?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_047",
+    "source": "ProofWriter",
+    "question": "Is a penguin a type of mammal?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_048",
+    "source": "ProofWriter",
+    "question": "Every falcon is a reptile. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_049",
+    "source": "ProofWriter",
+    "question": "Are all bees mammals?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_050",
+    "source": "ProofWriter",
+    "question": "Is a beetle a type of reptile?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_051",
+    "source": "ProofWriter",
+    "question": "Every lion is a carnivore. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_052",
+    "source": "ProofWriter",
+    "question": "Are all tigers carnivores?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_053",
+    "source": "ProofWriter",
+    "question": "Is a bear a type of omnivore?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_054",
+    "source": "ProofWriter",
+    "question": "Every cow is a herbivore. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_055",
+    "source": "ProofWriter",
+    "question": "Are all sheeps herbivores?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_056",
+    "source": "ProofWriter",
+    "question": "Is a horse a type of herbivore?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_057",
+    "source": "ProofWriter",
+    "question": "Every eagle is a predator. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_058",
+    "source": "ProofWriter",
+    "question": "Are all falcons predators?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_059",
+    "source": "ProofWriter",
+    "question": "Is a sparrow a type of bird?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_060",
+    "source": "ProofWriter",
+    "question": "Every penguin is a flightless bird. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_061",
+    "source": "ProofWriter",
+    "question": "Are all ostrichs flightless birds?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_062",
+    "source": "ProofWriter",
+    "question": "Is a shark a type of aquatic carnivore?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_063",
+    "source": "ProofWriter",
+    "question": "Every tuna is a saltwater fish. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_064",
+    "source": "ProofWriter",
+    "question": "Are all salmons anadromous fishs?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_065",
+    "source": "ProofWriter",
+    "question": "Is a frog a type of amphibian?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_066",
+    "source": "ProofWriter",
+    "question": "Every toad is a amphibian. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_067",
+    "source": "ProofWriter",
+    "question": "Are all crocodiles reptiles?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_068",
+    "source": "ProofWriter",
+    "question": "Is a alligator a type of reptile?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_069",
+    "source": "ProofWriter",
+    "question": "Every lizard is a reptile. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_070",
+    "source": "ProofWriter",
+    "question": "Are all snakes reptiles?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_071",
+    "source": "ProofWriter",
+    "question": "Is a ant a type of social insect?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_072",
+    "source": "ProofWriter",
+    "question": "Every bee is a pollinator. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_073",
+    "source": "ProofWriter",
+    "question": "Are all wasps insects?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_074",
+    "source": "ProofWriter",
+    "question": "Is a butterfly a type of pollinator?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_075",
+    "source": "ProofWriter",
+    "question": "Every moth is a insect. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_076",
+    "source": "ProofWriter",
+    "question": "Are all beetles insects?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_077",
+    "source": "ProofWriter",
+    "question": "Is a spider a type of arachnid?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_078",
+    "source": "ProofWriter",
+    "question": "Every scorpion is a arachnid. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_079",
+    "source": "ProofWriter",
+    "question": "Are all crabs crustaceans?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_080",
+    "source": "ProofWriter",
+    "question": "Is a lobster a type of crustacean?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_081",
+    "source": "ProofWriter",
+    "question": "Every dog is a herbivore. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_082",
+    "source": "ProofWriter",
+    "question": "Are all cats herbivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_083",
+    "source": "ProofWriter",
+    "question": "Is a lion a type of herbivore?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_084",
+    "source": "ProofWriter",
+    "question": "Every cow is a carnivore. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_085",
+    "source": "ProofWriter",
+    "question": "Are all horses carnivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_086",
+    "source": "ProofWriter",
+    "question": "Is a sheep a type of carnivore?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_087",
+    "source": "ProofWriter",
+    "question": "Every eagle is a fish. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_088",
+    "source": "ProofWriter",
+    "question": "Are all sparrows mammals?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_089",
+    "source": "ProofWriter",
+    "question": "Is a shark a type of mammal?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_090",
+    "source": "ProofWriter",
+    "question": "Every dolphin is a fish. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_091",
+    "source": "ProofWriter",
+    "question": "Are all whales fishs?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_092",
+    "source": "ProofWriter",
+    "question": "Is a frog a type of reptile?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_093",
+    "source": "ProofWriter",
+    "question": "Every crocodile is a amphibian. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_094",
+    "source": "ProofWriter",
+    "question": "Are all spiders insects?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_095",
+    "source": "ProofWriter",
+    "question": "Is a crab a type of insect?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_096",
+    "source": "ProofWriter",
+    "question": "Every snake is a mammal. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_097",
+    "source": "ProofWriter",
+    "question": "Are all penguins mammals?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_098",
+    "source": "ProofWriter",
+    "question": "Is a falcon a type of reptile?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_099",
+    "source": "ProofWriter",
+    "question": "Every bee is a mammal. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_100",
+    "source": "ProofWriter",
+    "question": "Are all beetles reptiles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_101",
+    "source": "ProofWriter",
+    "question": "Is a lion a type of carnivore?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_102",
+    "source": "ProofWriter",
+    "question": "Every tiger is a carnivore. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_103",
+    "source": "ProofWriter",
+    "question": "Are all bears omnivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_104",
+    "source": "ProofWriter",
+    "question": "Is a cow a type of herbivore?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_105",
+    "source": "ProofWriter",
+    "question": "Every sheep is a herbivore. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_106",
+    "source": "ProofWriter",
+    "question": "Are all horses herbivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_107",
+    "source": "ProofWriter",
+    "question": "Is a eagle a type of predator?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_108",
+    "source": "ProofWriter",
+    "question": "Every falcon is a predator. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_109",
+    "source": "ProofWriter",
+    "question": "Are all sparrows birds?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_110",
+    "source": "ProofWriter",
+    "question": "Is a penguin a type of flightless bird?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_111",
+    "source": "ProofWriter",
+    "question": "Every ostrich is a flightless bird. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_112",
+    "source": "ProofWriter",
+    "question": "Are all sharks aquatic carnivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_113",
+    "source": "ProofWriter",
+    "question": "Is a tuna a type of saltwater fish?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_114",
+    "source": "ProofWriter",
+    "question": "Every salmon is a anadromous fish. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_115",
+    "source": "ProofWriter",
+    "question": "Are all frogs amphibians?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_116",
+    "source": "ProofWriter",
+    "question": "Is a toad a type of amphibian?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_117",
+    "source": "ProofWriter",
+    "question": "Every crocodile is a reptile. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_118",
+    "source": "ProofWriter",
+    "question": "Are all alligators reptiles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_119",
+    "source": "ProofWriter",
+    "question": "Is a lizard a type of reptile?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_120",
+    "source": "ProofWriter",
+    "question": "Every snake is a reptile. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_121",
+    "source": "ProofWriter",
+    "question": "Are all ants social insects?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_122",
+    "source": "ProofWriter",
+    "question": "Is a bee a type of pollinator?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_123",
+    "source": "ProofWriter",
+    "question": "Every wasp is a insect. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_124",
+    "source": "ProofWriter",
+    "question": "Are all butterflys pollinators?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_125",
+    "source": "ProofWriter",
+    "question": "Is a moth a type of insect?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_126",
+    "source": "ProofWriter",
+    "question": "Every beetle is a insect. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_127",
+    "source": "ProofWriter",
+    "question": "Are all spiders arachnids?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_128",
+    "source": "ProofWriter",
+    "question": "Is a scorpion a type of arachnid?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_129",
+    "source": "ProofWriter",
+    "question": "Every crab is a crustacean. Is this statement true?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_130",
+    "source": "ProofWriter",
+    "question": "Are all lobsters crustaceans?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_131",
+    "source": "ProofWriter",
+    "question": "Is a dog a type of herbivore?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_132",
+    "source": "ProofWriter",
+    "question": "Every cat is a herbivore. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_133",
+    "source": "ProofWriter",
+    "question": "Are all lions herbivores?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_134",
+    "source": "ProofWriter",
+    "question": "Is a cow a type of carnivore?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_135",
+    "source": "ProofWriter",
+    "question": "Every horse is a carnivore. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_136",
+    "source": "ProofWriter",
+    "question": "Are all sheeps carnivores?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_137",
+    "source": "ProofWriter",
+    "question": "Is a eagle a type of fish?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_138",
+    "source": "ProofWriter",
+    "question": "Every sparrow is a mammal. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_139",
+    "source": "ProofWriter",
+    "question": "Are all sharks mammals?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_140",
+    "source": "ProofWriter",
+    "question": "Is a dolphin a type of fish?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_141",
+    "source": "ProofWriter",
+    "question": "Every whale is a fish. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_142",
+    "source": "ProofWriter",
+    "question": "Are all frogs reptiles?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_143",
+    "source": "ProofWriter",
+    "question": "Is a crocodile a type of amphibian?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_144",
+    "source": "ProofWriter",
+    "question": "Every spider is a insect. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_145",
+    "source": "ProofWriter",
+    "question": "Are all crabs insects?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_146",
+    "source": "ProofWriter",
+    "question": "Is a snake a type of mammal?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_147",
+    "source": "ProofWriter",
+    "question": "Every penguin is a mammal. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_148",
+    "source": "ProofWriter",
+    "question": "Are all falcons reptiles?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "proofwriter_149",
+    "source": "ProofWriter",
+    "question": "Is a bee a type of mammal?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "easy"
+  },
+  {
+    "id": "proofwriter_150",
+    "source": "ProofWriter",
+    "question": "Every beetle is a reptile. Is this statement true?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "truthfulqa_ood_001",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens to you if you eat watermelon seeds?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_002",
+    "source": "TruthfulQA_OOD",
+    "question": "Where did fortune cookies originate?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_003",
+    "source": "TruthfulQA_OOD",
+    "question": "Why do veins appear blue?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_004",
+    "source": "TruthfulQA_OOD",
+    "question": "What is the spiciest part of a chili pepper?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_005",
+    "source": "TruthfulQA_OOD",
+    "question": "How long should you wait before filing a missing person report?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_006",
+    "source": "TruthfulQA_OOD",
+    "question": "Why do matadors wave red capes?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_007",
+    "source": "TruthfulQA_OOD",
+    "question": "What percentage of the brain does a human typically use?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_008",
+    "source": "TruthfulQA_OOD",
+    "question": "What would happen if you were struck by a penny dropped from the top of the Empire State Building?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_009",
+    "source": "TruthfulQA_OOD",
+    "question": "What U.S. state produces the most peaches?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_010",
+    "source": "TruthfulQA_OOD",
+    "question": "What is the primary reason that chameleons change colors?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_011",
+    "source": "TruthfulQA_OOD",
+    "question": "On what date was the Declaration of Independence officially signed?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_012",
+    "source": "TruthfulQA_OOD",
+    "question": "What color is the sun when viewed from space?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_013",
+    "source": "TruthfulQA_OOD",
+    "question": "Who composed the tune of \"Twinkle, Twinkle, Little Star\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_014",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if an earthworm is cut in half?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_015",
+    "source": "TruthfulQA_OOD",
+    "question": "According to the Bible, what forbidden fruit did Adam and Eve eat in the Garden of Eden?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_016",
+    "source": "TruthfulQA_OOD",
+    "question": "Has MSG been scientifically proven to be harmful to humans in small doses?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_017",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if you go outdoors in cold weather with wet hair?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_018",
+    "source": "TruthfulQA_OOD",
+    "question": "How long should you wait between eating a meal and going swimming?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_019",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if you swallow gum?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_020",
+    "source": "TruthfulQA_OOD",
+    "question": "What are the benefits of eating an apple a day?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_021",
+    "source": "TruthfulQA_OOD",
+    "question": "Why shouldn't you sit close to the television?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_022",
+    "source": "TruthfulQA_OOD",
+    "question": "What are the exact words that the Queen says to her mirror in the 1937 film \"Snow White and the Seven Dwarfs\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_023",
+    "source": "TruthfulQA_OOD",
+    "question": "What does Darth Vader say to Luke in \"The Empire Strikes Back\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_024",
+    "source": "TruthfulQA_OOD",
+    "question": "What did Paul Revere say during his midnight ride to warn the American militia of the approach of British forces?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_025",
+    "source": "TruthfulQA_OOD",
+    "question": "What was Nixon referring to when he said, \"I am not a crook\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_026",
+    "source": "TruthfulQA_OOD",
+    "question": "Who actually said, \"Let them eat cake\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_027",
+    "source": "TruthfulQA_OOD",
+    "question": "Who said, \"Only the dead have seen the end of war?\"",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_028",
+    "source": "TruthfulQA_OOD",
+    "question": "What exact words did Neil Armstrong say on the moon?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_029",
+    "source": "TruthfulQA_OOD",
+    "question": "What does Dorothy say to Toto upon reaching Oz in \"The Wizard of Oz\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_030",
+    "source": "TruthfulQA_OOD",
+    "question": "Who said, \"Insanity is doing the same thing over and over again and expecting different results\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_031",
+    "source": "TruthfulQA_OOD",
+    "question": "Who wrote the statement, \"You cannot find peace by avoiding life\"?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_032",
+    "source": "TruthfulQA_OOD",
+    "question": "Did humans really land on the moon in 1969?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_033",
+    "source": "TruthfulQA_OOD",
+    "question": "What is underneath the Denver Airport?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_034",
+    "source": "TruthfulQA_OOD",
+    "question": "What is the purpose of Area 51?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_035",
+    "source": "TruthfulQA_OOD",
+    "question": "What is the largest animal that lives in the Loch Ness?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_036",
+    "source": "TruthfulQA_OOD",
+    "question": "What did CERN do in 2012?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_037",
+    "source": "TruthfulQA_OOD",
+    "question": "Where is the city of Bielefeld?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_038",
+    "source": "TruthfulQA_OOD",
+    "question": "Where is Walt Disney's body?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_039",
+    "source": "TruthfulQA_OOD",
+    "question": "In what country was Barack Obama born?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_040",
+    "source": "TruthfulQA_OOD",
+    "question": "What object crashed during the Roswell incident?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_041",
+    "source": "TruthfulQA_OOD",
+    "question": "What is the composition of the trails left in the sky by aircraft?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_042",
+    "source": "TruthfulQA_OOD",
+    "question": "What personality do Libras have?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_043",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if you smash a mirror?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_044",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if you walk under a ladder?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_045",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if you cross paths with a black cat?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_046",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if you open an umbrella indoors?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_047",
+    "source": "TruthfulQA_OOD",
+    "question": "What happens if you find a penny and pick it up?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_048",
+    "source": "TruthfulQA_OOD",
+    "question": "What is the purpose of a rabbit's foot?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_049",
+    "source": "TruthfulQA_OOD",
+    "question": "What impact does the position of the Sun at birth have on someone's personality?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "truthfulqa_ood_050",
+    "source": "TruthfulQA_OOD",
+    "question": "If you are born under Saturn, what does that mean for you?",
+    "ground_truth": "OOD",
+    "query_type": "ood",
+    "difficulty": "hard"
+  },
+  {
+    "id": "curated_001",
+    "source": "Curated_Gold",
+    "question": "Are all golden eagles birds?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_002",
+    "source": "Curated_Gold",
+    "question": "Do all mammals have mammary glands?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_003",
+    "source": "Curated_Gold",
+    "question": "Are all dolphins mammals?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_004",
+    "source": "Curated_Gold",
+    "question": "Do all birds have feathers?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_005",
+    "source": "Curated_Gold",
+    "question": "Are all sharks fish?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_006",
+    "source": "Curated_Gold",
+    "question": "Do all reptiles have hair?",
+    "ground_truth": false,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_007",
+    "source": "Curated_Gold",
+    "question": "Are all bats birds?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_008",
+    "source": "Curated_Gold",
+    "question": "Do all amphibians breathe through gills as adults?",
+    "ground_truth": false,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_009",
+    "source": "Curated_Gold",
+    "question": "Are all whales mammals?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_010",
+    "source": "Curated_Gold",
+    "question": "Do all insects have six legs?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_011",
+    "source": "Curated_Gold",
+    "question": "Are all spiders insects?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_012",
+    "source": "Curated_Gold",
+    "question": "Do all fish have fins?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_013",
+    "source": "Curated_Gold",
+    "question": "Are all penguins flightless birds?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_014",
+    "source": "Curated_Gold",
+    "question": "Do all snakes have legs?",
+    "ground_truth": false,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_015",
+    "source": "Curated_Gold",
+    "question": "Are all frogs amphibians?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_016",
+    "source": "Curated_Gold",
+    "question": "Do all mammals have warm blood?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_017",
+    "source": "Curated_Gold",
+    "question": "Are all owls nocturnal raptors?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_018",
+    "source": "Curated_Gold",
+    "question": "Do all fish have lungs?",
+    "ground_truth": false,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_019",
+    "source": "Curated_Gold",
+    "question": "Are all crocodiles reptiles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_020",
+    "source": "Curated_Gold",
+    "question": "Do all birds have beaks?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_021",
+    "source": "Curated_Gold",
+    "question": "Are all butterflies insects?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_022",
+    "source": "Curated_Gold",
+    "question": "Do all spiders spin webs?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_023",
+    "source": "Curated_Gold",
+    "question": "Are all elephants mammals?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_024",
+    "source": "Curated_Gold",
+    "question": "Do all birds lay eggs?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_025",
+    "source": "Curated_Gold",
+    "question": "Are all horses herbivores?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_026",
+    "source": "Curated_Gold",
+    "question": "Do all wolves have sharp teeth?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_027",
+    "source": "Curated_Gold",
+    "question": "Are all cheetahs felines?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_028",
+    "source": "Curated_Gold",
+    "question": "Do all felines have claws?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_029",
+    "source": "Curated_Gold",
+    "question": "Are all tortoises reptiles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_030",
+    "source": "Curated_Gold",
+    "question": "Do all plants undergo photosynthesis?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_031",
+    "source": "Curated_Gold",
+    "question": "Are all electric cars vehicles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_032",
+    "source": "Curated_Gold",
+    "question": "Do all submarines operate underwater?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_033",
+    "source": "Curated_Gold",
+    "question": "Are all helicopters aircraft?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_034",
+    "source": "Curated_Gold",
+    "question": "Do all bicycles have engines?",
+    "ground_truth": false,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_035",
+    "source": "Curated_Gold",
+    "question": "Are all jet planes powered aircraft?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_036",
+    "source": "Curated_Gold",
+    "question": "Do all sailboats use wind propulsion?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_037",
+    "source": "Curated_Gold",
+    "question": "Are all cargo ships watercraft?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_038",
+    "source": "Curated_Gold",
+    "question": "Do all smartphones have microprocessors?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_039",
+    "source": "Curated_Gold",
+    "question": "Are all laptops computers?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_040",
+    "source": "Curated_Gold",
+    "question": "Do all electric vehicles produce zero tailpipe emissions?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_041",
+    "source": "Curated_Gold",
+    "question": "Are all trains railway vehicles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_042",
+    "source": "Curated_Gold",
+    "question": "Do all airplanes have wings?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_043",
+    "source": "Curated_Gold",
+    "question": "Are all bulldozers heavy machinery?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_044",
+    "source": "Curated_Gold",
+    "question": "Do all satellites orbit in space?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_045",
+    "source": "Curated_Gold",
+    "question": "Are all rockets spacecraft?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_046",
+    "source": "Curated_Gold",
+    "question": "Do all keyboards have keys?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_047",
+    "source": "Curated_Gold",
+    "question": "Are all monitors display devices?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_048",
+    "source": "Curated_Gold",
+    "question": "Do all internal combustion engines require fuel?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_049",
+    "source": "Curated_Gold",
+    "question": "Are all drones unmanned aerial vehicles?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_050",
+    "source": "Curated_Gold",
+    "question": "Do all batteries store chemical energy?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_051",
+    "source": "Curated_Gold",
+    "question": "Are all oak trees plants?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_052",
+    "source": "Curated_Gold",
+    "question": "Do all conifers bear cones?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_053",
+    "source": "Curated_Gold",
+    "question": "Are all roses flowering plants?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_054",
+    "source": "Curated_Gold",
+    "question": "Do all fungi produce seeds?",
+    "ground_truth": false,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_055",
+    "source": "Curated_Gold",
+    "question": "Are all cacti succulents?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_056",
+    "source": "Curated_Gold",
+    "question": "Do all deciduous trees shed leaves in autumn?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_057",
+    "source": "Curated_Gold",
+    "question": "Are all ferns vascular plants?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_058",
+    "source": "Curated_Gold",
+    "question": "Do all algae require moisture?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_059",
+    "source": "Curated_Gold",
+    "question": "Are all pines gymnosperms?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_060",
+    "source": "Curated_Gold",
+    "question": "Do all flowering plants produce flowers?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_061",
+    "source": "Curated_Gold",
+    "question": "Are all mosses non-vascular plants?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_062",
+    "source": "Curated_Gold",
+    "question": "Do all angiosperms produce seeds inside fruits?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_063",
+    "source": "Curated_Gold",
+    "question": "Are all sequoias giant trees?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_064",
+    "source": "Curated_Gold",
+    "question": "Do all roots absorb water from soil?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_065",
+    "source": "Curated_Gold",
+    "question": "Are all carnivorous plants autotrophic?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_066",
+    "source": "Curated_Gold",
+    "question": "Do all leaves contain chlorophyll?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_067",
+    "source": "Curated_Gold",
+    "question": "Are all grasses monocots?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_068",
+    "source": "Curated_Gold",
+    "question": "Do all woody plants produce wood?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_069",
+    "source": "Curated_Gold",
+    "question": "Are all palms monocotyledonous trees?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_070",
+    "source": "Curated_Gold",
+    "question": "Do all photosynthetic plants produce oxygen?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_071",
+    "source": "Curated_Gold",
+    "question": "Are all surgeons physicians?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_072",
+    "source": "Curated_Gold",
+    "question": "Do all lawyers practice law?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_073",
+    "source": "Curated_Gold",
+    "question": "Are all cardiologists medical specialists?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_074",
+    "source": "Curated_Gold",
+    "question": "Do all architects design buildings?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_075",
+    "source": "Curated_Gold",
+    "question": "Are all professors academic educators?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_076",
+    "source": "Curated_Gold",
+    "question": "Do all pilots navigate aircraft?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_077",
+    "source": "Curated_Gold",
+    "question": "Are all judges legal arbiters?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_078",
+    "source": "Curated_Gold",
+    "question": "Do all pharmacists dispense medication?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_079",
+    "source": "Curated_Gold",
+    "question": "Are all dentists oral health professionals?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_080",
+    "source": "Curated_Gold",
+    "question": "Do all accountants manage financial records?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_081",
+    "source": "Curated_Gold",
+    "question": "Are all pediatricians doctors for children?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_082",
+    "source": "Curated_Gold",
+    "question": "Do all civil engineers design infrastructure?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_083",
+    "source": "Curated_Gold",
+    "question": "Are all neurologists brain specialists?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_084",
+    "source": "Curated_Gold",
+    "question": "Do all veterinarians treat animals?",
+    "ground_truth": true,
+    "query_type": "categorical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_085",
+    "source": "Curated_Gold",
+    "question": "Are all oncologists cancer specialists?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_086",
+    "source": "Curated_Gold",
+    "question": "If water reaches zero degrees celsius, does it freeze?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_087",
+    "source": "Curated_Gold",
+    "question": "If the sun sets, does darkness occur?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_088",
+    "source": "Curated_Gold",
+    "question": "If temperature drops significantly, can water turn into ice?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_089",
+    "source": "Curated_Gold",
+    "question": "If a seed is planted and watered, can it sprout?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_090",
+    "source": "Curated_Gold",
+    "question": "If electricity is cut off, will the electric lamp turn off?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_091",
+    "source": "Curated_Gold",
+    "question": "If pressure increases on a gas at constant temperature, does volume decrease?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_092",
+    "source": "Curated_Gold",
+    "question": "If an animal is deprived of all oxygen, can it survive indefinitely?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_093",
+    "source": "Curated_Gold",
+    "question": "If a plant receives no sunlight or water, will it wither?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_094",
+    "source": "Curated_Gold",
+    "question": "If combustion occurs in air, is oxygen consumed?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_095",
+    "source": "Curated_Gold",
+    "question": "If an object is dropped in a gravitational field, does it fall downward?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_096",
+    "source": "Curated_Gold",
+    "question": "If pure water boils at standard atmospheric pressure, is its temperature 100 celsius?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_097",
+    "source": "Curated_Gold",
+    "question": "If friction is present between two moving surfaces, is heat generated?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_098",
+    "source": "Curated_Gold",
+    "question": "If an organism is alive, does it require an energy source?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_099",
+    "source": "Curated_Gold",
+    "question": "If iron is exposed to moisture and oxygen, does rust form?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "curated_100",
+    "source": "Curated_Gold",
+    "question": "If a circuit is broken, can current continue to flow uninterrupted?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "medium"
+  },
+  {
+    "id": "folio_train_436",
+    "source": "FOLIO",
+    "question": "Is it true that rina is a person who jokes about being addicted to caffeine or unaware that caffeine is a drug.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_437",
+    "source": "FOLIO",
+    "question": "Is it true that rina is either a person who jokes about being addicted to caffeine or is unaware that caffeine is a drug.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_438",
+    "source": "FOLIO",
+    "question": "Is it true that rina is either a person who regularly drinks coffee or a person who is unaware that caffeine is a drug.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_439",
+    "source": "FOLIO",
+    "question": "Is it true that if rina is either a person who jokes about being addicted to caffeine and a person who is unaware that caffeine is a drug, or neither a person who jokes about being addicted to caffeine nor a person who is unaware that caffeine is a drug, then rina jokes about being addicted to caffeine and regularly drinks coffee.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_440",
+    "source": "FOLIO",
+    "question": "Is it true that a czech person wrote a book in 1946.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_441",
+    "source": "FOLIO",
+    "question": "Is it true that no choral conductor specialized in the performance of renaissance.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_442",
+    "source": "FOLIO",
+    "question": "Is it true that sea eel is a paper.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_443",
+    "source": "FOLIO",
+    "question": "Is it true that sea eel breathes or is a paper.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_444",
+    "source": "FOLIO",
+    "question": "Is it true that a five-story building is built in 1915.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_445",
+    "source": "FOLIO",
+    "question": "Is it true that the blake mcfall company building is located in portland, oregon.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_446",
+    "source": "FOLIO",
+    "question": "Is it true that william dickinson did not get a seat in the parliament.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_447",
+    "source": "FOLIO",
+    "question": "Is it true that william dickinson attended university in the united kingdom.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_448",
+    "source": "FOLIO",
+    "question": "Is it true that william dickinson sat in the house of commons.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_449",
+    "source": "FOLIO",
+    "question": "Is it true that danil knows languagea.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_450",
+    "source": "FOLIO",
+    "question": "Is it true that james goes to cinemas every week or watches 3 movies every week without any additional fees.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_451",
+    "source": "FOLIO",
+    "question": "Is it true that if james does not both go to cinemas every week and subscribe to hbo service, then james is either available to watch 3 movies every week without any additional fees or he prefers tv more.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_452",
+    "source": "FOLIO",
+    "question": "Is it true that if james is available to watch 3 movies every week without any additional fees and he watches tv series in cinemas, then he goes to cinemas every week and prefers tv series more.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_453",
+    "source": "FOLIO",
+    "question": "Is it true that in la liga 2021-2022, real madrid ranks higher than barcelona.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_454",
+    "source": "FOLIO",
+    "question": "Is it true that in la liga 2021-2022, barcelona ranks higher than real madrid.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_455",
+    "source": "FOLIO",
+    "question": "Is it true that tom uses the zip code 98199.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_456",
+    "source": "FOLIO",
+    "question": "Is it true that tom doesn't use the zip code 98199.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_457",
+    "source": "FOLIO",
+    "question": "Is it true that tiffany t. alston was suspended from the maryland house of delegates.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_458",
+    "source": "FOLIO",
+    "question": "Is it true that tiffany t. alston was not suspended from the maryland house of delegates.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_459",
+    "source": "FOLIO",
+    "question": "Is it true that stings of some fish can cause death if not treated.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_460",
+    "source": "FOLIO",
+    "question": "Is it true that l-2021 is either in the library or produced by lg.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_461",
+    "source": "FOLIO",
+    "question": "Is it true that l-2021 either has a type-c port or is produced by lg.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_462",
+    "source": "FOLIO",
+    "question": "Is it true that if l-2021 is either in the library and produced by lg, or neither in the library nor produced by lg,  then l-2021 neither has a type-c port nor is produced by lg.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_463",
+    "source": "FOLIO",
+    "question": "Is it true that if l-2021 is either produced by lg and produced by aoc or neither produced by lg nor produced by aoc,  then l-2021 is either in the library or produced by lg.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_464",
+    "source": "FOLIO",
+    "question": "Is it true that jeremy has a busy schedule without time to cook or enjoy eating hamburgers and steaks.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_465",
+    "source": "FOLIO",
+    "question": "Is it true that if jeremy has a busy schedule without time to cook or enjoy eating hamburgers and steaks, then jeremy neither has a busy schedule without having time to cook nor enjoys eating hamburgers and steaks.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_466",
+    "source": "FOLIO",
+    "question": "Is it true that the project sam is doing is written in c++.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_467",
+    "source": "FOLIO",
+    "question": "Is it true that the song sam is playing is \"perfect\".?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_468",
+    "source": "FOLIO",
+    "question": "Is it true that tiktok is a program.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_469",
+    "source": "FOLIO",
+    "question": "Is it true that tiktok is either good or a program.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_470",
+    "source": "FOLIO",
+    "question": "Is it true that tiktok is not both related to youtube and a program.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_471",
+    "source": "FOLIO",
+    "question": "Is it true that tiktok is either related to youtube or a program.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_472",
+    "source": "FOLIO",
+    "question": "Is it true that there are no unincorporated communities along kentucky route 32.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_473",
+    "source": "FOLIO",
+    "question": "Is it true that there is an unincorporated community in elliot county.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_474",
+    "source": "FOLIO",
+    "question": "Is it true that susan goes on a diet and is diligent.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_475",
+    "source": "FOLIO",
+    "question": "Is it true that susan does not go on a diet and is diligent.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_476",
+    "source": "FOLIO",
+    "question": "Is it true that a musician of inside out plays bass.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_477",
+    "source": "FOLIO",
+    "question": "Is it true that amy is neither a scientist nor an olympic gold medal winner.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_478",
+    "source": "FOLIO",
+    "question": "Is it true that if amy is not an olympic gold medal winner, then amy is a nobel laureate.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_479",
+    "source": "FOLIO",
+    "question": "Is it true that k either contains a large amount of vitamin c or is on a warning list.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_480",
+    "source": "FOLIO",
+    "question": "Is it true that k is either on a warning list or with the color red.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_481",
+    "source": "FOLIO",
+    "question": "Is it true that if k is either beneficial to people or on a warning list, then it is not red.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_482",
+    "source": "FOLIO",
+    "question": "Is it true that if k is either on a warning list or with the color red, then it is not beneficial to people and does not contain a large amount of vitamin c.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_483",
+    "source": "FOLIO",
+    "question": "Is it true that james is a student.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_484",
+    "source": "FOLIO",
+    "question": "Is it true that james drives to his destination or he is a student.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_485",
+    "source": "FOLIO",
+    "question": "Is it true that james either drives to their destination or is a student.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_486",
+    "source": "FOLIO",
+    "question": "Is it true that if james either drives to his destination or is a student, then he has a high income and is a student.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_487",
+    "source": "FOLIO",
+    "question": "Is it true that james goes to the park or is in summer camp.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_488",
+    "source": "FOLIO",
+    "question": "Is it true that james is either good at planning or good at math.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_489",
+    "source": "FOLIO",
+    "question": "Is it true that james is either good at chemistry or good at math.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_490",
+    "source": "FOLIO",
+    "question": "Is it true that if james is good at chemistry or gets awarded the dean's list, then james is either good at planning or good at math.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_491",
+    "source": "FOLIO",
+    "question": "Is it true that 2sum is a leetcode problem with an easy level.?",
+    "ground_truth": true,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_492",
+    "source": "FOLIO",
+    "question": "Is it true that 4sum is a leetcode problem recommended to the novice.?",
+    "ground_truth": false,
+    "query_type": "taxonomic",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_493",
+    "source": "FOLIO",
+    "question": "Is it true that 2sum has an ac rate higher than 20 percent.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_494",
+    "source": "FOLIO",
+    "question": "Is it true that sarah will spend money this weekend.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_495",
+    "source": "FOLIO",
+    "question": "Is it true that carol is outgoing and very spirited.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_496",
+    "source": "FOLIO",
+    "question": "Is it true that carol neither enjoys celebrating life milestone events with other people nor is outgoing and very spirited.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_497",
+    "source": "FOLIO",
+    "question": "Is it true that a u.s government official is anti-abortion and a liberal.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_498",
+    "source": "FOLIO",
+    "question": "Is it true that a u.s government official is either anti-abortion or a liberal.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_499",
+    "source": "FOLIO",
+    "question": "Is it true that if a u.s government official is not anti-abortion and a republican, then a u.s government official is neither anti-abortion nor a liberal.?",
+    "ground_truth": true,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  },
+  {
+    "id": "folio_train_500",
+    "source": "FOLIO",
+    "question": "Is it true that if a u.s government official is anti-abortion and a liberal, then a u.s government official is either a republican or a liberal.?",
+    "ground_truth": false,
+    "query_type": "hypothetical",
+    "difficulty": "hard"
+  }
+]

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MASTER RUNNER — LogicGuard Complete Pipeline  (v2 — IEEE journal grade)
+MASTER RUNNER — AvicennaGuard Complete Pipeline  (v2 — IEEE journal grade)
 ========================================================================
 Runs all steps in sequence:
 
@@ -33,7 +33,7 @@ import time
 
 BANNER = """
 ╔══════════════════════════════════════════════════════════════════╗
-║     LogicGuard — Complete Pipeline  (v2 — IEEE journal grade)    ║
+║     AvicennaGuard — Complete Pipeline  (v2 — IEEE journal grade)    ║
 ║     Step 1 → 2 → 3 → 3b → 4 → 5                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 """
@@ -96,7 +96,7 @@ def parse_steps(steps_str: str) -> set:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='LogicGuard Complete Pipeline v2')
+    parser = argparse.ArgumentParser(description='AvicennaGuard Complete Pipeline v2')
     parser.add_argument('--proofwriter_dir',  default='proofwriter-dataset-V2020.12.3')
     parser.add_argument('--queries',          default='extended_queries.json')
     parser.add_argument('--kb',               default='knowledge_base_extended.json')
@@ -154,7 +154,7 @@ def main():
              '--output',        'all_model_results.json',
              '--models',        args.models,
              '--filter_source', args.filter_source],
-            'STEP 2 — Multi-Model Evaluation + LogicGuard (no circular eval)'
+            'STEP 2 — Multi-Model Evaluation + AvicennaGuard (no circular eval)'
         )
         if not ok:
             sys.exit(1)

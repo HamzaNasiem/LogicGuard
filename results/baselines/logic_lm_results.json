@@ -1,0 +1,567 @@
+{
+  "method": "Logic-LM",
+  "model": "llama3.2:3b",
+  "mock": true,
+  "total_queries": 20,
+  "solver_status_counts": {
+    "UNKNOWN": 5,
+    "UNSAT": 15
+  },
+  "mean_latency_translation_ms": 0.05,
+  "mean_latency_solving_ms": 0.01,
+  "mean_latency_total_ms": 0.06,
+  "metrics": {
+    "accuracy": 0.35,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "specificity": 1.0,
+    "confusion_matrix": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 7,
+      "fn": 13,
+      "total": 20
+    },
+    "ood_count": 0,
+    "unresolved_count": 0
+  },
+  "per_query_type": {
+    "taxonomic": {
+      "accuracy": 0.25,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0,
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 1,
+        "fn": 3,
+        "total": 4
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 4
+    },
+    "hypothetical": {
+      "accuracy": 0.375,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0,
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 6,
+        "fn": 10,
+        "total": 16
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 16
+    }
+  },
+  "per_source": {
+    "FOLIO": {
+      "accuracy": 0.35,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0,
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 7,
+        "fn": 13,
+        "total": 20
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 20
+    }
+  },
+  "results": [
+    {
+      "query_id": "folio_001",
+      "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+      "logical_formula": "bonnie_is_either_both_a_young_child_or_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities_and_chaperones_high_school_dances_or_neither_is_a_young_child_nor_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities, \u2192 bonnie_is_either_a_student_who_attends_the_school_or_is_an_inactive_and_disinterested_member_of_the_community.",
+      "formula_type": "hypothetical",
+      "solver_status": "UNKNOWN",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: bonnie_is_either_both_a_young_child_or_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities_and_chaperones_high_school_dances_or_neither_is_a_young_child_nor_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities, \u2192 bonnie_is_either_a_student_who_attends_the_school_or_is_an_inactive_and_disinterested_member_of_the_community.",
+        "Condition 'bonnie_is_either_both_a_young_child_or_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities_and_chaperones_high_school_dances_or_neither_is_a_young_child_nor_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities,' not found in conditional graph G_C."
+      ],
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.62,
+      "latency_solving_ms": 0.02,
+      "latency_total_ms": 0.64,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_002",
+      "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+      "logical_formula": "bonnie_either_chaperones_high_school_dances_or,_if_she_does_not,_she_performs_in_school_talent_shows_often, \u2192 bonnie_is_both_a_young_child_or_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities_and_an_inactive_and_disinterested_member_of_the_community.",
+      "formula_type": "hypothetical",
+      "solver_status": "UNKNOWN",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: bonnie_either_chaperones_high_school_dances_or,_if_she_does_not,_she_performs_in_school_talent_shows_often, \u2192 bonnie_is_both_a_young_child_or_teenager_who_wishes_to_further_her_academic_career_and_educational_opportunities_and_an_inactive_and_disinterested_member_of_the_community.",
+        "Condition 'bonnie_either_chaperones_high_school_dances_or,_if_she_does_not,_she_performs_in_school_talent_shows_often,' not found in conditional graph G_C."
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.02,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.03,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_003",
+      "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+      "logical_formula": "james_is_either_a_manager_or_in_other_countries, \u2192 james_either_has_lunch_at_home_and_works_remotely_from_home,_or_neither_has_lunch_at_home_nor_works_remotely_from_home.",
+      "formula_type": "hypothetical",
+      "solver_status": "UNKNOWN",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: james_is_either_a_manager_or_in_other_countries, \u2192 james_either_has_lunch_at_home_and_works_remotely_from_home,_or_neither_has_lunch_at_home_nor_works_remotely_from_home.",
+        "Condition 'james_is_either_a_manager_or_in_other_countries,' not found in conditional graph G_C."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_004",
+      "question": "Is it true that there is an animal.?",
+      "logical_formula": "PropositionalQuery(true, animal)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, animal)",
+        "No propositional model satisfy true and animal."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.11,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.12,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_005",
+      "question": "Is it true that tom is an ocellated wild turkey.?",
+      "logical_formula": "PropositionalQuery(true, turkey)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, turkey)",
+        "No propositional model satisfy true and turkey."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_006",
+      "question": "Is it true that tom is an eastern wild turkey.?",
+      "logical_formula": "PropositionalQuery(true, turkey)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, turkey)",
+        "No propositional model satisfy true and turkey."
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_007",
+      "question": "Is it true that the legend of zelda is in the top 10 list.?",
+      "logical_formula": "PropositionalQuery(true, list)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, list)",
+        "No propositional model satisfy true and list."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_008",
+      "question": "Is it true that the legend of zelda is not in the top 10 list.?",
+      "logical_formula": "PropositionalQuery(true, list)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, list)",
+        "No propositional model satisfy true and list."
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_009",
+      "question": "Is it true that all squares are shapes.?",
+      "logical_formula": "PropositionalQuery(true, shapes)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, shapes)",
+        "No propositional model satisfy true and shape."
+      ],
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.02,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_010",
+      "question": "Is it true that rock is a turtle or cute.?",
+      "logical_formula": "PropositionalQuery(true, cute)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, cute)",
+        "No propositional model satisfy true and cute."
+      ],
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_011",
+      "question": "Is it true that if rock is not both a turtle and a squirrel, then rock is either cute or skittish.?",
+      "logical_formula": "rock_is_not_both_a_turtle_and_a_squirrel, \u2192 rock_is_either_cute_or_skittish.",
+      "formula_type": "hypothetical",
+      "solver_status": "UNKNOWN",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: rock_is_not_both_a_turtle_and_a_squirrel, \u2192 rock_is_either_cute_or_skittish.",
+        "Condition 'rock_is_not_both_a_turtle_and_a_squirrel,' not found in conditional graph G_C."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_012",
+      "question": "Is it true that if rock is cute and still, then rock is a turtle and skittish.?",
+      "logical_formula": "rock_is_cute_and_still, \u2192 rock_is_a_turtle_and_skittish.",
+      "formula_type": "hypothetical",
+      "solver_status": "UNKNOWN",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: rock_is_cute_and_still, \u2192 rock_is_a_turtle_and_skittish.",
+        "Condition 'rock_is_cute_and_still,' not found in conditional graph G_C."
+      ],
+      "ground_truth": false,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_013",
+      "question": "Is it true that karen will share \"stranger things\" to lisa.?",
+      "logical_formula": "PropositionalQuery(true, lisa)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, lisa)",
+        "No propositional model satisfy true and lisa."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_014",
+      "question": "Is it true that \"black mirror\" is popular.?",
+      "logical_formula": "PropositionalQuery(true, popular)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, popular)",
+        "No propositional model satisfy true and popular."
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_015",
+      "question": "Is it true that beijing has hosted both the 2008 summer olympics and a winter olympics.?",
+      "logical_formula": "PropositionalQuery(true, olympics)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, olympics)",
+        "No propositional model satisfy true and olympic."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.02,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_016",
+      "question": "Is it true that marvin is an alien.?",
+      "logical_formula": "PropositionalQuery(true, alien)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, alien)",
+        "No propositional model satisfy true and alien."
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_017",
+      "question": "Is it true that marvin is neither a human nor from mars.?",
+      "logical_formula": "PropositionalQuery(true, mars)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, mars)",
+        "No propositional model satisfy true and mar."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_018",
+      "question": "Is it true that djokovic lives in a tax haven.?",
+      "logical_formula": "PropositionalQuery(true, haven)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, haven)",
+        "No propositional model satisfy true and haven."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_019",
+      "question": "Is it true that djokovic does not live in a tax haven.?",
+      "logical_formula": "PropositionalQuery(true, haven)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, haven)",
+        "No propositional model satisfy true and haven."
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    },
+    {
+      "query_id": "folio_020",
+      "question": "Is it true that roderick strong leads a professional wrestling stable.?",
+      "logical_formula": "PropositionalQuery(true, stable)",
+      "formula_type": "propositional",
+      "solver_status": "UNSAT",
+      "prediction": false,
+      "final_answer": "no",
+      "proof_steps": [
+        "Input formula: PropositionalQuery(true, stable)",
+        "No propositional model satisfy true and stable."
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_translation_ms": 0.01,
+      "latency_solving_ms": 0.01,
+      "latency_total_ms": 0.02,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "mock": true,
+        "solver": "SymbolicLogicSolver"
+      }
+    }
+  ],
+  "summary_text": "====================================================================\n  EVALUATION SUMMARY: LOGIC-LM\n====================================================================\n  Total Evaluated: 20     | Accuracy:    35.0%\n  Precision:       0.0% | Recall:      0.0%\n  F1 Score:        0.0% | Specificity: 100.0%\n--------------------------------------------------------------------\n  Confusion Matrix: TP=0    FP=0    TN=7    FN=13  \n--------------------------------------------------------------------\n  Breakdown by Query Type:\n    Type            N      Acc      Prec     Rec      F1      \n    -------------------------------------------------------\n    hypothetical    16      37.5%    0.0%    0.0%    0.0%\n    taxonomic       4       25.0%    0.0%    0.0%    0.0%\n--------------------------------------------------------------------\n  Breakdown by Source Dataset:\n    Source             N      Acc      Prec     Rec      F1      \n    ----------------------------------------------------------\n    FOLIO              20      35.0%    0.0%    0.0%    0.0%\n===================================================================="
+}

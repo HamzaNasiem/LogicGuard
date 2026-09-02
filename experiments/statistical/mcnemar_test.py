@@ -2,7 +2,7 @@
 McNemar's Test for Statistical Significance.
 
 Required for IEEE journal submission.
-Tests whether LogicGuard accuracy improvement over baseline is
+Tests whether AvicennaGuard accuracy improvement over baseline is
 statistically significant (not due to random chance).
 
 McNemar's test is appropriate here because:
@@ -33,8 +33,8 @@ def mcnemar_test(n01: int, n10: int) -> tuple[float, float]:
     McNemar's test for paired nominal data.
 
     Args:
-        n01: Count where baseline=wrong, logicguard=correct
-        n10: Count where baseline=correct, logicguard=wrong
+        n01: Count where baseline=wrong, avicennaguard=correct
+        n10: Count where baseline=correct, avicennaguard=wrong
 
     Returns:
         (chi2_statistic, p_value)
@@ -69,7 +69,7 @@ def compute_confidence_interval(
 
 def run_significance_tests(results_path: Path) -> dict:
     """
-    Run McNemar's tests on all model pairs (baseline vs +LogicGuard).
+    Run McNemar's tests on all model pairs (baseline vs +AvicennaGuard).
 
     Loads all_model_results.json and produces p-values and
     confidence intervals for all accuracy comparisons.
@@ -79,11 +79,11 @@ def run_significance_tests(results_path: Path) -> dict:
 
     output = {}
 
-    # Models to compare (baseline vs logicguard)
+    # Models to compare (baseline vs avicennaguard)
     model_pairs = [
-        ("llama2_7b_baseline",  "llama2_7b_logicguard"),
-        ("mistral_7b_baseline", "mistral_7b_logicguard"),
-        ("llama32_3b_baseline", "llama32_3b_logicguard"),
+        ("llama2_7b_baseline",  "llama2_7b_avicennaguard" if "llama2_7b_avicennaguard" in data.get("per_query_results", {}) else "llama2_7b_logicguard"),
+        ("mistral_7b_baseline", "mistral_7b_avicennaguard" if "mistral_7b_avicennaguard" in data.get("per_query_results", {}) else "mistral_7b_logicguard"),
+        ("llama32_3b_baseline", "llama32_3b_avicennaguard" if "llama32_3b_avicennaguard" in data.get("per_query_results", {}) else "llama32_3b_logicguard"),
     ]
 
     for base_key, lg_key in model_pairs:
@@ -110,7 +110,7 @@ def run_significance_tests(results_path: Path) -> dict:
         output[model_name] = {
             "n_queries":          n,
             "baseline_accuracy":  round(base_correct / n * 100, 1),
-            "logicguard_accuracy": round(lg_correct  / n * 100, 1),
+            "avicennaguard_accuracy": round(lg_correct  / n * 100, 1),
             "delta_pp":           round((lg_correct - base_correct) / n * 100, 1),
             "mcnemar": {
                 "n01":        n01,
@@ -121,7 +121,7 @@ def run_significance_tests(results_path: Path) -> dict:
             },
             "confidence_intervals_95pct": {
                 "baseline":   [round(ci_base[0] * 100, 1), round(ci_base[1] * 100, 1)],
-                "logicguard": [round(ci_lg[0]   * 100, 1), round(ci_lg[1]   * 100, 1)],
+                "avicennaguard": [round(ci_lg[0]   * 100, 1), round(ci_lg[1]   * 100, 1)],
             },
         }
 
@@ -131,7 +131,7 @@ def run_significance_tests(results_path: Path) -> dict:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(message)s")
 
-    parser = argparse.ArgumentParser(description="McNemar's significance tests for LogicGuard")
+    parser = argparse.ArgumentParser(description="McNemar's significance tests for AvicennaGuard")
     parser.add_argument("--results", default="data/results/phase1/all_model_results.json")
     parser.add_argument("--output",  default="data/results/phase1/statistical_significance.json")
     args = parser.parse_args()
@@ -147,9 +147,9 @@ if __name__ == "__main__":
     for model, stats in results.items():
         sig = "✓ SIGNIFICANT" if stats["mcnemar"]["significant"] else "✗ NOT significant"
         print(f"\n{model}:")
-        print(f"  Accuracy: {stats['baseline_accuracy']}% → {stats['logicguard_accuracy']}% ({stats['delta_pp']:+.1f} pp)")
+        print(f"  Accuracy: {stats['baseline_accuracy']}% → {stats.get('avicennaguard_accuracy', stats.get('logicguard_accuracy'))}% ({stats['delta_pp']:+.1f} pp)")
         print(f"  McNemar p-value: {stats['mcnemar']['p_value']:.6f}  {sig}")
         print(f"  95% CI baseline:    [{stats['confidence_intervals_95pct']['baseline'][0]}%, {stats['confidence_intervals_95pct']['baseline'][1]}%]")
-        print(f"  95% CI +LogicGuard: [{stats['confidence_intervals_95pct']['logicguard'][0]}%, {stats['confidence_intervals_95pct']['logicguard'][1]}%]")
+        print(f"  95% CI +AvicennaGuard: [{stats['confidence_intervals_95pct'].get('avicennaguard', stats['confidence_intervals_95pct'].get('logicguard'))[0]}%, {stats['confidence_intervals_95pct'].get('avicennaguard', stats['confidence_intervals_95pct'].get('logicguard'))[1]}%]")
 
     print(f"\nSaved to: {args.output}")

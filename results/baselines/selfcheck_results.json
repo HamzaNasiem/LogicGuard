@@ -1,0 +1,627 @@
+{
+  "method": "SelfCheckGPT",
+  "model": "llama3.2:3b",
+  "n_samples": 5,
+  "temperature": 0.7,
+  "mock": true,
+  "total_queries": 20,
+  "mean_confidence": 0.74,
+  "mean_consistency": 0.74,
+  "hallucination_flags_count": 0,
+  "hallucination_rate": 0.0,
+  "mean_latency_ms": 0.04,
+  "metrics": {
+    "accuracy": 0.55,
+    "precision": 0.8333,
+    "recall": 0.3846,
+    "f1": 0.5263,
+    "specificity": 0.8571,
+    "confusion_matrix": {
+      "tp": 5,
+      "fp": 1,
+      "tn": 6,
+      "fn": 8,
+      "total": 20
+    },
+    "ood_count": 0,
+    "unresolved_count": 0
+  },
+  "per_query_type": {
+    "taxonomic": {
+      "accuracy": 0.5,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "specificity": 1.0,
+      "confusion_matrix": {
+        "tp": 1,
+        "fp": 0,
+        "tn": 1,
+        "fn": 2,
+        "total": 4
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 4
+    },
+    "hypothetical": {
+      "accuracy": 0.5625,
+      "precision": 0.8,
+      "recall": 0.4,
+      "f1": 0.5333,
+      "specificity": 0.8333,
+      "confusion_matrix": {
+        "tp": 4,
+        "fp": 1,
+        "tn": 5,
+        "fn": 6,
+        "total": 16
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 16
+    }
+  },
+  "per_source": {
+    "FOLIO": {
+      "accuracy": 0.55,
+      "precision": 0.8333,
+      "recall": 0.3846,
+      "f1": 0.5263,
+      "specificity": 0.8571,
+      "confusion_matrix": {
+        "tp": 5,
+        "fp": 1,
+        "tn": 6,
+        "fn": 8,
+        "total": 20
+      },
+      "ood_count": 0,
+      "unresolved_count": 0,
+      "count": 20
+    }
+  },
+  "results": [
+    {
+      "query_id": "folio_001",
+      "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 1.0,
+      "consistency_score": 1.0,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "no",
+        "no",
+        "no"
+      ],
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_ms": 0.09,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_002",
+      "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "confidence": 0.8,
+      "consistency_score": 0.8,
+      "is_hallucination": false,
+      "samples": [
+        "yes",
+        "no",
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.07,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_003",
+      "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "yes",
+        "no",
+        "yes"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.05,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_004",
+      "question": "Is it true that there is an animal.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "confidence": 0.8,
+      "consistency_score": 0.8,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_005",
+      "question": "Is it true that tom is an ocellated wild turkey.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "confidence": 1.0,
+      "consistency_score": 1.0,
+      "is_hallucination": false,
+      "samples": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_006",
+      "question": "Is it true that tom is an eastern wild turkey.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "yes",
+        "no",
+        "yes",
+        "no",
+        "no"
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.06,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_007",
+      "question": "Is it true that the legend of zelda is in the top 10 list.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "yes",
+        "yes",
+        "no",
+        "no"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_008",
+      "question": "Is it true that the legend of zelda is not in the top 10 list.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "yes",
+        "no",
+        "yes",
+        "no"
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_009",
+      "question": "Is it true that all squares are shapes.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "confidence": 1.0,
+      "consistency_score": 1.0,
+      "is_hallucination": false,
+      "samples": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ],
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_010",
+      "question": "Is it true that rock is a turtle or cute.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "yes",
+        "yes",
+        "no"
+      ],
+      "ground_truth": true,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_011",
+      "question": "Is it true that if rock is not both a turtle and a squirrel, then rock is either cute or skittish.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "yes",
+        "no",
+        "yes",
+        "no",
+        "no"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_012",
+      "question": "Is it true that if rock is cute and still, then rock is a turtle and skittish.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "yes",
+        "no",
+        "yes"
+      ],
+      "ground_truth": false,
+      "query_type": "taxonomic",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_013",
+      "question": "Is it true that karen will share \"stranger things\" to lisa.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "yes",
+        "yes",
+        "yes",
+        "no",
+        "no"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_014",
+      "question": "Is it true that \"black mirror\" is popular.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.8,
+      "consistency_score": 0.8,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "yes",
+        "no",
+        "no"
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_015",
+      "question": "Is it true that beijing has hosted both the 2008 summer olympics and a winter olympics.?",
+      "prediction": true,
+      "final_answer": "yes",
+      "confidence": 0.8,
+      "consistency_score": 0.8,
+      "is_hallucination": false,
+      "samples": [
+        "yes",
+        "yes",
+        "no",
+        "yes",
+        "yes"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_016",
+      "question": "Is it true that marvin is an alien.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 1.0,
+      "consistency_score": 1.0,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "no",
+        "no",
+        "no"
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.03,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_017",
+      "question": "Is it true that marvin is neither a human nor from mars.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 1.0,
+      "consistency_score": 1.0,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "no",
+        "no",
+        "no"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.03,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_018",
+      "question": "Is it true that djokovic lives in a tax haven.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "no",
+        "yes",
+        "yes",
+        "no"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_019",
+      "question": "Is it true that djokovic does not live in a tax haven.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "yes",
+        "no",
+        "yes",
+        "no"
+      ],
+      "ground_truth": false,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    },
+    {
+      "query_id": "folio_020",
+      "question": "Is it true that roderick strong leads a professional wrestling stable.?",
+      "prediction": false,
+      "final_answer": "no",
+      "confidence": 0.6,
+      "consistency_score": 0.6,
+      "is_hallucination": false,
+      "samples": [
+        "no",
+        "yes",
+        "no",
+        "no",
+        "yes"
+      ],
+      "ground_truth": true,
+      "query_type": "hypothetical",
+      "source": "FOLIO",
+      "latency_ms": 0.04,
+      "metadata": {
+        "model": "llama3.2:3b",
+        "n_samples": 5,
+        "temperature": 0.7,
+        "mock": true,
+        "confidence_threshold": 0.6
+      }
+    }
+  ],
+  "summary_text": "====================================================================\n  EVALUATION SUMMARY: SELFCHECKGPT\n====================================================================\n  Total Evaluated: 20     | Accuracy:    55.0%\n  Precision:       83.3% | Recall:      38.5%\n  F1 Score:        52.6% | Specificity: 85.7%\n--------------------------------------------------------------------\n  Confusion Matrix: TP=5    FP=1    TN=6    FN=8   \n--------------------------------------------------------------------\n  Breakdown by Query Type:\n    Type            N      Acc      Prec     Rec      F1      \n    -------------------------------------------------------\n    hypothetical    16      56.2%   80.0%   40.0%   53.3%\n    taxonomic       4       50.0%  100.0%   33.3%   50.0%\n--------------------------------------------------------------------\n  Breakdown by Source Dataset:\n    Source             N      Acc      Prec     Rec      F1      \n    ----------------------------------------------------------\n    FOLIO              20      55.0%   83.3%   38.5%   52.6%\n===================================================================="
+}

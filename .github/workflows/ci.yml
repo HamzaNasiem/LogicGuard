@@ -1,0 +1,65 @@
+name: AvicennaGuard CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint with ruff
+        run: ruff check src/ tests/ experiments/
+
+      - name: Type check with mypy
+        run: mypy src/avicennaguard/ --ignore-missing-imports
+
+      - name: Run unit tests
+        run: |
+          pytest tests/unit/ -v \
+            --cov=src/avicennaguard \
+            --cov-report=term-missing \
+            --cov-fail-under=80
+
+      - name: Run integration tests (no LLM — regex parser only)
+        run: |
+          pytest tests/integration/ -v -m "not requires_ollama"
+
+  reproducibility:
+    runs-on: ubuntu-latest
+    name: Verify KB integrity
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Verify KB loads without errors
+        run: |
+          python -c "
+          from avicennaguard.kb.loader import KnowledgeBase
+          kb = KnowledgeBase('data/knowledge_bases/knowledge_base_extended.json')
+          stats = kb.stats
+          assert stats['taxonomy_nodes'] >= 115, f'KB degraded: {stats}'
+          assert stats['taxonomy_edges'] >= 136, f'KB degraded: {stats}'
+          print('KB integrity check passed:', stats)
+          "
