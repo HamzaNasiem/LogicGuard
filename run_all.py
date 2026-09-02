@@ -129,10 +129,16 @@ def run_modern_suite(models: str = "all", mock: bool = True):
         "scripts/generate_paper_artifacts.py",
     ], "Stage 4: Statistical Significance (McNemar + Wilson CI) & IEEE Tables I–V")
 
+    # Step 5: Publication Figures Generation (300 DPI)
+    run_step([
+        "scripts/generate_paper_figures.py",
+    ], "Stage 5: High-Resolution Publication Figures Suite (Docs/figures/ Fig 1–6)")
+
     elapsed = time.time() - start
     print(f"\n{'=' * 65}")
     print(f"  ALL RESEARCH ARTIFACTS GENERATED in {elapsed:.2f}s")
     print(f"  LaTeX Tables: docs/paper/tables/ (Tables I-V)")
+    print(f"  Figures:      docs/figures/ (Figs 1-6 at 300 DPI)")
     print(f"  Results:      results/models/, results/baselines/, results/reports/")
     print(f"{'=' * 65}\n")
 

@@ -12,11 +12,11 @@
 
   Model               Base Acc  Base F1  +AG Acc   +AG F1  Gain Acc  Hall. Caught  Interc.%  Overhead
   --------------------------------------------------------------------------------------------------
-  llama3.2:3b            84.4%    87.2%    83.6%    86.3%     -0.9%             7      9.9%    0.82ms
-  mistral:7b             72.0%    76.5%    72.7%    76.9%     +0.7%            13     10.2%    0.82ms
-  llama2:7b              56.7%    62.1%    58.4%    63.7%     +1.8%            18      9.1%    0.82ms
-  deepseek-r1:7b         84.9%    87.5%    84.2%    86.9%     -0.7%             5      7.3%    0.82ms
-  phi4:latest            85.6%    87.9%    84.0%    86.5%     -1.6%             4      6.2%    0.82ms
+  llama3.2:3b            84.4%    87.2%    83.6%    86.3%     -0.9%             7      9.9%    0.84ms
+  mistral:7b             72.0%    76.5%    72.7%    76.9%     +0.7%            13     10.2%    0.84ms
+  llama2:7b              56.7%    62.1%    58.4%    63.7%     +1.8%            18      9.1%    0.83ms
+  deepseek-r1:7b         84.9%    87.5%    84.2%    86.9%     -0.7%             5      7.3%    0.83ms
+  phi4:latest            85.6%    87.9%    84.0%    86.5%     -1.6%             4      6.2%    0.83ms
 
 -------------------------------------------------------------------------------------
   MODEL: llama3.2:3b
@@ -37,9 +37,9 @@
     - ZANN      :    1
 
   Latency Profile (Mean / Median / P95):
-    - Stage 1 Parser   : 0.81ms / 0.81ms / 0.83ms
-    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.03ms
-    - Total Overhead   : 0.82ms / 0.81ms / 0.85ms
+    - Stage 1 Parser   : 0.82ms / 0.81ms / 0.86ms
+    - Stage 2 BFS      : 0.02ms / 0.00ms / 0.06ms
+    - Total Overhead   : 0.84ms / 0.82ms / 0.92ms
 
 -------------------------------------------------------------------------------------
   MODEL: mistral:7b
@@ -60,9 +60,9 @@
     - ZANN      :    1
 
   Latency Profile (Mean / Median / P95):
-    - Stage 1 Parser   : 0.81ms / 0.81ms / 0.83ms
-    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.03ms
-    - Total Overhead   : 0.82ms / 0.81ms / 0.86ms
+    - Stage 1 Parser   : 0.82ms / 0.81ms / 0.86ms
+    - Stage 2 BFS      : 0.02ms / 0.00ms / 0.06ms
+    - Total Overhead   : 0.84ms / 0.82ms / 0.90ms
 
 -------------------------------------------------------------------------------------
   MODEL: llama2:7b
@@ -83,9 +83,9 @@
     - ZANN      :    1
 
   Latency Profile (Mean / Median / P95):
-    - Stage 1 Parser   : 0.81ms / 0.81ms / 0.83ms
-    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.04ms
-    - Total Overhead   : 0.82ms / 0.81ms / 0.87ms
+    - Stage 1 Parser   : 0.82ms / 0.81ms / 0.85ms
+    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.06ms
+    - Total Overhead   : 0.83ms / 0.82ms / 0.90ms
 
 -------------------------------------------------------------------------------------
   MODEL: deepseek-r1:7b
@@ -106,9 +106,9 @@
     - ZANN      :    1
 
   Latency Profile (Mean / Median / P95):
-    - Stage 1 Parser   : 0.81ms / 0.81ms / 0.85ms
-    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.04ms
-    - Total Overhead   : 0.82ms / 0.81ms / 0.88ms
+    - Stage 1 Parser   : 0.82ms / 0.81ms / 0.85ms
+    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.05ms
+    - Total Overhead   : 0.83ms / 0.82ms / 0.89ms
 
 -------------------------------------------------------------------------------------
   MODEL: phi4:latest
@@ -129,9 +129,9 @@
     - ZANN      :    1
 
   Latency Profile (Mean / Median / P95):
-    - Stage 1 Parser   : 0.81ms / 0.81ms / 0.84ms
-    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.03ms
-    - Total Overhead   : 0.82ms / 0.81ms / 0.86ms
+    - Stage 1 Parser   : 0.82ms / 0.81ms / 0.85ms
+    - Stage 2 BFS      : 0.01ms / 0.00ms / 0.06ms
+    - Total Overhead   : 0.83ms / 0.82ms / 0.90ms
 
 =====================================================================================
   END OF BENCHMARK EVALUATION REPORT
