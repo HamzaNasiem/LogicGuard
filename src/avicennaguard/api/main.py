@@ -8,12 +8,10 @@ Exposes AvicennaGuard as a production REST API with:
     GET  /docs             — Auto-generated OpenAPI documentation
 
 Run:
-    cd D:/research/AvicennaGuard
     PYTHONPATH=src uvicorn avicennaguard.api.main:app --host 0.0.0.0 --port 8000 --reload
-
-Or with the helper script:
-    python run_api.py
 """
+
+from __future__ import annotations
 
 import logging
 import os
@@ -31,7 +29,7 @@ from avicennaguard.pipeline.avicennaguard import AvicennaGuard
 logger = logging.getLogger(__name__)
 
 # KB path — configurable via env var or defaults to extended KB
-KB_PATH      = Path(os.environ.get("AVICENNAGUARD_KB", os.environ.get("LOGICGUARD_KB", "knowledge_base_1200.json")))
+KB_PATH = Path(os.environ.get("AVICENNAGUARD_KB", os.environ.get("LOGICGUARD_KB", "knowledge_base_1200.json")))
 DEFAULT_MODEL = os.environ.get("AVICENNAGUARD_MODEL", os.environ.get("LOGICGUARD_MODEL", "llama3.2:3b"))
 
 
@@ -39,11 +37,11 @@ DEFAULT_MODEL = os.environ.get("AVICENNAGUARD_MODEL", os.environ.get("LOGICGUARD
 async def lifespan(app: FastAPI):
     """Load KB and initialize AvicennaGuard pipeline on startup."""
     logger.info("Loading AvicennaGuard knowledge base from %s", KB_PATH)
-    kb = KnowledgeBase(KB_PATH)
-    lg = AvicennaGuard(kb, model=DEFAULT_MODEL)
+    kb_inst = KnowledgeBase(KB_PATH)
+    lg = AvicennaGuard(kb_inst, model=DEFAULT_MODEL)
     dependencies.set_avicennaguard(lg)
     logger.info("AvicennaGuard ready — KB: %s | Model: %s", KB_PATH.name, DEFAULT_MODEL)
-    logger.info("KB stats: %s", kb.stats)
+    logger.info("KB stats: %s", kb_inst.stats)
     yield
     logger.info("AvicennaGuard API shutting down.")
 
@@ -54,7 +52,7 @@ app = FastAPI(
         "Neuro-symbolic middleware for deterministic hallucination interception "
         "in Large Language Models using Avicennian syllogistic frameworks.\n\n"
         "**Epistemic States:** YAQEEN (certain) · WAHM (intercepted) · SHAKK (unknown) · ZANN (probable)\n\n"
-        "**Architecture:** Stage 1 (LLM semantic parser, T=0.0) → Stage 2 (BFS graph validator, deterministic)"
+        "**Architecture:** Stage 1 (LLM semantic parser, T=0.0) -> Stage 2 (BFS graph validator, deterministic)"
     ),
     version="2.0.0",
     lifespan=lifespan,
@@ -70,5 +68,5 @@ app.add_middleware(
 )
 
 app.include_router(validate.router, prefix="/api/v1", tags=["Validation"])
-app.include_router(health.router,   prefix="/api/v1", tags=["Health"])
-app.include_router(kb.router,       prefix="/api/v1", tags=["Knowledge Base"])
+app.include_router(health.router, prefix="/api/v1", tags=["Health"])
+app.include_router(kb.router, prefix="/api/v1", tags=["Knowledge Base"])

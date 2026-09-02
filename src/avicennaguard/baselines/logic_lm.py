@@ -1,6 +1,6 @@
 """
 Logic-LM Baseline for AvicennaGuard.
-====================================
+
 Implements Logic-LM (Pan et al., EMNLP 2023) neuro-symbolic solver baseline.
 
 Architecture:
@@ -17,13 +17,14 @@ Reference:
     https://arxiv.org/abs/2305.12295
 """
 
-from dataclasses import asdict, dataclass, field
-import json
+from __future__ import annotations
+
 import logging
-from pathlib import Path
 import re
 import time
-from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 import networkx as nx
 
@@ -60,6 +61,7 @@ DEFAULT_KB_PATHS = [
 @dataclass
 class LogicLMResult:
     """Structured output from a Logic-LM evaluation."""
+
     query_id: str
     question: str
     logical_formula: str
@@ -90,6 +92,13 @@ class RuleBasedLogicTranslator:
     def translate(self, question: str, hint_type: Optional[str] = None) -> Dict[str, Any]:
         """
         Translate question to structured logical AST.
+
+        Args:
+            question: Natural language question string.
+            hint_type: Optional query type hint ('taxonomic', 'categorical', 'hypothetical').
+
+        Returns:
+            Dictionary with formula string, predicate, arguments, and parsing status.
         """
         q = question.strip()
         q_lower = q.lower()
@@ -172,7 +181,13 @@ class SymbolicLogicSolver:
     Deterministic symbolic solver over AvicennaGuard KnowledgeBase graph axioms.
     """
 
-    def __init__(self, kb: KnowledgeBase):
+    def __init__(self, kb: KnowledgeBase) -> None:
+        """
+        Initialize the SymbolicLogicSolver with a KnowledgeBase instance.
+
+        Args:
+            kb: KnowledgeBase instance.
+        """
         self.kb = kb
 
     def _resolve(self, term: str) -> str:
@@ -187,8 +202,11 @@ class SymbolicLogicSolver:
         """
         Symbolically evaluate formula against KB.
 
+        Args:
+            formula_info: Parsed formula AST dictionary.
+
         Returns:
-            (solver_status, prediction_bool, proof_steps)
+            Tuple of (solver_status, prediction_bool, proof_steps)
             solver_status in ('PROVEN_TRUE', 'PROVEN_FALSE', 'SAT', 'UNSAT', 'UNKNOWN')
         """
         ftype = formula_info.get("formula_type")
@@ -312,7 +330,7 @@ class LogicLMBaseline:
         kb_path: Optional[Union[str, Path]] = None,
         model: str = "llama3.2:3b",
         mock: bool = False,
-    ):
+    ) -> None:
         self.model = model
         self.mock = mock or (not _HAS_OLLAMA)
         self.kb_path = self._resolve_kb_path(kb_path)
@@ -337,6 +355,13 @@ class LogicLMBaseline:
     def translate(self, question: str, query_type: Optional[str] = None) -> Tuple[str, Dict[str, Any]]:
         """
         Translate natural language question to formal logic representation.
+
+        Args:
+            question: Query text.
+            query_type: Optional hint type.
+
+        Returns:
+            Tuple of (formula_string, formula_ast_dict).
         """
         formula_info = self.translator.translate(question, hint_type=query_type)
         return formula_info.get("formula", "Unknown()"), formula_info
@@ -344,6 +369,12 @@ class LogicLMBaseline:
     def solve(self, formula_info: Dict[str, Any]) -> Tuple[str, bool, List[str]]:
         """
         Solve translated logical formula using deterministic symbolic solver.
+
+        Args:
+            formula_info: Formula AST dictionary.
+
+        Returns:
+            Tuple of (solver_status, prediction_bool, proof_steps).
         """
         return self.solver.solve(formula_info)
 

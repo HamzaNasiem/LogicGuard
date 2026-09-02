@@ -1,7 +1,13 @@
-"""AvicennaGuard two-stage pipeline: Stage 1 (neural parser) + Stage 2 (BFS validator)."""
+"""
+AvicennaGuard Two-Stage Pipeline Package.
 
-from avicennaguard.pipeline.avicennaguard import AvicennaGuard
+Orchestrates Stage 1 (neural semantic parsing) and Stage 2 (deterministic BFS
+graph validation) for neuro-symbolic hallucination interception.
+"""
 
-LogicGuard = AvicennaGuard  # Backward-compatibility alias
+from avicennaguard.pipeline.avicennaguard import AvicennaGuard, LogicGuard
 
-__all__ = ["AvicennaGuard", "LogicGuard"]
+__all__ = [
+    "AvicennaGuard",
+    "LogicGuard",
+]

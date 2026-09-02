@@ -6,12 +6,22 @@ F1, Specificity, Confusion Matrix) and per-group breakdowns for baseline methods
 (SelfCheckGPT, Dense RAG, Logic-LM) on the AvicennaGuard benchmark dataset.
 """
 
+from __future__ import annotations
+
 from collections import defaultdict
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional
 
 
 def parse_bool_answer(val: Any) -> Optional[bool]:
-    """Parse various truth/boolean representations to standard bool or None."""
+    """
+    Parse various truth/boolean representations to standard bool or None.
+
+    Args:
+        val: Input truth value (bool, str, int, etc.).
+
+    Returns:
+        True, False, or None if uncertain / OOD / unparseable.
+    """
     if val is None:
         return None
     if isinstance(val, bool):
@@ -109,13 +119,22 @@ def compute_group_metrics(
     results: List[Dict[str, Any]],
     group_key: str = "query_type",
 ) -> Dict[str, Dict[str, Any]]:
-    """Compute classification metrics grouped by a query attribute (e.g. query_type, source)."""
+    """
+    Compute classification metrics grouped by a query attribute (e.g. query_type, source).
+
+    Args:
+        results: List of per-query result dictionaries.
+        group_key: Key name to group by.
+
+    Returns:
+        Dictionary mapping group names to their respective classification metrics.
+    """
     grouped = defaultdict(list)
     for r in results:
         key = r.get(group_key, "unknown")
         grouped[key].append(r)
 
-    out = {}
+    out: Dict[str, Dict[str, Any]] = {}
     for group_name, items in grouped.items():
         preds = [item.get("prediction") for item in items]
         gts = [item.get("ground_truth") for item in items]
@@ -132,7 +151,18 @@ def format_metrics_summary(
     by_type: Optional[Dict[str, Dict[str, Any]]] = None,
     by_source: Optional[Dict[str, Dict[str, Any]]] = None,
 ) -> str:
-    """Format evaluation metrics as a clean, human-readable terminal table."""
+    """
+    Format evaluation metrics as a clean, human-readable terminal table.
+
+    Args:
+        method_name: Name of evaluated baseline or pipeline.
+        metrics: Aggregate classification metrics dictionary.
+        by_type: Optional per-query-type breakdown dictionary.
+        by_source: Optional per-source-dataset breakdown dictionary.
+
+    Returns:
+        Formatted multi-line summary string.
+    """
     cm = metrics.get("confusion_matrix", {})
     tp, fp, tn, fn = cm.get("tp", 0), cm.get("fp", 0), cm.get("tn", 0), cm.get("fn", 0)
     total = cm.get("total", 0)

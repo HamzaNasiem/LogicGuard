@@ -13,21 +13,15 @@ Constraints applied:
 
 If the LLM produces malformed JSON, the regex fallback in regex_parser.py
 ensures 100% pipeline availability.
-
-This design resolves the Semantic Parsing Bottleneck:
-    "Would every creature classified as a dog fall under the mammal category?"
-    ↕ (logically identical, structurally incompatible)
-    "Are dogs mammals?"
-
-Both produce: {"type": "taxonomic", "subject": "dog", "predicate": "mammal"}
 """
+
+from __future__ import annotations
 
 import json
 import logging
 import time
-from typing import Optional
+from typing import Any, Dict, Tuple
 
-from avicennaguard.core.epistemic_states import QueryType
 from avicennaguard.parsers.regex_parser import RegexParser
 
 logger = logging.getLogger(__name__)
@@ -60,19 +54,28 @@ class LLMParser:
     supports JSON-forced output can serve as the Stage 1 parser.
     """
 
-    def __init__(self, model: str = "llama3.2:3b"):
+    def __init__(self, model: str = "llama3.2:3b") -> None:
+        """
+        Initialize the LLMParser.
+
+        Args:
+            model: Ollama model tag / identifier.
+        """
         self.model = model
         self._regex_fallback = RegexParser()
-        self._parse_stats = {"success": 0, "regex_fallback": 0, "failure": 0}
+        self._parse_stats: Dict[str, int] = {"success": 0, "regex_fallback": 0, "failure": 0}
 
-    def parse(self, question: str) -> tuple[dict, bool]:
+    def parse(self, question: str) -> Tuple[Dict[str, Any], bool]:
         """
         Parse natural language question into structured logical form.
 
+        Args:
+            question: Natural language query string.
+
         Returns:
-            (parsed_dict, used_fallback)
-            parsed_dict:    One of the four JSON schemas above.
-            used_fallback:  True if regex fallback was triggered.
+            Tuple of (parsed_dict, used_fallback):
+                parsed_dict: One of the four JSON proposition schemas.
+                used_fallback: True if regex fallback was triggered.
 
         Never raises an exception — returns {"type": "non-logical"} on
         complete failure to ensure 100% pipeline availability.
@@ -89,7 +92,8 @@ class LLMParser:
         result["_parse_latency_ms"] = round(elapsed, 2)
         return result, used_fallback
 
-    def _call_llm(self, question: str) -> tuple[dict, bool]:
+    def _call_llm(self, question: str) -> Tuple[Dict[str, Any], bool]:
+        """Call Ollama LLM with forced JSON format and schema validation."""
         try:
             import ollama
 
@@ -99,7 +103,7 @@ class LLMParser:
                 options={"temperature": 0.0, "num_predict": 80, "seed": 42},
                 messages=[
                     {"role": "system", "content": PARSER_SYSTEM_PROMPT},
-                    {"role": "user",   "content": question},
+                    {"role": "user", "content": question},
                 ],
             )
             raw = resp["message"]["content"].strip()
@@ -114,7 +118,10 @@ class LLMParser:
             if parsed.get("type") == "non-logical":
                 regex_result = self._regex_fallback.parse(question)
                 if regex_result.get("type") != "non-logical":
-                    logger.debug("Regex override: LLM said non-logical but regex found %s", regex_result["type"])
+                    logger.debug(
+                        "Regex override: LLM said non-logical but regex found %s",
+                        regex_result["type"],
+                    )
                     return regex_result, True
 
             return parsed, False
@@ -125,11 +132,16 @@ class LLMParser:
             return self._regex_fallback.parse(question), True
 
     @property
-    def parse_stats(self) -> dict:
-        """Returns Stage 1 reliability metrics for paper reporting."""
+    def parse_stats(self) -> Dict[str, Any]:
+        """
+        Returns Stage 1 reliability metrics for paper reporting.
+
+        Returns:
+            Dictionary containing success, fallback, failure counts and rates.
+        """
         total = sum(self._parse_stats.values())
         if total == 0:
-            return self._parse_stats
+            return dict(self._parse_stats)
         return {
             **self._parse_stats,
             "total": total,

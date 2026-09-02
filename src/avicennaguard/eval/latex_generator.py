@@ -12,7 +12,6 @@ and standard packages (booktabs, multirow, amsmath):
 
 from __future__ import annotations
 
-import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
@@ -142,15 +141,16 @@ def generate_baseline_comparison_table(results: Dict[str, Any]) -> str:
 
     Args:
         results: Dictionary containing baseline results (SelfCheckGPT, RAG, dense embeddings, etc.)
+
+    Returns:
+        LaTeX table string for Table II.
     """
-    # Extract baseline records with sensible defaults matching experiment runs
     selfcheck = results.get("selfcheckgpt", results.get("selfcheck", {}))
     rag_sparse = results.get("rag_sparse", results.get("rag", {}))
     rag_dense_minilm = results.get("rag_dense_minilm", results.get("rag_dense", {}))
     rag_dense_mpnet = results.get("rag_dense_mpnet", {})
     ag = results.get("avicennaguard", results.get("logicguard", {}))
 
-    # Helper to parse metric
     def _get_m(d: Dict[str, Any], key: str, default: float) -> float:
         v = d.get(key, default)
         return float(v) if v is not None else default
@@ -221,10 +221,12 @@ def generate_mcnemar_table(significance_data: Dict[str, Any]) -> str:
 
     Args:
         significance_data: Output from StatisticalAnalyzer or statistical_significance.json.
+
+    Returns:
+        LaTeX table string for Table III.
     """
     mc_tests = significance_data.get("mcnemar_tests", {})
     ci_data = significance_data.get("confidence_intervals", {})
-    summary_rows = significance_data.get("summary_table", [])
 
     model_keys = ["LLaMA2-7B", "Mistral-7B", "LLaMA3.2-3B"]
     rows: List[str] = []
@@ -299,6 +301,9 @@ def generate_latency_table(latency_data: Dict[str, Any]) -> str:
 
     Args:
         latency_data: Dictionary containing latency analysis per model.
+
+    Returns:
+        LaTeX table string for Table IV.
     """
     lat_models = latency_data.get("latency_analysis", latency_data)
     model_keys = ["LLaMA2-7B", "Mistral-7B", "LLaMA3.2-3B"]
@@ -344,6 +349,9 @@ def generate_ablation_table(ablation_data: Optional[Dict[str, Any]] = None) -> s
 
     Args:
         ablation_data: Optional dictionary with custom ablation results.
+
+    Returns:
+        LaTeX table string for Table V.
     """
     ablation_rows = [
         (
@@ -412,6 +420,9 @@ def generate_all_tables(
 ) -> Dict[str, str]:
     """
     Generate all 5 IEEE publication tables as a dictionary of LaTeX strings.
+
+    Returns:
+        Dictionary mapping table keys to their respective LaTeX table strings.
     """
     return {
         "table1_main_results": generate_main_results_table(model_results),
@@ -425,6 +436,13 @@ def generate_all_tables(
 def wrap_standalone_document(tables: Dict[str, str] | List[str], title: str = "AvicennaGuard IEEE Tables") -> str:
     """
     Wrap tables in a compilable LaTeX document for previewing or testing with pdflatex.
+
+    Args:
+        tables: Dictionary or list of LaTeX table snippets.
+        title: Document title string.
+
+    Returns:
+        Complete compilable LaTeX document string.
     """
     if isinstance(tables, dict):
         table_snippets = list(tables.values())
@@ -458,6 +476,13 @@ def wrap_standalone_document(tables: Dict[str, str] | List[str], title: str = "A
 def export_tables_to_files(tables_dict: Dict[str, str], output_dir: Union[str, Path]) -> List[str]:
     """
     Save generated LaTeX table strings to individual .tex files in output_dir.
+
+    Args:
+        tables_dict: Dictionary mapping table names to LaTeX strings.
+        output_dir: Target output directory.
+
+    Returns:
+        List of generated file paths.
     """
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)

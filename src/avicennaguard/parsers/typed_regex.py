@@ -1,13 +1,14 @@
 """
 Typed regex extraction for research evaluation (Stage 1).
 
-Uses dataset qtype hints for reproducible IEEE eval runs.
-Production API uses LLMParser instead.
+Uses dataset query type hints for reproducible benchmark evaluation runs.
+Production API uses DebertaParser / LLMParser instead.
 """
+
+from __future__ import annotations
 
 import re
 from typing import Optional, Tuple
-
 
 _TAX_SYNONYMS = {
     "living things": "living_thing",
@@ -19,6 +20,7 @@ _TAX_SYNONYMS = {
 
 
 def _normalize_word(word: str) -> str:
+    """Singularize and normalize irregular English nouns."""
     w = word.lower().strip()
     irregulars = {
         "mice": "mouse", "geese": "goose", "feet": "foot", "teeth": "tooth",
@@ -48,11 +50,21 @@ def _normalize_word(word: str) -> str:
 
 
 def _normalize_predicate(pred: str) -> str:
+    """Normalize taxonomic predicate term."""
     p = pred.strip().lower()
     return _TAX_SYNONYMS.get(p, _normalize_word(p))
 
 
 def extract_taxonomic(q: str) -> Tuple[Optional[str], Optional[str], str]:
+    """
+    Extract subject and predicate from a taxonomic query.
+
+    Args:
+        q: Raw question string.
+
+    Returns:
+        Tuple of (subject, predicate, status).
+    """
     t = q.lower().strip().rstrip("?")
     m = re.match(r"are all (\w+)\s+(?:a\s+|an\s+)?([\w ]+)", t)
     if m:
@@ -67,6 +79,15 @@ def extract_taxonomic(q: str) -> Tuple[Optional[str], Optional[str], str]:
 
 
 def extract_categorical(q: str) -> Tuple[Optional[str], Optional[str], str]:
+    """
+    Extract entity and property from a categorical query.
+
+    Args:
+        q: Raw question string.
+
+    Returns:
+        Tuple of (entity, property, status).
+    """
     t = q.lower().strip().rstrip("?")
     m = re.match(r"do all (\w+)\s+(?:have|need)\s+(?:a\s+|an\s+|the\s+)?(.+)", t)
     if m:
@@ -94,6 +115,15 @@ def extract_categorical(q: str) -> Tuple[Optional[str], Optional[str], str]:
 
 
 def extract_hypothetical(q: str) -> Tuple[Optional[str], Optional[str], bool, str]:
+    """
+    Extract condition and consequence from a hypothetical (IF-THEN) query.
+
+    Args:
+        q: Raw question string.
+
+    Returns:
+        Tuple of (condition, consequence, is_negated, status).
+    """
     t = q.lower().strip().rstrip("?")
     if "if" not in t:
         return None, None, False, "parse_failure"

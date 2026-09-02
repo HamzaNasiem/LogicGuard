@@ -1,6 +1,6 @@
 """
-AvicennaGuard Knowledge Base Builder & Validator Module
-======================================================
+AvicennaGuard Knowledge Base Builder & Validator Module.
+
 Provides programmatic extraction, synthesis, cycle-checking, and export
 for AvicennaGuard's multi-relational knowledge base:
   - G_T: Directed Acyclic Graph (DAG) for Taxonomic IS-A chains
@@ -8,10 +8,12 @@ for AvicennaGuard's multi-relational knowledge base:
   - G_C: Conditional causal / scientific IF-THEN implication rules
 """
 
+from __future__ import annotations
+
 import json
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple, Any
+from typing import Any, Dict, List, Set, Tuple
 
 import networkx as nx
 
@@ -21,20 +23,33 @@ logger = logging.getLogger(__name__)
 class KnowledgeBaseBuilder:
     """Programmatic builder and validator for Avicennian multi-relational knowledge bases."""
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """Initialize an empty KnowledgeBaseBuilder."""
         self.g_t: nx.DiGraph = nx.DiGraph()
         self.g_p: Dict[str, Set[str]] = {}
         self.g_c: List[Dict[str, str]] = []
 
     def add_taxonomy_edge(self, child: str, parent: str) -> None:
-        """Add a directed IS-A edge: child -> parent."""
+        """
+        Add a directed IS-A edge: child -> parent.
+
+        Args:
+            child: Subtype or hyponym entity name.
+            parent: Supertype or hypernym entity name.
+        """
         c = child.strip().lower().replace(" ", "_")
         p = parent.strip().lower().replace(" ", "_")
         if c and p and c != p:
             self.g_t.add_edge(c, p)
 
     def add_property(self, entity: str, prop: str) -> None:
-        """Associate a property with an entity."""
+        """
+        Associate a property with an entity.
+
+        Args:
+            entity: Entity name.
+            prop: Property or attribute name.
+        """
         e = entity.strip().lower().replace(" ", "_")
         p = prop.strip().lower().replace(" ", "_")
         if e and p:
@@ -43,7 +58,13 @@ class KnowledgeBaseBuilder:
             self.g_p[e].add(p)
 
     def add_conditional(self, antecedent: str, consequent: str) -> None:
-        """Add a conditional implication rule: antecedent => consequent."""
+        """
+        Add a conditional implication rule: antecedent => consequent.
+
+        Args:
+            antecedent: IF condition clause.
+            consequent: THEN consequence clause.
+        """
         a = antecedent.strip().lower().replace(" ", "_")
         c = consequent.strip().lower().replace(" ", "_")
         if a and c:
@@ -52,49 +73,89 @@ class KnowledgeBaseBuilder:
                 self.g_c.append(rule)
 
     def validate_acyclicity(self) -> Tuple[bool, List[List[str]]]:
-        """Verify that G_T is a strictly Acyclic Directed Graph (DAG).
-        Returns (is_dag, cycles_found).
+        """
+        Verify that G_T is a strictly Acyclic Directed Graph (DAG).
+
+        Returns:
+            Tuple of (is_dag, list_of_cycles_found).
         """
         is_dag = nx.is_directed_acyclic_graph(self.g_t)
-        cycles = []
+        cycles: List[List[str]] = []
         if not is_dag:
             try:
                 cycles = list(nx.simple_cycles(self.g_t))
             except Exception as e:
-                logger.error(f"Error computing simple cycles: {e}")
+                logger.error("Error computing simple cycles: %s", e)
         return is_dag, cycles
 
     def get_parents(self, entity: str) -> List[str]:
-        """Get direct taxonomic parents (hypernyms) of an entity."""
+        """
+        Get direct taxonomic parents (hypernyms) of an entity.
+
+        Args:
+            entity: Target entity name.
+
+        Returns:
+            Sorted list of immediate hypernym entities.
+        """
         e = entity.strip().lower().replace(" ", "_")
         if e in self.g_t:
             return sorted(list(self.g_t.successors(e)))
         return []
 
     def get_children(self, entity: str) -> List[str]:
-        """Get direct taxonomic children (hyponyms) of an entity."""
+        """
+        Get direct taxonomic children (hyponyms) of an entity.
+
+        Args:
+            entity: Target entity name.
+
+        Returns:
+            Sorted list of immediate hyponym entities.
+        """
         e = entity.strip().lower().replace(" ", "_")
         if e in self.g_t:
             return sorted(list(self.g_t.predecessors(e)))
         return []
 
     def get_ancestors(self, entity: str) -> Set[str]:
-        """Get all taxonomic ancestors (transitive hypernyms) of an entity."""
+        """
+        Get all taxonomic ancestors (transitive hypernyms) of an entity.
+
+        Args:
+            entity: Target entity name.
+
+        Returns:
+            Set of all ancestor nodes reachable from entity.
+        """
         e = entity.strip().lower().replace(" ", "_")
         if e in self.g_t:
-            return nx.descendants(self.g_t, e)
+            return set(nx.descendants(self.g_t, e))
         return set()
 
     def get_descendants(self, entity: str) -> Set[str]:
-        """Get all taxonomic descendants (transitive hyponyms) of an entity."""
+        """
+        Get all taxonomic descendants (transitive hyponyms) of an entity.
+
+        Args:
+            entity: Target entity name.
+
+        Returns:
+            Set of all descendant nodes that lead to entity.
+        """
         e = entity.strip().lower().replace(" ", "_")
         if e in self.g_t:
-            return nx.ancestors(self.g_t, e)
+            return set(nx.ancestors(self.g_t, e))
         return set()
 
     def get_multi_parent_nodes(self) -> Dict[str, List[str]]:
-        """Find all nodes in G_T with multiple direct parents (poly-hierarchy)."""
-        multi_parents = {}
+        """
+        Find all nodes in G_T with multiple direct parents (poly-hierarchy).
+
+        Returns:
+            Dictionary mapping node names to lists of their direct parents.
+        """
+        multi_parents: Dict[str, List[str]] = {}
         for node in self.g_t.nodes():
             parents = list(self.g_t.successors(node))
             if len(parents) > 1:
@@ -102,9 +163,17 @@ class KnowledgeBaseBuilder:
         return multi_parents
 
     def get_inherited_properties(self, entity: str) -> Set[str]:
-        """Retrieve all direct and inherited properties for an entity via G_T traversal."""
+        """
+        Retrieve all direct and inherited properties for an entity via G_T traversal.
+
+        Args:
+            entity: Target entity name.
+
+        Returns:
+            Set of all direct and transitively inherited properties.
+        """
         e = entity.strip().lower().replace(" ", "_")
-        props = set()
+        props: Set[str] = set()
         if e in self.g_p:
             props.update(self.g_p[e])
         if e in self.g_t:
@@ -114,10 +183,15 @@ class KnowledgeBaseBuilder:
         return props
 
     def get_statistics(self) -> Dict[str, Any]:
-        """Compute structural metrics of the multi-relational KB."""
+        """
+        Compute structural metrics of the multi-relational KB.
+
+        Returns:
+            Dictionary containing node counts, edge counts, DAG status, and rule totals.
+        """
         is_dag, cycles = self.validate_acyclicity()
         total_properties = sum(len(props) for props in self.g_p.values())
-        unique_properties = set()
+        unique_properties: Set[str] = set()
         for props in self.g_p.values():
             unique_properties.update(props)
         multi_parents = self.get_multi_parent_nodes()
@@ -135,7 +209,16 @@ class KnowledgeBaseBuilder:
         }
 
     def load_from_json(self, filepath: str | Path) -> None:
-        """Load an existing knowledge base JSON into the builder."""
+        """
+        Load an existing knowledge base JSON into the builder.
+
+        Args:
+            filepath: Path to knowledge base JSON file.
+
+        Raises:
+            FileNotFoundError: If KB file does not exist.
+            ValueError: If JSON cannot be decoded with supported encodings.
+        """
         path = Path(filepath)
         if not path.exists():
             raise FileNotFoundError(f"KB file not found at: {path}")
@@ -190,7 +273,15 @@ class KnowledgeBaseBuilder:
                         self.add_conditional(ant, csq)
 
     def export_to_json(self, filepath: str | Path) -> Dict[str, Any]:
-        """Export the verified knowledge base to JSON format."""
+        """
+        Export the verified knowledge base to JSON format.
+
+        Args:
+            filepath: Destination file path.
+
+        Returns:
+            Dictionary representation of exported KB.
+        """
         path = Path(filepath)
         path.parent.mkdir(parents=True, exist_ok=True)
 

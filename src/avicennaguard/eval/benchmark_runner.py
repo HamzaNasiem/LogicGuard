@@ -9,16 +9,15 @@ hallucination interceptions, and full confusion matrix metrics.
 
 from __future__ import annotations
 
-from collections import Counter, defaultdict
 import hashlib
 import json
 import logging
-from pathlib import Path
-import random
 import time
-from typing import Any, Dict, List, Optional, Tuple, Union
+from collections import Counter
+from pathlib import Path
+from typing import Any, Optional, Union
 
-from avicennaguard.core.epistemic_states import EpistemicState, QueryType, ValidatorResult
+from avicennaguard.core.epistemic_states import EpistemicState
 from avicennaguard.data.benchmark_loader import BenchmarkLoader
 from avicennaguard.kb.loader import KnowledgeBase
 from avicennaguard.kb.validator import BFSValidator
@@ -217,7 +216,7 @@ class BenchmarkRunner:
         Call LLM for baseline question answering (or simulate in mock mode).
 
         Returns:
-            (raw_answer_string, parsed_bool, latency_ms)
+            Tuple of (raw_answer_string, parsed_bool, latency_ms).
         """
         if self.mock_mode:
             # Deterministic pseudo-random simulation based on question and model
@@ -271,7 +270,7 @@ class BenchmarkRunner:
         Execute Stage 1 Semantic Parsing (probabilistic form extraction).
 
         Returns:
-            (parsed_dict, used_fallback, parse_status, stage1_latency_ms)
+            Tuple of (parsed_dict, used_fallback, parse_status, stage1_latency_ms).
         """
         t0 = time.perf_counter()
 
@@ -334,7 +333,7 @@ class BenchmarkRunner:
         Execute Stage 2 Deterministic BFS Graph Validation.
 
         Returns:
-            (graph_answer, epistemic_state, path, proof, stage2_latency_ms)
+            Tuple of (graph_answer, epistemic_state, path, proof, stage2_latency_ms).
         """
         t0 = time.perf_counter()
         qtype = parsed.get("type", query_type_hint)
@@ -349,7 +348,7 @@ class BenchmarkRunner:
             if path:
                 proof = f"BFS: {' -> '.join(path)} = {ans}"
             elif ans is not None:
-                proof = f"BFS: {s} \u22AC {p} = {ans}"
+                proof = f"BFS: {s} ⊬ {p} = {ans}"
             else:
                 proof = f"Entity '{s}' or '{p}' not in KB (SHAKK)"
             stage2_ms = (time.perf_counter() - t0) * 1000
@@ -392,7 +391,7 @@ class BenchmarkRunner:
         Positive class = ground_truth is TRUE (valid claim)
         Negative class = ground_truth is FALSE (invalid claim)
         """
-        TP = TN = FP = FN = 0
+        tp = tn = fp = fn = 0
         for r in records:
             gt = to_bool(r.get("ground_truth"))
             pred = to_bool(r.get("final_answer"))
@@ -402,29 +401,29 @@ class BenchmarkRunner:
                 pred = False
 
             if gt is True and pred is True:
-                TP += 1
+                tp += 1
             elif gt is False and pred is False:
-                TN += 1
+                tn += 1
             elif gt is False and pred is True:
-                FP += 1
+                fp += 1
             elif gt is True and pred is False:
-                FN += 1
+                fn += 1
 
-        total = TP + TN + FP + FN
-        return {"TP": TP, "FP": FP, "TN": TN, "FN": FN, "total": total}
+        total = tp + tn + fp + fn
+        return {"TP": tp, "FP": fp, "TN": tn, "FN": fn, "total": total}
 
     @staticmethod
     def compute_prf1(cm: dict[str, int]) -> dict[str, float]:
         """Compute Accuracy, Precision, Recall, F1, Specificity, FPR from confusion matrix."""
-        TP, FP, TN, FN = cm["TP"], cm["FP"], cm["TN"], cm["FN"]
+        tp, fp, tn, fn = cm["TP"], cm["FP"], cm["TN"], cm["FN"]
         total = cm["total"]
 
-        precision = TP / (TP + FP) if (TP + FP) > 0 else 0.0
-        recall = TP / (TP + FN) if (TP + FN) > 0 else 0.0
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
         f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) > 0 else 0.0
-        accuracy = (TP + TN) / total if total > 0 else 0.0
-        specificity = TN / (TN + FP) if (TN + FP) > 0 else 0.0
-        fpr = FP / (TN + FP) if (TN + FP) > 0 else 0.0
+        accuracy = (tp + tn) / total if total > 0 else 0.0
+        specificity = tn / (tn + fp) if (tn + fp) > 0 else 0.0
+        fpr = fp / (tn + fp) if (tn + fp) > 0 else 0.0
 
         return {
             "accuracy": round(accuracy * 100, 2),

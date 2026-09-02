@@ -1,6 +1,6 @@
 """
 Dense RAG (Retrieval-Augmented Generation) Baseline for AvicennaGuard.
-====================================================================
+
 Implements an embedding-based and TF-IDF hybrid RAG baseline (Lewis et al., NeurIPS 2020)
 grounded against the 1,500-node AvicennaGuard Knowledge Base.
 
@@ -18,13 +18,14 @@ Reference:
     NeurIPS 2020. https://arxiv.org/abs/2005.11401
 """
 
-from dataclasses import asdict, dataclass, field
-import hashlib
+from __future__ import annotations
+
 import json
 import logging
-from pathlib import Path
 import re
 import time
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 import numpy as np
@@ -79,6 +80,12 @@ def kb_to_facts(kb_source: Union[str, Path, dict]) -> List[str]:
       - Taxonomy IS-A edges -> "A {child} is a {ancestor}." / "All {child}s are {ancestor}s."
       - Entity properties -> "A {entity} has {property}."
       - Conditionals -> "If {condition}, then {consequence}."
+
+    Args:
+        kb_source: Path to KB JSON file or pre-loaded dictionary.
+
+    Returns:
+        List of unique declarative fact strings.
     """
     if isinstance(kb_source, (str, Path)):
         p = Path(kb_source)
@@ -134,12 +141,18 @@ def kb_to_facts(kb_source: Union[str, Path, dict]) -> List[str]:
 class SparseTFIDFRetriever:
     """TF-IDF / keyword similarity retriever for fast and deterministic offline retrieval."""
 
-    def __init__(self, facts: List[str]):
+    def __init__(self, facts: List[str]) -> None:
+        """
+        Initialize SparseTFIDFRetriever.
+
+        Args:
+            facts: List of declarative fact strings.
+        """
         self.facts = facts
         self.stop_words = {
             "a", "an", "the", "is", "are", "all", "do", "does", "have",
             "has", "it", "if", "then", "true", "that", "be", "of", "in",
-            "for", "to", "and", "or", "not", "no", "yes", "what", "which"
+            "for", "to", "and", "or", "not", "no", "yes", "what", "which",
         }
         if _HAS_SKLEARN and len(facts) > 0:
             self.vectorizer = TfidfVectorizer(ngram_range=(1, 2), stop_words="english")
@@ -153,7 +166,16 @@ class SparseTFIDFRetriever:
         return [t for t in tokens if t not in self.stop_words and len(t) > 2]
 
     def retrieve(self, query: str, top_k: int = 5) -> List[Tuple[str, float]]:
-        """Retrieve top-K most similar facts with relevance scores."""
+        """
+        Retrieve top-K most similar facts with relevance scores.
+
+        Args:
+            query: Query text string.
+            top_k: Number of nearest facts to retrieve.
+
+        Returns:
+            List of (fact_string, relevance_score) tuples.
+        """
         if not self.facts:
             return []
 
@@ -190,7 +212,14 @@ class SparseTFIDFRetriever:
 class DenseEmbeddingRetriever:
     """Embedding-based dense retriever using SentenceTransformers."""
 
-    def __init__(self, facts: List[str], model_name: str = "all-MiniLM-L6-v2"):
+    def __init__(self, facts: List[str], model_name: str = "all-MiniLM-L6-v2") -> None:
+        """
+        Initialize DenseEmbeddingRetriever.
+
+        Args:
+            facts: List of declarative knowledge base facts.
+            model_name: SentenceTransformer encoder model name.
+        """
         self.facts = facts
         self.model_name = model_name
         if not _HAS_SENTENCE_TRANSFORMERS:
@@ -205,7 +234,16 @@ class DenseEmbeddingRetriever:
         self.fact_embeddings = np.array(embeddings, dtype=np.float32)
 
     def retrieve(self, query: str, top_k: int = 5) -> List[Tuple[str, float]]:
-        """Retrieve top-K semantic nearest facts using cosine similarity."""
+        """
+        Retrieve top-K semantic nearest facts using cosine similarity.
+
+        Args:
+            query: Natural language query string.
+            top_k: Number of nearest facts to return.
+
+        Returns:
+            List of (fact_string, similarity_score) tuples.
+        """
         if not self.facts:
             return []
         q_emb = self.encoder.encode(
@@ -223,6 +261,7 @@ class DenseEmbeddingRetriever:
 @dataclass
 class DenseRAGResult:
     """Structured output from a Dense RAG query evaluation."""
+
     query_id: str
     question: str
     prediction: bool
@@ -265,7 +304,7 @@ class DenseRAGBaseline:
         top_k: int = 5,
         use_dense: bool = True,
         mock: bool = False,
-    ):
+    ) -> None:
         self.model = model
         self.embedding_model = embedding_model
         self.top_k = max(1, top_k)
@@ -349,14 +388,7 @@ class DenseRAGBaseline:
             return "no"
 
     def _mock_reasoning(self, question: str, retrieved_facts: List[str]) -> str:
-        """
-        Deterministic mock reasoning over retrieved facts.
-
-        Analyzes retrieved facts for explicit support or contradiction:
-        - If query terms are corroborated by high-similarity context -> 'yes'
-        - If contradictory facts or negation found -> 'no'
-        - Fallback heuristic based on context overlap
-        """
+        """Deterministic mock reasoning over retrieved facts for offline testing."""
         q_lower = question.lower()
         context_text = " ".join(retrieved_facts).lower()
 
@@ -368,7 +400,6 @@ class DenseRAGBaseline:
         if "whale" in q_lower and "fish" in q_lower:
             return "no"
         if "not" in q_lower or "neither" in q_lower:
-            # Check if context contains supportive relation
             return "no"
 
         # Check explicit positive support

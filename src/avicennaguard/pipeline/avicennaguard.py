@@ -5,27 +5,30 @@ This class orchestrates the full pipeline:
     Stage 1: Neural Semantic Parser (probabilistic — LLM constrained to JSON)
     Stage 2: BFS Graph Validator    (deterministic — pure graph traversal)
 
-Design constraint (immutable):
+Design constraints:
     No probabilistic computation enters Stage 2.
     No symbolic computation occurs in Stage 1.
     The boundary between stages is a structured JSON proposition.
 
 Usage:
-    from avicennaguard.pipeline.AvicennaGuard import AvicennaGuard
-    from avicennaguard.kb.loader import KnowledgeBase
+    from avicennaguard.pipeline import AvicennaGuard
+    from avicennaguard.kb import KnowledgeBase
 
     kb = KnowledgeBase("data/knowledge_bases/knowledge_base_extended.json")
-    lg = AvicennaGuard(kb, model="llama3.2:3b")
+    ag = AvicennaGuard(kb, model="llama3.2:3b")
 
-    result = lg.validate("Are all dogs mammals?", llm_answer="yes")
+    result = ag.validate("Are all dogs mammals?", llm_answer="yes")
     print(result.epistemic_state)   # EpistemicState.YAQEEN
     print(result.intercepted)       # False (LLM was correct)
     print(result.path)              # ['dog', 'canine', 'mammal']
 """
 
+from __future__ import annotations
+
 import logging
 import time
-from typing import Optional
+from pathlib import Path
+from typing import Optional, Tuple
 
 from avicennaguard.core.epistemic_states import EpistemicState, QueryType, ValidatorResult
 from avicennaguard.kb.loader import KnowledgeBase
@@ -40,14 +43,24 @@ class AvicennaGuard:
     Main AvicennaGuard pipeline. Thread-safe, stateless per-call.
 
     Args:
-        kb:     Pre-loaded KnowledgeBase instance.
-        model:  Ollama model name for Stage 1 parser.
+        kb: Pre-loaded KnowledgeBase instance or path to KB JSON file.
+        model: Ollama model name for Stage 1 parser.
     """
 
-    def __init__(self, kb: KnowledgeBase, model: str = "llama3.2:3b"):
-        self.kb        = kb
-        self._parser   = LLMParser(model=model)
-        self._validator = BFSValidator(kb)
+    def __init__(self, kb: KnowledgeBase | str | Path, model: str = "llama3.2:3b") -> None:
+        """
+        Initialize the AvicennaGuard pipeline.
+
+        Args:
+            kb: KnowledgeBase instance or filesystem path to KB JSON.
+            model: Model identifier used for Stage 1 proposition parsing.
+        """
+        if isinstance(kb, (str, Path)):
+            self.kb = KnowledgeBase(kb)
+        else:
+            self.kb = kb
+        self._parser = LLMParser(model=model)
+        self._validator = BFSValidator(self.kb)
 
     def validate(
         self,
@@ -58,7 +71,7 @@ class AvicennaGuard:
         Run the full two-stage pipeline on a question.
 
         Args:
-            question:   Natural language question.
+            question: Natural language question to validate.
             llm_answer: Raw LLM answer ("yes"/"no") before AvicennaGuard.
                         If None, no interception comparison is made.
 
@@ -118,7 +131,7 @@ class AvicennaGuard:
         else:
             final_answer = llm_answer or ""
 
-        subject   = parsed.get("subject") or parsed.get("entity") or parsed.get("condition", "")
+        subject = parsed.get("subject") or parsed.get("entity") or parsed.get("condition", "")
         predicate = parsed.get("predicate") or parsed.get("property") or parsed.get("consequence", "")
 
         return ValidatorResult(
@@ -139,7 +152,7 @@ class AvicennaGuard:
 
     def _run_stage2(
         self, parsed: dict, query_type: QueryType
-    ) -> tuple[Optional[bool], EpistemicState, list[str]]:
+    ) -> Tuple[Optional[bool], EpistemicState, list[str]]:
         """Dispatch to the appropriate BFS validator method."""
         if query_type == QueryType.TAXONOMIC:
             result, state, path = self._validator.validate_taxonomic(
@@ -166,6 +179,7 @@ class AvicennaGuard:
 
     @staticmethod
     def _parse_bool(answer: Optional[str]) -> Optional[bool]:
+        """Convert string answer to boolean or None."""
         if answer is None:
             return None
         a = answer.strip().lower()

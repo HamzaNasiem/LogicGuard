@@ -1,28 +1,73 @@
-# Python
+# ==============================================================================
+# Project AvicennaGuard .gitignore
+# ==============================================================================
+
+# Bytecode & Compilation Artifacts
 __pycache__/
-*.py[oc]
+*.py[cod]
+*$py.class
 *.pyo
+*.pyd
+*.so
+*.dll
+
+# Packaging & Distribution
 build/
 dist/
 wheels/
 *.egg-info/
 .eggs/
 
-# Virtual environments
+# Virtual Environments
 .venv/
 venv/
 env/
+ENV/
+env.bak/
+venv.bak/
 
-# IDE
+# IDEs, Editors & Workspaces
 .vscode/
 .idea/
 *.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
 
-# Jupyter
+# Jupyter Notebooks
 .ipynb_checkpoints/
+*/.ipynb_checkpoints/*
 
-# Logs
+# Testing, Coverage & Profiling
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Linters, Type Checkers & Code Quality
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+
+# Logs & Temporary Files
 *.log
+*.tmp
+*.bak
+*.pid
+
+# Operating System Metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
 
 # ── Large external datasets (download separately) ─────────────────────
 data/external/proofwriter/

@@ -1,11 +1,15 @@
 """Knowledge base upload and reload endpoints."""
 
+from __future__ import annotations
+
 import json
+import os
 import tempfile
 from pathlib import Path
+from typing import Any, Dict
 
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from pydantic import BaseModel, Field
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from pydantic import BaseModel
 
 from avicennaguard.api.dependencies import get_avicennaguard, reload_avicennaguard
 from avicennaguard.kb.loader import KnowledgeBase
@@ -15,6 +19,8 @@ router = APIRouter()
 
 
 class KBStatsResponse(BaseModel):
+    """Knowledge base statistics payload schema."""
+
     path: str
     taxonomies: int
     properties: int
@@ -22,18 +28,22 @@ class KBStatsResponse(BaseModel):
 
 
 class KBUploadResponse(BaseModel):
+    """Knowledge base upload response payload schema."""
+
     message: str
     stats: KBStatsResponse
 
 
-def _validate_kb_schema(data: dict) -> None:
+def _validate_kb_schema(data: Dict[str, Any]) -> None:
+    """Validate that required sections exist in the uploaded KB JSON."""
     for key in ("taxonomies", "properties", "conditionals"):
-        if key not in data or not isinstance(data[key], dict):
+        if key not in data or not isinstance(data[key], (dict, list)):
             raise HTTPException(status_code=400, detail=f"Invalid KB: missing or invalid '{key}'")
 
 
 @router.get("/kb/stats", response_model=KBStatsResponse, summary="Current KB statistics")
 async def kb_stats(lg: AvicennaGuard = Depends(get_avicennaguard)) -> KBStatsResponse:
+    """Retrieve graph entity and rule counts for the currently loaded KB."""
     stats = lg.kb.stats
     return KBStatsResponse(
         path=str(lg.kb.kb_path),
@@ -69,7 +79,7 @@ async def kb_upload(file: UploadFile = File(...)) -> KBUploadResponse:
 
     # Validate load before committing
     try:
-        kb = KnowledgeBase(tmp_path)
+        kb_inst = KnowledgeBase(tmp_path)
     except Exception as e:
         tmp_path.unlink(missing_ok=True)
         raise HTTPException(status_code=400, detail=f"KB load failed: {e}") from e
@@ -79,7 +89,7 @@ async def kb_upload(file: UploadFile = File(...)) -> KBUploadResponse:
 
     model = ag_model_from_env()
     reload_avicennaguard(dest, model)
-    stats = kb.stats
+    stats = kb_inst.stats
 
     return KBUploadResponse(
         message=f"KB loaded from {file.filename}",
@@ -93,7 +103,7 @@ async def kb_upload(file: UploadFile = File(...)) -> KBUploadResponse:
 
 
 def ag_model_from_env() -> str:
-    import os
+    """Retrieve the configured LLM parser model tag from environment."""
     return os.environ.get("AVICENNAGUARD_MODEL", os.environ.get("LOGICGUARD_MODEL", "llama3.2:3b"))
 
 

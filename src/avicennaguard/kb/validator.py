@@ -1,22 +1,24 @@
 """
 Stage 2: Deterministic BFS Graph Validator.
 
-This is the core of AvicennaGuard. ALL logical reasoning happens here.
+This is the core verification engine of AvicennaGuard. ALL logical reasoning
+happens here via deterministic graph algorithms (BFS, reachability, property closure).
 No probabilistic computation enters this module.
 
 Three inference methods (Ibn Sina's Qiyas):
-    validate_taxonomic()   — Qiyas al-Haml (IS-A BFS traversal)
-    validate_categorical() — Property inheritance with transitive lookup
-    validate_hypothetical()— Qiyas al-Istithna (Modus Ponens O(1) check)
+    validate_taxonomic()   — Qiyas al-Haml (IS-A BFS reachability)
+    validate_categorical() — Property inheritance with transitive taxonomic closure
+    validate_hypothetical()— Qiyas al-Istithna (Modus Ponens O(1) adjacency lookup)
 """
 
-import time
+from __future__ import annotations
+
 import logging
-from typing import Optional
+from typing import List, Optional, Set, Tuple
 
 import networkx as nx
 
-from avicennaguard.core.epistemic_states import EpistemicState, QueryType
+from avicennaguard.core.epistemic_states import EpistemicState
 from avicennaguard.kb.loader import KnowledgeBase, normalize_term
 
 logger = logging.getLogger(__name__)
@@ -40,29 +42,40 @@ class BFSValidator:
         false alarms (FP). Honest KB coverage gaps are explicitly reported.
     """
 
-    def __init__(self, kb: KnowledgeBase):
+    def __init__(self, kb: KnowledgeBase) -> None:
+        """
+        Initialize the BFSValidator with a KnowledgeBase instance.
+
+        Args:
+            kb: Loaded KnowledgeBase instance containing G_T, G_P, and G_C.
+        """
         self.kb = kb
 
-    def _resolve(self, term: str, graph: nx.DiGraph | None = None) -> str:
-        """Resolve a term to its KB key, trying plural normalization as fallback.
+    def _resolve(self, term: str, graph: Optional[nx.DiGraph] = None) -> str:
+        """
+        Resolve a term to its KB key, trying plural normalization as fallback.
 
         Checks in order:
         1. Exact match (as-is)
-        2. Singular normalized (dogs→dog, corners→corner)
+        2. Singular normalized (dogs -> dog, corners -> corner)
+
         Returns the first form found in ANY of the KB graphs.
         """
         t = term.strip().lower().replace(" ", "_")
+        # Check explicit graph if provided
+        if graph is not None and t in graph:
+            return t
         # Exact match: check all KB graphs
         for g in (self.kb.G_T, self.kb.G_P, self.kb.G_C):
             if t in g:
                 return t
         # Singular normalized form
-        singular = _normalize(t)
+        singular = normalize_term(t)
         return singular
 
-    def _prop_matches(self, prop_set: set[str], prop: str) -> bool:
+    def _prop_matches(self, prop_set: Set[str], prop: str) -> bool:
         """Check if a property or its normalized / prefixed forms exist in prop_set."""
-        p_norm = _normalize(prop)
+        p_norm = normalize_term(prop)
         return (
             prop in prop_set
             or p_norm in prop_set
@@ -72,20 +85,23 @@ class BFSValidator:
 
     def validate_taxonomic(
         self, subject: str, predicate: str
-    ) -> tuple[Optional[bool], EpistemicState, list[str]]:
+    ) -> Tuple[Optional[bool], EpistemicState, List[str]]:
         """
         Qiyas al-Haml — Categorical Syllogism (IS-A).
 
-        Checks if subject IS-A predicate via BFS on G_T.
-        Time complexity: O(|V_T| + |E_T|)
+        Checks if subject IS-A predicate via BFS reachability on G_T.
+        Time complexity: O(|V_T| + |E_T|).
+
+        Args:
+            subject: The hyponym / child entity to evaluate.
+            predicate: The hypernym / parent class to test reachability to.
 
         Returns:
-            (result, epistemic_state, path)
-            result: True/False/None (None = SHAKK, entity not in KB)
-            path:   BFS path for audit trail (EU AI Act compliance)
+            Tuple of (result, epistemic_state, path):
+                result: True (path exists), False (no path), or None (entity not in KB).
+                epistemic_state: EpistemicState.YAQEEN if covered, EpistemicState.SHAKK if out of scope.
+                path: Shortest path audit trail list of entity nodes.
         """
-        t0 = time.perf_counter()
-
         s = self._resolve(subject)
         p = self._resolve(predicate)
 
@@ -109,14 +125,24 @@ class BFSValidator:
 
     def validate_categorical(
         self, entity: str, prop: str
-    ) -> tuple[Optional[bool], EpistemicState]:
+    ) -> Tuple[Optional[bool], EpistemicState]:
         """
         Property inheritance with transitive lookup via G_T.
 
-        has_prop(e, π) ⟺ (e, π) ∈ G_P  ∨  ∃a ∈ anc_G_T(e) : (a, π) ∈ G_P
+        has_prop(e, pi) <==> (e, pi) in G_P  OR  exists a in anc_G_T(e) : (a, pi) in G_P
 
-        This ensures "Do all dogs have hair?" returns YAQEEN even without
-        a direct dog→hair edge, via: dog → canine → mammal → hair.
+        Ensures property inheritance across taxonomic ancestors.
+
+        Args:
+            entity: Entity name to query.
+            prop: Target property name to test.
+
+        Returns:
+            Tuple of (result, epistemic_state):
+                result: True if property is directly asserted or inherited,
+                        False if property is known in KB but absent from entity,
+                        None if entity/property is outside KB scope (SHAKK).
+                epistemic_state: EpistemicState.YAQEEN or EpistemicState.SHAKK.
         """
         e = self._resolve(entity)
         p = self._resolve(prop)
@@ -135,7 +161,7 @@ class BFSValidator:
                 if ancestor in self.kb.G_P and self._prop_matches(self.kb.G_P[ancestor], p):
                     return True, EpistemicState.YAQEEN
 
-        # Unknown property in KB scope → SHAKK (open-world safe, preserves FP=0)
+        # Unknown property in KB scope -> SHAKK (open-world safe, preserves FP=0)
         if e in self.kb.G_P or e in self.kb.G_T:
             if not self._property_in_kb(p):
                 return None, EpistemicState.SHAKK
@@ -144,7 +170,15 @@ class BFSValidator:
         return None, EpistemicState.SHAKK
 
     def _property_in_kb(self, prop: str) -> bool:
-        """True if prop appears on any entity in the property graph."""
+        """
+        Check if a property appears on any entity in the property graph.
+
+        Args:
+            prop: Target property string.
+
+        Returns:
+            True if property exists on any KB entity.
+        """
         p = self._resolve(prop)
         for props in self.kb.G_P.values():
             if self._prop_matches(props, p):
@@ -153,14 +187,24 @@ class BFSValidator:
 
     def validate_hypothetical(
         self, condition: str, consequence: str
-    ) -> tuple[Optional[bool], EpistemicState]:
+    ) -> Tuple[Optional[bool], EpistemicState]:
         """
         Qiyas al-Istithna — Hypothetical Syllogism (Modus Ponens).
 
-        Checks if condition → consequence edge exists in G_C.
+        Checks if condition -> consequence edge exists in G_C.
         Time complexity: O(1) adjacency lookup.
+
+        Args:
+            condition: IF antecedent clause.
+            consequence: THEN consequent clause.
+
+        Returns:
+            Tuple of (result, epistemic_state):
+                result: True if edge exists in G_C, False if condition is in G_C
+                        but consequence is not reachable, None if condition is not in G_C.
+                epistemic_state: EpistemicState.YAQEEN or EpistemicState.SHAKK.
         """
-        c  = self._resolve(condition,  self.kb.G_C)
+        c = self._resolve(condition, self.kb.G_C)
         cq = self._resolve(consequence, self.kb.G_C)
 
         if c not in self.kb.G_C:

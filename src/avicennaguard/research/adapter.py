@@ -8,9 +8,9 @@ from __future__ import annotations
 
 import time
 from pathlib import Path
-from typing import Any
+from typing import Any, Dict, Set, Tuple
 
-from avicennaguard.core.epistemic_states import EpistemicState, QueryType
+from avicennaguard.core.epistemic_states import EpistemicState
 from avicennaguard.kb.loader import KnowledgeBase
 from avicennaguard.kb.validator import BFSValidator
 from avicennaguard.parsers.llm_parser import LLMParser
@@ -22,6 +22,7 @@ from avicennaguard.parsers.typed_regex import (
 
 
 def _epistemic_label(state: EpistemicState, used_fallback: bool, covered: bool) -> str:
+    """Resolve epistemic state string representation for research evaluation logs."""
     if not covered:
         return EpistemicState.SHAKK.value
     if state == EpistemicState.WAHM:
@@ -32,34 +33,43 @@ def _epistemic_label(state: EpistemicState, used_fallback: bool, covered: bool) 
 
 
 class ResearchValidator:
-    """Drop-in replacement for legacy AvicennaGuardValidator (formerly LogicGuardValidator) in step2/step4."""
+    """Drop-in replacement for legacy AvicennaGuardValidator in step2/step4."""
 
     def __init__(
         self,
         kb_path: str | Path,
         parser_mode: str = "regex",
         model: str = "llama3.2:3b",
-    ):
+    ) -> None:
+        """
+        Initialize ResearchValidator.
+
+        Args:
+            kb_path: Path to knowledge base JSON file.
+            parser_mode: Stage 1 parsing mode ('regex', 'llm', or 'both').
+            model: Ollama model name for LLM parser.
+        """
         self.kb_path = str(kb_path)
         self.kb = KnowledgeBase(kb_path)
         self._validator = BFSValidator(self.kb)
         self.parser_mode = parser_mode
         self._llm_parser = LLMParser(model=model) if parser_mode in ("llm", "both") else None
-        self._parse_stats: dict[str, int] = {
+        self._parse_stats: Dict[str, int] = {
             "success": 0,
             "regex_fallback": 0,
             "parse_failure": 0,
         }
 
     @property
-    def graph(self) -> dict:
+    def graph(self) -> Dict[str, Set[str]]:
         """Legacy compat: taxonomy adjacency as dict-of-sets."""
-        out: dict[str, set] = {}
+        out: Dict[str, Set[str]] = {}
         for child, ancestors in self.kb._raw.get("taxonomies", {}).items():
             out[child] = set(ancestors)
         return out
 
-    def _parse_regex(self, question: str, qtype: str) -> tuple[dict, str, bool]:
+    def _parse_regex(self, question: str, qtype: str) -> Tuple[Dict[str, Any], str, bool]:
+        """Extract logical form using typed regex extraction."""
         q = question.strip()
         used_fallback = False
         if qtype == "taxonomic":
@@ -82,7 +92,8 @@ class ResearchValidator:
             return parsed, status, used_fallback
         return {"type": "non-logical"}, "parse_failure", False
 
-    def _parse_llm(self, question: str) -> tuple[dict, str, bool]:
+    def _parse_llm(self, question: str) -> Tuple[Dict[str, Any], str, bool]:
+        """Extract logical form using LLM parser."""
         assert self._llm_parser is not None
         parsed, used_fallback = self._llm_parser.parse(question)
         status = "regex_fallback" if used_fallback else "success"
@@ -90,7 +101,17 @@ class ResearchValidator:
             status = "parse_failure"
         return parsed, status, used_fallback
 
-    def validate(self, question: str, qtype: str) -> dict[str, Any]:
+    def validate(self, question: str, qtype: str) -> Dict[str, Any]:
+        """
+        Validate question for research step evaluation.
+
+        Args:
+            question: Natural language query.
+            qtype: Query type string.
+
+        Returns:
+            Dictionary with graph_answer, epistemic_state, proof, covered, latency, etc.
+        """
         t1_start = time.perf_counter()
         used_fallback = False
 
@@ -136,7 +157,8 @@ class ResearchValidator:
             "stage2_ms": round(stage2_ms, 3),
         }
 
-    def _run_stage2(self, parsed: dict, qtype: str) -> dict[str, Any]:
+    def _run_stage2(self, parsed: Dict[str, Any], qtype: str) -> Dict[str, Any]:
+        """Dispatch Stage 2 BFS verification."""
         effective_type = parsed.get("type", qtype)
         negate = parsed.pop("_negate", False)
 
@@ -179,7 +201,8 @@ class ResearchValidator:
 
         return {"graph_answer": None, "epistemic_state": EpistemicState.SHAKK, "covered": False, "proof": "Unknown type"}
 
-    def _shakk_result(self, proof: str, parse_status: str, stage1_ms: float, stage2_ms: float) -> dict:
+    def _shakk_result(self, proof: str, parse_status: str, stage1_ms: float, stage2_ms: float) -> Dict[str, Any]:
+        """Construct SHAKK default result."""
         return {
             "graph_answer": None,
             "epistemic_state": EpistemicState.SHAKK.value,
@@ -193,7 +216,13 @@ class ResearchValidator:
         }
 
     @property
-    def parse_stats(self) -> dict:
+    def parse_stats(self) -> Dict[str, Any]:
+        """
+        Stage 1 reliability statistics dictionary.
+
+        Returns:
+            Dictionary with counts and percentage rates.
+        """
         total = sum(self._parse_stats.values())
         if total == 0:
             return {**self._parse_stats, "total": 0, "success_rate": 0.0, "fallback_rate": 0.0, "failure_rate": 0.0}

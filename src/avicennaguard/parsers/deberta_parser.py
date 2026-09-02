@@ -19,24 +19,25 @@ Output schema:
     }
 """
 
+from __future__ import annotations
+
 import logging
 import os
 import re
-import time
-from typing import Optional, Dict, Any, Tuple
+from typing import Any, Dict, Optional
 
 from avicennaguard.parsers.regex_parser import RegexParser
 
 logger = logging.getLogger(__name__)
 
 # Label mappings for 4 query types
-LABEL_MAP = {
+LABEL_MAP: Dict[int, str] = {
     0: "taxonomic",
     1: "categorical",
     2: "hypothetical",
     3: "non-logical",
 }
-NAME_TO_LABEL = {v: k for k, v in LABEL_MAP.items()}
+NAME_TO_LABEL: Dict[str, int] = {v: k for k, v in LABEL_MAP.items()}
 
 
 def _clean_term(term: str) -> str:
@@ -101,7 +102,7 @@ class DebertaParser:
         device: Optional[str] = None,
         confidence_threshold: float = 0.5,
         fallback_parser: Optional[RegexParser] = None,
-    ):
+    ) -> None:
         """
         Initialize DebertaParser.
 
@@ -119,9 +120,9 @@ class DebertaParser:
         self.device = device
         self.model = None
         self.tokenizer = None
-        self.model_backend = None  # "sklearn" or "torch"
+        self.model_backend: Optional[str] = None  # "sklearn" or "torch"
 
-        self._stats = {
+        self._stats: Dict[str, int] = {
             "total": 0,
             "deberta": 0,
             "regex_fallback": 0,
@@ -133,7 +134,9 @@ class DebertaParser:
     def _initialize_model(self) -> None:
         """Attempt to load classifier model if model_path is provided."""
         if not self.model_path:
-            logger.info("DebertaParser initialized without model checkpoint; operating in fast regex fallback mode.")
+            logger.info(
+                "DebertaParser initialized without model checkpoint; operating in fast regex fallback mode."
+            )
             return
 
         # Handle 'auto' resolution
@@ -149,12 +152,18 @@ class DebertaParser:
                     target_path = cp
                     break
             if target_path is None:
-                logger.info("DebertaParser: 'auto' model path requested but no saved model found in models/. Operating in regex fallback mode.")
+                logger.info(
+                    "DebertaParser: 'auto' model path requested but no saved model found in models/. Operating in regex fallback mode."
+                )
                 return
 
         # Check if joblib sklearn artifact
         is_joblib_file = target_path.endswith(".joblib") or target_path.endswith(".pkl")
-        joblib_dir_candidate = os.path.join(target_path, "stage1_classifier.joblib") if os.path.isdir(target_path) else None
+        joblib_dir_candidate = (
+            os.path.join(target_path, "stage1_classifier.joblib")
+            if os.path.isdir(target_path)
+            else None
+        )
 
         if is_joblib_file and os.path.exists(target_path):
             self._load_sklearn_model(target_path)
@@ -181,6 +190,7 @@ class DebertaParser:
         """Load Scikit-Learn TF-IDF classification pipeline from joblib artifact."""
         try:
             import joblib
+
             logger.info("Loading Scikit-Learn Stage 1 classifier from '%s'...", path)
             self.model = joblib.load(path)
             self.model_backend = "sklearn"
@@ -198,7 +208,7 @@ class DebertaParser:
         """Load HuggingFace DeBERTa tokenizer and model."""
         try:
             import torch
-            from transformers import AutoTokenizer, AutoModelForSequenceClassification
+            from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
             if self.device is None:
                 self.device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -271,6 +281,7 @@ class DebertaParser:
 
         if is_sklearn:
             import numpy as np
+
             probs = self.model.predict_proba([question])[0]
             pred_idx = int(np.argmax(probs))
             confidence = float(probs[pred_idx])
@@ -307,7 +318,7 @@ class DebertaParser:
         """Run DeBERTa PyTorch sequence classification and slot extraction."""
         import torch
 
-        if self.tokenizer is None:
+        if self.tokenizer is None or self.model is None:
             return None
 
         inputs = self.tokenizer(
@@ -444,7 +455,12 @@ class DebertaParser:
 
     @property
     def parse_stats(self) -> Dict[str, Any]:
-        """Stage 1 throughput and method distribution statistics."""
+        """
+        Stage 1 throughput and method distribution statistics.
+
+        Returns:
+            Dictionary with total counts, deberta rate, and fallback rate.
+        """
         total = self._stats["total"]
         if total == 0:
             return dict(self._stats)

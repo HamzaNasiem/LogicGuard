@@ -7,93 +7,93 @@
       "variant": "Full System",
       "key": "full",
       "description": "All KB graphs (G_T, G_P, G_C) + 4-state epistemics",
-      "accuracy": 83.56,
-      "precision": 89.27,
-      "recall": 83.51,
-      "f1_score": 86.3,
-      "fpr": 16.37,
+      "accuracy": 83.11,
+      "precision": 89.49,
+      "recall": 82.44,
+      "f1_score": 85.82,
+      "fpr": 15.79,
       "confusion_matrix": {
-        "TP": 233,
-        "FP": 28,
-        "TN": 143,
-        "FN": 46,
+        "TP": 230,
+        "FP": 27,
+        "TN": 144,
+        "FN": 49,
         "total": 450
       },
       "epistemic_states": {
-        "SHAKK": 449,
-        "YAQEEN": 32,
-        "WAHM": 18,
+        "SHAKK": 416,
+        "YAQEEN": 53,
+        "WAHM": 30,
         "ZANN": 1
       },
       "latency_ms": {
         "stage1": {
-          "mean": 0.819,
-          "median": 0.809,
-          "p95": 0.847,
-          "min": 0.802,
-          "max": 1.672
+          "mean": 0.834,
+          "median": 0.823,
+          "p95": 0.88,
+          "min": 0.808,
+          "max": 1.852
         },
         "stage2": {
-          "mean": 0.014,
+          "mean": 0.02,
           "median": 0.0,
-          "p95": 0.04,
+          "p95": 0.066,
           "min": 0.0,
-          "max": 0.706
+          "max": 0.838
         },
         "total_overhead": {
-          "mean": 0.833,
-          "median": 0.816,
-          "p95": 0.884,
-          "min": 0.802,
-          "max": 1.762
+          "mean": 0.854,
+          "median": 0.831,
+          "p95": 0.931,
+          "min": 0.808,
+          "max": 1.868
         }
       },
-      "hallucinations_caught": 7,
+      "hallucinations_caught": 12,
       "total_queries": 500
     },
     {
       "variant": "No G_T (Taxonomy)",
       "key": "no_gt",
       "description": "Taxonomic IS-A graph removed",
-      "accuracy": 84.22,
-      "precision": 89.39,
-      "recall": 84.59,
-      "f1_score": 86.92,
+      "accuracy": 84.0,
+      "precision": 89.35,
+      "recall": 84.23,
+      "f1_score": 86.72,
       "fpr": 16.37,
       "confusion_matrix": {
-        "TP": 236,
+        "TP": 235,
         "FP": 28,
         "TN": 143,
-        "FN": 43,
+        "FN": 44,
         "total": 450
       },
       "epistemic_states": {
-        "SHAKK": 490,
-        "WAHM": 5,
-        "YAQEEN": 4,
+        "SHAKK": 488,
+        "WAHM": 6,
+        "YAQEEN": 5,
         "ZANN": 1
       },
       "latency_ms": {
         "stage1": {
-          "mean": 0.814,
-          "median": 0.807,
-          "p95": 0.836,
-          "min": 0.802,
-          "max": 1.178
+          "mean": 0.834,
+          "median": 0.822,
+          "p95": 0.897,
+          "min": 0.808,
+          "max": 1.038
         },
         "stage2": {
-          "mean": 0.009,
-          "median": 0.0,
-          "p95": 0.011,
+          "mean": 0.014,
+          "median": 0.001,
+          "p95": 0.022,
           "min": 0.0,
-          "max": 0.592
+          "max": 0.87
         },
         "total_overhead": {
-          "mean": 0.823,
-          "median": 0.814,
-          "p95": 0.849,
-          "min": 0.802,
-          "max": 1.398
+          "mean": 0.848,
+          "median": 0.828,
+          "p95": 0.941,
+          "min": 0.808,
+          "max": 1.701
         }
       },
       "hallucinations_caught": 3,
@@ -103,143 +103,143 @@
       "variant": "No G_P (Properties)",
       "key": "no_gp",
       "description": "Property inheritance graph removed",
-      "accuracy": 83.33,
-      "precision": 88.64,
-      "recall": 83.87,
-      "f1_score": 86.19,
-      "fpr": 17.54,
+      "accuracy": 83.11,
+      "precision": 88.89,
+      "recall": 83.15,
+      "f1_score": 85.93,
+      "fpr": 16.96,
       "confusion_matrix": {
-        "TP": 234,
-        "FP": 30,
-        "TN": 141,
-        "FN": 45,
+        "TP": 232,
+        "FP": 29,
+        "TN": 142,
+        "FN": 47,
         "total": 450
       },
       "epistemic_states": {
-        "SHAKK": 459,
-        "YAQEEN": 26,
-        "WAHM": 15
+        "SHAKK": 428,
+        "YAQEEN": 46,
+        "WAHM": 26
       },
       "latency_ms": {
         "stage1": {
-          "mean": 0.813,
-          "median": 0.808,
-          "p95": 0.835,
-          "min": 0.802,
-          "max": 1.091
+          "mean": 0.846,
+          "median": 0.832,
+          "p95": 0.91,
+          "min": 0.814,
+          "max": 1.143
         },
         "stage2": {
-          "mean": 0.006,
-          "median": 0.0,
-          "p95": 0.033,
+          "mean": 0.017,
+          "median": 0.001,
+          "p95": 0.091,
           "min": 0.0,
-          "max": 0.157
+          "max": 0.329
         },
         "total_overhead": {
-          "mean": 0.819,
-          "median": 0.815,
-          "p95": 0.85,
-          "min": 0.802,
-          "max": 1.091
+          "mean": 0.863,
+          "median": 0.848,
+          "p95": 0.944,
+          "min": 0.814,
+          "max": 1.165
         }
       },
-      "hallucinations_caught": 5,
+      "hallucinations_caught": 10,
       "total_queries": 500
     },
     {
       "variant": "No G_C (Conditionals)",
       "key": "no_gc",
       "description": "Conditional IF-THEN graph removed",
-      "accuracy": 83.56,
-      "precision": 89.27,
-      "recall": 83.51,
-      "f1_score": 86.3,
-      "fpr": 16.37,
+      "accuracy": 83.11,
+      "precision": 89.49,
+      "recall": 82.44,
+      "f1_score": 85.82,
+      "fpr": 15.79,
       "confusion_matrix": {
-        "TP": 233,
-        "FP": 28,
-        "TN": 143,
-        "FN": 46,
+        "TP": 230,
+        "FP": 27,
+        "TN": 144,
+        "FN": 49,
         "total": 450
       },
       "epistemic_states": {
-        "SHAKK": 449,
-        "YAQEEN": 32,
-        "WAHM": 18,
+        "SHAKK": 416,
+        "YAQEEN": 53,
+        "WAHM": 30,
         "ZANN": 1
       },
       "latency_ms": {
         "stage1": {
-          "mean": 0.815,
-          "median": 0.808,
-          "p95": 0.842,
-          "min": 0.802,
-          "max": 1.154
+          "mean": 0.839,
+          "median": 0.832,
+          "p95": 0.884,
+          "min": 0.811,
+          "max": 1.05
         },
         "stage2": {
-          "mean": 0.01,
-          "median": 0.0,
-          "p95": 0.036,
+          "mean": 0.028,
+          "median": 0.001,
+          "p95": 0.103,
           "min": 0.0,
-          "max": 0.387
+          "max": 0.951
         },
         "total_overhead": {
-          "mean": 0.826,
-          "median": 0.815,
-          "p95": 0.875,
-          "min": 0.802,
-          "max": 1.212
+          "mean": 0.867,
+          "median": 0.843,
+          "p95": 0.957,
+          "min": 0.818,
+          "max": 1.826
         }
       },
-      "hallucinations_caught": 7,
+      "hallucinations_caught": 12,
       "total_queries": 500
     },
     {
       "variant": "No SHAKK Deferral",
       "key": "no_shakk",
       "description": "Forced binary decision on OOD queries (no epistemic safety)",
-      "accuracy": 69.06,
-      "precision": 74.27,
-      "recall": 83.51,
-      "f1_score": 74.3,
-      "fpr": 54.370000000000005,
+      "accuracy": 68.61,
+      "precision": 74.49,
+      "recall": 82.44,
+      "f1_score": 73.82,
+      "fpr": 53.79,
       "confusion_matrix": {
-        "TP": 233,
-        "FP": 28,
-        "TN": 143,
-        "FN": 46,
+        "TP": 230,
+        "FP": 27,
+        "TN": 144,
+        "FN": 49,
         "total": 450
       },
       "epistemic_states": {
-        "SHAKK": 449,
-        "YAQEEN": 32,
-        "WAHM": 18,
+        "SHAKK": 416,
+        "YAQEEN": 53,
+        "WAHM": 30,
         "ZANN": 1
       },
       "latency_ms": {
         "stage1": {
-          "mean": 0.814,
-          "median": 0.809,
-          "p95": 0.837,
-          "min": 0.802,
-          "max": 1.1
+          "mean": 0.841,
+          "median": 0.832,
+          "p95": 0.9,
+          "min": 0.811,
+          "max": 1.065
         },
         "stage2": {
-          "mean": 0.011,
-          "median": 0.0,
-          "p95": 0.038,
+          "mean": 0.026,
+          "median": 0.001,
+          "p95": 0.104,
           "min": 0.0,
-          "max": 0.384
+          "max": 0.954
         },
         "total_overhead": {
-          "mean": 0.825,
-          "median": 0.815,
-          "p95": 0.876,
-          "min": 0.802,
-          "max": 1.198
+          "mean": 0.867,
+          "median": 0.843,
+          "p95": 0.959,
+          "min": 0.811,
+          "max": 1.855
         }
       },
-      "hallucinations_caught": 7,
+      "hallucinations_caught": 12,
       "total_queries": 500
     }
   ]

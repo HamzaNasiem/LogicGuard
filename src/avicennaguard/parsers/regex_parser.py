@@ -1,17 +1,20 @@
 """
 Deterministic Regex Fallback Parser for Stage 1.
 
-Triggered when the constrained LLM produces malformed JSON.
-Ensures 100% pipeline availability without any LLM dependency.
+Triggered when the neural/LLM parser produces malformed JSON or times out.
+Ensures 100% pipeline availability without external model dependencies.
 
 Pattern coverage:
     - Taxonomic:   "Are all X [a/an] Y?", "Is X a Y?", "Do all X belong to Y?"
-    - Categorical: "Do all X have Y?", "Does X possess Y?"
-    - Hypothetical:"If X, [does/will] Y?", "If X then Y?"
+    - Categorical: "Do all X have Y?", "Does X possess Y?", "Is X a property of Y?"
+    - Hypothetical:"If X, [does/will] Y?", "When X, then Y?"
 """
 
-import re
+from __future__ import annotations
+
 import logging
+import re
+from typing import Any, Dict
 
 logger = logging.getLogger(__name__)
 
@@ -66,12 +69,21 @@ def _clean_term(term: str) -> str:
 
 
 class RegexParser:
-    """Deterministic fallback parser using pattern matching."""
+    """Deterministic fallback parser using regex pattern matching."""
 
-    def parse(self, question: str) -> dict:
+    def parse(self, question: str) -> Dict[str, Any]:
         """
         Attempt to extract logical form using regex patterns.
-        Returns {"type": "non-logical"} if no pattern matches.
+
+        Args:
+            question: Natural language question string.
+
+        Returns:
+            Dictionary matching one of the proposition schemas:
+            {"type": "taxonomic", "subject": ..., "predicate": ...},
+            {"type": "categorical", "entity": ..., "property": ...},
+            {"type": "hypothetical", "condition": ..., "consequence": ...},
+            or {"type": "non-logical"}.
         """
         if question is None:
             return {"type": "non-logical"}
@@ -85,7 +97,7 @@ class RegexParser:
                 logger.debug("Regex matched taxonomic: %s", q)
                 return {
                     "type": "taxonomic",
-                    "subject":   _clean_term(m.group(1)),
+                    "subject": _clean_term(m.group(1)),
                     "predicate": _clean_term(m.group(2)),
                 }
 
@@ -100,8 +112,8 @@ class RegexParser:
                     entity = _clean_term(m.group(1))
                     prop = _clean_term(m.group(2))
                 return {
-                    "type":     "categorical",
-                    "entity":   entity,
+                    "type": "categorical",
+                    "entity": entity,
                     "property": prop,
                 }
 
@@ -110,8 +122,8 @@ class RegexParser:
             if m:
                 logger.debug("Regex matched hypothetical: %s", q)
                 return {
-                    "type":        "hypothetical",
-                    "condition":   _clean_term(m.group(1)),
+                    "type": "hypothetical",
+                    "condition": _clean_term(m.group(1)),
                     "consequence": _clean_term(m.group(2)),
                 }
 

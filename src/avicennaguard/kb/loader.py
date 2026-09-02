@@ -2,11 +2,11 @@
 Knowledge Base Loader and Graph Constructor.
 
 Builds three interdependent directed graphs (NetworkX) from the KB JSON file:
-    G_T  — Taxonomy graph:   115+ nodes, 136+ IS-A edges (BFS traversal)
-    G_P  — Property graph:   115+ entity-property associations (inherited via G_T)
-    G_C  — Conditional graph: 49+ IF-THEN Modus Ponens rules (O(1) lookup)
+    G_T  — Taxonomy graph:   IS-A hierarchical DAG (BFS reachability)
+    G_P  — Property graph:   entity-property associations (inherited via G_T)
+    G_C  — Conditional graph: IF-THEN Modus Ponens rules (O(1) adjacency lookup)
 
-KB JSON Format (knowledge_base_extended.json):
+KB JSON Format:
 {
   "taxonomies":   { "dog": ["canine", "mammal", "animal", "living_thing"], ... },
   "properties":   { "mammal": ["hair", "warm_blood", "backbone", ...], ... },
@@ -14,9 +14,12 @@ KB JSON Format (knowledge_base_extended.json):
 }
 """
 
+from __future__ import annotations
+
 import json
 import logging
 from pathlib import Path
+from typing import Any, Dict, Set
 
 import networkx as nx
 
@@ -24,7 +27,15 @@ logger = logging.getLogger(__name__)
 
 
 def normalize_term(term: str) -> str:
-    """Singularize common English plural forms for KB lookup."""
+    """
+    Singularize common English plural forms for KB lookup.
+
+    Args:
+        term: Raw noun or entity string.
+
+    Returns:
+        Normalized singularized lowercase string.
+    """
     w = term.lower().strip()
     if w.endswith("ies") and len(w) > 4:
         return w[:-3] + "y"
@@ -45,19 +56,26 @@ class KnowledgeBase:
     components exist in this class or any method it calls.
     """
 
-    def __init__(self, kb_path: str | Path):
+    def __init__(self, kb_path: str | Path) -> None:
+        """
+        Initialize and load the KnowledgeBase from a JSON file.
+
+        Args:
+            kb_path: Path to the knowledge base JSON file.
+        """
         self.kb_path = Path(kb_path)
-        self._raw: dict = {}
+        self._raw: Dict[str, Any] = {}
 
         # The three directed graphs
         self.G_T: nx.DiGraph = nx.DiGraph()  # Taxonomy (IS-A)
-        self.G_P: dict       = {}            # Properties (entity → set of props)
-        self.G_C: nx.DiGraph = nx.DiGraph()  # Conditionals (IF → THEN)
+        self.G_P: Dict[str, Set[str]] = {}   # Properties (entity -> set of props)
+        self.G_C: nx.DiGraph = nx.DiGraph()  # Conditionals (IF -> THEN)
 
         self._load()
         self._build_graphs()
 
     def _load(self) -> None:
+        """Load JSON data from disk with multi-encoding fallback."""
         data = None
         for enc in ("utf-8", "utf-8-sig", "utf-16", "latin-1"):
             try:
@@ -85,12 +103,11 @@ class KnowledgeBase:
                         self.G_T.add_edge(child_norm, ancestor_norm)
 
         # --- Property graph (G_P) ---
-        # Stored as dict for O(1) property lookup before BFS inheritance
         props_data = self._raw.get("properties", {})
         if isinstance(props_data, dict):
             for entity, props in props_data.items():
                 entity_norm = entity.lower().replace(" ", "_")
-                prop_set = set()
+                prop_set: Set[str] = set()
                 prop_list = props if isinstance(props, (list, set)) else [props]
                 for p in prop_list:
                     p_norm = p.lower().replace(" ", "_")
@@ -129,11 +146,17 @@ class KnowledgeBase:
         )
 
     @property
-    def stats(self) -> dict:
+    def stats(self) -> Dict[str, Any]:
+        """
+        Summary statistics of the loaded knowledge base graphs.
+
+        Returns:
+            Dictionary containing node, edge, entity, and rule counts.
+        """
         return {
-            "taxonomy_nodes":      self.G_T.number_of_nodes(),
-            "taxonomy_edges":      self.G_T.number_of_edges(),
-            "property_entities":   len(self.G_P),
-            "conditional_rules":   self.G_C.number_of_edges(),
-            "kb_file":             self.kb_path.name,
+            "taxonomy_nodes": self.G_T.number_of_nodes(),
+            "taxonomy_edges": self.G_T.number_of_edges(),
+            "property_entities": len(self.G_P),
+            "conditional_rules": self.G_C.number_of_edges(),
+            "kb_file": self.kb_path.name,
         }

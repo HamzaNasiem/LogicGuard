@@ -1,6 +1,6 @@
 """
 SelfCheckGPT Baseline for AvicennaGuard.
-=========================================
+
 Implements SelfCheckGPT (Manakul et al., EMNLP 2023) black-box zero-resource
 hallucination detection and consistency-based factuality checking.
 
@@ -17,14 +17,16 @@ Reference:
     https://arxiv.org/abs/2303.08896
 """
 
-from collections import Counter
-from dataclasses import asdict, dataclass, field
+from __future__ import annotations
+
 import hashlib
 import logging
 import random
 import re
 import time
-from typing import Any, Callable, Dict, List, Optional, Tuple, Union
+from collections import Counter
+from dataclasses import asdict, dataclass, field
+from typing import Any, Callable, Dict, List, Optional
 
 from avicennaguard.baselines.metrics import (
     compute_classification_metrics,
@@ -46,6 +48,7 @@ except ImportError:
 @dataclass
 class SelfCheckGPTResult:
     """Structured output from a SelfCheckGPT evaluation call."""
+
     query_id: str
     question: str
     prediction: bool
@@ -86,7 +89,7 @@ class SelfCheckGPTBaseline:
         confidence_threshold: float = 0.6,
         mock: bool = False,
         seed: Optional[int] = 42,
-    ):
+    ) -> None:
         self.model = model
         self.n_samples = max(1, n_samples)
         self.temperature = temperature
@@ -98,7 +101,6 @@ class SelfCheckGPTBaseline:
     def _extract_binary_answer(self, text: str) -> Optional[str]:
         """Extract YES or NO from LLM response text."""
         cleaned = text.strip().upper()
-        # Direct regex check for whole word YES or NO
         if re.search(r"\bYES\b", cleaned):
             return "yes"
         if re.search(r"\bNO\b", cleaned):
@@ -146,9 +148,7 @@ class SelfCheckGPTBaseline:
         """
         q_lower = question.lower()
         hash_val = int(hashlib.md5(f"{self.seed}_{question}_{sample_idx}".encode("utf-8")).hexdigest(), 16)
-        prob_yes = 0.5
 
-        # Heuristic baseline calibration based on linguistic markers in benchmark
         if any(w in q_lower for w in ["not a", "neither", "spider", "insect", "is a fish a mammal", "fly without"]):
             prob_yes = 0.2
         elif any(w in q_lower for w in ["all dogs", "mammal", "animal", "living thing", "water", "ice", "square"]):
@@ -156,7 +156,6 @@ class SelfCheckGPTBaseline:
         elif "if" in q_lower and "then" in q_lower:
             prob_yes = 0.65
         else:
-            # Hash-driven probability between 0.3 and 0.7
             prob_yes = 0.3 + ((hash_val % 100) / 250.0)
 
         sample_rand = (hash_val % 1000) / 1000.0
@@ -239,7 +238,7 @@ class SelfCheckGPTBaseline:
         Evaluate SelfCheckGPT across a list of benchmark queries.
 
         Args:
-            benchmark_data: List of query dicts (must have 'question' and optionally 'id', 'ground_truth', etc.).
+            benchmark_data: List of query dicts.
             max_queries: Optional cap on the number of queries to evaluate.
             progress_callback: Optional callback invoked as `callback(current_idx, total)`.
 

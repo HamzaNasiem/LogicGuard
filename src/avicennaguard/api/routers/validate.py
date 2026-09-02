@@ -5,6 +5,10 @@ POST /api/v1/validate  — Single query validation
 POST /api/v1/batch     — Batch validation (max 50 queries)
 """
 
+from __future__ import annotations
+
+from typing import Any, Dict, List, Optional
+
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel, Field
 
@@ -15,34 +19,42 @@ router = APIRouter()
 
 
 class ValidateRequest(BaseModel):
-    question:   str = Field(..., description="Natural language question to validate", example="Are all dogs mammals?")
-    llm_answer: str | None = Field(None, description="LLM's raw answer (yes/no) before AvicennaGuard override", example="yes")
-    model:      str = Field("llama3.2:3b", description="Ollama model for Stage 1 parsing")
+    """Payload schema for single query validation."""
+
+    question: str = Field(..., description="Natural language question to validate", example="Are all dogs mammals?")
+    llm_answer: Optional[str] = Field(None, description="LLM's raw answer (yes/no) before AvicennaGuard override", example="yes")
+    model: str = Field("llama3.2:3b", description="Ollama model for Stage 1 parsing")
 
 
 class ValidateResponse(BaseModel):
-    question:        str
+    """Response schema for single query validation."""
+
+    question: str
     epistemic_state: str = Field(..., description="YAQEEN | WAHM | SHAKK | ZANN")
-    graph_answer:    bool | None = Field(None, description="BFS result. None if KB doesn't cover this query")
-    llm_answer:      str
-    final_answer:    str = Field(..., description="Answer returned to user (may override LLM answer)")
-    covered:         bool = Field(..., description="Whether KB covers this entity/relation")
-    intercepted:     bool = Field(..., description="True if a hallucination was caught")
-    query_type:      str = Field(..., description="taxonomic | categorical | hypothetical | non-logical")
-    subject:         str
-    predicate:       str
-    path:            list[str] = Field(..., description="BFS traversal path (audit trail)")
-    latency_ms:      dict
+    graph_answer: Optional[bool] = Field(None, description="BFS result. None if KB doesn't cover this query")
+    llm_answer: str
+    final_answer: str = Field(..., description="Answer returned to user (may override LLM answer)")
+    covered: bool = Field(..., description="Whether KB covers this entity/relation")
+    intercepted: bool = Field(..., description="True if a hallucination was caught")
+    query_type: str = Field(..., description="taxonomic | categorical | hypothetical | non-logical")
+    subject: str
+    predicate: str
+    path: List[str] = Field(..., description="BFS traversal path (audit trail)")
+    latency_ms: Dict[str, Any]
 
 
 class BatchRequest(BaseModel):
-    queries: list[ValidateRequest] = Field(..., max_length=50)
+    """Payload schema for batch query validation."""
+
+    queries: List[ValidateRequest] = Field(..., max_length=50)
 
 
 class BatchResponse(BaseModel):
-    total:       int
+    """Response schema for batch query validation."""
+
+    total: int
     intercepted: int
-    results:     list[ValidateResponse]
+    results: List[ValidateResponse]
 
 
 @router.post("/validate", response_model=ValidateResponse, summary="Validate a single question")
@@ -74,7 +86,7 @@ async def validate_batch(
 
     Returns aggregate interception count plus per-query results.
     """
-    results = []
+    results: List[ValidateResponse] = []
     intercepted_count = 0
 
     for q in req.queries:

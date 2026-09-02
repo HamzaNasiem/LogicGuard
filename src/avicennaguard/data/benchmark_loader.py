@@ -6,11 +6,13 @@ for the 500-query AvicennaGuard benchmark dataset (FOLIO, ProofWriter,
 Curated Gold, and TruthfulQA OOD).
 """
 
-from collections import Counter
+from __future__ import annotations
+
 import json
 import logging
-from pathlib import Path
 import random
+from collections import Counter
+from pathlib import Path
 from typing import Any, Optional, Union
 
 logger = logging.getLogger(__name__)
@@ -33,6 +35,12 @@ class BenchmarkLoader:
     """
 
     def __init__(self, benchmark_path: Optional[Union[str, Path]] = None) -> None:
+        """
+        Initialize the BenchmarkLoader.
+
+        Args:
+            benchmark_path: Path to benchmark JSON file (or auto-discover).
+        """
         self.benchmark_path = self._resolve_path(benchmark_path)
         self._queries: list[dict[str, Any]] = []
         self._id_map: dict[str, dict[str, Any]] = {}

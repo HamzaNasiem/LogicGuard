@@ -12,7 +12,8 @@ for journal-grade IEEE publications:
 from __future__ import annotations
 
 import math
-from typing import Any, Dict, List, Sequence, Tuple, Union
+from typing import Any, Dict, List, Sequence, Tuple
+
 import numpy as np
 import scipy.stats as stats
 
@@ -29,6 +30,12 @@ class StatisticalAnalyzer:
           - dict with 'is_correct' or 'correct'
           - dict with 'predicted_answer' and 'ground_truth'
           - bool or numeric 0/1 values
+
+        Args:
+            results: Sequence of result items.
+
+        Returns:
+            List of boolean correctness values.
         """
         correctness: List[bool] = []
         for r in results:
@@ -76,7 +83,7 @@ class StatisticalAnalyzer:
           - n00: Both WRONG
 
         Continuity-corrected Chi-squared:
-            χ² = (|n01 - n10| - 1)² / (n01 + n10)  (when |n01 - n10| >= 1 and n01 + n10 > 0)
+            chi2 = (|n01 - n10| - 1)^2 / (n01 + n10)  (when |n01 - n10| >= 1 and n01 + n10 > 0)
 
         Returns:
             Dictionary containing contingency matrix, chi2 statistic, asymptotic and exact
@@ -155,7 +162,6 @@ class StatisticalAnalyzer:
         guard_acc = float((c_11 + c_01) / n_total) if n_total > 0 else 0.0
         delta_acc = guard_acc - base_acc
 
-        # Primary p_value is the asymptotic chi2 p-value (or exact if discordant < 25)
         primary_p = p_val_asym
 
         return {
@@ -210,7 +216,7 @@ class StatisticalAnalyzer:
             as_percentage: If True, returns interval as percentages in [0, 100]
 
         Returns:
-            (lower_bound, upper_bound)
+            Tuple of (lower_bound, upper_bound).
         """
         if n <= 0:
             return (0.0, 100.0) if as_percentage else (0.0, 1.0)
@@ -246,8 +252,11 @@ class StatisticalAnalyzer:
         """
         Compute robust summary statistics for latency measurements in milliseconds.
 
+        Args:
+            values: Sequence of latency measurement numbers.
+
         Returns:
-            mean, median, p95, p99, min, max, std, and sample count n.
+            Dictionary with mean, median, p95, p99, min, max, std, and sample count n.
         """
         valid_vals = [float(v) for v in values if v is not None and not math.isnan(float(v)) and float(v) >= 0]
         if not valid_vals:
@@ -293,6 +302,15 @@ class StatisticalAnalyzer:
     ) -> Dict[str, Any]:
         """
         Comprehensive paired model evaluation: McNemar significance, Wilson CIs, and latency.
+
+        Args:
+            results_baseline: Baseline model results sequence.
+            results_guard: +AvicennaGuard results sequence.
+            model_name: Model identifier string.
+            confidence: Confidence level for Wilson CI (default 0.95).
+
+        Returns:
+            Dictionary with complete paired comparison metrics and test statistics.
         """
         base_corr = cls._extract_correctness(results_baseline)
         guard_corr = cls._extract_correctness(results_guard)
@@ -356,8 +374,13 @@ class StatisticalAnalyzer:
         """
         Run full statistical evaluation on an experiment results dictionary
         (e.g., loaded from `all_model_results.json`).
+
+        Args:
+            data: Raw experiment dictionary containing 'results' and 'metadata'.
+
+        Returns:
+            Dictionary containing McNemar tests, confidence intervals, and summary table.
         """
-        summaries = data.get("summaries", {})
         all_results = data.get("results", {})
         metadata = data.get("metadata", {})
 

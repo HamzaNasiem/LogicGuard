@@ -1,4 +1,8 @@
-"""Health check and KB stats endpoints."""
+"""Health check and KB statistics endpoints."""
+
+from __future__ import annotations
+
+from typing import Any, Dict
 
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
@@ -10,10 +14,12 @@ router = APIRouter()
 
 
 class HealthResponse(BaseModel):
-    status:    str
-    version:   str
-    kb_stats:  dict
-    model:     str
+    """Health check response payload schema."""
+
+    status: str
+    version: str
+    kb_stats: Dict[str, Any]
+    model: str
 
 
 @router.get("/health", response_model=HealthResponse, summary="API health check")
