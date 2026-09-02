@@ -401,17 +401,21 @@ def load_kb_properties(kb_path: str) -> List[Tuple[str, str, str]]:
         return []
 
 
-def load_truthfulqa(csv_path: str) -> List[str]:
-    """Load open-domain / non-logical questions from TruthfulQA.csv."""
+def load_truthfulqa(csv_path: str, exclude_questions: set = None) -> List[str]:
+    """Load open-domain / non-logical questions from TruthfulQA.csv, strictly excluding benchmark questions."""
     if not os.path.exists(csv_path):
         return []
+    if exclude_questions is None:
+        exclude_questions = set()
+    norm_exclude = {re.sub(r"[^\w\s]", "", q.lower().strip()) for q in exclude_questions}
     questions = []
     try:
         with open(csv_path, "r", encoding="utf-8", errors="ignore") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 q = row.get("Question", "").strip()
-                if q and len(q) > 8:
+                norm_q = re.sub(r"[^\w\s]", "", q.lower().strip())
+                if q and len(q) > 8 and norm_q not in norm_exclude:
                     questions.append(q)
     except Exception as e:
         logger.warning("Could not load TruthfulQA: %s", e)
@@ -433,17 +437,19 @@ def load_benchmark_queries(bench_path: str) -> List[Dict[str, Any]]:
 
 
 # ==============================================================================
-# Generator Functions
-# ==============================================================================
+def _normalize(t: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", "", t.lower().strip()))
 
-def generate_taxonomic_samples(count: int, kb_pairs: List[Tuple[str, str, str, str]], rng: random.Random) -> List[Dict[str, Any]]:
+
+def generate_taxonomic_samples(count: int, kb_pairs: List[Tuple[str, str, str, str]], rng: random.Random, exclude_qs: set = None) -> List[Dict[str, Any]]:
     """Generate taxonomic training samples."""
+    exclude_norm = {_normalize(q) for q in (exclude_qs or set())}
     pool = list(TAXONOMIC_PAIRS) + kb_pairs
     samples = []
-    seen = set()
+    seen = set(exclude_norm)
 
     attempts = 0
-    while len(samples) < count and attempts < count * 15:
+    while len(samples) < count and attempts < count * 25:
         attempts += 1
         subj_pl, pred_pl, subj_sg, pred_sg = rng.choice(pool)
         tmpl = rng.choice(TAXONOMIC_TEMPLATES)
@@ -455,9 +461,10 @@ def generate_taxonomic_samples(count: int, kb_pairs: List[Tuple[str, str, str, s
             subject_sing=subj_sg,
             predicate_sing=pred_sg,
         )
-        if text in seen:
+        norm_t = _normalize(text)
+        if norm_t in seen:
             continue
-        seen.add(text)
+        seen.add(norm_t)
 
         norm_subj = subj_sg.lower().replace(" ", "_")
         norm_pred = pred_sg.lower().replace(" ", "_")
@@ -472,37 +479,18 @@ def generate_taxonomic_samples(count: int, kb_pairs: List[Tuple[str, str, str, s
             "consequence": "",
         })
 
-    # If count not reached, cycle templates
-    while len(samples) < count:
-        subj_pl, pred_pl, subj_sg, pred_sg = rng.choice(pool)
-        tmpl = rng.choice(TAXONOMIC_TEMPLATES)
-        text = tmpl.format(
-            subject=subj_pl,
-            predicate=pred_pl,
-            subject_sing=subj_sg,
-            predicate_sing=pred_sg,
-        )
-        samples.append({
-            "text": text,
-            "label": 0,
-            "label_name": "taxonomic",
-            "subject": subj_sg.lower().replace(" ", "_"),
-            "predicate": pred_sg.lower().replace(" ", "_"),
-            "condition": "",
-            "consequence": "",
-        })
-
     return samples[:count]
 
 
-def generate_categorical_samples(count: int, kb_props: List[Tuple[str, str, str]], rng: random.Random) -> List[Dict[str, Any]]:
+def generate_categorical_samples(count: int, kb_props: List[Tuple[str, str, str]], rng: random.Random, exclude_qs: set = None) -> List[Dict[str, Any]]:
     """Generate categorical training samples."""
+    exclude_norm = {_normalize(q) for q in (exclude_qs or set())}
     pool = list(CATEGORICAL_PAIRS) + kb_props
     samples = []
-    seen = set()
+    seen = set(exclude_norm)
 
     attempts = 0
-    while len(samples) < count and attempts < count * 15:
+    while len(samples) < count and attempts < count * 25:
         attempts += 1
         ent_pl, prop, ent_sg = rng.choice(pool)
         tmpl = rng.choice(CATEGORICAL_TEMPLATES)
@@ -512,9 +500,10 @@ def generate_categorical_samples(count: int, kb_props: List[Tuple[str, str, str]
             property=prop,
             entity_sing=ent_sg,
         )
-        if text in seen:
+        norm_t = _normalize(text)
+        if norm_t in seen:
             continue
-        seen.add(text)
+        seen.add(norm_t)
 
         norm_ent = ent_sg.lower().replace(" ", "_")
         norm_prop = prop.lower().replace(" ", "_")
@@ -529,42 +518,26 @@ def generate_categorical_samples(count: int, kb_props: List[Tuple[str, str, str]
             "consequence": "",
         })
 
-    while len(samples) < count:
-        ent_pl, prop, ent_sg = rng.choice(pool)
-        tmpl = rng.choice(CATEGORICAL_TEMPLATES)
-        text = tmpl.format(
-            entity=ent_pl,
-            property=prop,
-            entity_sing=ent_sg,
-        )
-        samples.append({
-            "text": text,
-            "label": 1,
-            "label_name": "categorical",
-            "subject": ent_sg.lower().replace(" ", "_"),
-            "predicate": prop.lower().replace(" ", "_"),
-            "condition": "",
-            "consequence": "",
-        })
-
     return samples[:count]
 
 
-def generate_hypothetical_samples(count: int, rng: random.Random) -> List[Dict[str, Any]]:
+def generate_hypothetical_samples(count: int, rng: random.Random, exclude_qs: set = None) -> List[Dict[str, Any]]:
     """Generate hypothetical training samples."""
+    exclude_norm = {_normalize(q) for q in (exclude_qs or set())}
     samples = []
-    seen = set()
+    seen = set(exclude_norm)
 
     attempts = 0
-    while len(samples) < count and attempts < count * 15:
+    while len(samples) < count and attempts < count * 25:
         attempts += 1
         cond, cons = rng.choice(HYPOTHETICAL_PAIRS)
         tmpl = rng.choice(HYPOTHETICAL_TEMPLATES)
 
         text = tmpl.format(condition=cond, consequence=cons)
-        if text in seen:
+        norm_t = _normalize(text)
+        if norm_t in seen:
             continue
-        seen.add(text)
+        seen.add(norm_t)
 
         norm_cond = cond.lower().replace(" ", "_")
         norm_cons = cons.lower().replace(" ", "_")
@@ -579,35 +552,23 @@ def generate_hypothetical_samples(count: int, rng: random.Random) -> List[Dict[s
             "consequence": norm_cons,
         })
 
-    while len(samples) < count:
-        cond, cons = rng.choice(HYPOTHETICAL_PAIRS)
-        tmpl = rng.choice(HYPOTHETICAL_TEMPLATES)
-        text = tmpl.format(condition=cond, consequence=cons)
-        samples.append({
-            "text": text,
-            "label": 2,
-            "label_name": "hypothetical",
-            "subject": "",
-            "predicate": "",
-            "condition": cond.lower().replace(" ", "_"),
-            "consequence": cons.lower().replace(" ", "_"),
-        })
-
     return samples[:count]
 
 
-def generate_non_logical_samples(count: int, truthful_qs: List[str], rng: random.Random) -> List[Dict[str, Any]]:
+def generate_non_logical_samples(count: int, truthful_qs: List[str], rng: random.Random, exclude_qs: set = None) -> List[Dict[str, Any]]:
     """Generate non-logical training samples from TruthfulQA and synthesized non-syllogistic queries."""
+    exclude_norm = {_normalize(q) for q in (exclude_qs or set())}
     samples = []
-    seen = set()
+    seen = set(exclude_norm)
 
     # Add real TruthfulQA questions first
     for q in truthful_qs:
         if len(samples) >= count:
             break
         q_clean = q.strip()
-        if q_clean not in seen:
-            seen.add(q_clean)
+        norm_t = _normalize(q_clean)
+        if norm_t not in seen:
+            seen.add(norm_t)
             samples.append({
                 "text": q_clean,
                 "label": 3,
@@ -620,7 +581,7 @@ def generate_non_logical_samples(count: int, truthful_qs: List[str], rng: random
 
     # Fill remainder with synthesized open-domain / non-syllogistic queries
     attempts = 0
-    while len(samples) < count and attempts < count * 20:
+    while len(samples) < count and attempts < count * 25:
         attempts += 1
         tmpl = rng.choice(NON_LOGICAL_TEMPLATES)
         fmt_kwargs = {}
@@ -629,8 +590,9 @@ def generate_non_logical_samples(count: int, truthful_qs: List[str], rng: random
                 fmt_kwargs[key] = rng.choice(vals)
 
         text = tmpl.format(**fmt_kwargs)
-        if text not in seen:
-            seen.add(text)
+        norm_t = _normalize(text)
+        if norm_t not in seen:
+            seen.add(norm_t)
             samples.append({
                 "text": text,
                 "label": 3,
@@ -640,20 +602,6 @@ def generate_non_logical_samples(count: int, truthful_qs: List[str], rng: random
                 "condition": "",
                 "consequence": "",
             })
-
-    while len(samples) < count:
-        tmpl = rng.choice(NON_LOGICAL_TEMPLATES)
-        fmt_kwargs = {k: rng.choice(v) for k, v in NON_LOGICAL_FILLERS.items() if "{" + k + "}" in tmpl}
-        text = tmpl.format(**fmt_kwargs)
-        samples.append({
-            "text": text,
-            "label": 3,
-            "label_name": "non-logical",
-            "subject": "",
-            "predicate": "",
-            "condition": "",
-            "consequence": "",
-        })
 
     return samples[:count]
 
@@ -683,16 +631,18 @@ def prepare_stage1_dataset(
     logger.info("Generating %d samples per class across 4 classes (Total: %d)...", samples_per_class, total_samples)
 
     # Load resources
+    bench_queries = load_benchmark_queries(os.path.join(os.path.dirname(output_dir), "benchmarks", "avicenna_benchmark_500.json"))
+    exclude_qs = {q.get("question", "") for q in bench_queries if isinstance(q, dict)}
     kb_pairs = load_kb_entities(kb_path)
     kb_props = load_kb_properties(kb_path)
-    truthful_qs = load_truthfulqa(truthfulqa_path)
-    logger.info("Loaded %d KB taxonomy pairs, %d KB properties, %d TruthfulQA questions.", len(kb_pairs), len(kb_props), len(truthful_qs))
+    truthful_qs = load_truthfulqa(truthfulqa_path, exclude_questions=exclude_qs)
+    logger.info("Loaded %d KB taxonomy pairs, %d KB properties, %d TruthfulQA questions (excluded %d benchmark queries).", len(kb_pairs), len(kb_props), len(truthful_qs), len(exclude_qs))
 
     # Generate samples per class
-    tax_samples = generate_taxonomic_samples(samples_per_class, kb_pairs, rng)
-    cat_samples = generate_categorical_samples(samples_per_class, kb_props, rng)
-    hyp_samples = generate_hypothetical_samples(samples_per_class, rng)
-    non_samples = generate_non_logical_samples(samples_per_class, truthful_qs, rng)
+    tax_samples = generate_taxonomic_samples(samples_per_class, kb_pairs, rng, exclude_qs=exclude_qs)
+    cat_samples = generate_categorical_samples(samples_per_class, kb_props, rng, exclude_qs=exclude_qs)
+    hyp_samples = generate_hypothetical_samples(samples_per_class, rng, exclude_qs=exclude_qs)
+    non_samples = generate_non_logical_samples(samples_per_class, truthful_qs, rng, exclude_qs=exclude_qs)
 
     # Perform stratified split per class
     train_samples: List[Dict[str, Any]] = []

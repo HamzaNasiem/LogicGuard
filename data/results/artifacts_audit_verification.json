@@ -1,0 +1,402 @@
+{
+  "audit_timestamp": "2026-09-03T01:42:00Z",
+  "auditor": "Statistical Rigor & Publication Artifacts Specialist",
+  "verification_status": "PASSED",
+  "mathematical_verification": {
+    "LLaMA2-7B": {
+      "n_queries": 100,
+      "k_baseline": 63,
+      "k_guard": 99,
+      "discordant_n01": 36,
+      "discordant_n10": 0,
+      "wilson_ci_95_baseline": [
+        53.22,
+        71.82
+      ],
+      "wilson_ci_95_guard": [
+        94.55,
+        99.82
+      ],
+      "mcnemar_chi2_yates": 34.0278,
+      "mcnemar_p_asymptotic": 5.433087474176234e-09,
+      "mcnemar_p_exact_binomial": 2.9103830456733704e-11,
+      "cohens_g_effect_size": 0.5,
+      "cohens_g_magnitude": "large",
+      "significance_alpha_0_05": true,
+      "significance_alpha_0_001": true,
+      "formula_agreement": "100.00% exact match between independent formulation and StatisticalAnalyzer"
+    },
+    "Mistral-7B": {
+      "n_queries": 100,
+      "k_baseline": 95,
+      "k_guard": 100,
+      "discordant_n01": 5,
+      "discordant_n10": 0,
+      "wilson_ci_95_baseline": [
+        88.82,
+        97.85
+      ],
+      "wilson_ci_95_guard": [
+        96.3,
+        100.0
+      ],
+      "mcnemar_chi2_yates": 3.2,
+      "mcnemar_p_asymptotic": 0.07363827012030257,
+      "mcnemar_p_exact_binomial": 0.0625,
+      "cohens_g_effect_size": 0.5,
+      "cohens_g_magnitude": "large",
+      "significance_alpha_0_05": false,
+      "significance_alpha_0_001": false,
+      "formula_agreement": "100.00% exact match between independent formulation and StatisticalAnalyzer"
+    },
+    "LLaMA3.2-3B": {
+      "n_queries": 100,
+      "k_baseline": 85,
+      "k_guard": 100,
+      "discordant_n01": 15,
+      "discordant_n10": 0,
+      "wilson_ci_95_baseline": [
+        76.72,
+        90.69
+      ],
+      "wilson_ci_95_guard": [
+        96.3,
+        100.0
+      ],
+      "mcnemar_chi2_yates": 13.0667,
+      "mcnemar_p_asymptotic": 0.0003005976074404506,
+      "mcnemar_p_exact_binomial": 6.103515625e-05,
+      "cohens_g_effect_size": 0.5,
+      "cohens_g_magnitude": "large",
+      "significance_alpha_0_05": true,
+      "significance_alpha_0_001": true,
+      "formula_agreement": "100.00% exact match between independent formulation and StatisticalAnalyzer"
+    }
+  },
+  "latex_tables_verification": {
+    "table1_main_results": {
+      "file": "docs/paper/tables/table1_main_results.tex",
+      "verified_against": "results/models/all_model_results.json",
+      "status": "VERIFIED_100_PERCENT_MATCH",
+      "checks": [
+        {
+          "metric": "LLaMA2-7B Baseline Overall",
+          "expected_token": "63.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA2-7B Guard Overall",
+          "expected_token": "99.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA2-7B Caught",
+          "expected_token": "36/36",
+          "matched": true
+        },
+        {
+          "metric": "Mistral-7B Baseline Overall",
+          "expected_token": "95.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "Mistral-7B Guard Overall",
+          "expected_token": "100.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "Mistral-7B Caught",
+          "expected_token": "5/5",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA3.2-3B Baseline Overall",
+          "expected_token": "85.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA3.2-3B Guard Overall",
+          "expected_token": "100.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA3.2-3B Caught",
+          "expected_token": "15/15",
+          "matched": true
+        }
+      ]
+    },
+    "table2_baseline_comparison": {
+      "file": "docs/paper/tables/table2_baseline_comparison.tex",
+      "verified_against": "results/baselines/*.json",
+      "status": "VERIFIED_100_PERCENT_MATCH",
+      "checks": [
+        {
+          "metric": "Raw LLM Accuracy",
+          "expected_token": "85.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "SelfCheckGPT Accuracy",
+          "expected_token": "85.5\\%",
+          "matched": true
+        },
+        {
+          "metric": "SelfCheckGPT FP",
+          "expected_token": "2",
+          "matched": true
+        },
+        {
+          "metric": "RAG-Sparse Accuracy",
+          "expected_token": "84.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "RAG-Sparse Latency",
+          "expected_token": "6736.8",
+          "matched": true
+        },
+        {
+          "metric": "RAG-Dense MiniLM Accuracy",
+          "expected_token": "82.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "RAG-Dense MiniLM Latency",
+          "expected_token": "5650.8",
+          "matched": true
+        },
+        {
+          "metric": "RAG-Dense mpnet Accuracy",
+          "expected_token": "80.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "RAG-Dense mpnet Latency",
+          "expected_token": "6136.6",
+          "matched": true
+        },
+        {
+          "metric": "AvicennaGuard Accuracy",
+          "expected_token": "100.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "AvicennaGuard FP",
+          "expected_token": "0",
+          "matched": true
+        }
+      ]
+    },
+    "table3_mcnemar_significance": {
+      "file": "docs/paper/tables/table3_mcnemar_significance.tex",
+      "verified_against": "Independent McNemar & Wilson Calculations",
+      "status": "VERIFIED_100_PERCENT_MATCH",
+      "checks": [
+        {
+          "metric": "LLaMA2-7B chi2",
+          "expected_token": "34.03",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA2-7B p-value",
+          "expected_token": "p < 0.001",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA2-7B Cohen g",
+          "expected_token": "0.50",
+          "matched": true
+        },
+        {
+          "metric": "Mistral-7B chi2",
+          "expected_token": "3.20",
+          "matched": true
+        },
+        {
+          "metric": "Mistral-7B p-value",
+          "expected_token": "p = 0.0736",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA3.2-3B chi2",
+          "expected_token": "13.07",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA3.2-3B p-value",
+          "expected_token": "p < 0.001",
+          "matched": true
+        }
+      ]
+    },
+    "table4_latency_breakdown": {
+      "file": "docs/paper/tables/table4_latency_breakdown.tex",
+      "verified_against": "results/models/all_model_results.json & results/reports/statistical_significance.json",
+      "status": "VERIFIED_100_PERCENT_MATCH",
+      "checks": [
+        {
+          "metric": "LLaMA2-7B LLM Latency",
+          "expected_token": "11012.5",
+          "matched": true
+        },
+        {
+          "metric": "Mistral-7B LLM Latency",
+          "expected_token": "3402.6",
+          "matched": true
+        },
+        {
+          "metric": "LLaMA3.2-3B LLM Latency",
+          "expected_token": "1396.5",
+          "matched": true
+        },
+        {
+          "metric": "Stage 1 Latency Range",
+          "expected_token": "0.067",
+          "matched": true
+        },
+        {
+          "metric": "Stage 2 Latency Range",
+          "expected_token": "0.039",
+          "matched": true
+        },
+        {
+          "metric": "Overhead Ratio < 0.01%",
+          "expected_token": "0.000\\%",
+          "matched": true
+        }
+      ]
+    },
+    "table5_ablation_study": {
+      "file": "docs/paper/tables/table5_ablation_study.tex",
+      "verified_against": "Architecture Component Specifications & Ablations",
+      "status": "VERIFIED_100_PERCENT_MATCH",
+      "checks": [
+        {
+          "metric": "Full Architecture",
+          "expected_token": "100.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "w/o Stage 2 BFS",
+          "expected_token": "76.5\\%",
+          "matched": true
+        },
+        {
+          "metric": "w/o 4-State Epistemics",
+          "expected_token": "88.0\\%",
+          "matched": true
+        },
+        {
+          "metric": "w/o DeBERTa Fallback",
+          "expected_token": "98.5\\%",
+          "matched": true
+        },
+        {
+          "metric": "w/o Regex Fast-Path",
+          "expected_token": "99.2\\%",
+          "matched": true
+        },
+        {
+          "metric": "w/o Transitive BFS Closure",
+          "expected_token": "84.0\\%",
+          "matched": true
+        }
+      ]
+    }
+  },
+  "figures_verification": {
+    "fig1_neurosymbolic_pipeline.png": {
+      "exists": true,
+      "path": "docs\\figures\\fig1_neurosymbolic_pipeline.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "dimensions_px": {
+        "width": 3198,
+        "height": 1861
+      },
+      "dpi": 300.0,
+      "dpi_valid_300": true,
+      "file_size_bytes": 439459,
+      "status": "300_DPI_PUBLICATION_GRADE_VERIFIED"
+    },
+    "fig2_multimodel_performance.png": {
+      "exists": true,
+      "path": "docs\\figures\\fig2_multimodel_performance.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "dimensions_px": {
+        "width": 2800,
+        "height": 1839
+      },
+      "dpi": 300.0,
+      "dpi_valid_300": true,
+      "file_size_bytes": 250910,
+      "status": "300_DPI_PUBLICATION_GRADE_VERIFIED"
+    },
+    "fig3_baseline_pareto_tradeoff.png": {
+      "exists": true,
+      "path": "docs\\figures\\fig3_baseline_pareto_tradeoff.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "dimensions_px": {
+        "width": 2993,
+        "height": 1798
+      },
+      "dpi": 300.0,
+      "dpi_valid_300": true,
+      "file_size_bytes": 396251,
+      "status": "300_DPI_PUBLICATION_GRADE_VERIFIED"
+    },
+    "fig4_epistemic_state_distribution.png": {
+      "exists": true,
+      "path": "docs\\figures\\fig4_epistemic_state_distribution.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "dimensions_px": {
+        "width": 3177,
+        "height": 1756
+      },
+      "dpi": 300.0,
+      "dpi_valid_300": true,
+      "file_size_bytes": 302877,
+      "status": "300_DPI_PUBLICATION_GRADE_VERIFIED"
+    },
+    "fig5_component_ablation_impact.png": {
+      "exists": true,
+      "path": "docs\\figures\\fig5_component_ablation_impact.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "dimensions_px": {
+        "width": 3339,
+        "height": 1682
+      },
+      "dpi": 300.0,
+      "dpi_valid_300": true,
+      "file_size_bytes": 248608,
+      "status": "300_DPI_PUBLICATION_GRADE_VERIFIED"
+    },
+    "fig6_knowledge_graph_proof_paths.png": {
+      "exists": true,
+      "path": "docs\\figures\\fig6_knowledge_graph_proof_paths.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "dimensions_px": {
+        "width": 3198,
+        "height": 1861
+      },
+      "dpi": 300.0,
+      "dpi_valid_300": true,
+      "file_size_bytes": 249973,
+      "status": "300_DPI_PUBLICATION_GRADE_VERIFIED"
+    }
+  },
+  "unit_tests_verification": {
+    "test_suite": "tests/unit/test_statistical_analyzer.py",
+    "total_tests": 25,
+    "passed": 25,
+    "failed": 0,
+    "execution_time_seconds": 4.9,
+    "status": "ALL_TESTS_PASSED"
+  }
+}

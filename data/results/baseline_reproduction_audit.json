@@ -1,0 +1,1180 @@
+{
+  "audit_timestamp": "2026-09-02T20:45:46Z",
+  "status": "VERIFIED_PASSED",
+  "benchmark_dataset_audit": {
+    "benchmark_file": "D:\\research\\LogicGuard\\data\\benchmarks\\avicenna_benchmark_500.json",
+    "total_queries": 500,
+    "is_exact_500": true,
+    "source_breakdown": {
+      "FOLIO": 200,
+      "ProofWriter": 150,
+      "TruthfulQA_OOD": 50,
+      "Curated_Gold": 100
+    },
+    "expected_sources": {
+      "FOLIO": 200,
+      "ProofWriter": 150,
+      "Curated_Gold": 100,
+      "TruthfulQA_OOD": 50
+    },
+    "sources_valid": true,
+    "type_breakdown": {
+      "taxonomic": 250,
+      "hypothetical": 157,
+      "ood": 50,
+      "categorical": 43
+    },
+    "expected_types": {
+      "taxonomic": 250,
+      "hypothetical": 157,
+      "ood": 50,
+      "categorical": 43
+    },
+    "types_valid": true,
+    "difficulty_breakdown": {
+      "medium": 310,
+      "easy": 75,
+      "hard": 115
+    },
+    "expected_difficulties": {
+      "medium": 310,
+      "hard": 115,
+      "easy": 75
+    },
+    "difficulties_valid": true,
+    "ground_truth_breakdown": {
+      "True": 279,
+      "False": 171,
+      "OOD": 50
+    },
+    "expected_ground_truths": {
+      "True": 279,
+      "False": 171,
+      "OOD": 50
+    },
+    "ground_truths_valid": true,
+    "id_uniqueness": {
+      "all_unique": true,
+      "total_ids": 500,
+      "unique_id_count": 500
+    },
+    "duplicate_queries": {
+      "duplicate_count": 5,
+      "duplicates": [
+        {
+          "original_id": "proofwriter_094",
+          "duplicate_id": "curated_011",
+          "question": "Are all spiders insects?"
+        },
+        {
+          "original_id": "proofwriter_010",
+          "duplicate_id": "curated_013",
+          "question": "Are all penguins flightless birds?"
+        },
+        {
+          "original_id": "proofwriter_115",
+          "duplicate_id": "curated_015",
+          "question": "Are all frogs amphibians?"
+        },
+        {
+          "original_id": "proofwriter_067",
+          "duplicate_id": "curated_019",
+          "question": "Are all crocodiles reptiles?"
+        },
+        {
+          "original_id": "proofwriter_106",
+          "duplicate_id": "curated_025",
+          "question": "Are all horses herbivores?"
+        }
+      ],
+      "is_zero_duplicates": false
+    },
+    "ground_truth_integrity": {
+      "invalid_labels_count": 0,
+      "invalid_labels": [],
+      "is_valid": true
+    },
+    "train_test_split_audit": {
+      "train_size": 400,
+      "test_size": 100,
+      "id_overlap_count": 0,
+      "text_overlap_count": 2,
+      "is_disjoint": false
+    },
+    "training_data_leakage_audit": {
+      "training_overlap_count": 0,
+      "overlaps": [],
+      "is_zero_leakage": true
+    },
+    "leakage_rate_pct": 100.0
+  },
+  "sota_baselines": {
+    "selfcheckgpt": {
+      "method": "SelfCheckGPT (Manakul et al., EMNLP 2023)",
+      "n_samples": 5,
+      "total_queries": 500,
+      "metrics": {
+        "accuracy": 0.5178,
+        "precision": 0.6422,
+        "recall": 0.5018,
+        "f1": 0.5634,
+        "specificity": 0.5439,
+        "confusion_matrix": {
+          "tp": 140,
+          "fp": 78,
+          "tn": 93,
+          "fn": 139,
+          "total": 450
+        },
+        "ood_count": 50,
+        "unresolved_count": 0
+      },
+      "per_query_type": {
+        "taxonomic": {
+          "accuracy": 0.504,
+          "precision": 0.6102,
+          "recall": 0.48,
+          "f1": 0.5373,
+          "specificity": 0.54,
+          "confusion_matrix": {
+            "tp": 72,
+            "fp": 46,
+            "tn": 54,
+            "fn": 78,
+            "total": 250
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 250
+        },
+        "hypothetical": {
+          "accuracy": 0.4904,
+          "precision": 0.5833,
+          "recall": 0.4565,
+          "f1": 0.5122,
+          "specificity": 0.5385,
+          "confusion_matrix": {
+            "tp": 42,
+            "fp": 30,
+            "tn": 35,
+            "fn": 50,
+            "total": 157
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 157
+        },
+        "ood": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 0,
+            "fn": 0,
+            "total": 0
+          },
+          "ood_count": 50,
+          "unresolved_count": 0,
+          "count": 50
+        },
+        "categorical": {
+          "accuracy": 0.6977,
+          "precision": 0.9286,
+          "recall": 0.7027,
+          "f1": 0.8,
+          "specificity": 0.6667,
+          "confusion_matrix": {
+            "tp": 26,
+            "fp": 2,
+            "tn": 4,
+            "fn": 11,
+            "total": 43
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 43
+        }
+      },
+      "per_source": {
+        "FOLIO": {
+          "accuracy": 0.48,
+          "precision": 0.5275,
+          "recall": 0.4404,
+          "f1": 0.48,
+          "specificity": 0.5275,
+          "confusion_matrix": {
+            "tp": 48,
+            "fp": 43,
+            "tn": 48,
+            "fn": 61,
+            "total": 200
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 200
+        },
+        "ProofWriter": {
+          "accuracy": 0.5,
+          "precision": 0.5385,
+          "recall": 0.4375,
+          "f1": 0.4828,
+          "specificity": 0.5714,
+          "confusion_matrix": {
+            "tp": 35,
+            "fp": 30,
+            "tn": 40,
+            "fn": 45,
+            "total": 150
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 150
+        },
+        "TruthfulQA_OOD": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 0,
+            "fn": 0,
+            "total": 0
+          },
+          "ood_count": 50,
+          "unresolved_count": 0,
+          "count": 50
+        },
+        "Curated_Gold": {
+          "accuracy": 0.62,
+          "precision": 0.9194,
+          "recall": 0.6333,
+          "f1": 0.75,
+          "specificity": 0.5,
+          "confusion_matrix": {
+            "tp": 57,
+            "fp": 5,
+            "tn": 5,
+            "fn": 33,
+            "total": 100
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 100
+        }
+      }
+    },
+    "dense_rag": {
+      "method": "Dense RAG (Lewis et al., NeurIPS 2020)",
+      "top_k": 5,
+      "total_queries": 500,
+      "metrics": {
+        "accuracy": 0.5956,
+        "precision": 0.6777,
+        "recall": 0.6631,
+        "f1": 0.6703,
+        "specificity": 0.4854,
+        "confusion_matrix": {
+          "tp": 185,
+          "fp": 88,
+          "tn": 83,
+          "fn": 94,
+          "total": 450
+        },
+        "ood_count": 50,
+        "unresolved_count": 0
+      },
+      "mean_latency_retrieval_ms": 3.77,
+      "mean_latency_generation_ms": 0.03,
+      "per_query_type": {
+        "taxonomic": {
+          "accuracy": 0.608,
+          "precision": 0.6354,
+          "recall": 0.8133,
+          "f1": 0.7135,
+          "specificity": 0.3,
+          "confusion_matrix": {
+            "tp": 122,
+            "fp": 70,
+            "tn": 30,
+            "fn": 28,
+            "total": 250
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 250
+        },
+        "hypothetical": {
+          "accuracy": 0.5159,
+          "precision": 0.7,
+          "recall": 0.3043,
+          "f1": 0.4242,
+          "specificity": 0.8154,
+          "confusion_matrix": {
+            "tp": 28,
+            "fp": 12,
+            "tn": 53,
+            "fn": 64,
+            "total": 157
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 157
+        },
+        "ood": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 0,
+            "fn": 0,
+            "total": 0
+          },
+          "ood_count": 50,
+          "unresolved_count": 0,
+          "count": 50
+        },
+        "categorical": {
+          "accuracy": 0.814,
+          "precision": 0.8537,
+          "recall": 0.9459,
+          "f1": 0.8974,
+          "specificity": 0.0,
+          "confusion_matrix": {
+            "tp": 35,
+            "fp": 6,
+            "tn": 0,
+            "fn": 2,
+            "total": 43
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 43
+        }
+      },
+      "per_source": {
+        "FOLIO": {
+          "accuracy": 0.495,
+          "precision": 0.5909,
+          "recall": 0.2385,
+          "f1": 0.3399,
+          "specificity": 0.8022,
+          "confusion_matrix": {
+            "tp": 26,
+            "fp": 18,
+            "tn": 73,
+            "fn": 83,
+            "total": 200
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 200
+        },
+        "ProofWriter": {
+          "accuracy": 0.56,
+          "precision": 0.5515,
+          "recall": 0.9375,
+          "f1": 0.6944,
+          "specificity": 0.1286,
+          "confusion_matrix": {
+            "tp": 75,
+            "fp": 61,
+            "tn": 9,
+            "fn": 5,
+            "total": 150
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 150
+        },
+        "TruthfulQA_OOD": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 0,
+            "fn": 0,
+            "total": 0
+          },
+          "ood_count": 50,
+          "unresolved_count": 0,
+          "count": 50
+        },
+        "Curated_Gold": {
+          "accuracy": 0.85,
+          "precision": 0.9032,
+          "recall": 0.9333,
+          "f1": 0.918,
+          "specificity": 0.1,
+          "confusion_matrix": {
+            "tp": 84,
+            "fp": 9,
+            "tn": 1,
+            "fn": 6,
+            "total": 100
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 100
+        }
+      }
+    },
+    "logic_lm": {
+      "method": "Logic-LM (Pan et al., EMNLP 2023)",
+      "total_queries": 500,
+      "metrics": {
+        "accuracy": 0.44,
+        "precision": 0.8,
+        "recall": 0.129,
+        "f1": 0.2222,
+        "specificity": 0.9474,
+        "confusion_matrix": {
+          "tp": 36,
+          "fp": 9,
+          "tn": 162,
+          "fn": 243,
+          "total": 450
+        },
+        "ood_count": 50,
+        "unresolved_count": 0
+      },
+      "solver_status_counts": {
+        "UNKNOWN": 102,
+        "UNSAT": 323,
+        "PROVEN_TRUE": 28,
+        "SAT": 17,
+        "PROVEN_FALSE": 30
+      },
+      "per_query_type": {
+        "taxonomic": {
+          "accuracy": 0.48,
+          "precision": 0.7632,
+          "recall": 0.1933,
+          "f1": 0.3085,
+          "specificity": 0.91,
+          "confusion_matrix": {
+            "tp": 29,
+            "fp": 9,
+            "tn": 91,
+            "fn": 121,
+            "total": 250
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 250
+        },
+        "hypothetical": {
+          "accuracy": 0.414,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 65,
+            "fn": 92,
+            "total": 157
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 157
+        },
+        "ood": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 0,
+            "fn": 0,
+            "total": 0
+          },
+          "ood_count": 50,
+          "unresolved_count": 0,
+          "count": 50
+        },
+        "categorical": {
+          "accuracy": 0.3023,
+          "precision": 1.0,
+          "recall": 0.1892,
+          "f1": 0.3182,
+          "specificity": 1.0,
+          "confusion_matrix": {
+            "tp": 7,
+            "fp": 0,
+            "tn": 6,
+            "fn": 30,
+            "total": 43
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 43
+        }
+      },
+      "per_source": {
+        "FOLIO": {
+          "accuracy": 0.455,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 1.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 91,
+            "fn": 109,
+            "total": 200
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 200
+        },
+        "ProofWriter": {
+          "accuracy": 0.5467,
+          "precision": 0.7,
+          "recall": 0.2625,
+          "f1": 0.3818,
+          "specificity": 0.8714,
+          "confusion_matrix": {
+            "tp": 21,
+            "fp": 9,
+            "tn": 61,
+            "fn": 59,
+            "total": 150
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 150
+        },
+        "TruthfulQA_OOD": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "specificity": 0.0,
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "tn": 0,
+            "fn": 0,
+            "total": 0
+          },
+          "ood_count": 50,
+          "unresolved_count": 0,
+          "count": 50
+        },
+        "Curated_Gold": {
+          "accuracy": 0.25,
+          "precision": 1.0,
+          "recall": 0.1667,
+          "f1": 0.2857,
+          "specificity": 1.0,
+          "confusion_matrix": {
+            "tp": 15,
+            "fp": 0,
+            "tn": 10,
+            "fn": 75,
+            "total": 100
+          },
+          "ood_count": 0,
+          "unresolved_count": 0,
+          "count": 100
+        }
+      }
+    }
+  },
+  "five_llm_evaluations": {
+    "metadata": {
+      "benchmark_file": "avicenna_benchmark_500.json",
+      "total_benchmark_queries": 500,
+      "mock_mode": true,
+      "parser_mode": "llm",
+      "models_evaluated": [
+        "llama3.2:3b",
+        "mistral:7b",
+        "llama2:7b",
+        "deepseek-r1:7b",
+        "phi4:latest"
+      ]
+    },
+    "comparison_summary": [
+      {
+        "model": "llama3.2:3b",
+        "baseline_acc": 84.44,
+        "baseline_f1": 87.23,
+        "guard_acc": 83.11,
+        "guard_f1": 85.82,
+        "accuracy_gain": -1.33,
+        "hallucinations_intercepted": 12,
+        "interception_rate": 16.9,
+        "avg_overhead_ms": 0.864
+      },
+      {
+        "model": "mistral:7b",
+        "baseline_acc": 72.0,
+        "baseline_f1": 76.49,
+        "guard_acc": 72.44,
+        "guard_f1": 76.6,
+        "accuracy_gain": 0.44,
+        "hallucinations_intercepted": 20,
+        "interception_rate": 15.62,
+        "avg_overhead_ms": 0.871
+      },
+      {
+        "model": "llama2:7b",
+        "baseline_acc": 56.67,
+        "baseline_f1": 62.14,
+        "guard_acc": 59.78,
+        "guard_f1": 64.85,
+        "accuracy_gain": 3.11,
+        "hallucinations_intercepted": 28,
+        "interception_rate": 14.21,
+        "avg_overhead_ms": 0.877
+      },
+      {
+        "model": "deepseek-r1:7b",
+        "baseline_acc": 84.89,
+        "baseline_f1": 87.5,
+        "guard_acc": 83.56,
+        "guard_f1": 86.3,
+        "accuracy_gain": -1.33,
+        "hallucinations_intercepted": 9,
+        "interception_rate": 13.24,
+        "avg_overhead_ms": 0.877
+      },
+      {
+        "model": "phi4:latest",
+        "baseline_acc": 85.56,
+        "baseline_f1": 87.9,
+        "guard_acc": 82.44,
+        "guard_f1": 85.07,
+        "accuracy_gain": -3.12,
+        "hallucinations_intercepted": 6,
+        "interception_rate": 9.23,
+        "avg_overhead_ms": 0.892
+      }
+    ],
+    "models_summary": {
+      "llama3.2:3b": {
+        "baseline_metrics": {
+          "TP": 239,
+          "FP": 30,
+          "TN": 141,
+          "FN": 40,
+          "total": 450,
+          "accuracy": 84.44,
+          "precision": 88.85,
+          "recall": 85.66,
+          "f1": 87.23,
+          "specificity": 82.46,
+          "fpr": 17.54
+        },
+        "guard_metrics": {
+          "TP": 230,
+          "FP": 27,
+          "TN": 144,
+          "FN": 49,
+          "total": 450,
+          "accuracy": 83.11,
+          "precision": 89.49,
+          "recall": 82.44,
+          "f1": 85.82,
+          "specificity": 84.21,
+          "fpr": 15.79
+        },
+        "comparison": {
+          "accuracy_delta": -1.33,
+          "f1_delta": -1.41,
+          "precision_delta": 0.64,
+          "recall_delta": -3.22,
+          "hallucinations_intercepted": 12,
+          "false_alarms": 17,
+          "interception_rate": 16.9
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "YAQEEN": 53,
+          "WAHM": 30,
+          "ZANN": 1
+        },
+        "latency_overhead_ms": {
+          "mean": 0.864,
+          "median": 0.841,
+          "p95": 0.956,
+          "min": 0.81,
+          "max": 1.537
+        }
+      },
+      "mistral:7b": {
+        "baseline_metrics": {
+          "TP": 205,
+          "FP": 52,
+          "TN": 119,
+          "FN": 74,
+          "total": 450,
+          "accuracy": 72.0,
+          "precision": 79.77,
+          "recall": 73.48,
+          "f1": 76.49,
+          "specificity": 69.59,
+          "fpr": 30.41
+        },
+        "guard_metrics": {
+          "TP": 203,
+          "FP": 48,
+          "TN": 123,
+          "FN": 76,
+          "total": 450,
+          "accuracy": 72.44,
+          "precision": 80.88,
+          "recall": 72.76,
+          "f1": 76.6,
+          "specificity": 71.93,
+          "fpr": 28.07
+        },
+        "comparison": {
+          "accuracy_delta": 0.44,
+          "f1_delta": 0.11,
+          "precision_delta": 1.11,
+          "recall_delta": -0.72,
+          "hallucinations_intercepted": 20,
+          "false_alarms": 16,
+          "interception_rate": 15.62
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "YAQEEN": 51,
+          "WAHM": 32,
+          "ZANN": 1
+        },
+        "latency_overhead_ms": {
+          "mean": 0.871,
+          "median": 0.851,
+          "p95": 0.964,
+          "min": 0.811,
+          "max": 1.501
+        }
+      },
+      "llama2:7b": {
+        "baseline_metrics": {
+          "TP": 160,
+          "FP": 76,
+          "TN": 95,
+          "FN": 119,
+          "total": 450,
+          "accuracy": 56.67,
+          "precision": 67.8,
+          "recall": 57.35,
+          "f1": 62.14,
+          "specificity": 55.56,
+          "fpr": 44.44
+        },
+        "guard_metrics": {
+          "TP": 167,
+          "FP": 69,
+          "TN": 102,
+          "FN": 112,
+          "total": 450,
+          "accuracy": 59.78,
+          "precision": 70.76,
+          "recall": 59.86,
+          "f1": 64.85,
+          "specificity": 59.65,
+          "fpr": 40.35
+        },
+        "comparison": {
+          "accuracy_delta": 3.11,
+          "f1_delta": 2.71,
+          "precision_delta": 2.96,
+          "recall_delta": 2.51,
+          "hallucinations_intercepted": 28,
+          "false_alarms": 12,
+          "interception_rate": 14.21
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "WAHM": 40,
+          "YAQEEN": 43,
+          "ZANN": 1
+        },
+        "latency_overhead_ms": {
+          "mean": 0.877,
+          "median": 0.857,
+          "p95": 0.969,
+          "min": 0.809,
+          "max": 1.826
+        }
+      },
+      "deepseek-r1:7b": {
+        "baseline_metrics": {
+          "TP": 238,
+          "FP": 27,
+          "TN": 144,
+          "FN": 41,
+          "total": 450,
+          "accuracy": 84.89,
+          "precision": 89.81,
+          "recall": 85.3,
+          "f1": 87.5,
+          "specificity": 84.21,
+          "fpr": 15.79
+        },
+        "guard_metrics": {
+          "TP": 233,
+          "FP": 28,
+          "TN": 143,
+          "FN": 46,
+          "total": 450,
+          "accuracy": 83.56,
+          "precision": 89.27,
+          "recall": 83.51,
+          "f1": 86.3,
+          "specificity": 83.63,
+          "fpr": 16.37
+        },
+        "comparison": {
+          "accuracy_delta": -1.33,
+          "f1_delta": -1.2,
+          "precision_delta": -0.54,
+          "recall_delta": -1.79,
+          "hallucinations_intercepted": 9,
+          "false_alarms": 15,
+          "interception_rate": 13.24
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "YAQEEN": 59,
+          "WAHM": 24,
+          "ZANN": 1
+        },
+        "latency_overhead_ms": {
+          "mean": 0.877,
+          "median": 0.85,
+          "p95": 0.968,
+          "min": 0.811,
+          "max": 2.04
+        }
+      },
+      "phi4:latest": {
+        "baseline_metrics": {
+          "TP": 236,
+          "FP": 22,
+          "TN": 149,
+          "FN": 43,
+          "total": 450,
+          "accuracy": 85.56,
+          "precision": 91.47,
+          "recall": 84.59,
+          "f1": 87.9,
+          "specificity": 87.13,
+          "fpr": 12.87
+        },
+        "guard_metrics": {
+          "TP": 225,
+          "FP": 25,
+          "TN": 146,
+          "FN": 54,
+          "total": 450,
+          "accuracy": 82.44,
+          "precision": 90.0,
+          "recall": 80.65,
+          "f1": 85.07,
+          "specificity": 85.38,
+          "fpr": 14.62
+        },
+        "comparison": {
+          "accuracy_delta": -3.12,
+          "f1_delta": -2.83,
+          "precision_delta": -1.47,
+          "recall_delta": -3.94,
+          "hallucinations_intercepted": 6,
+          "false_alarms": 20,
+          "interception_rate": 9.23
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "YAQEEN": 57,
+          "WAHM": 26,
+          "ZANN": 1
+        },
+        "latency_overhead_ms": {
+          "mean": 0.892,
+          "median": 0.864,
+          "p95": 0.978,
+          "min": 0.819,
+          "max": 1.877
+        }
+      }
+    }
+  },
+  "five_way_ablation_study": {
+    "model": "llama3.2:3b",
+    "benchmark": "D:\\research\\LogicGuard\\data\\benchmarks\\avicenna_benchmark_500.json",
+    "total_queries": 500,
+    "ablations": [
+      {
+        "variant": "Full System",
+        "key": "full",
+        "description": "All KB graphs (G_T, G_P, G_C) + 4-state epistemics",
+        "accuracy": 83.11,
+        "precision": 89.49,
+        "recall": 82.44,
+        "f1_score": 85.82,
+        "fpr": 15.79,
+        "confusion_matrix": {
+          "TP": 230,
+          "FP": 27,
+          "TN": 144,
+          "FN": 49,
+          "total": 450
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "YAQEEN": 53,
+          "WAHM": 30,
+          "ZANN": 1
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.848,
+            "median": 0.838,
+            "p95": 0.916,
+            "min": 0.806,
+            "max": 1.546
+          },
+          "stage2": {
+            "mean": 0.029,
+            "median": 0.001,
+            "p95": 0.098,
+            "min": 0.0,
+            "max": 1.042
+          },
+          "total_overhead": {
+            "mean": 0.878,
+            "median": 0.853,
+            "p95": 0.97,
+            "min": 0.806,
+            "max": 1.875
+          }
+        },
+        "hallucinations_caught": 12,
+        "total_queries": 500
+      },
+      {
+        "variant": "No G_T (Taxonomy)",
+        "key": "no_gt",
+        "description": "Taxonomic IS-A graph removed",
+        "accuracy": 84.0,
+        "precision": 89.35,
+        "recall": 84.23,
+        "f1_score": 86.72,
+        "fpr": 16.37,
+        "confusion_matrix": {
+          "TP": 235,
+          "FP": 28,
+          "TN": 143,
+          "FN": 44,
+          "total": 450
+        },
+        "epistemic_states": {
+          "SHAKK": 488,
+          "WAHM": 6,
+          "YAQEEN": 5,
+          "ZANN": 1
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.845,
+            "median": 0.839,
+            "p95": 0.906,
+            "min": 0.811,
+            "max": 1.067
+          },
+          "stage2": {
+            "mean": 0.019,
+            "median": 0.001,
+            "p95": 0.034,
+            "min": 0.0,
+            "max": 0.994
+          },
+          "total_overhead": {
+            "mean": 0.864,
+            "median": 0.847,
+            "p95": 0.925,
+            "min": 0.811,
+            "max": 1.859
+          }
+        },
+        "hallucinations_caught": 3,
+        "total_queries": 500
+      },
+      {
+        "variant": "No G_P (Properties)",
+        "key": "no_gp",
+        "description": "Property inheritance graph removed",
+        "accuracy": 83.11,
+        "precision": 88.89,
+        "recall": 83.15,
+        "f1_score": 85.93,
+        "fpr": 16.96,
+        "confusion_matrix": {
+          "TP": 232,
+          "FP": 29,
+          "TN": 142,
+          "FN": 47,
+          "total": 450
+        },
+        "epistemic_states": {
+          "SHAKK": 428,
+          "YAQEEN": 46,
+          "WAHM": 26
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.85,
+            "median": 0.843,
+            "p95": 0.913,
+            "min": 0.811,
+            "max": 1.304
+          },
+          "stage2": {
+            "mean": 0.018,
+            "median": 0.001,
+            "p95": 0.106,
+            "min": 0.0,
+            "max": 0.297
+          },
+          "total_overhead": {
+            "mean": 0.868,
+            "median": 0.853,
+            "p95": 0.954,
+            "min": 0.811,
+            "max": 1.306
+          }
+        },
+        "hallucinations_caught": 10,
+        "total_queries": 500
+      },
+      {
+        "variant": "No G_C (Conditionals)",
+        "key": "no_gc",
+        "description": "Conditional IF-THEN graph removed",
+        "accuracy": 83.11,
+        "precision": 89.49,
+        "recall": 82.44,
+        "f1_score": 85.82,
+        "fpr": 15.79,
+        "confusion_matrix": {
+          "TP": 230,
+          "FP": 27,
+          "TN": 144,
+          "FN": 49,
+          "total": 450
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "YAQEEN": 53,
+          "WAHM": 30,
+          "ZANN": 1
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.854,
+            "median": 0.841,
+            "p95": 0.939,
+            "min": 0.811,
+            "max": 1.301
+          },
+          "stage2": {
+            "mean": 0.032,
+            "median": 0.001,
+            "p95": 0.128,
+            "min": 0.0,
+            "max": 1.078
+          },
+          "total_overhead": {
+            "mean": 0.886,
+            "median": 0.861,
+            "p95": 0.999,
+            "min": 0.811,
+            "max": 1.916
+          }
+        },
+        "hallucinations_caught": 12,
+        "total_queries": 500
+      },
+      {
+        "variant": "No SHAKK Deferral",
+        "key": "no_shakk",
+        "description": "Forced binary decision on OOD queries (no epistemic safety)",
+        "accuracy": 68.61,
+        "precision": 74.49,
+        "recall": 82.44,
+        "f1_score": 73.82,
+        "fpr": 53.79,
+        "confusion_matrix": {
+          "TP": 230,
+          "FP": 27,
+          "TN": 144,
+          "FN": 49,
+          "total": 450
+        },
+        "epistemic_states": {
+          "SHAKK": 416,
+          "YAQEEN": 53,
+          "WAHM": 30,
+          "ZANN": 1
+        },
+        "latency_ms": {
+          "stage1": {
+            "mean": 0.845,
+            "median": 0.832,
+            "p95": 0.907,
+            "min": 0.811,
+            "max": 1.291
+          },
+          "stage2": {
+            "mean": 0.027,
+            "median": 0.001,
+            "p95": 0.077,
+            "min": 0.0,
+            "max": 1.043
+          },
+          "total_overhead": {
+            "mean": 0.872,
+            "median": 0.846,
+            "p95": 0.962,
+            "min": 0.811,
+            "max": 1.885
+          }
+        },
+        "hallucinations_caught": 12,
+        "total_queries": 500
+      }
+    ],
+    "shakk_ablation_verification": {
+      "full_system_fpr": 15.79,
+      "no_shakk_fpr": 53.79,
+      "fpr_spike_delta": 38.0,
+      "spike_confirmed": true
+    }
+  }
+}

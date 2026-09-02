@@ -1,0 +1,651 @@
+{
+  "audit_metadata": {
+    "title": "AvicennaGuard Knowledge Base Exhaustive Stress-Test & Formal Verification Audit",
+    "kb_target": "data\\knowledge_bases\\knowledge_base_extended.json",
+    "timestamp": "2026-09-03T01:44:18+0500",
+    "audit_specialist": "AvicennaGuard Knowledge Base & Ontology Specialist",
+    "total_execution_time_seconds": 21.518
+  },
+  "formal_verifications": {
+    "g_t_is_directed_acyclic_graph": true,
+    "g_t_cycles_detected": 0,
+    "g_t_self_loops_detected": 0,
+    "g_c_is_directed_acyclic_graph": true,
+    "g_c_cycles_detected": 0,
+    "g_c_self_loops_detected": 0,
+    "false_positive_count": 0,
+    "fp_zero_guarantee_verified": true,
+    "orphan_references_count": 0,
+    "orphan_breakdown": {
+      "empty_taxonomy_keys": [],
+      "null_taxonomy_values": [],
+      "missing_taxonomy_parent_references": [],
+      "empty_property_keys": [],
+      "empty_property_values": [],
+      "null_property_values": [],
+      "empty_conditional_keys": [],
+      "empty_conditional_values": [],
+      "null_conditional_values": []
+    }
+  },
+  "graph_topology_metrics": {
+    "taxonomy_graph_G_T": {
+      "total_nodes": 1500,
+      "total_edges": 2156,
+      "graph_density": 0.0009588614631976873,
+      "root_nodes_count": 337,
+      "leaf_nodes_count": 622,
+      "intermediate_nodes_count": 541,
+      "poly_hierarchical_nodes_count": 474,
+      "poly_hierarchy_ratio": 0.316,
+      "multi_child_nodes_count": 295,
+      "weakly_connected_components": 1,
+      "largest_wcc_nodes": 1500,
+      "dag_longest_path_hops": 16,
+      "dag_longest_path_nodes": [
+        "domestic_cat",
+        "cat",
+        "gossip",
+        "chat",
+        "thrush",
+        "oscine",
+        "passerine",
+        "bird",
+        "girl",
+        "female_offspring",
+        "child",
+        "juvenile",
+        "person",
+        "grammatical_category",
+        "class",
+        "gathering",
+        "social_group"
+      ],
+      "undirected_diameter": 12,
+      "undirected_avg_shortest_path_length": 5.5062,
+      "total_reachable_node_pairs": 31702,
+      "degree_statistics": {
+        "out_degree_parents": {
+          "min": 0,
+          "max": 8,
+          "mean": 1.4373,
+          "max_parent_nodes": [
+            "square"
+          ]
+        },
+        "in_degree_children": {
+          "min": 0,
+          "max": 99,
+          "mean": 1.4373,
+          "max_child_nodes": [
+            "animal"
+          ]
+        }
+      },
+      "sample_roots": [
+        "act",
+        "actress",
+        "adjudicator",
+        "administration",
+        "administrative_unit",
+        "adversity",
+        "alliaceous_plant",
+        "american_state",
+        "amerind",
+        "amorphous_shape",
+        "amount",
+        "analysis",
+        "angelim",
+        "animal_material",
+        "animal_product"
+      ],
+      "sample_leaves": [
+        "abaca",
+        "abandoned_ship",
+        "acarine",
+        "accessory_fruit",
+        "achene",
+        "acute_triangle",
+        "adelie",
+        "african_crocodile",
+        "african_daisy",
+        "african_elephant",
+        "african_grey",
+        "african_violet",
+        "agamid",
+        "airliner",
+        "alligator"
+      ]
+    },
+    "property_graph_G_P": {
+      "total_property_entities": 418,
+      "total_property_assertions": 1929,
+      "unique_property_predicates": 1489,
+      "entities_in_taxonomy_G_T": 160,
+      "entities_standalone": 258,
+      "avg_properties_per_entity": 4.61
+    },
+    "conditional_graph_G_C": {
+      "total_condition_keys": 115,
+      "total_implication_rules": 194,
+      "unique_antecedents": 66,
+      "unique_consequents": 173,
+      "total_conditional_nodes": 235
+    }
+  },
+  "stress_test_summary": {
+    "total_queries_executed": 1000,
+    "passed_queries": 1000,
+    "failed_queries": 0,
+    "accuracy": 1.0,
+    "false_positives": 0,
+    "categories_tested": {
+      "multi_hop_reachability": {
+        "count": 250,
+        "passed": 250,
+        "accuracy": 1.0
+      },
+      "poly_hierarchy_reachability": {
+        "count": 150,
+        "passed": 150,
+        "accuracy": 1.0
+      },
+      "transitive_property_inheritance": {
+        "count": 200,
+        "passed": 200,
+        "accuracy": 1.0
+      },
+      "inverted_negative_queries": {
+        "count": 150,
+        "passed": 150,
+        "accuracy": 1.0
+      },
+      "disjoint_negative_queries": {
+        "count": 100,
+        "passed": 100,
+        "accuracy": 1.0
+      },
+      "out_of_vocabulary_shakk": {
+        "count": 75,
+        "passed": 75,
+        "accuracy": 1.0
+      },
+      "conditional_modus_ponens": {
+        "count": 75,
+        "passed": 75,
+        "accuracy": 1.0
+      }
+    },
+    "latency_benchmarks_ms": {
+      "mean": 0.02019,
+      "p50": 0.0119,
+      "p95": 0.0561,
+      "p99": 0.0905,
+      "max": 0.6067,
+      "throughput_qps": 49539.5
+    }
+  },
+  "pytest_unit_tests": {
+    "total_tests": 25,
+    "passed": 25,
+    "failed": 0,
+    "exit_code": 0,
+    "status": "PASSED",
+    "test_files": [
+      "tests/unit/test_kb_builder.py (9 tests)",
+      "tests/unit/test_bfs_validator.py (16 tests)"
+    ]
+  },
+  "sample_stress_test_traces": [
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "pan",
+      "predicate": "container",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "pan",
+        "container"
+      ],
+      "latency_us": 606.7,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "bug",
+      "predicate": "microphone",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "bug",
+        "microphone"
+      ],
+      "latency_us": 22.5,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "anapsid",
+      "predicate": "reptile",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "anapsid",
+        "reptile"
+      ],
+      "latency_us": 11.0,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "discharge",
+      "predicate": "emission",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "discharge",
+        "emission"
+      ],
+      "latency_us": 7.4,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "crocodile",
+      "predicate": "living_thing",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "crocodile",
+        "living_thing"
+      ],
+      "latency_us": 8.0,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "contest",
+      "predicate": "competition",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "contest",
+        "competition"
+      ],
+      "latency_us": 7.7,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "caribou",
+      "predicate": "deer",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "caribou",
+        "deer"
+      ],
+      "latency_us": 6.3,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "bottom_lurkers",
+      "predicate": "fish",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "bottom_lurkers",
+        "fish"
+      ],
+      "latency_us": 6.6,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "plane_figure",
+      "predicate": "figure",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "plane_figure",
+        "figure"
+      ],
+      "latency_us": 6.5,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "mail_train",
+      "predicate": "train",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "mail_train",
+        "train"
+      ],
+      "latency_us": 6.6,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "blackfish",
+      "predicate": "wrasse",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "blackfish",
+        "wrasse"
+      ],
+      "latency_us": 6.1,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "muntjac",
+      "predicate": "deer",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "muntjac",
+        "deer"
+      ],
+      "latency_us": 6.3,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "griffon",
+      "predicate": "dog",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "griffon",
+        "dog"
+      ],
+      "latency_us": 6.1,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "animal_skin",
+      "predicate": "animal_product",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "animal_skin",
+        "animal_product"
+      ],
+      "latency_us": 6.5,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "anguid_lizard",
+      "predicate": "lizard",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "anguid_lizard",
+        "lizard"
+      ],
+      "latency_us": 6.1,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "bogy",
+      "predicate": "evil_spirit",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "bogy",
+        "evil_spirit"
+      ],
+      "latency_us": 7.1,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "consequence",
+      "predicate": "phenomenon",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "consequence",
+        "phenomenon"
+      ],
+      "latency_us": 5.7,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "cow",
+      "predicate": "mammal",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "cow",
+        "mammal"
+      ],
+      "latency_us": 6.1,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "kite",
+      "predicate": "check",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "kite",
+        "check"
+      ],
+      "latency_us": 6.4,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "night_lizard",
+      "predicate": "lizard",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "night_lizard",
+        "lizard"
+      ],
+      "latency_us": 5.5,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "andrena",
+      "predicate": "bee",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "andrena",
+        "bee"
+      ],
+      "latency_us": 5.7,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "meat",
+      "predicate": "food",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "meat",
+        "food"
+      ],
+      "latency_us": 5.9,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "cod",
+      "predicate": "living_thing",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "cod",
+        "living_thing"
+      ],
+      "latency_us": 6.1,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "product",
+      "predicate": "quantity",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "product",
+        "quantity"
+      ],
+      "latency_us": 5.7,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "peafowl",
+      "predicate": "pheasant",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "peafowl",
+        "pheasant"
+      ],
+      "latency_us": 5.9,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "potato_wart_fungus",
+      "predicate": "fungus",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "potato_wart_fungus",
+        "fungus"
+      ],
+      "latency_us": 6.8,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "green",
+      "predicate": "tract",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "green",
+        "tract"
+      ],
+      "latency_us": 8.4,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "constrictor",
+      "predicate": "snake",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "constrictor",
+        "snake"
+      ],
+      "latency_us": 5.9,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "hemp",
+      "predicate": "rope",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "hemp",
+        "rope"
+      ],
+      "latency_us": 5.7,
+      "passed": true
+    },
+    {
+      "category": "multi_hop_reachability",
+      "hop_distance": 1,
+      "subject": "mule_deer",
+      "predicate": "deer",
+      "expected_result": true,
+      "actual_result": true,
+      "epistemic_state": "YAQEEN",
+      "path": [
+        "mule_deer",
+        "deer"
+      ],
+      "latency_us": 5.5,
+      "passed": true
+    }
+  ]
+}
