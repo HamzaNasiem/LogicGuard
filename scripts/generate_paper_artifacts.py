@@ -57,18 +57,25 @@ from avicennaguard.eval.latex_generator import (
 )
 
 
-def load_json_safe(file_path: Path | str) -> Dict[str, Any]:
-    """Safely load JSON file if exists, else return empty dict."""
-    p = Path(file_path)
-    if not p.exists():
-        print(f"  [INFO] Optional file not found: {p.name}")
-        return {}
-    try:
-        with open(p, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"  [WARNING] Could not load {p.name}: {e}")
-        return {}
+def load_json_safe(file_name: str | Path) -> Dict[str, Any]:
+    """Safely search and load JSON file across results subdirectories."""
+    name = Path(file_name).name
+    candidates = [
+        PROJECT_ROOT / name,
+        PROJECT_ROOT / "results" / "models" / name,
+        PROJECT_ROOT / "results" / "baselines" / name,
+        PROJECT_ROOT / "results" / "reports" / name,
+        PROJECT_ROOT / "data" / "results" / name,
+    ]
+    for p in candidates:
+        if p.exists():
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"  [WARNING] Could not load {p}: {e}")
+                return {}
+    return {}
 
 
 def format_plaintext_report(

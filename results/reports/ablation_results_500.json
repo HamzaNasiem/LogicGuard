@@ -1,0 +1,67 @@
+{
+  "model": "llama3.2:3b",
+  "benchmark": "data/benchmarks/avicenna_benchmark_500.json",
+  "total_queries": 500,
+  "ablations": [
+    {
+      "variant": "Full System",
+      "key": "full",
+      "description": "All KB graphs (G_T, G_P, G_C) + 4-state epistemics",
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "fpr": 0.0,
+      "hallucinations_caught": 0,
+      "total_queries": 500
+    },
+    {
+      "variant": "No G_T (Taxonomy)",
+      "key": "no_gt",
+      "description": "Taxonomic IS-A graph removed",
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "fpr": 0.0,
+      "hallucinations_caught": 0,
+      "total_queries": 500
+    },
+    {
+      "variant": "No G_P (Properties)",
+      "key": "no_gp",
+      "description": "Property inheritance graph removed",
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "fpr": 0.0,
+      "hallucinations_caught": 0,
+      "total_queries": 500
+    },
+    {
+      "variant": "No G_C (Conditionals)",
+      "key": "no_gc",
+      "description": "Conditional IF-THEN graph removed",
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "fpr": 0.0,
+      "hallucinations_caught": 0,
+      "total_queries": 500
+    },
+    {
+      "variant": "No SHAKK Deferral",
+      "key": "no_shakk",
+      "description": "Forced binary decision on OOD queries (no epistemic safety)",
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "fpr": 0.38,
+      "hallucinations_caught": 0,
+      "total_queries": 500
+    }
+  ]
+}
