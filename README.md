@@ -112,6 +112,12 @@ The AvicennaGuard Knowledge Base $\mathcal{K} = (G_T, G_P, G_C)$ is formalized a
 2. **Property Association Graph ($G_P = (V_P, E_P)$):** 418 distinct categories with inherited property closures ($u \xrightarrow{\text{HAS-A}} p$).
 3. **Conditional Rules Graph ($G_C = (V_C, E_C)$):** 194 directed scientific and causal implications ($C_1 \xrightarrow{\text{IF-THEN}} C_2$) satisfying Modus Ponens ($Qiy\bar{a}s\ al\text{-}Istithn\bar{a}$).
 
+<p align="center">
+  <img src="docs/figures/fig6_knowledge_graph_proof_paths.png" alt="Figure 6: Multi-Relational Knowledge Graph & Proof Paths" width="95%"/>
+  <br>
+  <i><b>Figure 6:</b> Topological visualization of the multi-relational Knowledge Base $\mathcal{K} = (G_T, G_P, G_C)$ showing deductive reachability and refutation paths ($Wahm$).</i>
+</p>
+
 ### Theorem 1: Zero False-Positive Invariance Proof
 
 > **Theorem 1 (Zero False Positive Invariance):**  
@@ -123,6 +129,12 @@ The AvicennaGuard Knowledge Base $\mathcal{K} = (G_T, G_P, G_C)$ is formalized a
 ---
 
 ## ⚙️ System Architecture & Workflow
+
+<p align="center">
+  <img src="docs/figures/fig1_neurosymbolic_pipeline.png" alt="Figure 1: AvicennaGuard System Architecture Pipeline" width="100%"/>
+  <br>
+  <i><b>Figure 1:</b> AvicennaGuard end-to-end neuro-symbolic workflow showing sub-millisecond Stage 1 neural parsing, Stage 2 deterministic BFS graph verification, and 4-state epistemic adjudication.</i>
+</p>
 
 ### Pipeline Flow Diagram
 
@@ -197,6 +209,12 @@ To eliminate reviewer concerns regarding circular derivation, evaluations were c
 
 ### Table I: Multi-Model Evaluation Across 5 Target LLMs
 
+<p align="center">
+  <img src="docs/figures/fig2_multimodel_performance.png" alt="Figure 2: Multi-Model Accuracy Gains" width="95%"/>
+  <br>
+  <i><b>Figure 2:</b> Multi-model evaluation accuracy and total hallucinations intercepted across 5 frontier model architectures on 500 benchmark queries.</i>
+</p>
+
 | Model Architecture | Parameter Size | Baseline Accuracy | +AvicennaGuard Accuracy | Accuracy Gain ($\Delta$) | Hallucinations Intercepted | False Positives (FP) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **LLaMA-2-7B** | 7B | 56.67% | **58.44%** | **+1.77 pp** | **18 / 18** | **0** |
@@ -211,6 +229,12 @@ To eliminate reviewer concerns regarding circular derivation, evaluations were c
 
 ### Table II: Comparison with State-of-the-Art Baselines
 
+<p align="center">
+  <img src="docs/figures/fig3_baseline_pareto_tradeoff.png" alt="Figure 3: Accuracy vs Latency Pareto Frontier" width="95%"/>
+  <br>
+  <i><b>Figure 3:</b> Hallucination mitigation trade-off space comparing reasoning accuracy against inference latency (log-scale). AvicennaGuard establishes the optimal top-left frontier (<0.1ms, 100% precision).</i>
+</p>
+
 | Method / Baseline Architecture | Publication Venue | Accuracy | Precision | Recall | F1 Score | False Positives | Guard Latency | Compute Overhead |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Raw Baseline (LLaMA-3.2-3B)** | — | 85.0% | 100.0% | 75.0% | 85.7% | 0 | — | $1.0\times$ (Baseline) |
@@ -220,6 +244,16 @@ To eliminate reviewer concerns regarding circular derivation, evaluations were c
 | **Dense RAG (mpnet-768)** | *NeurIPS 2020* | 80.0% | 100.0% | 51.8% | 68.2% | 0 | ~6,136 ms | $2.8\times$ |
 | **Logic-LM (FOL Z3 Solver)** | *Findings EMNLP 2023* | 44.0% | 80.0% | 12.9% | 22.2% | 9 | ~1,200 ms | $3.1\times$ |
 | **AvicennaGuard (Ours)** | **Proposed** | **100.0%** | **100.0%** | **100.0%** | **100.0%** | **0** | **$< 0.1$ ms** | **$1.0001\times$ ($>40,000\times$ faster)** |
+
+---
+
+### Epistemic State & Out-Of-Domain Safety
+
+<p align="center">
+  <img src="docs/figures/fig4_epistemic_state_distribution.png" alt="Figure 4: Epistemic State Distribution and Out-Of-Domain Safety" width="95%"/>
+  <br>
+  <i><b>Figure 4:</b> Distribution of 4 epistemic states across the 500-query benchmark dataset showing conservative, non-interferent safe deferral ($Shakk$) on out-of-domain queries.</i>
+</p>
 
 ---
 
@@ -248,6 +282,12 @@ $$\chi^2 = \frac{(|n_{01} - n_{10}| - 1)^2}{n_{01} + n_{10}}, \quad w = \frac{\h
 ---
 
 ### Table V: 5-Variant Component Ablation Study
+
+<p align="center">
+  <img src="docs/figures/fig5_component_ablation_impact.png" alt="Figure 5: Component Ablation Impact" width="95%"/>
+  <br>
+  <i><b>Figure 5:</b> Marginal contribution of Knowledge Base graphs ($G_T, G_P, G_C$) and the catastrophic $+38.0\%$ False Positive Rate spike upon ablating the $Shakk$ safe deferral state.</i>
+</p>
 
 | Ablation Configuration Variant | Evaluated Components | Accuracy (%) | Precision (%) | Recall (%) | F1 Score (%) | False Positive Rate (FPR) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
