@@ -40,25 +40,27 @@ NAME_TO_LABEL = {v: k for k, v in LABEL_MAP.items()}
 
 
 def _clean_term(term: str) -> str:
-    """Normalize extracted term: strip leading articles and convert whitespace to underscores."""
+    """Normalize extracted term: strip leading articles/determiners and convert whitespace to underscores."""
     t = (term or "").strip()
-    t = re.sub(r"^(?:a|an|the)\s+", "", t, flags=re.I)
+    t = re.sub(r"^(?:a|an|the|each|every|all|any|an\s+instance\s+of|every\s+single)\s+", "", t, flags=re.I)
     return t.strip().lower().replace(" ", "_")
 
 
 # Helper patterns for slot extraction (ordered from most specific to general)
 _TAX_PATTERNS = [
-    re.compile(r"^are\s+all\s+([\w\-][\w\s\-]*?)\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^do\s+all\s+([\w\-][\w\s\-]*?)\s+belong\s+to\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^do\s+([\w\-][\w\s\-]*?)\s+fall\s+(?:under|into)\s+(?:the\s+)?category\s+of\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^(?:are|is)\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\s+classified\s+as\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^can\s+(?:any|all)\s+([\w\-][\w\s\-]*?)\s+be\s+(?:considered|classified\s+as)\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^would\s+(?:an?\s+|any\s+|an\s+instance\s+of\s+)?([\w\-][\w\s\-]*?)\s+(?:be\s+considered\s+(?:an\s+|a\s+)?|fall\s+under\s+(?:the\s+category\s+of\s+)?([\w\-][\w\s\-]*?))\??$", re.I),
-    re.compile(r"^is\s+(?:each|every|any|an\s+|a\s+)?([\w\-][\w\s\-]*?)\s+a\s+(?:subclass|subtype|type|member)\s+of\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^is\s+every\s+single\s+([\w\-][\w\s\-]*?)\s+a\s+member\s+of\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^are\s+([\w\-][\w\s\-]*?)\s+considered\s+to\s+be\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^every\s+([\w\-][\w\s\-]*?)\s+is\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
-    re.compile(r"^is\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\s+(?:an\s+|a\s+)?([\w\-][\w\s\-]*?)\??$", re.I),
+    re.compile(r"^are\s+all\s+([\w\-]+(?:\s+[\w\-]+)*?)\s+(?:an\s+|a\s+)([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^are\s+all\s+([\w\-]+(?:\s+[\w\-]+)*)\s+([\w\-]+)\??$", re.I),
+    re.compile(r"^do\s+all\s+([\w\-]+(?:\s+[\w\-]+)*?)\s+belong\s+to\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^do\s+([\w\-]+(?:\s+[\w\-]+)*?)\s+fall\s+(?:under|into)\s+(?:the\s+)?category\s+of\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^(?:are|is)\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*?)\s+classified\s+as\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^can\s+(?:any|all)\s+([\w\-]+(?:\s+[\w\-]+)*?)\s+be\s+(?:considered|classified\s+as)\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^would\s+(?:an?\s+|any\s+|an\s+instance\s+of\s+)?([\w\-]+(?:\s+[\w\-]+)*?)\s+(?:be\s+considered\s+(?:an\s+|a\s+)?|fall\s+under\s+(?:the\s+category\s+of\s+)?)([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^is\s+(?:each|every|any|an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*?)\s+a\s+(?:subclass|subtype|type|member)\s+of\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^is\s+every\s+single\s+([\w\-]+(?:\s+[\w\-]+)*?)\s+a\s+member\s+of\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^are\s+([\w\-]+(?:\s+[\w\-]+)*?)\s+considered\s+to\s+be\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^every\s+([\w\-]+(?:\s+[\w\-]+)*?)\s+is\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^(?:are|is)\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*?)\s+(?:an\s+|a\s+)([\w\-]+(?:\s+[\w\-]+)*)\??$", re.I),
+    re.compile(r"^(?:are|is)\s+(?:an\s+|a\s+)?([\w\-]+(?:\s+[\w\-]+)*)\s+([\w\-]+)\??$", re.I),
 ]
 
 _CAT_PATTERNS = [
@@ -238,7 +240,9 @@ class DebertaParser:
             }
         """
         self._stats["total"] += 1
-        q = (question or "").strip()
+        if question is None:
+            return self._build_result("non-logical", confidence=1.0, method="regex_fallback")
+        q = re.sub(r"\s+", " ", str(question)).strip()
 
         if not q:
             return self._build_result("non-logical", confidence=1.0, method="regex_fallback")
@@ -281,6 +285,11 @@ class DebertaParser:
 
             pred_type = LABEL_MAP.get(pred_idx, "non-logical")
             slots = self._extract_slots(question, pred_type)
+
+            if pred_type != "non-logical" and not any(slots.values()):
+                reg = self.fallback_parser.parse(question)
+                if reg.get("type") != "non-logical":
+                    return self._regex_fallback_parse(question)
 
             return self._build_result(
                 query_type=pred_type,
@@ -328,6 +337,11 @@ class DebertaParser:
 
         pred_type = LABEL_MAP.get(pred_idx, "non-logical")
         slots = self._extract_slots(question, pred_type)
+
+        if pred_type != "non-logical" and not any(slots.values()):
+            reg = self.fallback_parser.parse(question)
+            if reg.get("type") != "non-logical":
+                return self._regex_fallback_parse(question)
 
         return self._build_result(
             query_type=pred_type,

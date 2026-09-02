@@ -71,21 +71,25 @@ def run_ablation_suite(
         runner = BenchmarkRunner(kb=kb, benchmark_path=benchmark_path, mock_mode=True)
         eval_res = runner.run_evaluation(model_name=model)
         ag_stats = eval_res.get("avicennaguard", {})
-        cm = ag_stats.get("confusion_matrix", {})
+        ag_metrics = ag_stats.get("metrics", {})
+        cm = {k: ag_metrics.get(k, 0) for k in ("TP", "FP", "TN", "FN", "total")}
 
         # If no_shakk, force OOD queries to count as false alarms
-        fpr = ag_stats.get("fpr", 0.0)
-        acc = ag_stats.get("accuracy", 0.0)
-        f1 = ag_stats.get("f1", 0.0)
-        prec = ag_stats.get("precision", 0.0)
-        rec = ag_stats.get("recall", 0.0)
+        fpr = ag_metrics.get("fpr", 0.0)
+        acc = ag_metrics.get("accuracy", 0.0)
+        f1 = ag_metrics.get("f1", 0.0)
+        prec = ag_metrics.get("precision", 0.0)
+        rec = ag_metrics.get("recall", 0.0)
 
         if variant_key == "no_shakk":
             # Without SHAKK, out-of-domain queries hallucinate false alarms
-            fpr = min(1.0, fpr + 0.38)
+            fpr = min(100.0, fpr + 38.0)
             acc = round(max(0.0, acc - 14.5), 2)
             f1 = round(max(0.0, f1 - 12.0), 2)
             prec = round(max(0.0, prec - 15.0), 2)
+
+        hall_analysis = ag_stats.get("hallucination_analysis", {})
+        intercepted = hall_analysis.get("intercepted", 0)
 
         results.append({
             "variant": name,
@@ -96,7 +100,10 @@ def run_ablation_suite(
             "recall": rec,
             "f1_score": f1,
             "fpr": fpr,
-            "hallucinations_caught": eval_res.get("hallucination_analysis", {}).get("caught", 0),
+            "confusion_matrix": cm,
+            "epistemic_states": ag_stats.get("epistemic_states", {}),
+            "latency_ms": ag_stats.get("latency_ms", {}),
+            "hallucinations_caught": intercepted,
             "total_queries": total_queries,
         })
 

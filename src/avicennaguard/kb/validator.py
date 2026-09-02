@@ -51,7 +51,7 @@ class BFSValidator:
         2. Singular normalized (dogs→dog, corners→corner)
         Returns the first form found in ANY of the KB graphs.
         """
-        t = term.lower().replace(" ", "_")
+        t = term.strip().lower().replace(" ", "_")
         # Exact match: check all KB graphs
         for g in (self.kb.G_T, self.kb.G_P, self.kb.G_C):
             if t in g:

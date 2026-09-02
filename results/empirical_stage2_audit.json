@@ -1,0 +1,27 @@
+{
+  "total_cases": 298,
+  "epistemic_counts": {
+    "YAQEEN": 145,
+    "WAHM": 134,
+    "SHAKK": 16,
+    "ZANN": 3
+  },
+  "confusion_matrix": {
+    "tp": 134,
+    "tn": 164,
+    "fp": 0,
+    "fn": 0
+  },
+  "metrics": {
+    "fpr": 0.0,
+    "tpr": 1.0,
+    "precision": 1.0,
+    "mean_latency_ms": 0.034788925428843535
+  },
+  "eu_ai_act_compliance": {
+    "valid_paths": 160,
+    "total_positive_taxonomic": 160,
+    "percentage": 100.0
+  },
+  "discrepancies": []
+}
