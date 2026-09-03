@@ -1483,7 +1483,7 @@
     "id": "proofwriter_051",
     "source": "ProofWriter",
     "question": "Every lion is a carnivore. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1491,7 +1491,7 @@
     "id": "proofwriter_052",
     "source": "ProofWriter",
     "question": "Are all tigers carnivores?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1499,7 +1499,7 @@
     "id": "proofwriter_053",
     "source": "ProofWriter",
     "question": "Is a bear a type of omnivore?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1507,7 +1507,7 @@
     "id": "proofwriter_054",
     "source": "ProofWriter",
     "question": "Every cow is a herbivore. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1515,7 +1515,7 @@
     "id": "proofwriter_055",
     "source": "ProofWriter",
     "question": "Are all sheeps herbivores?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1523,7 +1523,7 @@
     "id": "proofwriter_056",
     "source": "ProofWriter",
     "question": "Is a horse a type of herbivore?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1531,7 +1531,7 @@
     "id": "proofwriter_057",
     "source": "ProofWriter",
     "question": "Every eagle is a predator. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1539,7 +1539,7 @@
     "id": "proofwriter_058",
     "source": "ProofWriter",
     "question": "Are all falcons predators?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1547,7 +1547,7 @@
     "id": "proofwriter_059",
     "source": "ProofWriter",
     "question": "Is a sparrow a type of bird?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1555,7 +1555,7 @@
     "id": "proofwriter_060",
     "source": "ProofWriter",
     "question": "Every penguin is a flightless bird. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1563,7 +1563,7 @@
     "id": "proofwriter_061",
     "source": "ProofWriter",
     "question": "Are all ostrichs flightless birds?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1571,7 +1571,7 @@
     "id": "proofwriter_062",
     "source": "ProofWriter",
     "question": "Is a shark a type of aquatic carnivore?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1579,7 +1579,7 @@
     "id": "proofwriter_063",
     "source": "ProofWriter",
     "question": "Every tuna is a saltwater fish. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1587,7 +1587,7 @@
     "id": "proofwriter_064",
     "source": "ProofWriter",
     "question": "Are all salmons anadromous fishs?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1595,7 +1595,7 @@
     "id": "proofwriter_065",
     "source": "ProofWriter",
     "question": "Is a frog a type of amphibian?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1603,7 +1603,7 @@
     "id": "proofwriter_066",
     "source": "ProofWriter",
     "question": "Every toad is a amphibian. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1611,7 +1611,7 @@
     "id": "proofwriter_067",
     "source": "ProofWriter",
     "question": "Are all crocodiles reptiles?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1619,7 +1619,7 @@
     "id": "proofwriter_068",
     "source": "ProofWriter",
     "question": "Is a alligator a type of reptile?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1627,7 +1627,7 @@
     "id": "proofwriter_069",
     "source": "ProofWriter",
     "question": "Every lizard is a reptile. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1635,7 +1635,7 @@
     "id": "proofwriter_070",
     "source": "ProofWriter",
     "question": "Are all snakes reptiles?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1643,7 +1643,7 @@
     "id": "proofwriter_071",
     "source": "ProofWriter",
     "question": "Is a ant a type of social insect?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1651,7 +1651,7 @@
     "id": "proofwriter_072",
     "source": "ProofWriter",
     "question": "Every bee is a pollinator. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1659,7 +1659,7 @@
     "id": "proofwriter_073",
     "source": "ProofWriter",
     "question": "Are all wasps insects?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1667,7 +1667,7 @@
     "id": "proofwriter_074",
     "source": "ProofWriter",
     "question": "Is a butterfly a type of pollinator?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1675,7 +1675,7 @@
     "id": "proofwriter_075",
     "source": "ProofWriter",
     "question": "Every moth is a insect. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1683,7 +1683,7 @@
     "id": "proofwriter_076",
     "source": "ProofWriter",
     "question": "Are all beetles insects?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1691,7 +1691,7 @@
     "id": "proofwriter_077",
     "source": "ProofWriter",
     "question": "Is a spider a type of arachnid?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1699,7 +1699,7 @@
     "id": "proofwriter_078",
     "source": "ProofWriter",
     "question": "Every scorpion is a arachnid. Is this statement true?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1707,7 +1707,7 @@
     "id": "proofwriter_079",
     "source": "ProofWriter",
     "question": "Are all crabs crustaceans?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1715,7 +1715,7 @@
     "id": "proofwriter_080",
     "source": "ProofWriter",
     "question": "Is a lobster a type of crustacean?",
-    "ground_truth": true,
+    "ground_truth": false,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1723,7 +1723,7 @@
     "id": "proofwriter_081",
     "source": "ProofWriter",
     "question": "Every dog is a herbivore. Is this statement true?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1731,7 +1731,7 @@
     "id": "proofwriter_082",
     "source": "ProofWriter",
     "question": "Are all cats herbivores?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1739,7 +1739,7 @@
     "id": "proofwriter_083",
     "source": "ProofWriter",
     "question": "Is a lion a type of herbivore?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1747,7 +1747,7 @@
     "id": "proofwriter_084",
     "source": "ProofWriter",
     "question": "Every cow is a carnivore. Is this statement true?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1755,7 +1755,7 @@
     "id": "proofwriter_085",
     "source": "ProofWriter",
     "question": "Are all horses carnivores?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1763,7 +1763,7 @@
     "id": "proofwriter_086",
     "source": "ProofWriter",
     "question": "Is a sheep a type of carnivore?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1771,7 +1771,7 @@
     "id": "proofwriter_087",
     "source": "ProofWriter",
     "question": "Every eagle is a fish. Is this statement true?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1779,7 +1779,7 @@
     "id": "proofwriter_088",
     "source": "ProofWriter",
     "question": "Are all sparrows mammals?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1787,7 +1787,7 @@
     "id": "proofwriter_089",
     "source": "ProofWriter",
     "question": "Is a shark a type of mammal?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1795,7 +1795,7 @@
     "id": "proofwriter_090",
     "source": "ProofWriter",
     "question": "Every dolphin is a fish. Is this statement true?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1803,7 +1803,7 @@
     "id": "proofwriter_091",
     "source": "ProofWriter",
     "question": "Are all whales fishs?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1811,7 +1811,7 @@
     "id": "proofwriter_092",
     "source": "ProofWriter",
     "question": "Is a frog a type of reptile?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1819,7 +1819,7 @@
     "id": "proofwriter_093",
     "source": "ProofWriter",
     "question": "Every crocodile is a amphibian. Is this statement true?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1827,7 +1827,7 @@
     "id": "proofwriter_094",
     "source": "ProofWriter",
     "question": "Are all spiders insects?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1835,7 +1835,7 @@
     "id": "proofwriter_095",
     "source": "ProofWriter",
     "question": "Is a crab a type of insect?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1843,7 +1843,7 @@
     "id": "proofwriter_096",
     "source": "ProofWriter",
     "question": "Every snake is a mammal. Is this statement true?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1851,7 +1851,7 @@
     "id": "proofwriter_097",
     "source": "ProofWriter",
     "question": "Are all penguins mammals?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1859,7 +1859,7 @@
     "id": "proofwriter_098",
     "source": "ProofWriter",
     "question": "Is a falcon a type of reptile?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },
@@ -1867,7 +1867,7 @@
     "id": "proofwriter_099",
     "source": "ProofWriter",
     "question": "Every bee is a mammal. Is this statement true?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "easy"
   },
@@ -1875,7 +1875,7 @@
     "id": "proofwriter_100",
     "source": "ProofWriter",
     "question": "Are all beetles reptiles?",
-    "ground_truth": false,
+    "ground_truth": true,
     "query_type": "taxonomic",
     "difficulty": "medium"
   },

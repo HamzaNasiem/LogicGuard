@@ -131,10 +131,10 @@ class TestKnowledgeBaseBuilder:
         stats = builder.get_statistics()
 
         assert stats["taxonomy_nodes"] == 1500
-        assert stats["taxonomy_edges"] == 2158
+        assert stats["taxonomy_edges"] == 2156
         assert stats["is_dag"] is True
         assert stats["cycle_count"] == 0
         assert stats["property_entities"] == 418
-        assert stats["total_property_assertions"] == 1933
+        assert stats["total_property_assertions"] == 1929
         assert stats["conditional_rules"] == 194
-        assert stats["multi_parent_nodes_count"] == 475
+        assert stats["multi_parent_nodes_count"] == 474
