@@ -308,7 +308,12 @@ class DenseRAGBaseline:
         self.model = model
         self.embedding_model = embedding_model
         self.top_k = max(1, top_k)
-        self.mock = mock or (not _HAS_OLLAMA)
+        if not mock and not _HAS_OLLAMA:
+            raise RuntimeError(
+                "Ollama is not installed or available for DenseRAG execution. "
+                "Please install ollama and start the Ollama service."
+            )
+        self.mock = mock
         self.use_dense = use_dense and _HAS_SENTENCE_TRANSFORMERS and (not mock)
 
         self.kb_path = self._resolve_kb_path(kb_path)

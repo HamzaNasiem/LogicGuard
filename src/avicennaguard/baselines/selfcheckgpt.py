@@ -94,7 +94,12 @@ class SelfCheckGPTBaseline:
         self.n_samples = max(1, n_samples)
         self.temperature = temperature
         self.confidence_threshold = confidence_threshold
-        self.mock = mock or (not _HAS_OLLAMA)
+        if not mock and not _HAS_OLLAMA:
+            raise RuntimeError(
+                "Ollama is not installed or available for SelfCheckGPT execution. "
+                "Please install ollama and start the Ollama service."
+            )
+        self.mock = mock
         self.seed = seed
         self._rng = random.Random(seed)
 

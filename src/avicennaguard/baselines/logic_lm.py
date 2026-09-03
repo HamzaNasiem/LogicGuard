@@ -332,7 +332,12 @@ class LogicLMBaseline:
         mock: bool = False,
     ) -> None:
         self.model = model
-        self.mock = mock or (not _HAS_OLLAMA)
+        if not mock and not _HAS_OLLAMA:
+            raise RuntimeError(
+                "Ollama is not installed or available for Logic-LM execution. "
+                "Please install ollama and start the Ollama service."
+            )
+        self.mock = mock
         self.kb_path = self._resolve_kb_path(kb_path)
         self.kb = KnowledgeBase(self.kb_path)
         self.translator = RuleBasedLogicTranslator()
