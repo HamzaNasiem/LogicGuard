@@ -29,6 +29,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from avicennaguard.kb.loader import KnowledgeBase
 from avicennaguard.kb.validator import BFSValidator
 from avicennaguard.kb.context_builder import ContextGraphBuilder
+from avicennaguard.kb.z3_solver import Z3LogicSolver
 from avicennaguard.parsers.deberta_parser import DebertaParser
 from avicennaguard.parsers.typed_regex import extract_taxonomic, extract_categorical, extract_hypothetical
 from avicennaguard.core.epistemic_states import EpistemicState
@@ -143,6 +144,15 @@ def evaluate_folio_sample(sample: dict, model_slug: str, api_key: str, builder: 
 
     # 3. Deterministic BFS Validation
     graph_ans, state, path = validator.validate_taxonomic(sub, pred)
+    
+    # 3b. Z3 SMT Solver Fallback for Multi-Premise Logic
+    if state == EpistemicState.SHAKK:
+        z3_solver = Z3LogicSolver()
+        z3_ans, z3_state, _ = z3_solver.solve_propositional(premises, conclusion)
+        if z3_state != EpistemicState.SHAKK:
+            graph_ans = z3_ans
+            state = z3_state
+
     lat_guard = (time.perf_counter() - t0_g) * 1000
 
     # 4. 4-State Epistemic Adjudication
@@ -156,6 +166,10 @@ def evaluate_folio_sample(sample: dict, model_slug: str, api_key: str, builder: 
             final_bool = graph_ans
         elif llm_bool is None:
             final_bool = graph_ans
+    elif state == EpistemicState.WAHM:
+        if llm_bool is not False:
+            intercepted = True
+            final_bool = False
     elif state == EpistemicState.SHAKK:
         final_bool = llm_bool  # Safe Deferral
 

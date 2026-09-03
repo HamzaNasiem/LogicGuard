@@ -76,14 +76,25 @@ class BFSValidator:
         return singular
 
     def _prop_matches(self, prop_set: Set[str], prop: str) -> bool:
-        """Check if a property or its normalized / prefixed forms exist in prop_set."""
-        p_norm = normalize_term(prop)
-        return (
-            prop in prop_set
-            or p_norm in prop_set
-            or f"has_{prop}" in prop_set
-            or f"has_{p_norm}" in prop_set
-        )
+        """Check if a property exists in prop_set (excluding negative/negated trait strings)."""
+        p_clean = prop.strip().lower().replace(" ", "_")
+        p_norm = normalize_term(p_clean).rstrip("s").rstrip("e")
+        
+        for ex in prop_set:
+            ex_clean = ex.strip().lower()
+            # Explicit negative traits (e.g. legless, flightless, hairless, no_wings) must never match positively
+            if ex_clean.endswith("less") or ex_clean.startswith("no_") or ex_clean.startswith("non_") or ex_clean.startswith("cannot_"):
+                continue
+            ex_norm = normalize_term(ex_clean).rstrip("s").rstrip("e")
+            
+            if p_norm == ex_norm or f"has_{p_norm}" == ex_norm or f"produces_{p_norm}" == ex_norm or f"gives_{p_norm}" == ex_norm:
+                return True
+            if (p_norm in ("mammary_gland", "mammary", "milk")) and ("milk" in ex_norm or "nurse" in ex_norm):
+                return True
+            if p_norm == "flower" and ("flower" in ex_norm):
+                return True
+
+        return False
 
     def validate_taxonomic(
         self, subject: str, predicate: str
@@ -93,16 +104,6 @@ class BFSValidator:
 
         Checks if subject IS-A predicate via BFS reachability on G_T.
         Time complexity: O(|V_T| + |E_T|).
-
-        Args:
-            subject: The hyponym / child entity to evaluate.
-            predicate: The hypernym / parent class to test reachability to.
-
-        Returns:
-            Tuple of (result, epistemic_state, path):
-                result: True (path exists), False (no path), or None (entity not in KB).
-                epistemic_state: EpistemicState.YAQEEN if covered, EpistemicState.SHAKK if out of scope.
-                path: Shortest path audit trail list of entity nodes.
         """
         if not subject or not predicate:
             return None, EpistemicState.SHAKK, []
@@ -142,7 +143,7 @@ class BFSValidator:
 
         # Check property fallback if p is a property
         cat_ans, cat_state = self.validate_categorical(s, p)
-        if cat_state != EpistemicState.SHAKK and cat_ans is not None:
+        if cat_state == EpistemicState.YAQEEN and cat_ans is not None:
             return cat_ans, cat_state, [s, p] if cat_ans else []
 
         # If s and p are both in G_T with known distinct subtrees
@@ -155,22 +156,7 @@ class BFSValidator:
         self, entity: str, prop: str
     ) -> Tuple[Optional[bool], EpistemicState]:
         """
-        Property inheritance with transitive lookup via G_T.
-
-        has_prop(e, pi) <==> (e, pi) in G_P  OR  exists a in anc_G_T(e) : (a, pi) in G_P
-
-        Ensures property inheritance across taxonomic ancestors.
-
-        Args:
-            entity: Entity name to query.
-            prop: Target property name to test.
-
-        Returns:
-            Tuple of (result, epistemic_state):
-                result: True if property is directly asserted or inherited,
-                        False if property is known in KB but absent from entity,
-                        None if entity/property is outside KB scope (SHAKK).
-                epistemic_state: EpistemicState.YAQEEN or EpistemicState.SHAKK.
+        Property inheritance with transitive lookup via G_T under Sound Open-World Assumption (OWA).
         """
         e = self._resolve(entity)
         p = self._resolve(prop)
@@ -178,23 +164,47 @@ class BFSValidator:
         if e not in self.kb.G_P and e not in self.kb.G_T:
             return None, EpistemicState.SHAKK
 
-        # Direct property check
+        # 1. Direct positive check
         if e in self.kb.G_P and self._prop_matches(self.kb.G_P[e], p):
             return True, EpistemicState.YAQEEN
 
-        # Inherited property via taxonomy ancestors
+        # 2. Inherited positive property via taxonomy ancestors
         if e in self.kb.G_T:
             ancestors = nx.descendants(self.kb.G_T, e)
             for ancestor in ancestors:
                 if ancestor in self.kb.G_P and self._prop_matches(self.kb.G_P[ancestor], p):
                     return True, EpistemicState.YAQEEN
 
-        # Unknown property in KB scope -> SHAKK (open-world safe, preserves FP=0)
-        if e in self.kb.G_P or e in self.kb.G_T:
-            if not self._property_in_kb(p):
-                return None, EpistemicState.SHAKK
-            return False, EpistemicState.YAQEEN
+        # 3. Explicit negative property check (e.g. 'legless' vs 'legs', 'cold_blooded' vs 'warm_blooded')
+        p_clean = p.strip().lower().replace(" ", "_")
+        p_stem = normalize_term(p_clean).rstrip("s").rstrip("e")
 
+        entities_to_check = [e]
+        if e in self.kb.G_T:
+            entities_to_check.extend(nx.descendants(self.kb.G_T, e))
+
+        for ent in entities_to_check:
+            if ent in self.kb.G_P:
+                e_props = self.kb.G_P[ent]
+                for ex in e_props:
+                    ex_clean = ex.strip().lower()
+                    if ex_clean in (f"{p_stem}less", f"{p_clean}less", f"no_{p_stem}", f"no_{p_clean}", f"cannot_{p_stem}"):
+                        return False, EpistemicState.YAQEEN
+                    if p_stem == "leg" and ex_clean in ("legless", "limbless"):
+                        return False, EpistemicState.YAQEEN
+                    if p_stem == "wing" and ex_clean in ("wingless", "flightless"):
+                        return False, EpistemicState.YAQEEN
+                    if p_stem in ("warm_blood", "warm_blooded") and "cold_blooded" in ex_clean:
+                        return False, EpistemicState.YAQEEN
+                    if p_stem in ("cold_blood", "cold_blooded") and "warm_blooded" in ex_clean:
+                        return False, EpistemicState.YAQEEN
+
+        # 4. Property known in KB scope on another entity, but absent and not inherited on e
+        if e in self.kb.G_P or e in self.kb.G_T:
+            if self._property_in_kb(p):
+                return False, EpistemicState.YAQEEN
+
+        # Open-World Assumption for unknown properties
         return None, EpistemicState.SHAKK
 
     def _property_in_kb(self, prop: str) -> bool:
