@@ -1,0 +1,638 @@
+{
+  "anthropic/claude-sonnet-5": {
+    "model_name": "Claude Sonnet 5 (Anthropic #8)",
+    "model_id": "anthropic/claude-sonnet-5",
+    "total_queries": 5,
+    "baseline_accuracy": 0.0,
+    "guard_accuracy": 0.0,
+    "accuracy_gain": 0.0,
+    "hallucinations_intercepted": 0,
+    "false_alarms": 0,
+    "epistemic_distribution": {
+      "SHAKK": 5
+    },
+    "total_cost_usd": 0.0,
+    "records": [
+      {
+        "id": "folio_001",
+        "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.689,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_002",
+        "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+        "ground_truth": false,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.139,
+          "s2": 0.004
+        }
+      },
+      {
+        "id": "folio_003",
+        "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.279,
+          "s2": 0.004
+        }
+      },
+      {
+        "id": "folio_004",
+        "question": "Is it true that there is an animal.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.067,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_005",
+        "question": "Is it true that tom is an ocellated wild turkey.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.055,
+          "s2": 0.002
+        }
+      }
+    ]
+  },
+  "x-ai/grok-4.5": {
+    "model_name": "Grok 4.5 (xAI #12)",
+    "model_id": "x-ai/grok-4.5",
+    "total_queries": 5,
+    "baseline_accuracy": 0.0,
+    "guard_accuracy": 0.0,
+    "accuracy_gain": 0.0,
+    "hallucinations_intercepted": 0,
+    "false_alarms": 0,
+    "epistemic_distribution": {
+      "SHAKK": 5
+    },
+    "total_cost_usd": 0.0,
+    "records": [
+      {
+        "id": "folio_001",
+        "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.218,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_002",
+        "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+        "ground_truth": false,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.146,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_003",
+        "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.082,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_004",
+        "question": "Is it true that there is an animal.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.057,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_005",
+        "question": "Is it true that tom is an ocellated wild turkey.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.071,
+          "s2": 0.002
+        }
+      }
+    ]
+  },
+  "openai/gpt-5.6-luna": {
+    "model_name": "GPT 5.6 Luna (OpenAI #27)",
+    "model_id": "openai/gpt-5.6-luna",
+    "total_queries": 5,
+    "baseline_accuracy": 0.0,
+    "guard_accuracy": 0.0,
+    "accuracy_gain": 0.0,
+    "hallucinations_intercepted": 0,
+    "false_alarms": 0,
+    "epistemic_distribution": {
+      "SHAKK": 5
+    },
+    "total_cost_usd": 0.0,
+    "records": [
+      {
+        "id": "folio_001",
+        "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.355,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_002",
+        "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+        "ground_truth": false,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.068,
+          "s2": 0.001
+        }
+      },
+      {
+        "id": "folio_003",
+        "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.075,
+          "s2": 0.001
+        }
+      },
+      {
+        "id": "folio_004",
+        "question": "Is it true that there is an animal.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.091,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_005",
+        "question": "Is it true that tom is an ocellated wild turkey.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.055,
+          "s2": 0.002
+        }
+      }
+    ]
+  },
+  "deepseek/deepseek-chat": {
+    "model_name": "DeepSeek-V3 671B (DeepSeek)",
+    "model_id": "deepseek/deepseek-chat",
+    "total_queries": 5,
+    "baseline_accuracy": 0.0,
+    "guard_accuracy": 0.0,
+    "accuracy_gain": 0.0,
+    "hallucinations_intercepted": 0,
+    "false_alarms": 0,
+    "epistemic_distribution": {
+      "SHAKK": 5
+    },
+    "total_cost_usd": 0.0,
+    "records": [
+      {
+        "id": "folio_001",
+        "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.293,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_002",
+        "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+        "ground_truth": false,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.072,
+          "s2": 0.001
+        }
+      },
+      {
+        "id": "folio_003",
+        "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.103,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_004",
+        "question": "Is it true that there is an animal.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.056,
+          "s2": 0.001
+        }
+      },
+      {
+        "id": "folio_005",
+        "question": "Is it true that tom is an ocellated wild turkey.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.06,
+          "s2": 0.002
+        }
+      }
+    ]
+  },
+  "meta-llama/llama-3.3-70b-instruct": {
+    "model_name": "Llama 3.3 70B (Meta AI)",
+    "model_id": "meta-llama/llama-3.3-70b-instruct",
+    "total_queries": 5,
+    "baseline_accuracy": 0.0,
+    "guard_accuracy": 0.0,
+    "accuracy_gain": 0.0,
+    "hallucinations_intercepted": 0,
+    "false_alarms": 0,
+    "epistemic_distribution": {
+      "SHAKK": 5
+    },
+    "total_cost_usd": 0.0,
+    "records": [
+      {
+        "id": "folio_001",
+        "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.229,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_002",
+        "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+        "ground_truth": false,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.073,
+          "s2": 0.001
+        }
+      },
+      {
+        "id": "folio_003",
+        "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.071,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_004",
+        "question": "Is it true that there is an animal.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.054,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_005",
+        "question": "Is it true that tom is an ocellated wild turkey.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.054,
+          "s2": 0.002
+        }
+      }
+    ]
+  },
+  "z-ai/glm-5.3": {
+    "model_name": "GLM 5.3 (Zhipu AI #21)",
+    "model_id": "z-ai/glm-5.3",
+    "total_queries": 5,
+    "baseline_accuracy": 0.0,
+    "guard_accuracy": 0.0,
+    "accuracy_gain": 0.0,
+    "hallucinations_intercepted": 0,
+    "false_alarms": 0,
+    "epistemic_distribution": {
+      "SHAKK": 5
+    },
+    "total_cost_usd": 0.0,
+    "records": [
+      {
+        "id": "folio_001",
+        "question": "Is it true that if bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then bonnie is either a student who attends the school or is an inactive and disinterested member of the community.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.395,
+          "s2": 0.003
+        }
+      },
+      {
+        "id": "folio_002",
+        "question": "Is it true that if bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.?",
+        "ground_truth": false,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.138,
+          "s2": 0.003
+        }
+      },
+      {
+        "id": "folio_003",
+        "question": "Is it true that if james is either a manager or in other countries,  then james either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.177,
+          "s2": 0.013
+        }
+      },
+      {
+        "id": "folio_004",
+        "question": "Is it true that there is an animal.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.074,
+          "s2": 0.002
+        }
+      },
+      {
+        "id": "folio_005",
+        "question": "Is it true that tom is an ocellated wild turkey.?",
+        "ground_truth": true,
+        "llm_raw": "[INSUFFICIENT_CREDITS]",
+        "llm_answer": null,
+        "final_answer": null,
+        "epistemic_state": "SHAKK",
+        "intercepted": false,
+        "path": [],
+        "is_bl_correct": false,
+        "is_ag_correct": false,
+        "latency_ms": {
+          "llm": 0.0,
+          "s1": 0.068,
+          "s2": 0.002
+        }
+      }
+    ]
+  }
+}

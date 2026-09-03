@@ -1,0 +1,14 @@
+{
+  "yale_folio": {
+    "file": "official_folio_val.jsonl",
+    "description": "Yale University First-Order Logic Reasoning Benchmark (ACL 2022)",
+    "source": "https://github.com/Yale-LILY/FOLIO",
+    "total_samples": 204
+  },
+  "oxford_truthfulqa": {
+    "file": "TruthfulQA.csv",
+    "description": "University of Oxford Falsehood & Cognitive Hallucination Benchmark (NeurIPS 2022)",
+    "source": "https://github.com/sylinrl/TruthfulQA",
+    "total_samples": 817
+  }
+}

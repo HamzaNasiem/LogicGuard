@@ -494,7 +494,8 @@
       "insect",
       "animal",
       "living_thing",
-      "hymenopterous_insect"
+      "hymenopterous_insect",
+      "social_insect"
     ],
     "bee": [
       "insect",
@@ -1122,7 +1123,8 @@
       "bird"
     ],
     "bird_of_prey": [
-      "bird"
+      "bird",
+      "predator"
     ],
     "piciform_bird": [
       "bird"
@@ -4837,7 +4839,10 @@
       "brain",
       "has_lungs",
       "lungs",
-      "vertebrate"
+      "vertebrate",
+      "mammary_glands",
+      "has_mammary_glands",
+      "warm_blood"
     ],
     "bird": [
       "has_feathers",
@@ -6611,7 +6616,8 @@
       "produces_fruit",
       "enclosed_seeds",
       "nectar_production",
-      "pollination_adapted"
+      "pollination_adapted",
+      "flowers"
     ],
     "dicot": [
       "two_cotyledons_seed_leaves",

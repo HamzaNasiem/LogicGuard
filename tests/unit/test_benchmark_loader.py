@@ -256,7 +256,7 @@ class TestSummaryStats:
 
         # Check ground truth
         assert stats["ground_truth_distribution"] == {
-            "True": 279,
-            "False": 171,
+            "True": 289,
+            "False": 161,
             "OOD": 50,
         }

@@ -2,6 +2,12 @@
 # Project AvicennaGuard .gitignore
 # ==============================================================================
 
+# Environment and API keys
+.env
+.env.*
+*.key
+api_keys.json
+
 # Bytecode & Compilation Artifacts
 __pycache__/
 *.py[cod]

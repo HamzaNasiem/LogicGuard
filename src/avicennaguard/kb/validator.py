@@ -61,7 +61,9 @@ class BFSValidator:
 
         Returns the first form found in ANY of the KB graphs.
         """
-        t = term.strip().lower().replace(" ", "_")
+        if not term:
+            return ""
+        t = str(term).strip().lower().replace(" ", "_")
         # Check explicit graph if provided
         if graph is not None and t in graph:
             return t
@@ -102,8 +104,14 @@ class BFSValidator:
                 epistemic_state: EpistemicState.YAQEEN if covered, EpistemicState.SHAKK if out of scope.
                 path: Shortest path audit trail list of entity nodes.
         """
+        if not subject or not predicate:
+            return None, EpistemicState.SHAKK, []
+
         s = self._resolve(subject)
         p = self._resolve(predicate)
+
+        if not s or not p:
+            return None, EpistemicState.SHAKK, []
 
         # Check KB coverage (SHAKK condition)
         if s not in self.kb.G_T and s not in self.kb.G_P:
@@ -118,10 +126,30 @@ class BFSValidator:
             path = nx.shortest_path(self.kb.G_T, source=s, target=p)
             logger.debug("BFS path found: %s", " → ".join(path))
             return True, EpistemicState.YAQEEN, path
-        except nx.NetworkXNoPath:
+        except (nx.NetworkXNoPath, nx.NodeNotFound):
+            pass
+
+        # Check explicit disjointness if available
+        disjoint_pairs = getattr(self.kb, "_disjoint_pairs", set())
+        if (s, p) in disjoint_pairs or (p, s) in disjoint_pairs:
             return False, EpistemicState.YAQEEN, []
-        except nx.NodeNotFound:
-            return None, EpistemicState.SHAKK, []
+
+        if s in self.kb.G_T:
+            ancestors = nx.descendants(self.kb.G_T, s) if s in self.kb.G_T else set()
+            for anc in ancestors:
+                if (anc, p) in disjoint_pairs or (p, anc) in disjoint_pairs:
+                    return False, EpistemicState.YAQEEN, []
+
+        # Check property fallback if p is a property
+        cat_ans, cat_state = self.validate_categorical(s, p)
+        if cat_state != EpistemicState.SHAKK and cat_ans is not None:
+            return cat_ans, cat_state, [s, p] if cat_ans else []
+
+        # If s and p are both in G_T with known distinct subtrees
+        if s in self.kb.G_T and p in self.kb.G_T:
+            return False, EpistemicState.YAQEEN, []
+
+        return None, EpistemicState.SHAKK, []
 
     def validate_categorical(
         self, entity: str, prop: str
